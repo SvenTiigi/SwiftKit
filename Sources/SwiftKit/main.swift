@@ -9,7 +9,7 @@ import SwiftCLI
 
 // Initialize the CLI
 let cli = CLI(
-    name: "kit",
+    name: "swiftkit",
     version: "1.0.0"
 )
 
@@ -23,4 +23,4 @@ cli.commands = [
 ]
 
 /// Start CLI
-_ = cli.go()
+_ = cli.debugGo(with: "swiftkit new")
