@@ -34,8 +34,6 @@
 		OBJ_101 /* ProjectDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ProjectDirectory.swift */; };
 		OBJ_102 /* GitConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* GitConfigService.swift */; };
 		OBJ_103 /* SwiftCLIGitConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* SwiftCLIGitConfigService.swift */; };
-		OBJ_104 /* DefaultQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* DefaultQuestionService.swift */; };
-		OBJ_105 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* QuestionService.swift */; };
 		OBJ_106 /* DefaultTemplateCloneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* DefaultTemplateCloneService.swift */; };
 		OBJ_107 /* TemplateCloneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* TemplateCloneService.swift */; };
 		OBJ_108 /* DefaultTemplatePlaceholderMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* DefaultTemplatePlaceholderMigrationService.swift */; };
@@ -116,8 +114,6 @@
 		OBJ_11 /* ProjectDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDirectory.swift; sourceTree = "<group>"; };
 		OBJ_14 /* GitConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitConfigService.swift; sourceTree = "<group>"; };
 		OBJ_15 /* SwiftCLIGitConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCLIGitConfigService.swift; sourceTree = "<group>"; };
-		OBJ_17 /* DefaultQuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQuestionService.swift; sourceTree = "<group>"; };
-		OBJ_18 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		OBJ_20 /* DefaultTemplateCloneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTemplateCloneService.swift; sourceTree = "<group>"; };
 		OBJ_21 /* TemplateCloneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCloneService.swift; sourceTree = "<group>"; };
 		OBJ_23 /* DefaultTemplatePlaceholderMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTemplatePlaceholderMigrationService.swift; sourceTree = "<group>"; };
@@ -219,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_13 /* GitConfigService */,
-				OBJ_16 /* QuestionService */,
 				OBJ_19 /* TemplateCloneService */,
 				OBJ_22 /* TemplatePlaceholderMigrationService */,
 			);
@@ -233,15 +228,6 @@
 				OBJ_15 /* SwiftCLIGitConfigService.swift */,
 			);
 			path = GitConfigService;
-			sourceTree = "<group>";
-		};
-		OBJ_16 /* QuestionService */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_18 /* QuestionService.swift */,
-				OBJ_17 /* DefaultQuestionService.swift */,
-			);
-			path = QuestionService;
 			sourceTree = "<group>";
 		};
 		OBJ_19 /* TemplateCloneService */ = {
@@ -561,8 +547,6 @@
 				3D9C439D2274D164000A6585 /* OrganizationNameQuestion.swift in Sources */,
 				OBJ_103 /* SwiftCLIGitConfigService.swift in Sources */,
 				3D9C439F2274D177000A6585 /* BundleIdentifierQuestion.swift in Sources */,
-				OBJ_104 /* DefaultQuestionService.swift in Sources */,
-				OBJ_105 /* QuestionService.swift in Sources */,
 				OBJ_106 /* DefaultTemplateCloneService.swift in Sources */,
 				OBJ_107 /* TemplateCloneService.swift in Sources */,
 				OBJ_108 /* DefaultTemplatePlaceholderMigrationService.swift in Sources */,
