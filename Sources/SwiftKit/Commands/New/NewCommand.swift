@@ -105,12 +105,12 @@ extension NewCommand: Command {
         // Print Start
         self.printStart(with: templatePlaceholder)
         // Clone Template
-//        try self.templateCloneService.clone(atPath: self.projectDirectory.path)
-//        /// Migrate Template
-//        self.templatePlaceholderMigrationService.migrate(
-//            atPath: self.projectDirectory.path,
-//            placeholder: templatePlaceholder
-//        )
+        try self.templateCloneService.clone(atPath: self.projectDirectory.path)
+        /// Migrate Template
+        self.templatePlaceholderMigrationService.migrate(
+            atPath: self.projectDirectory.path,
+            placeholder: templatePlaceholder
+        )
         // Print Finish
         self.printFinish(with: templatePlaceholder)
     }
@@ -130,8 +130,8 @@ extension NewCommand {
     ///
     /// - Parameter templatePlaceholder: The TemplatePlaceholder
     func printSummary(with templatePlaceholder: TemplatePlaceholder, projectDirectory: ProjectDirectory) {
-        stdout <<< "---------------------------------------------------------------------"
         stdout <<< "\(templatePlaceholder.projectName) Summary:"
+        stdout <<< "---------------------------------------------------------------------"
         stdout <<< "Destination: \(projectDirectory.path)"
         stdout <<< "Name: \(templatePlaceholder.projectName)"
         stdout <<< "Author: \(templatePlaceholder.authorName)"
