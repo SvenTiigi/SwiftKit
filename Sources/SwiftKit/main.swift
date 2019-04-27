@@ -23,4 +23,4 @@ cli.commands = [
 ]
 
 /// Start CLI
-_ = cli.debugGo(with: "swiftkit new")
+_ = cli.go()

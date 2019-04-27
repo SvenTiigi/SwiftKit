@@ -70,7 +70,7 @@ extension NewCommand: Command {
             self.projectDirectory.path += "/\(projectNameParameterValue)"
         }
         // Initialize ProjectName
-        let projectName = self.projectNameParameter.value ?? ProjectNameQuestion(projectDirectory: self.projectDirectory).ask(on: self)
+        let projectName = ProjectNameQuestion(projectDirectory: self.projectDirectory).ask(on: self)
         // Initialize AuthorName
         let authorName = AuthorNameQuestion(gitConfigService: self.gitConfigService).ask(on: self)
         // Initialiuze AuthorEmail
