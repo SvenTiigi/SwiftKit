@@ -33,17 +33,17 @@ struct TemplatePlaceholder: Codable, Equatable, Hashable {
     /// The Date
     var date: String {
         return DateFormatter.localizedString(
-            from: Date(),
-            dateStyle: DateFormatter.Style.medium,
-            timeStyle: DateFormatter.Style.none
+            from: .init(),
+            dateStyle: .medium,
+            timeStyle: .none
         )
     }
     
     /// The Year
     var year: String {
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
-        return yearFormatter.string(from: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        return dateFormatter.string(from: .init())
     }
     
 }
@@ -52,6 +52,15 @@ struct TemplatePlaceholder: Codable, Equatable, Hashable {
 
 extension TemplatePlaceholder {
     
+    /// Designated Initializer
+    ///
+    /// - Parameters:
+    ///   - projectName: The project Name
+    ///   - authorName: The author name
+    ///   - authorEmail: The optional author E-Mail. Default value `empty`
+    ///   - repositoryURL: The optional repository url. Default value `empty`
+    ///   - organizationName: The optional organization name. Default value `projectName`
+    ///   - bundleIdentifier: The optional bundle identifier. Default value `"com.\(projectName)"`
     init(projectName: String,
          authorName: String,
          authorEmail: String?,

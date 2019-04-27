@@ -18,4 +18,10 @@ protocol GitConfigService {
     /// - Returns: The corresponding value if available
     func getValue(forKey key: String) -> String?
     
+    /// Retrieve remote URL for Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Returns: The remot URL if available
+    func getRemoteURL(repositoryPath: String) -> String?
+    
 }

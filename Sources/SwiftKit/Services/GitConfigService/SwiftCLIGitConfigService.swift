@@ -26,4 +26,16 @@ extension SwiftCLIGitConfigService: GitConfigService {
             .stdout
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    /// Retrieve remote URL for Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Returns: The remot URL if available
+    func getRemoteURL(repositoryPath: String) -> String? {
+        return try? capture(bash: "cd \(repositoryPath) && git remote get-url origin")
+            .stdout
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .drop(suffix: ".git")
+    }
+    
 }

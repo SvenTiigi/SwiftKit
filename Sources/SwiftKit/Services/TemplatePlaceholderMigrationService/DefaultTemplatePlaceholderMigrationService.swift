@@ -39,7 +39,7 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
         // Initialize current File Name
         let currentFileName = URL(fileURLWithPath: #file).lastPathComponent
         // Verify Item Names are available for contents of Directory at Folder Path
-        guard let itemNames = try? fileManager.contentsOfDirectory(atPath: folderPath) else {
+        guard let itemNames = try? self.fileManager.contentsOfDirectory(atPath: folderPath) else {
             // Item Names are unavailable return
             return
         }
@@ -56,11 +56,11 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
             let newItemPath = folderPath + "/" + self.replace(string: itemName, with: placeholder)
             do {
                 // Check if Item Path is a Folder
-                if fileManager.isFolder(atPath: itemPath) {
+                if self.fileManager.isFolder(atPath: itemPath) {
                     // Process Files in Folder with Item Path
                     self.migrate(atPath: itemPath, placeholder: placeholder)
                     // Rename Item
-                    try fileManager.moveItem(atPath: itemPath, toPath: newItemPath)
+                    try self.fileManager.moveItem(atPath: itemPath, toPath: newItemPath)
                 } else {
                     // When Item Path is not a Folder retrieve contents of File
                     let fileContents = try String(contentsOfFile: itemPath)
@@ -74,7 +74,7 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
                     // Check if new Item Path is not equal to the Item Path
                     if newItemPath != itemPath {
                         // Remove Item Path
-                        try fileManager.removeItem(atPath: itemPath)
+                        try self.fileManager.removeItem(atPath: itemPath)
                     }
                 }
             } catch {
@@ -84,17 +84,36 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
         }
     }
     
+}
+
+// MARK: - Replace
+
+extension DefaultTemplatePlaceholderMigrationService {
+    
+    /// Replace String with TemplatePlaceholder
+    ///
+    /// - Parameters:
+    ///   - string: The String
+    ///   - placeholder: The TemplatePlaceholder
+    /// - Returns: The updated String
     func replace(string: String, with placeholder: TemplatePlaceholder) -> String {
+        // Initialize mutable replaced String
         var replacedString = string
+        // For each Key-Value-Pair
         for keyValuePair in placeholder.keyValuePairs {
-            replacedString = replacedString.replacingOccurrences(of: keyValuePair.key, with: keyValuePair.value)
+            // Re-Initialize replaced String
+            replacedString = replacedString.replacingOccurrences(
+                of: keyValuePair.key,
+                with: keyValuePair.value
+            )
         }
+        // Return replaced String
         return replacedString
     }
     
 }
 
-
+// MARK: - FileManager+isFolder
 
 private extension FileManager {
     

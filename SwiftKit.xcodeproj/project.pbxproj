@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D9C438E2274B40F000A6585 /* String+DropSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C438A2274B363000A6585 /* String+DropSuffix.swift */; };
+		3D9C438F2274B413000A6585 /* String+NonEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C438C2274B3B8000A6585 /* String+NonEmpty.swift */; };
 		OBJ_100 /* NewCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* NewCommand.swift */; };
 		OBJ_101 /* ProjectDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ProjectDirectory.swift */; };
 		OBJ_102 /* GitConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* GitConfigService.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D9C438A2274B363000A6585 /* String+DropSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DropSuffix.swift"; sourceTree = "<group>"; };
+		3D9C438C2274B3B8000A6585 /* String+NonEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NonEmpty.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* NewCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommand.swift; sourceTree = "<group>"; };
 		OBJ_11 /* ProjectDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDirectory.swift; sourceTree = "<group>"; };
 		OBJ_14 /* GitConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitConfigService.swift; sourceTree = "<group>"; };
@@ -165,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D9C43892274B356000A6585 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C438A2274B363000A6585 /* String+DropSuffix.swift */,
+				3D9C438C2274B3B8000A6585 /* String+NonEmpty.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		OBJ_12 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,8 +201,8 @@
 		OBJ_16 /* QuestionService */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* DefaultQuestionService.swift */,
 				OBJ_18 /* QuestionService.swift */,
+				OBJ_17 /* DefaultQuestionService.swift */,
 			);
 			path = QuestionService;
 			sourceTree = "<group>";
@@ -197,8 +210,8 @@
 		OBJ_19 /* TemplateCloneService */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_20 /* DefaultTemplateCloneService.swift */,
 				OBJ_21 /* TemplateCloneService.swift */,
+				OBJ_20 /* DefaultTemplateCloneService.swift */,
 			);
 			path = TemplateCloneService;
 			sourceTree = "<group>";
@@ -206,9 +219,9 @@
 		OBJ_22 /* TemplatePlaceholderMigrationService */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* DefaultTemplatePlaceholderMigrationService.swift */,
 				OBJ_24 /* TemplatePlaceholder.swift */,
 				OBJ_25 /* TemplatePlaceholderMigrationService.swift */,
+				OBJ_23 /* DefaultTemplatePlaceholderMigrationService.swift */,
 			);
 			path = TemplatePlaceholderMigrationService;
 			sourceTree = "<group>";
@@ -277,7 +290,7 @@
 			path = .build/checkouts/SwiftCLI/Sources/SwiftCLI;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -288,7 +301,6 @@
 				OBJ_60 /* Template */,
 				OBJ_61 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_56 /* Products */ = {
@@ -316,6 +328,7 @@
 				OBJ_11 /* ProjectDirectory.swift */,
 				OBJ_9 /* Commands */,
 				OBJ_12 /* Services */,
+				3D9C43892274B356000A6585 /* Extensions */,
 			);
 			name = SwiftKit;
 			path = Sources/SwiftKit;
@@ -428,7 +441,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -503,6 +516,7 @@
 			files = (
 				OBJ_100 /* NewCommand.swift in Sources */,
 				OBJ_101 /* ProjectDirectory.swift in Sources */,
+				3D9C438E2274B40F000A6585 /* String+DropSuffix.swift in Sources */,
 				OBJ_102 /* GitConfigService.swift in Sources */,
 				OBJ_103 /* SwiftCLIGitConfigService.swift in Sources */,
 				OBJ_104 /* DefaultQuestionService.swift in Sources */,
@@ -510,6 +524,7 @@
 				OBJ_106 /* DefaultTemplateCloneService.swift in Sources */,
 				OBJ_107 /* TemplateCloneService.swift in Sources */,
 				OBJ_108 /* DefaultTemplatePlaceholderMigrationService.swift in Sources */,
+				3D9C438F2274B413000A6585 /* String+NonEmpty.swift in Sources */,
 				OBJ_109 /* TemplatePlaceholder.swift in Sources */,
 				OBJ_110 /* TemplatePlaceholderMigrationService.swift in Sources */,
 				OBJ_111 /* main.swift in Sources */,

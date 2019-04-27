@@ -79,7 +79,10 @@ extension NewCommand: Command {
             bundleIdentifier: self.askForBundleIdentifier()
         )
         // Print Summary
-        self.printSummary(with: templatePlaceholder)
+        self.printSummary(
+            with: templatePlaceholder,
+            projectDirectory: self.projectDirectory
+        )
         // Ask for Procceed
         self.askForProceed()
         // Print Start
@@ -97,14 +100,33 @@ extension NewCommand: Command {
     
 }
 
+// MARK: - Prints
+
 extension NewCommand {
-    
+
+    /// Print Bootstrap
     func printBootstrap() {
-        stdout <<< "Kit-Generator 📦\n"
+        stdout <<< "SwiftKit\n"
     }
     
-    func printSummary(with templatePlaceholder: TemplatePlaceholder) {
-        
+    /// Print Summary
+    ///
+    /// - Parameter templatePlaceholder: The TemplatePlaceholder
+    func printSummary(with templatePlaceholder: TemplatePlaceholder, projectDirectory: ProjectDirectory) {
+        stdout <<< "---------------------------------------------------------------------"
+        stdout <<< "\(templatePlaceholder.projectName) Summary:"
+        stdout <<< "Destination: \(projectDirectory.path)"
+        stdout <<< "Name: \(templatePlaceholder.projectName)"
+        stdout <<< "Author: \(templatePlaceholder.authorName)"
+        if !templatePlaceholder.authorEmail.isEmpty {
+            stdout <<< "E-Mail: \(templatePlaceholder.authorEmail)"
+        }
+        if !templatePlaceholder.repositoryURL.isEmpty {
+            stdout <<< "Repository URL: \(templatePlaceholder.repositoryURL)"
+        }
+        stdout <<< "Organization: \(templatePlaceholder.organizationName)"
+        stdout <<< "Bundle-Identifier: \(templatePlaceholder.bundleIdentifier)"
+        stdout <<< "---------------------------------------------------------------------"
     }
     
     func printStart(with templatePlaceholder: TemplatePlaceholder) {
@@ -112,7 +134,7 @@ extension NewCommand {
     }
     
     func printFinish(with templatePlaceholder: TemplatePlaceholder) {
-        stdout <<< "\(templatePlaceholder.projectName) is ready to go 🎉 Good luck with your Kit 🚀"
+        stdout <<< "\(templatePlaceholder.projectName) is ready to go 👨‍💻 Good luck with your Kit 🚀"
     }
     
     
@@ -161,7 +183,7 @@ extension NewCommand {
 extension NewCommand {
     
     func askForProjectName(destination: String) -> String {
-        let projectFolderName = destination.withoutSuffix("/").components(separatedBy: "/").last!
+        let projectFolderName = destination.drop(suffix: "/").components(separatedBy: "/").last!
         
         let projectName = askForOptionalInfo(
             question: "📛  What's the name of your project?",
@@ -199,7 +221,7 @@ extension NewCommand {
         let gitURL = try? capture(bash: "cd \(destination) && git remote get-url origin")
             .stdout
             .trimmingCharacters(in: .whitespacesAndNewlines)
-            .withoutSuffix(".git")
+            .drop(suffix: ".git")
         
         let question = "🌍  Any Repository URL that you'll be hosting this project at (for Podspec)?"
         
@@ -226,23 +248,4 @@ extension NewCommand {
     }
     
     
-}
-
-
-private extension String {
-    var nonEmpty: String? {
-        guard count > 0 else {
-            return nil
-        }
-        
-        return self
-    }
-    func withoutSuffix(_ suffix: String) -> String {
-        guard hasSuffix(suffix) else {
-            return self
-        }
-        
-        let startIndex = index(endIndex, offsetBy: -suffix.count)
-        return replacingCharacters(in: startIndex..<endIndex, with: "")
-    }
 }

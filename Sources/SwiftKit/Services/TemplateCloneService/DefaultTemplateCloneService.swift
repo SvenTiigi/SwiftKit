@@ -24,9 +24,9 @@ struct DefaultTemplateCloneService {
     /// Designated Initializer
     ///
     /// - Parameters:
-    ///   - cloneURL: The Clone URL. Default value `https://github.com/SvenTiigi/Kit.git`
+    ///   - cloneURL: The Clone URL. Default value `https://github.com/SvenTiigi/SwiftKit.git`
     ///   - fileManager: The FileManager
-    init(cloneURL: String = "https://github.com/SvenTiigi/Kit.git",
+    init(cloneURL: String = "https://github.com/SvenTiigi/SwiftKit.git",
          fileManager: FileManager = .default) {
         self.cloneURL = cloneURL
         self.fileManager = fileManager
@@ -71,12 +71,12 @@ extension DefaultTemplateCloneService {
     
     /// The Temp Folder Path
     func tempFolderPath(basePath: String) -> String {
-        return basePath + "/kit_temp"
+        return basePath + "/swiftkit_temp"
     }
     
     /// The ClonePath
     func clonePath(basePath: String) -> String {
-        return self.tempFolderPath(basePath: basePath) + "/Kit"
+        return self.tempFolderPath(basePath: basePath) + "/SwiftKit"
     }
     
     /// The cloned Kit Template Path
