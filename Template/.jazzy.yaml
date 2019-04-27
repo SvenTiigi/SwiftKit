@@ -1,0 +1,7 @@
+# KITPROJECT document generator jazzy settings
+
+copyright: Copyright KITYEAR KITORGANIZATION
+author: KITAUTHOR
+xcodebuild_arguments: [-target, KITPROJECT-iOS]
+clean: true
+output: ./Documentation

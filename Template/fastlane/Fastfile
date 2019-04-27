@@ -1,0 +1,74 @@
+fastlane_version "2.89.0"
+
+default_platform :ios
+
+platform :ios do
+
+  desc "Release a new version of KITPROJECT"
+  lane :release do |options|
+    ensure_git_status_clean
+    ensure_git_branch(branch: 'master')
+    test
+    version = options[:version]
+    increment(version: version)
+    add_git_tag(tag: version)
+    push_git_tags()
+    push_to_git_remote()
+    pod_push()
+  end
+
+  desc "Increment Version"
+    lane :increment do |options|
+    version = options[:version]
+    version_bump_podspec(
+      path: "KITPROJECT.podspec", 
+      version_number: version
+    )
+    set_info_plist_value(
+      path: "Configs/KITPROJECT.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    set_info_plist_value(
+      path: "Configs/KITPROJECTTests.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    set_info_plist_value(
+      path: "Example/Resources/Info.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    git_commit(
+        path: [
+          "KITPROJECT.podspec", 
+          "Configs/KITPROJECT.plist", 
+          "Configs/KITPROJECTTests.plist", 
+          "Example/Resources/Info.plist"
+        ],
+        message: "KITPROJECT Version #{version} 🚀"
+    )
+  end
+
+  desc "Runs Tests"
+  lane :test do
+    carthage(command: "build", no_skip_current: true, cache_builds: true)
+    pod_lib_lint
+    scan(
+      project: "KITPROJECT.xcodeproj",
+      scheme: "KITPROJECT-iOS",
+      clean: true
+    )
+    scan(
+      project: "KITPROJECT.xcodeproj",
+      scheme: "KITPROJECT-tvOS",
+      clean: true
+    )
+    scan(
+      project: "KITPROJECT.xcodeproj",
+      scheme: "KITPROJECT-macOS",
+      clean: true
+    )
+  end
+
+end
