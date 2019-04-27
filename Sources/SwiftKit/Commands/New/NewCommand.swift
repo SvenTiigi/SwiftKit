@@ -132,17 +132,17 @@ extension NewCommand {
     func printSummary(with templatePlaceholder: TemplatePlaceholder, projectDirectory: ProjectDirectory) {
         stdout <<< "\(templatePlaceholder.projectName) Summary:"
         stdout <<< "---------------------------------------------------------------------"
-        stdout <<< "Destination: \(projectDirectory.path)"
-        stdout <<< "Name: \(templatePlaceholder.projectName)"
-        stdout <<< "Author: \(templatePlaceholder.authorName)"
+        stdout <<< "💾 Destination: \(projectDirectory.path)"
+        stdout <<< "🐣 Name: \(templatePlaceholder.projectName)"
+        stdout <<< "👨‍💻 Author: \(templatePlaceholder.authorName)"
         if !templatePlaceholder.authorEmail.isEmpty {
-            stdout <<< "E-Mail: \(templatePlaceholder.authorEmail)"
+            stdout <<< "✉️ E-Mail: \(templatePlaceholder.authorEmail)"
         }
         if !templatePlaceholder.repositoryURL.isEmpty {
-            stdout <<< "Repository URL: \(templatePlaceholder.repositoryURL)"
+            stdout <<< "🌎 Repository URL: \(templatePlaceholder.repositoryURL)"
         }
-        stdout <<< "Organization: \(templatePlaceholder.organizationName)"
-        stdout <<< "Bundle-Identifier: \(templatePlaceholder.bundleIdentifier)"
+        stdout <<< "🏢 Organization: \(templatePlaceholder.organizationName)"
+        stdout <<< "📦 Bundle-Identifier: \(templatePlaceholder.bundleIdentifier)"
         stdout <<< "---------------------------------------------------------------------"
     }
     
