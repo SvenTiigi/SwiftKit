@@ -63,11 +63,12 @@ $ brew install swiftkit
 
 ## Usage
 
-To create a new Kit inside a new directory simply run:
+To create a new Kit simply run:
 
 ```bash
 $ swiftkit new MyAwesomeKit
 ```
+> This will create a new folder in your current directory named by the name of your Kit
 
 If you already created a directory for example `MyAwesomeKit` and you want to create the Kit inside this directory simply run:
 
