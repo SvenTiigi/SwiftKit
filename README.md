@@ -40,5 +40,62 @@ Inspired by <a href="https://github.com/JohnSundell/SwiftPlate">SwiftPlate</a>
 brew install swiftkit
 ```
 
+### Mint
+
+[Mint](https://github.com/yonaskolb/Mint) is a package manager that installs and runs Swift command line tool packages.
+
+```bash
+mint install SvenTiigi/SwiftKit
+```
+
 ## Usage
 
+To create a new Kit inside a new directory simply run:
+
+```bash
+swiftkit new MyAwesomeKit
+```
+
+If you already created a directory for example `MyAwesomeKit` and you want to create the Kit inside this directory simply run:
+
+```bash
+swiftkit new
+```
+
+## Kit-Structure
+
+### ReadMe
+
+A `README.md` template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
+
+### Fastlane
+
+Every generated Kit will come along with a predefined `Fastfile`.
+
+#### tests-Lane
+
+The `tests` lane will run your Unit-Tests and verify that your Kit is `Carthage` and `CocoaPods` compatible.
+
+```bash
+fastlane ios tests
+```
+
+### release-lane
+
+The `release` lane will allow you to release a new version of your Kit.
+
+```bash
+fastlane ios release version:1.1.0
+```
+
+The lane verifies various aspects of your Kit.
+
+| Step | Description |
+| --- | --- |
+| 1 | Ensure your are on a clean master branch |
+| 2 | Run `tests` lane |
+| 3 | Increment version |
+| 4 | Add and push Git tag |
+| 5 | Pushes the Podspec via `pod trunk push` |
+
+> ☝️ Please ensure you have registered your machine with [`pod trunk register`](https://guides.cocoapods.org/making/getting-setup-with-trunk.html) in order to successfully push the Podspec to CocoaPods
