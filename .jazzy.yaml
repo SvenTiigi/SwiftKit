@@ -1,0 +1,9 @@
+# SwiftKit document generator jazzy settings
+
+copyright: Copyright 2019 Sven Tiigi
+author: Sven Tiigi
+github_url: https://github.com/SvenTiigi/SwiftKit
+xcodebuild_arguments: [-target, SwiftKit]
+clean: true
+output: ./Documentation
+min_acl: internal
