@@ -144,13 +144,14 @@ extension NewCommand {
         stdout <<< "🏢 Organization: \(templatePlaceholder.organizationName)"
         stdout <<< "📦 Bundle-Identifier: \(templatePlaceholder.bundleIdentifier)"
         stdout <<< "---------------------------------------------------------------------"
+        stdout <<< ""
     }
     
     /// Print Start
     ///
     /// - Parameter templatePlaceholder: The TemplatePlaceholder
     func printStart(with templatePlaceholder: TemplatePlaceholder) {
-        stdout <<< "🚀  Starting to generate \(templatePlaceholder.projectName)..."
+        stdout <<< "Starting to generate \(templatePlaceholder.projectName) 🚀"
     }
     
     /// Print Finish
