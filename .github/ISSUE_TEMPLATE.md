@@ -1,11 +1,9 @@
 ## SwiftKit Environment
 
-**SwiftKit version:**
-**macOS version:**
-**Xcode version:**
-**Package manager:**
-- [ ] Brew
-- [ ] Mint
+- SwiftKit version:
+- macOS version:
+- Xcode version:
+- Installed via (mint, brew):
 
 ## What did you do?
 
