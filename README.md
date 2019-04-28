@@ -38,7 +38,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 
 ## Features
 
-- [x] Support for `iOS`, `tvOS`, `watchOS` and `macOS`
+- [x] Kit supports `iOS`, `tvOS`, `watchOS` and `macOS`
 - [x] `CocoaPods`, `Carthage` and `Swift Package Manager` compatibility
 - [x] Predefined `README.md` template
 - [x] Fastlane already integrated for `tests` and `release`
@@ -78,6 +78,7 @@ $ swiftkit new
 ```
 
 ## Kit-Structure
+
 The upcoming sections will explain the structure of your generated Kit in detail.
 
 ### Xcode Project Structure
@@ -116,7 +117,7 @@ $ fastlane ios tests
 
 #### release-lane
 
-The `release` lane will allow you to release a new version of your Kit.
+The `release` lane will allow you to automatically release a new version of your Kit for `Carthage`/`GitHub` and `CocoaPods`.
 
 ```bash
 $ fastlane ios release version:1.1.0
