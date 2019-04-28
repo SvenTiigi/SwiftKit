@@ -148,7 +148,7 @@ The lane verifies various aspects of your Kit.
 A `README.md` template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe">
+   <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
 </p>
 
 ## Contributing
