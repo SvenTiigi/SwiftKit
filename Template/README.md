@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitLogo.png?token=ACZQQFXYRSFF7DSHRJBKTTS4Z2SV2" alt="KITPROJECT Logo">
+   <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitLogo.png" alt="KITPROJECT Logo">
 </p>
 
 <p align="center">
