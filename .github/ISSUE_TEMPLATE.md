@@ -6,6 +6,7 @@
 
 **SwiftKit version:**
 **macOS version:**
+**Xcode version:**
 **Package manager:**
 - [ ] Brew
 - [ ] Mint
