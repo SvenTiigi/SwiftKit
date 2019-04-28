@@ -44,7 +44,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 
 ## Installation
 
-### Mint
+### Mint 🌱
 
 [Mint](https://github.com/yonaskolb/Mint) is a package manager that installs and runs Swift command line tool packages.
 
@@ -52,7 +52,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 $ mint install SvenTiigi/SwiftKit
 ```
 
-### Homebrew
+### Homebrew 🍺
 
 [Homebrew](https://brew.sh/) is a free and open-source software package management system that simplifies the installation of software on Apple's macOS operating system.
 
