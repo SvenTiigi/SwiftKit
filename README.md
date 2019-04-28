@@ -105,13 +105,13 @@ In the aforementioned `Sources` directory you will find one Swift file which is 
 @_exported import Foundation
 ```
 
-> This file will is used to inherit the import of `Foundation` when importing your Kit.
+> This [file](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/Sources/KITPROJECT.swift) is used to inherit the import of `Foundation` when importing your Kit.
 
-<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/fastlane-logo.png" alt="Fastlane Logo">
+<a href="https://fastlane.tools/"><img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/fastlane-logo.png" alt="Fastlane Logo"></a>
 
 ### Fastlane
 
-Every generated Kit will come along with a predefined `Fastfile`.
+Every generated Kit will come along with a predefined [`Fastfile`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/fastlane/Fastfile).
 
 ##### tests-Lane
 
@@ -145,7 +145,7 @@ The lane verifies various aspects of your Kit.
 
 ### ReadMe
 
-A `README.md` template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
+A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
 
 <p align="center">
    <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
