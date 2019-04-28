@@ -29,7 +29,7 @@ extension ProjectNameQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "🐣 What is the name of your project?",
+            text: "🐣  What is the name of your project?",
             hint: "Leave empty to use: \(self.folderName)",
             defaultAnswer: self.folderName
         )

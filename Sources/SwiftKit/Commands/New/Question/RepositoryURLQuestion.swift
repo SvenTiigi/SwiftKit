@@ -45,7 +45,7 @@ extension RepositoryURLQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "🌎 The Repository URL which is used for Podspec?",
+            text: "🌎  The Repository URL which is used for Podspec?",
             hint: self.gitURL.flatMap { "Leave empty to use: \($0)" } ?? "You may leave this empty",
             defaultAnswer: self.gitURL ?? self.fallbackURL
         )

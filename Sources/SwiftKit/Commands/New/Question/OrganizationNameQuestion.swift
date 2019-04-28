@@ -24,7 +24,7 @@ extension OrganizationNameQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "🏢 What's your organization name?",
+            text: "🏢  What's your organization name?",
             hint: "Leave empty to use: \(self.projectName)",
             defaultAnswer: self.projectName
         )

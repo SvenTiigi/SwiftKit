@@ -84,8 +84,8 @@ extension NewCommand: Command {
         ).ask(on: self)
         // Initialize OrganizationName
         let organizationName = OrganizationNameQuestion(projectName: projectName).ask(on: self)
-        // Initialize BundleIdentifier
-        let bundleIdentifier = BundleIdentifierQuestion(projectName: projectName).ask(on: self)
+        // Initialize OrganizationIdentifier
+        let organizationIdentifier = OrganizationIdentifierQuestion(projectName: projectName).ask(on: self)
         // Initialize TemplatePlacerholder
         let templatePlaceholder = TemplatePlaceholder(
             projectName: projectName,
@@ -93,7 +93,7 @@ extension NewCommand: Command {
             authorEmail: authorEmail,
             repositoryURL: repositoryURL,
             organizationName: organizationName,
-            bundleIdentifier: bundleIdentifier
+            organizationIdentifier: organizationIdentifier
         )
         // Print Summary
         self.printSummary(
@@ -132,17 +132,17 @@ extension NewCommand {
     func printSummary(with templatePlaceholder: TemplatePlaceholder, projectDirectory: ProjectDirectory) {
         stdout <<< "\(templatePlaceholder.projectName) Summary:"
         stdout <<< "---------------------------------------------------------------------"
-        stdout <<< "💾 Destination: \(projectDirectory.path)"
-        stdout <<< "🐣 Name: \(templatePlaceholder.projectName)"
-        stdout <<< "👨‍💻 Author: \(templatePlaceholder.authorName)"
+        stdout <<< "💾  Destination: \(projectDirectory.path)"
+        stdout <<< "🐣  Project Name: \(templatePlaceholder.projectName)"
+        stdout <<< "👨‍💻  Author: \(templatePlaceholder.authorName)"
         if !templatePlaceholder.authorEmail.isEmpty {
-            stdout <<< "✉️ E-Mail: \(templatePlaceholder.authorEmail)"
+            stdout <<< "✉️  E-Mail: \(templatePlaceholder.authorEmail)"
         }
         if !templatePlaceholder.repositoryURL.isEmpty {
-            stdout <<< "🌎 Repository URL: \(templatePlaceholder.repositoryURL)"
+            stdout <<< "🌎  Repository URL: \(templatePlaceholder.repositoryURL)"
         }
-        stdout <<< "🏢 Organization: \(templatePlaceholder.organizationName)"
-        stdout <<< "📦 Bundle-Identifier: \(templatePlaceholder.bundleIdentifier)"
+        stdout <<< "🏢  Organization: \(templatePlaceholder.organizationName)"
+        stdout <<< "📦  Organization Identifier: \(templatePlaceholder.organizationIdentifier)"
         stdout <<< "---------------------------------------------------------------------"
         stdout <<< ""
     }

@@ -27,14 +27,10 @@ extension Question {
     /// - Parameter command: The Command
     /// - Returns: The Answer
     func ask(on command: Command) -> String {
-        // Declare Answer
-        var answer: String?
+        // Defer
         defer {
-            // Check if answer is not nil
-            if answer != nil {
-                // Print line
-                command.stdout <<< ""
-            }
+            // Print empty line
+            command.stdout <<< ""
         }
         // Switch on QuestionVariant
         switch self.questionVariant {
@@ -42,21 +38,19 @@ extension Question {
             // Print Question text
             command.stdout <<< text
             // Verify answer is available
-            guard let requiredAnswer = readLine()?.nonEmpty else {
+            guard let answer = Input.readLine(prompt: ">").nonEmpty else {
                 // Print Information is required
                 command.stdout <<< "👮‍♂️ Information is required"
                 // Re-Invoke ask
                 return self.ask(on: command)
             }
-            // Fill in required Answer
-            answer = requiredAnswer
             // Return answer
-            return requiredAnswer
+            return answer
         case .optional(let text, let hint, let defaultAnswer):
             // Print Text with Hint
             command.stdout <<< "\(text)\n(\(hint))"
-            // Initialize Answer
-            answer = readLine()?.nonEmpty
+            // Initialize Answer by reading line
+            let answer = Input.readLine(prompt: ">").nonEmpty
             // Return answer otherwise the default answer
             return answer ?? defaultAnswer
         }

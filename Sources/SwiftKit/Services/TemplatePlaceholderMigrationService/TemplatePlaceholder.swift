@@ -24,11 +24,11 @@ struct TemplatePlaceholder: Codable, Equatable, Hashable {
     /// The repository URL
     let repositoryURL: String
     
-    /// The optional Organization name
+    /// The Organization name
     let organizationName: String
     
-    /// The Bundle-Identifier
-    let bundleIdentifier: String
+    /// The Organization Identifier
+    let organizationIdentifier: String
     
     /// The Date
     var date: String {
@@ -60,7 +60,7 @@ extension TemplatePlaceholder {
             "KITAUTHORMAIL": self.authorEmail,
             "KITURL": self.repositoryURL,
             "KITORGANIZATION": self.organizationName,
-            "KITBUNDLEIDENTIFIER": self.bundleIdentifier,
+            "KITBUNDLEIDENTIFIER": self.organizationIdentifier,
             "KITDATE": self.date,
             "KITYEAR": self.year,
         ]

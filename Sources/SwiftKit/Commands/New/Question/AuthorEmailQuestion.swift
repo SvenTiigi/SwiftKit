@@ -29,7 +29,7 @@ extension AuthorEmailQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "✉️ What's your email address which is used for Podspec?",
+            text: "✉️  What's your email address which is used for Podspec?",
             hint: self.gitEmail.flatMap { "Leave empty to use: \($0)" } ?? "You may leave this empty",
             defaultAnswer: gitEmail ?? ""
         )

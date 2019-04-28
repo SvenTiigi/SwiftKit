@@ -11,7 +11,7 @@ extension String {
     
     /// Retrieve non empty String representation if available
     var nonEmpty: String? {
-        guard !self.isEmpty else {
+        guard !self.trimmingCharacters(in: .whitespaces).isEmpty else {
             return nil
         }
         return self

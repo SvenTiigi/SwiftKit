@@ -5,22 +5,10 @@
 //  Created by Sven Tiigi on 27.04.19.
 //
 
-import SwiftCLI
+import Foundation
 
-// Initialize the CLI
-let cli = CLI(
-    name: "swiftkit",
-    version: "1.0.0"
-)
+/// Initialize SwiftKit
+let swiftKit = SwiftKit(environment: .production)
 
-// Set Commands
-cli.commands = [
-    NewCommand(
-        gitConfigService: SwiftCLIGitConfigService(),
-        templateCloneService: DefaultTemplateCloneService(),
-        templatePlaceholderMigrationService: DefaultTemplatePlaceholderMigrationService()
-    )
-]
-
-/// Start CLI
-_ = cli.go()
+// Start SwiftKit
+swiftKit.start()

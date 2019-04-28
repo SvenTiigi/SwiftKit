@@ -28,7 +28,7 @@ extension AuthorNameQuestion: Question {
     
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
-        let text = "👨‍💻 What's your name?"
+        let text = "👨‍💻  What's your name?"
         if let gitName = self.gitName {
             return .optional(
                 text: text,
