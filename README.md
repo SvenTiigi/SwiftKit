@@ -59,7 +59,7 @@ $ mint install SvenTiigi/SwiftKit
 ```bash
 $ brew install swiftkit
 ```
-> ☝️ Currently not available on brew (https://github.com/Homebrew/homebrew-core/pull/39392)
+> ☝️ Coming soon to brew: https://github.com/Homebrew/homebrew-core/pull/39392
 
 ## Usage
 
