@@ -15,7 +15,8 @@
 
 <p align="center">
 SwiftKit enables you to easily generate cross platform Swift-Frameworks via your command line.<br/>
-It is the best way to start your next Open-Source Swift Framework.
+It is the best way to start your next Open-Source Swift Framework.<br/>
+Inspired by <a href="https://github.com/JohnSundell/SwiftPlate">SwiftPlate</a>
 </p>
 
 <br/>
@@ -24,10 +25,10 @@ It is the best way to start your next Open-Source Swift Framework.
 
 - [x] Support for `iOS`, `tvOS`, `watchOS` and `macOS`
 - [x] `CocoaPods`, `Carthage` and `Swift Package Manager` compatibility
-- [x] Predefined `README.md`
+- [x] Predefined `README.md` template
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
-- [x] `SwiftLint` already integrated
+- [x] `SwiftLint` Build-Phase integrated
 
 ## Installation
 
