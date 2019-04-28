@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="750" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKit.png?token=ACZQQFRDMCNQJJK5HOTE7HC4ZXTOK" alt="SwiftKit Header Logo">
+   <img width="750" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKit.png" alt="SwiftKit Header Logo">
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <br/>
 
 <p align="center">
-  <kbd><img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitDemo.gif?token=ACZQQFXOJIIBNFKO2H3VEUS4Z3MSO" alt="SwiftKit Demo GIF"></kbd>
+  <kbd><img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitDemo.gif" alt="SwiftKit Demo GIF"></kbd>
 </p>
 
 <br/>
@@ -140,7 +140,7 @@ The lane verifies various aspects of your Kit.
 A `README.md` template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png?token=ACZQQFWOBACXKQBG7JB7QFK4Z3OMI" alt="Template ReadMe">
+   <img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe">
 </p>
 
 ## Contributing
