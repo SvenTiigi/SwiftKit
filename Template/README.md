@@ -2,10 +2,6 @@
    <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitLogo.png?token=ACZQQFXYRSFF7DSHRJBKTTS4Z2SV2" alt="KITPROJECT Logo">
 </p>
 
-<p align="center" style="color:gray; font-size: 45px; font-weight: 100;">
-KITPROJECT
-</p>
-
 <p align="center">
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
@@ -24,13 +20,11 @@ KITPROJECT
    </a>
 </p>
 
-<br/>
+# KITPROJECT
 
 <p align="center">
 ℹ️ Short description of KITPROJECT
 </p>
-
-<br/>
 
 ## Features
 
