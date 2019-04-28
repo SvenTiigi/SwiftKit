@@ -9,9 +9,6 @@
    <a href="https://sventiigi.github.io/SwiftKit">
       <img src="https://github.com/SvenTiigi/SwiftKit/blob/gh-pages/badge.svg" alt="Documentation">
    </a>
-   <a href="https://brew.sh">
-      <img src="https://img.shields.io/badge/brew-compatible-brightgreen.svg" alt="Brew">
-   </a>
    <a href="https://github.com/yonaskolb/Mint">
       <img src="https://img.shields.io/badge/Mint-compatible-brightgreen.svg" alt="Mint">
    </a>
@@ -47,14 +44,6 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 
 ## Installation
 
-### Homebrew
-
-[Homebrew](https://brew.sh/) is a free and open-source software package management system that simplifies the installation of software on Apple's macOS operating system.
-
-```bash
-$ brew install swiftkit
-```
-
 ### Mint
 
 [Mint](https://github.com/yonaskolb/Mint) is a package manager that installs and runs Swift command line tool packages.
@@ -62,6 +51,15 @@ $ brew install swiftkit
 ```bash
 $ mint install SvenTiigi/SwiftKit
 ```
+
+### Homebrew
+
+[Homebrew](https://brew.sh/) is a free and open-source software package management system that simplifies the installation of software on Apple's macOS operating system.
+
+```bash
+$ brew install swiftkit
+```
+> ☝️ Currently not available on brew (https://github.com/Homebrew/homebrew-core/pull/39392)
 
 ## Usage
 
