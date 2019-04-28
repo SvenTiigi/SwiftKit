@@ -35,9 +35,9 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 
 ## Features
 
-- [x] Kit supports `iOS`, `tvOS`, `watchOS` and `macOS`
+- [x] Generated Kit supports `iOS`, `tvOS`, `watchOS` and `macOS`
 - [x] `CocoaPods`, `Carthage` and `Swift Package Manager` compatibility
-- [x] Predefined `README.md` template
+- [x] `README.md` template
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
 - [x] `SwiftLint` Build-Phase integrated
@@ -61,7 +61,7 @@ $ brew install swiftkit
 ```
 > ☝️ Coming soon to brew: https://github.com/Homebrew/homebrew-core/pull/39392
 
-## Usage
+## Usage 👨‍💻
 
 To create a new Kit simply run:
 
