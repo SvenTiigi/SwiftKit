@@ -16,7 +16,7 @@
 <p align="center">
 SwiftKit enables you to easily generate cross platform Swift-Frameworks via your command line.<br/>
 It is the best way to start your next Open-Source Swift Framework.<br/>
-Inspired by <a href="https://github.com/JohnSundell/SwiftPlate">SwiftPlate</a>
+SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">SwiftPlate</a>
 </p>
 
 <br/>
