@@ -70,11 +70,12 @@ $ swiftkit new MyAwesomeKit
 ```
 > This will create a new folder in your current directory named by the name of your Kit
 
-If you already created a directory for example `MyAwesomeKit` and you want to create the Kit inside this directory simply run:
+To create a Kit inside the current directory simply run:
 
 ```bash
 $ swiftkit new
 ```
+> This will infer the Kit name based on your directory name
 
 ## Kit-Structure 📦
 
