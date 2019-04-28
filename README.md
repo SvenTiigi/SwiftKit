@@ -9,6 +9,12 @@
    <a href="https://sventiigi.github.io/SwiftKit">
       <img src="https://github.com/SvenTiigi/SwiftKit/blob/gh-pages/badge.svg" alt="Documentation">
    </a>
+   <a href="https://brew.sh">
+      <img src="https://img.shields.io/badge/brew-compatible-brightgreen.svg" alt="Brew">
+   </a>
+   <a href="https://github.com/yonaskolb/Mint">
+      <img src="https://img.shields.io/badge/Mint-compatible-brightgreen.svg" alt="Mint">
+   </a>
    <a href="https://twitter.com/SvenTiigi/">
       <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
    </a>
