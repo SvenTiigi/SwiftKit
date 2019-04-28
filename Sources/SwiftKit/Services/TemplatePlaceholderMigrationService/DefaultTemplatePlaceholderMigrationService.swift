@@ -60,7 +60,10 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
                     // Process Files in Folder with Item Path
                     self.migrate(atPath: itemPath, placeholder: placeholder)
                     // Rename Item
-                    try self.fileManager.moveItem(atPath: itemPath, toPath: newItemPath)
+                    try self.fileManager.moveItem(
+                        atPath: itemPath,
+                        toPath: newItemPath
+                    )
                 } else {
                     // When Item Path is not a Folder retrieve contents of File
                     let fileContents = try String(contentsOfFile: itemPath)
@@ -70,7 +73,11 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
                         with: placeholder
                     )
                     // Try to write updated File Contents back to the FileSystem
-                    try updatedFileContents.write(toFile: newItemPath, atomically: false, encoding: .utf8)
+                    try updatedFileContents.write(
+                        toFile: newItemPath,
+                        atomically: false,
+                        encoding: .utf8
+                    )
                     // Check if new Item Path is not equal to the Item Path
                     if newItemPath != itemPath {
                         // Remove Item Path
