@@ -80,9 +80,11 @@ $ swiftkit new
 
 The upcoming sections will explain the structure of your generated Kit in detail.
 
+<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/xcode-logo.png" alt="Xcode Logo">
+
 ### Xcode Project Structure
 
-In the generated Xcode project you will find 4 important directories.
+In the generated Xcode project you will find four important directories.
 
 | Directory | Description |
 | --- | --- |
@@ -90,6 +92,8 @@ In the generated Xcode project you will find 4 important directories.
 | Tests | Place your Unit-Tests files |
 | Example | The `iOS` application example for your Kit |
 | Configs | All config files like `Plist`, `Package.swift`, `Podspec`, etc. |
+
+<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/swift-file-logo.png" alt="Swift File Logo">
 
 ### Kit.swift
 
@@ -101,6 +105,8 @@ In the aforementioned `Sources` directory you will find one Swift file which is 
 ```
 
 > This file will is used to inherit the import of `Foundation` when importing your Kit.
+
+<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/fastlane-logo.png" alt="Fastlane Logo">
 
 ### Fastlane
 
@@ -133,6 +139,8 @@ The lane verifies various aspects of your Kit.
 | 5 | Pushes the Podspec via `pod trunk push` |
 
 > ☝️ Please ensure you have registered your machine with [`pod trunk register`](https://guides.cocoapods.org/making/getting-setup-with-trunk.html) in order to successfully push the Podspec to CocoaPods
+
+<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/markdown-logo.png" alt="Markdown Logo">
 
 ### ReadMe
 
