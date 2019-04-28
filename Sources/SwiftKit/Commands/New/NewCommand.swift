@@ -100,8 +100,8 @@ extension NewCommand: Command {
             with: templatePlaceholder,
             projectDirectory: self.projectDirectory
         )
-        // Ask for Procceed
-        self.askForProceed()
+        // Ask for Generate
+        self.askForGenerate(projectName: projectName)
         // Print Start
         self.printStart(with: templatePlaceholder)
         // Clone Template
@@ -123,7 +123,8 @@ extension NewCommand {
 
     /// Print Bootstrap
     func printBootstrap() {
-        stdout <<< "Welcome to SwiftKit\n"
+        // Print out ASCII Art
+        stdout <<< .asciiArt
     }
     
     /// Print Summary
@@ -136,7 +137,7 @@ extension NewCommand {
         stdout <<< "🐣  Project Name: \(templatePlaceholder.projectName)"
         stdout <<< "👨‍💻  Author: \(templatePlaceholder.authorName)"
         if !templatePlaceholder.authorEmail.isEmpty {
-            stdout <<< "✉️  E-Mail: \(templatePlaceholder.authorEmail)"
+            stdout <<< "📫  E-Mail: \(templatePlaceholder.authorEmail)"
         }
         if !templatePlaceholder.repositoryURL.isEmpty {
             stdout <<< "🌎  Repository URL: \(templatePlaceholder.repositoryURL)"
@@ -167,20 +168,21 @@ extension NewCommand {
 
 extension NewCommand {
     
-    /// Ask for Proceed
-    func askForProceed() {
+    /// Ask for Generate
+    func askForGenerate(projectName: String) {
         // swiftlint:disable nesting
-        /// The Proceed Question
-        struct ProceedQuestion: Question {
+        /// The Generate Question
+        struct GenerateQuestion: Question {
+            let projectName: String
             var questionVariant: QuestionVariant {
                 return .required(
-                    text: "Proceed? ✅\nPlease enter Y/y (yes) or N/n (no)"
+                    text: "Generate \(self.projectName)? ✅\nPlease enter Y/y (yes) or N/n (no)"
                 )
             }
         }
         // swiftlint:enable nesting
-        // Initialize ProceedQuestion
-        let question = ProceedQuestion()
+        // Initialize GenerateQuestion
+        let question = GenerateQuestion(projectName: projectName)
         // Switch on lowercased answer
         switch question.ask(on: self).lowercased() {
         case "y":
@@ -194,8 +196,8 @@ extension NewCommand {
         default:
             // Print try again
             stdout <<< "Please try again"
-            // Re-Invoke ask for proceed
-            self.askForProceed()
+            // Re-Invoke ask for generate
+            self.askForGenerate(projectName: projectName)
         }
     }
     

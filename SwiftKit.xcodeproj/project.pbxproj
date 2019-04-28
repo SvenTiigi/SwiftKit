@@ -24,6 +24,7 @@
 		3D8C2FAA2275B3650064A14F /* EmptyTemplateCloneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2FA92275B3650064A14F /* EmptyTemplateCloneService.swift */; };
 		3D8C2FAC2275B39A0064A14F /* EmptyTemplatePlaceholderMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2FAB2275B39A0064A14F /* EmptyTemplatePlaceholderMigrationService.swift */; };
 		3D8C2FAE2275B6DF0064A14F /* SwiftKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2FAD2275B6DF0064A14F /* SwiftKit.swift */; };
+		3D8C2FB12275BF900064A14F /* String+AsciiArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2FB02275BF900064A14F /* String+AsciiArt.swift */; };
 		OBJ_103 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* Package.swift */; };
 		OBJ_109 /* NewCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* NewCommand.swift */; };
 		OBJ_110 /* AuthorEmailQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* AuthorEmailQuestion.swift */; };
@@ -107,6 +108,7 @@
 		3D8C2FA92275B3650064A14F /* EmptyTemplateCloneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTemplateCloneService.swift; sourceTree = "<group>"; };
 		3D8C2FAB2275B39A0064A14F /* EmptyTemplatePlaceholderMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTemplatePlaceholderMigrationService.swift; sourceTree = "<group>"; };
 		3D8C2FAD2275B6DF0064A14F /* SwiftKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKit.swift; sourceTree = "<group>"; };
+		3D8C2FB02275BF900064A14F /* String+AsciiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AsciiArt.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* NewCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommand.swift; sourceTree = "<group>"; };
 		OBJ_13 /* AuthorEmailQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorEmailQuestion.swift; sourceTree = "<group>"; };
 		OBJ_14 /* AuthorNameQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorNameQuestion.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				OBJ_21 /* String+DropSuffix.swift */,
 				OBJ_22 /* String+NonEmpty.swift */,
+				3D8C2FB02275BF900064A14F /* String+AsciiArt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				3D8C2FB12275BF900064A14F /* String+AsciiArt.swift in Sources */,
 				OBJ_109 /* NewCommand.swift in Sources */,
 				OBJ_110 /* AuthorEmailQuestion.swift in Sources */,
 				OBJ_111 /* AuthorNameQuestion.swift in Sources */,
