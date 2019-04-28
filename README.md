@@ -69,6 +69,29 @@ $ swiftkit new
 ```
 
 ## Kit-Structure
+The upcoming sections will explain the structure of your generated Kit in detail.
+
+### Xcode Project Structure
+
+In the generated Xcode project you will find 4 important directories.
+
+| Directory | Description |
+| --- | --- |
+| Sources | Where you place your Swift source files |
+| Tests | Place your Unit-Tests files |
+| Example | The `iOS` application example for your Kit |
+| Configs | All config files like `Plist`, `Package.swift`, `Podspec`, etc. |
+
+### Kit.swift
+
+In the aforementioned `Sources` directory you will find one Swift file which is named by your Kit.
+
+```swift
+// Include Foundation
+@_exported import Foundation
+```
+
+This file will is used to inherit the import of `Foundation` when importing your Kit.
 
 ### Fastlane
 
