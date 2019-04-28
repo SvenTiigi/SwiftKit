@@ -91,7 +91,7 @@ In the aforementioned `Sources` directory you will find one Swift file which is 
 @_exported import Foundation
 ```
 
-This file will is used to inherit the import of `Foundation` when importing your Kit.
+> This file will is used to inherit the import of `Foundation` when importing your Kit.
 
 ### Fastlane
 
