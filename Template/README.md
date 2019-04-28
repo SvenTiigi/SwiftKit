@@ -1,4 +1,10 @@
-# KITPROJECT
+<p align="center">
+   <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitLogo.png?token=ACZQQFXYRSFF7DSHRJBKTTS4Z2SV2" alt="KITPROJECT Logo">
+</p>
+
+<p align="center" style="color:gray; font-size: 45px; font-weight: 100;">
+KITPROJECT
+</p>
 
 <p align="center">
    <a href="https://developer.apple.com/swift/">
@@ -7,15 +13,32 @@
    <a href="http://cocoapods.org/pods/KITPROJECT">
       <img src="https://img.shields.io/cocoapods/v/KITPROJECT.svg?style=flat" alt="Version">
    </a>
-   <a href="https://github.com/Carthage/Carthage">
-      <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
-   </a>
    <a href="http://cocoapods.org/pods/KITPROJECT">
       <img src="https://img.shields.io/cocoapods/p/KITPROJECT.svg?style=flat" alt="Platform">
    </a>
+   <a href="https://github.com/Carthage/Carthage">
+      <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
+   </a>
+   <a href="https://github.com/apple/swift-package-manager">
+      <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="SPM">
+   </a>
 </p>
 
-ℹ️ General description
+<br/>
+
+<p align="center">
+ℹ️ Short description of KITPROJECT
+</p>
+
+<br/>
+
+## Features
+
+- [x] ℹ️ Add KITPROJECT features
+
+## Example
+
+The example application is the best way to see `KITPROJECT ` in action. Simply open the `KITPROJECT.xcodeproj` and run the `Example` scheme.
 
 ## Installation
 
@@ -42,6 +65,16 @@ Run `carthage update` to build the framework and drag the built `KITPROJECT.fram
 
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md#if-youre-building-for-ios-tvos-or-watchos)
 
+### Swift Package Manager
+
+To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/KITAUTHOR/KITPROJECT.git", from: "1.0.0")
+]
+```
+
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate KITPROJECT into your project manually. Simply drag the `Sources` Folder into your Xcode project.
@@ -51,13 +84,13 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ℹ️ Describe the usage of your Kit
 
 ## Contributing
-Contributions are very welcome 🙌 🤓
+Contributions are very welcome 🙌
 
 ## License
 
 ```
 KITPROJECT
-Copyright (c) 2019 KITAUTHOR KITAUTHORMAIL
+Copyright (c) KITYEAR KITAUTHOR KITAUTHORMAIL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
