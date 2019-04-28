@@ -16,8 +16,11 @@ struct ProjectNameQuestion {
     let projectDirectory: ProjectDirectory
     
     /// The FolderName
-    var folderName: String {
-        return self.projectDirectory.path.drop(suffix: "/").components(separatedBy: "/").last!
+    var folderName: String? {
+        return self.projectDirectory.path
+            .drop(suffix: "/")
+            .components(separatedBy: "/")
+            .last
     }
     
 }
@@ -28,11 +31,22 @@ extension ProjectNameQuestion: Question {
     
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
-        return .optional(
-            text: "🐣  What is the name of your project?",
-            hint: "Leave empty to use: \(self.folderName)",
-            defaultAnswer: self.folderName
-        )
+        // Initialize Question Text
+        let text = "🐣  What is the name of your project?"
+        // Check if FolderName is available
+        if let folderName = self.folderName {
+            // Return optional variant as we can provide a default answer
+            return .optional(
+                text: text,
+                hint: "Leave empty to use: \(folderName)",
+                defaultAnswer: folderName
+            )
+        } else {
+            // Return required variant
+            return .required(
+                text: text
+            )
+        }
     }
     
 }

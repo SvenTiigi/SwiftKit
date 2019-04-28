@@ -62,7 +62,7 @@ extension TemplatePlaceholder {
             "KITORGANIZATION": self.organizationName,
             "KITBUNDLEIDENTIFIER": self.organizationIdentifier,
             "KITDATE": self.date,
-            "KITYEAR": self.year,
+            "KITYEAR": self.year
         ]
     }
     

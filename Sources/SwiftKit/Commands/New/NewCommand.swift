@@ -169,6 +169,7 @@ extension NewCommand {
     
     /// Ask for Proceed
     func askForProceed() {
+        // swiftlint:disable nesting
         /// The Proceed Question
         struct ProceedQuestion: Question {
             var questionVariant: QuestionVariant {
@@ -177,6 +178,7 @@ extension NewCommand {
                 )
             }
         }
+        // swiftlint:enable nesting
         // Initialize ProceedQuestion
         let question = ProceedQuestion()
         // Switch on lowercased answer
