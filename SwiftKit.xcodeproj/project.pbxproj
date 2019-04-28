@@ -156,7 +156,7 @@
 		OBJ_69 /* Template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Template; sourceTree = SOURCE_ROOT; };
 		OBJ_70 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		"SwiftCLI::SwiftCLI::Product" /* SwiftCLI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftCLI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"SwiftKit::SwiftKit::Product" /* SwiftKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftKit; sourceTree = BUILT_PRODUCTS_DIR; };
+		"SwiftKit::SwiftKit::Product" /* swiftkit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = swiftkit; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftKit::SwiftKitTests::Product" /* SwiftKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwiftKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -324,7 +324,7 @@
 			path = .build/checkouts/SwiftCLI/Sources/SwiftCLI;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -335,14 +335,13 @@
 				OBJ_69 /* Template */,
 				OBJ_70 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_65 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"SwiftCLI::SwiftCLI::Product" /* SwiftCLI.framework */,
-				"SwiftKit::SwiftKit::Product" /* SwiftKit */,
+				"SwiftKit::SwiftKit::Product" /* swiftkit */,
 				"SwiftKit::SwiftKitTests::Product" /* SwiftKitTests.xctest */,
 			);
 			name = Products;
@@ -426,7 +425,7 @@
 			);
 			name = SwiftKit;
 			productName = SwiftKit;
-			productReference = "SwiftKit::SwiftKit::Product" /* SwiftKit */;
+			productReference = "SwiftKit::SwiftKit::Product" /* swiftkit */;
 			productType = "com.apple.product-type.tool";
 		};
 		"SwiftKit::SwiftKitTests" /* SwiftKitTests */ = {
@@ -478,7 +477,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -661,7 +660,7 @@
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
 				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftKit;
+				TARGET_NAME = swiftkit;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -686,7 +685,7 @@
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
 				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftKit;
+				TARGET_NAME = swiftkit;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
