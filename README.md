@@ -89,10 +89,10 @@ In the generated Xcode project you will find four important directories.
 
 | Directory | Description |
 | --- | --- |
-| Sources | Where you place your Swift source files |
-| Tests | Place your Unit-Tests files |
-| Example | The `iOS` application example for your Kit |
-| Configs | All config files like `Plist`, `Package.swift`, `Podspec`, etc. |
+| `Sources` | Where you place your Swift source files |
+| `Tests` | Place your Unit-Tests files |
+| `Example` | The iOS application example for your Kit |
+| `Configs` | All config files like Plist, Package.swift, Podspec, etc. |
 
 <img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/swift-file-logo.png" alt="Swift File Logo">
 
