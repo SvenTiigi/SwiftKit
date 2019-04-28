@@ -13,13 +13,15 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.2.2"))
+        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.2.2")),
+        .package(url: "https://github.com/flintbox/Motor.git", .exact("0.1.2"))
     ],
     targets: [
         .target(
             name: "SwiftKit",
             dependencies: [
-                "SwiftCLI"
+                "SwiftCLI",
+                "Motor"
             ]
         ),
         .testTarget(

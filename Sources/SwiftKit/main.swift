@@ -8,7 +8,7 @@
 import Foundation
 
 /// Initialize SwiftKit
-let swiftKit = SwiftKit(environment: .production)
+let swiftKit = SwiftKit(environment: .development)
 
 // Start SwiftKit
 swiftKit.start()

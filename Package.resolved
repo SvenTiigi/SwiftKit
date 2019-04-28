@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "ANSIEscapeCode",
+        "repositoryURL": "https://github.com/flintbox/ANSIEscapeCode",
+        "state": {
+          "branch": null,
+          "revision": "892f5f3067ea4c029af05cb45efb3b6a3be2f838",
+          "version": "0.1.1"
+        }
+      },
+      {
+        "package": "Motor",
+        "repositoryURL": "https://github.com/flintbox/Motor.git",
+        "state": {
+          "branch": null,
+          "revision": "ec165db3be9046b956cc3a9b035d4134ab95998e",
+          "version": "0.1.2"
+        }
+      },
+      {
         "package": "SwiftCLI",
         "repositoryURL": "https://github.com/jakeheis/SwiftCLI.git",
         "state": {

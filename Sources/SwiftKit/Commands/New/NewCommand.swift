@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftCLI
+import Motor
 
 // MARK: - NewCommand
 
@@ -29,6 +30,9 @@ class NewCommand {
     
     /// The TemplatePlaceholderMigrationService
     let templatePlaceholderMigrationService: TemplatePlaceholderMigrationService
+    
+    /// The Spinner
+    let spinner = Spinner(pattern: Patterns.dots)
     
     /// Designated Initializer
     ///
@@ -152,14 +156,20 @@ extension NewCommand {
     ///
     /// - Parameter templatePlaceholder: The TemplatePlaceholder
     func printStart(with templatePlaceholder: TemplatePlaceholder) {
-        stdout <<< "Starting to generate \(templatePlaceholder.projectName) 🚀"
+        // Start Spinner with message
+        self.spinner.start(
+            message: "Generating \(templatePlaceholder.projectName)"
+        )
     }
     
     /// Print Finish
     ///
     /// - Parameter templatePlaceholder: The TemplatePlaceholder
     func printFinish(with templatePlaceholder: TemplatePlaceholder) {
-        stdout <<< "\n\(templatePlaceholder.projectName) is ready to go 👨‍💻 Good luck with your Kit 🚀"
+        // Stop Spinner with message
+        self.spinner.stop(
+            message: "\(templatePlaceholder.projectName) is ready to go 🚀"
+        )
     }
     
 }
