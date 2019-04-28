@@ -22,7 +22,7 @@ Inspired by <a href="https://github.com/JohnSundell/SwiftPlate">SwiftPlate</a>
 <br/>
 
 <p align="center">
-  <img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitDemo.gif?token=ACZQQFXOJIIBNFKO2H3VEUS4Z3MSO" alt="SwiftKit Demo GIF">  
+  <kbd><img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitDemo.gif?token=ACZQQFXOJIIBNFKO2H3VEUS4Z3MSO" alt="SwiftKit Demo GIF"></kbd>
 </p>
 
 <br/>
