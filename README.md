@@ -97,7 +97,7 @@ This file will is used to inherit the import of `Foundation` when importing your
 
 Every generated Kit will come along with a predefined `Fastfile`.
 
-#### tests-Lane
+##### tests-Lane
 
 The `tests` lane will run your Unit-Tests and verify that your Kit is `Carthage` and `CocoaPods` compatible.
 
@@ -105,7 +105,7 @@ The `tests` lane will run your Unit-Tests and verify that your Kit is `Carthage`
 $ fastlane ios tests
 ```
 
-### release-lane
+#### release-lane
 
 The `release` lane will allow you to release a new version of your Kit.
 
@@ -132,3 +132,34 @@ A `README.md` template will be automatically created inside your Kit. It contain
 <p align="center">
    <img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png?token=ACZQQFWOBACXKQBG7JB7QFK4Z3OMI" alt="Template ReadMe">
 </p>
+
+## Contributing
+Contributions are very welcome 🙌 🤓
+
+## Credits
+SwiftKit is inspired by [`SwiftPlate`](https://github.com/JohnSundell/SwiftPlate) from [JohnSundell](https://twitter.com/johnsundell)
+
+## License
+
+```
+SwiftKit
+Copyright (c) 2019 Sven Tiigi <sven.tiigi@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
