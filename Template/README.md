@@ -32,7 +32,7 @@
 
 ## Example
 
-The example application is the best way to see `KITPROJECT ` in action. Simply open the `KITPROJECT.xcodeproj` and run the `Example` scheme.
+The example application is the best way to see `KITPROJECT` in action. Simply open the `KITPROJECT.xcodeproj` and run the `Example` scheme.
 
 ## Installation
 
