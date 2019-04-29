@@ -19,9 +19,9 @@ extension CIServiceQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "Which CI-Service should be used?\n\(CIService.optionText)",
-            hint: "You may leave this empty",
-            defaultAnswer: "0"
+            text: "🛠   Which CI-Service should be used?\n\(TemplatePlaceholder.CIService.optionText)",
+            hint: "Type in the number or leave this empty to use none of them",
+            defaultAnswer: ""
         )
     }
     
@@ -29,11 +29,13 @@ extension CIServiceQuestion: Question {
 
 // MARK: - CIService+OptionText
 
-private extension CIService {
+private extension TemplatePlaceholder.CIService {
     
     /// The option text
     static var optionText: String {
-        return "1) Travis CI\n2) GitLab CI"
+        return self.allCases
+            .map { "\($0.rawValue)) \($0.displayName)" }
+            .joined(separator: "\n")
     }
     
 }

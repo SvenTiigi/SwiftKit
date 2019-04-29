@@ -30,8 +30,8 @@ struct TemplatePlaceholder: Codable, Equatable, Hashable {
     /// The Organization Identifier
     let organizationIdentifier: String
     
-    /// The CIService
-    let ciService: CIService
+    /// The optional CIService
+    let ciService: CIService?
     
     /// The Date
     var date: String {
@@ -67,36 +67,6 @@ extension TemplatePlaceholder {
             "KITDATE": self.date,
             "KITYEAR": self.year
         ]
-    }
-    
-}
-
-// MARK: - CIService
-
-/// The CIService
-enum CIService: String, Codable, Equatable, Hashable {
-    /// None
-    case none = "0"
-    /// Travis CI
-    case travis = "1"
-    /// GitLab CI
-    case gitlab = "2"
-    
-    /// The FileName
-    var fileName: String {
-        switch self {
-        case .none:
-            return ""
-        case .travis:
-            return ".travis.yml"
-        case .gitlab:
-            return ".gitlab-ci.yml"
-        }
-    }
-    
-    /// A collection of all values of this type.
-    static var allCases: [CIService] {
-        return [.travis,  .gitlab]
     }
     
 }

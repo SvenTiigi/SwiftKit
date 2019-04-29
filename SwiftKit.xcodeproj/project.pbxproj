@@ -35,6 +35,7 @@
 		3D4A3B6622775C1B002F897B /* Flag+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6522775C1B002F897B /* Flag+Present.swift */; };
 		3D4A3B6B227771A3002F897B /* NewCommand+Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6A227771A3002F897B /* NewCommand+Argument.swift */; };
 		3D4A3B6D227773A8002F897B /* CIServiceQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6C227773A8002F897B /* CIServiceQuestion.swift */; };
+		3D4A3B6F22778419002F897B /* TemplatePlaceholder+CIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6E22778419002F897B /* TemplatePlaceholder+CIService.swift */; };
 		OBJ_105 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* ANSIEscapeCode.swift */; };
 		OBJ_106 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* BackgroundColor.swift */; };
 		OBJ_107 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* Cursor.swift */; };
@@ -186,6 +187,7 @@
 		3D4A3B6522775C1B002F897B /* Flag+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flag+Present.swift"; sourceTree = "<group>"; };
 		3D4A3B6A227771A3002F897B /* NewCommand+Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewCommand+Argument.swift"; sourceTree = "<group>"; };
 		3D4A3B6C227773A8002F897B /* CIServiceQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIServiceQuestion.swift; sourceTree = "<group>"; };
+		3D4A3B6E22778419002F897B /* TemplatePlaceholder+CIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TemplatePlaceholder+CIService.swift"; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* NewCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommand.swift; sourceTree = "<group>"; };
@@ -332,9 +334,9 @@
 				OBJ_14 /* AuthorNameQuestion.swift */,
 				OBJ_13 /* AuthorEmailQuestion.swift */,
 				OBJ_19 /* RepositoryURLQuestion.swift */,
+				3D4A3B6C227773A8002F897B /* CIServiceQuestion.swift */,
 				OBJ_16 /* OrganizationNameQuestion.swift */,
 				OBJ_15 /* OrganizationIdentifierQuestion.swift */,
-				3D4A3B6C227773A8002F897B /* CIServiceQuestion.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_36 /* TemplatePlaceholder.swift */,
+				3D4A3B6E22778419002F897B /* TemplatePlaceholder+CIService.swift */,
 				OBJ_37 /* TemplatePlaceholderMigrationService.swift */,
 				OBJ_34 /* DefaultTemplatePlaceholderMigrationService.swift */,
 				OBJ_35 /* EmptyTemplatePlaceholderMigrationService.swift */,
@@ -866,6 +869,7 @@
 				OBJ_191 /* GitConfigService.swift in Sources */,
 				OBJ_192 /* SwiftCLIGitConfigService.swift in Sources */,
 				OBJ_193 /* DefaultTemplateCloneService.swift in Sources */,
+				3D4A3B6F22778419002F897B /* TemplatePlaceholder+CIService.swift in Sources */,
 				OBJ_194 /* EmptyTemplateCloneService.swift in Sources */,
 				OBJ_195 /* TemplateCloneService.swift in Sources */,
 				OBJ_196 /* DefaultTemplatePlaceholderMigrationService.swift in Sources */,

@@ -29,7 +29,7 @@ extension OrganizationIdentifierQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         return .optional(
-            text: "📦  What's your organization identifier?",
+            text: "🖋   What's your organization identifier?",
             hint: "Leave empty to use \(self.defaultOrganizationIdentifier)",
             defaultAnswer: self.defaultOrganizationIdentifier
         )

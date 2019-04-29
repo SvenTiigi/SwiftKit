@@ -45,6 +45,12 @@ extension NewCommand {
             description: "The repository url 🌎"
         )
         
+        /// The CIService Argument
+        static let ciService = Key<String>(
+            "-c", "--ci-service",
+            description: "The CI-Service 🛠"
+        )
+        
         /// The organization name Argument
         static let organizationName = Key<String>(
             "-o", "--organization",

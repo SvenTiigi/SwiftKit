@@ -36,6 +36,24 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
     ///   - atPath: The Path
     ///   - placeholder: The TemplatePlaceholder
     func migrate(atPath folderPath: String, placeholder: TemplatePlaceholder) {
+        // Migrate Files at folder path with TemplatePlaceholder
+        self.migrateFiles(atPath: folderPath, placeholder: placeholder)
+        // Migrate CIServices at folder path with TemplatePlaceholder
+        self.migrateCIServices(atPath: folderPath, placeholder: placeholder)
+    }
+    
+}
+
+// MARK: - Migrate Files
+
+extension DefaultTemplatePlaceholderMigrationService {
+    
+    /// Migrate TemplatePlaceholder
+    ///
+    /// - Parameters:
+    ///   - atPath: The Path
+    ///   - placeholder: The TemplatePlaceholder
+    func migrateFiles(atPath folderPath: String, placeholder: TemplatePlaceholder) {
         // Initialize current File Name
         let currentFileName = URL(fileURLWithPath: #file).lastPathComponent
         // Verify Item Names are available for contents of Directory at Folder Path
@@ -57,8 +75,8 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
             do {
                 // Check if Item Path is a Folder
                 if self.fileManager.isFolder(atPath: itemPath) {
-                    // Process Files in Folder with Item Path
-                    self.migrate(atPath: itemPath, placeholder: placeholder)
+                    // Migrate Files in Folder with Item Path
+                    self.migrateFiles(atPath: itemPath, placeholder: placeholder)
                     // Rename Item
                     try self.fileManager.moveItem(
                         atPath: itemPath,
@@ -89,14 +107,29 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
                 continue
             }
         }
+    }
+    
+}
+
+// MARK: - Migrate CIServices
+
+extension DefaultTemplatePlaceholderMigrationService {
+    
+    /// Migrate CIServices which will remove all CIServices files except if the
+    /// TemplatePlaceholder contains a selected CIService
+    ///
+    /// - Parameters:
+    ///   - folderPath: The folder path
+    ///   - placeholder: The TemplatePlaceholder
+    func migrateCIServices(atPath folderPath: String, placeholder: TemplatePlaceholder) {
         // Iterate through all CIServices
-        for ciService in CIService.allCases {
+        for ciService in TemplatePlaceholder.CIService.allCases {
             // Verify CIService is not equal to the CIService defined in the TemplatePlaceholder
             guard ciService != placeholder.ciService else {
                 // Continue with next CIService
                 continue
             }
-            // Remove CIService file
+            // Remove not choosen CIService file
             try? self.fileManager.removeItem(
                 atPath: folderPath + "/" + ciService.fileName
             )

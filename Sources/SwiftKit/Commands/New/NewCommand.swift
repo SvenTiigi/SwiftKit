@@ -36,6 +36,9 @@ class NewCommand {
     /// The repository URL Argument
     let repositoryURLArgument = Argument.repositoryURL
     
+    /// The CIService Argument
+    let ciServiceArgument = Argument.ciService
+    
     /// The organization name Argument
     let organizationNameArgument = Argument.organizationName
     
@@ -124,45 +127,8 @@ extension NewCommand: Command {
             // Append value to ProjectDirectory Path
             self.projectDirectory.path += "/\(projectNameParameterValue)"
         }
-        // Initialize ProjectName
-        let projectName = self.projectNameParameter.value ?? self.projectNameArgument.value ?? ProjectNameQuestion(
-            projectDirectory: self.projectDirectory
-        ).ask(on: self)
-        // Initialize AuthorName
-        let authorName = self.authorNameArgument.value ?? AuthorNameQuestion(
-            gitConfigService: self.gitConfigService
-        ).ask(on: self)
-        // Initialiuze AuthorEmail
-        let authorEmail = self.authorEmailArgument.value ?? AuthorEmailQuestion(
-            gitConfigService: self.gitConfigService
-        ).ask(on: self)
-        // Initialize RepositoryURL
-        let repositoryURL = self.repositoryURLArgument.value ?? RepositoryURLQuestion(
-            projectDirectory: self.projectDirectory,
-            gitConfigService: self.gitConfigService,
-            projectName: projectName,
-            authorName: authorName
-        ).ask(on: self)
-        // Initialize OrganizationName
-        let organizationName = self.organizationNameArgument.value ?? OrganizationNameQuestion(
-            projectName: projectName
-        ).ask(on: self)
-        // Initialize OrganizationIdentifier
-        let organizationIdentifier = self.organizationIdentifierArgument.value ?? OrganizationIdentifierQuestion(
-            projectName: projectName
-        ).ask(on: self)
-        // Initialize CIService
-        let ciService = CIService(rawValue: CIServiceQuestion().ask(on: self)) ?? .none
-        // Initialize TemplatePlacerholder
-        let templatePlaceholder = TemplatePlaceholder(
-            projectName: projectName,
-            authorName: authorName,
-            authorEmail: authorEmail,
-            repositoryURL: repositoryURL,
-            organizationName: organizationName,
-            organizationIdentifier: organizationIdentifier,
-            ciService: ciService
-        )
+        // Make TemplatePlaceholder
+        let templatePlaceholder = self.makeTemplatePlaceholder()
         // Print Summary
         self.printSummary(
             with: templatePlaceholder,
@@ -171,7 +137,7 @@ extension NewCommand: Command {
         // Check if Force Argument is not present
         if !self.forceArgument.isPresent {
             // Ask for Generate
-            self.askForGenerate(projectName: projectName)
+            self.askForGenerate(projectName: templatePlaceholder.projectName)
         }
         // Print Start
         self.printStart(with: templatePlaceholder)
@@ -185,11 +151,61 @@ extension NewCommand: Command {
         // Print Finish
         self.printFinish(with: templatePlaceholder)
         // Verify if OpenProject Argument is present
-        guard self.openProjectArgument.isPresent else {
-            // Return out of function as nothing left to do
-            return
+        if self.openProjectArgument.isPresent {
+            // Open the Xcode Project
+            try? run(bash: "open \(self.projectDirectory.path)/\(templatePlaceholder.projectName).xcodeproj")
         }
-        try? run(bash: "open \(self.projectDirectory.path)/\(projectName).xcodeproj")
+    }
+    
+}
+
+// MARK: - Make TemplatePlaceholder
+
+extension NewCommand {
+    
+    /// Make TemplatePlaceholder
+    ///
+    /// - Returns: The TemplatePlaceholder
+    func makeTemplatePlaceholder() -> TemplatePlaceholder {
+        // 1. Initialize ProjectName
+        let projectName = self.projectNameParameter.value ?? self.projectNameArgument.value ?? ProjectNameQuestion(
+            projectDirectory: self.projectDirectory
+        ).ask(on: self)
+        // 2. Initialize AuthorName
+        let authorName = self.authorNameArgument.value ?? AuthorNameQuestion(
+            gitConfigService: self.gitConfigService
+        ).ask(on: self)
+        // 3. Initialiuze AuthorEmail
+        let authorEmail = self.authorEmailArgument.value ?? AuthorEmailQuestion(
+            gitConfigService: self.gitConfigService
+        ).ask(on: self)
+        // 4. Initialize RepositoryURL
+        let repositoryURL = self.repositoryURLArgument.value ?? RepositoryURLQuestion(
+            projectDirectory: self.projectDirectory,
+            gitConfigService: self.gitConfigService,
+            projectName: projectName,
+            authorName: authorName
+        ).ask(on: self)
+        // 5. Initialize CIService
+        let ciService = TemplatePlaceholder.CIService(rawValue: self.ciServiceArgument.value ?? CIServiceQuestion().ask(on: self))
+        // 6. Initialize OrganizationName
+        let organizationName = self.organizationNameArgument.value ?? OrganizationNameQuestion(
+            projectName: projectName
+        ).ask(on: self)
+        // 7. Initialize OrganizationIdentifier
+        let organizationIdentifier = self.organizationIdentifierArgument.value ?? OrganizationIdentifierQuestion(
+            projectName: projectName
+        ).ask(on: self)
+        // Return TemplatePlacerholder
+        return .init(
+            projectName: projectName,
+            authorName: authorName,
+            authorEmail: authorEmail,
+            repositoryURL: repositoryURL,
+            organizationName: organizationName,
+            organizationIdentifier: organizationIdentifier,
+            ciService: ciService
+        )
     }
     
 }
@@ -220,7 +236,10 @@ extension NewCommand {
             stdout <<< "🌎  Repository URL: \(templatePlaceholder.repositoryURL)"
         }
         stdout <<< "🏢  Organization: \(templatePlaceholder.organizationName)"
-        stdout <<< "ℹ️  Organization Identifier: \(templatePlaceholder.organizationIdentifier)"
+        stdout <<< "🖋   Organization Identifier: \(templatePlaceholder.organizationIdentifier)"
+        if let ciService = templatePlaceholder.ciService {
+            stdout <<< "🛠   CI-Service: \(ciService.displayName)"
+        }
         stdout <<< "---------------------------------------------------------------------"
         stdout <<< ""
     }
@@ -258,8 +277,10 @@ extension NewCommand {
         struct GenerateQuestion: Question {
             let projectName: String
             var questionVariant: QuestionVariant {
-                return .required(
-                    text: "Generate \(self.projectName)? ✅\nPlease enter Y/y (yes) or N/n (no)"
+                return .optional(
+                    text: "Generate \(self.projectName)? ✅",
+                    hint: "Simply hit enter or type N/n (no) to abort",
+                    defaultAnswer: "y"
                 )
             }
         }
@@ -277,10 +298,8 @@ extension NewCommand {
             // Exit program
             exit(0)
         default:
-            // Print try again
-            stdout <<< "Please try again"
-            // Re-Invoke ask for generate
-            self.askForGenerate(projectName: projectName)
+            // Do nothing
+            break
         }
     }
     

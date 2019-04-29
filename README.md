@@ -172,8 +172,9 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--name` | `-n` | Your name 👨‍💻 |
 | `--email` | `-e` | Your email address 📫 |
 | `--url` | `-u` | The repository url 🌎 |
+| `--ci-service` | `-c` | The CI-Service 🛠 (`1=Travis CI`, `2=GitLab CI`) |
 | `--organization` | `-o` | The name of your organization 🏢 |
-| `--organization-identifier` | `-i` | The organization identifier ℹ️ |
+| `--organization-identifier` | `-i` | The organization identifier 🖋 |
 | `--force` | `-f` | Generate the Kit without confirmation ✅ |
 | `--open` | `-o` | Open the Xcode project after your Kit has been generated 📂 |
 
@@ -221,3 +222,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+‘
