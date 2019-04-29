@@ -1,0 +1,12 @@
+stages:
+  - tests
+
+UnitTests:
+  stage: tests
+  only:
+    - master
+    - develop
+    - /^hotfix.*$/
+    - /^feature.*$/
+  script:
+    fastlane ios tests

@@ -151,6 +151,8 @@ extension NewCommand: Command {
         let organizationIdentifier = self.organizationIdentifierArgument.value ?? OrganizationIdentifierQuestion(
             projectName: projectName
         ).ask(on: self)
+        // Initialize CIService
+        let ciService = CIService(rawValue: CIServiceQuestion().ask(on: self)) ?? .none
         // Initialize TemplatePlacerholder
         let templatePlaceholder = TemplatePlaceholder(
             projectName: projectName,
@@ -158,7 +160,8 @@ extension NewCommand: Command {
             authorEmail: authorEmail,
             repositoryURL: repositoryURL,
             organizationName: organizationName,
-            organizationIdentifier: organizationIdentifier
+            organizationIdentifier: organizationIdentifier,
+            ciService: ciService
         )
         // Print Summary
         self.printSummary(

@@ -89,6 +89,18 @@ extension DefaultTemplatePlaceholderMigrationService: TemplatePlaceholderMigrati
                 continue
             }
         }
+        // Iterate through all CIServices
+        for ciService in CIService.allCases {
+            // Verify CIService is not equal to the CIService defined in the TemplatePlaceholder
+            guard ciService != placeholder.ciService else {
+                // Continue with next CIService
+                continue
+            }
+            // Remove CIService file
+            try? self.fileManager.removeItem(
+                atPath: folderPath + "/" + ciService.fileName
+            )
+        }
     }
     
 }
