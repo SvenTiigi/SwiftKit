@@ -44,6 +44,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
 - [x] `SwiftLint` Build-Phase integrated
+- [x] `CI-Service` configuration templates included (Travis, GitLab) 
 
 ## Installation
 
