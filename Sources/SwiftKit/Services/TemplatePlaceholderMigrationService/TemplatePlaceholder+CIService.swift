@@ -17,27 +17,32 @@ extension TemplatePlaceholder {
         case travis = "1"
         /// GitLab CI
         case gitlab = "2"
-        
-        /// The DisplayName
-        var displayName: String {
-            switch self {
-            case .travis:
-                return "Travis CI"
-            case .gitlab:
-                return "GitLab CI"
-            }
+    }
+    
+}
+
+// MARK: - Properties
+
+extension TemplatePlaceholder.CIService {
+    
+    /// The DisplayName
+    var displayName: String {
+        switch self {
+        case .travis:
+            return "Travis CI"
+        case .gitlab:
+            return "GitLab CI"
         }
-        
-        /// The FileName
-        var fileName: String {
-            switch self {
-            case .travis:
-                return ".travis.yml"
-            case .gitlab:
-                return ".gitlab-ci.yml"
-            }
+    }
+    
+    /// The FileName
+    var fileName: String {
+        switch self {
+        case .travis:
+            return ".travis.yml"
+        case .gitlab:
+            return ".gitlab-ci.yml"
         }
-        
     }
     
 }
