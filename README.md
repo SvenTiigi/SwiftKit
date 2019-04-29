@@ -60,9 +60,9 @@ $ mint install SvenTiigi/SwiftKit
 [Homebrew](https://brew.sh/) is a free and open-source software package management system that simplifies the installation of software on Apple's macOS operating system.
 
 ```bash
+$ brew tap SvenTiigi/SwiftKit
 $ brew install swiftkit
 ```
-> ☝️ Coming soon to brew: https://github.com/Homebrew/homebrew-core/pull/39392
 
 ## Usage 👨‍💻
 
