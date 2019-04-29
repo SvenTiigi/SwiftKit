@@ -74,13 +74,13 @@ extension TemplatePlaceholder {
 // MARK: - CIService
 
 /// The CIService
-enum CIService: String, Codable, Equatable, Hashable, CaseIterable {
+enum CIService: String, Codable, Equatable, Hashable {
     /// None
     case none = "0"
     /// Travis CI
     case travis = "1"
     /// GitLab CI
-    case gitlab = "4"
+    case gitlab = "2"
     
     /// The FileName
     var fileName: String {
