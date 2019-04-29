@@ -94,4 +94,9 @@ enum CIService: String, Codable, Equatable, Hashable, CaseIterable {
         }
     }
     
+    /// A collection of all values of this type.
+    static var allCases: [CIService] {
+        return [.travis,  .gitlab]
+    }
+    
 }
