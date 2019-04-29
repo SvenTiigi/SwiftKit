@@ -126,9 +126,13 @@ extension NewCommand: Command {
     func execute() throws {
         // Print Bootstrap
         self.printBootstrap()
+        // Check if the DestinationFlag Value is available
         if let destinationFlagValue = self.destinationFlag.value {
+            // Set Project Path with DestinationFlag Value
             self.projectDirectory.path = destinationFlagValue
+            // Check if the last character is a slash
             if self.projectDirectory.path.last == "/" {
+                // Drop the last slash
                 self.projectDirectory.path = .init(self.projectDirectory.path.dropLast())
             }
         }
