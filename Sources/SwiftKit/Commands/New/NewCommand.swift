@@ -24,49 +24,49 @@ class NewCommand {
     /// The destination Flag
     let destinationFlag = Key<String>(
         "-d", "--destination",
-        description: "Where the generated Kit should be saved 💾"
+        description: "Where the generated Kit should be saved"
     )
     
     /// The project name Flag
     let projectNameFlag = Key<String>(
         "-p", "--project",
-        description: "The project name of your Kit 🐣"
+        description: "The project name of your Kit"
     )
     
     /// The author name Flag
     let authorNameFlag = Key<String>(
         "-n", "--name",
-        description: "Your name 👨‍💻"
+        description: "Your name"
     )
     
     /// The author email Flag
     let authorEmailFlag = Key<String>(
         "-e", "--email",
-        description: "Your email address 📫"
+        description: "Your email address"
     )
     
     /// The repository URL Flag
     let repositoryURLFlag = Key<String>(
         "-u", "--url",
-        description: "The repository url 🌎"
+        description: "The repository url"
     )
     
     /// The organization name Flags
     let organizationNameFlag = Key<String>(
         "-o", "--organization",
-        description: "The name of your organization 🏢"
+        description: "The name of your organization"
     )
     
     /// The organization identifier Flag
     let organizationIdentifierFlag = Key<String>(
         "-oi", "--organization-identifier",
-        description: "The organization identifier 📦"
+        description: "The organization identifier"
     )
     
     /// The force Flag
     let forceFlag = Flag(
         "-f", "--force",
-        description: "Generate the Kit without confirmation ✅"
+        description: "Generate the Kit without confirmation"
     )
     
     /// The open project Flag
