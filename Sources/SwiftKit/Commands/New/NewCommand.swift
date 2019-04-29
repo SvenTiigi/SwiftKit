@@ -19,61 +19,34 @@ class NewCommand {
     /// The optional ProjectName Parameter
     let projectNameParameter = OptionalParameter()
     
-    // MARK: Flags & Keys
+    // MARK: Arguments
     
-    /// The destination Flag
-    let destinationFlag = Key<String>(
-        "-d", "--destination",
-        description: "Where the generated Kit should be saved"
-    )
+    /// The destination Argument
+    let destinationArgument = Argument.destination
     
-    /// The project name Flag
-    let projectNameFlag = Key<String>(
-        "-p", "--project",
-        description: "The project name of your Kit"
-    )
+    /// The project name Argument
+    let projectNameArgument = Argument.projectName
     
-    /// The author name Flag
-    let authorNameFlag = Key<String>(
-        "-n", "--name",
-        description: "Your name"
-    )
+    /// The author name Argument
+    let authorNameArgument = Argument.authorName
     
-    /// The author email Flag
-    let authorEmailFlag = Key<String>(
-        "-e", "--email",
-        description: "Your email address"
-    )
+    /// The author email Argument
+    let authorEmailArgument = Argument.authorEmail
     
-    /// The repository URL Flag
-    let repositoryURLFlag = Key<String>(
-        "-u", "--url",
-        description: "The repository url"
-    )
+    /// The repository URL Argument
+    let repositoryURLArgument = Argument.repositoryURL
     
-    /// The organization name Flags
-    let organizationNameFlag = Key<String>(
-        "-o", "--organization",
-        description: "The name of your organization"
-    )
+    /// The organization name Argument
+    let organizationNameArgument = Argument.organizationName
     
-    /// The organization identifier Flag
-    let organizationIdentifierFlag = Key<String>(
-        "-i", "--organization-identifier",
-        description: "The organization identifier"
-    )
+    /// The organization identifier Argument
+    let organizationIdentifierArgument = Argument.organizationIdentifier
     
-    /// The force Flag
-    let forceFlag = Flag(
-        "-f", "--force",
-        description: "Generate the Kit without confirmation"
-    )
+    /// The force Argument
+    let forceArgument = Argument.force
     
-    /// The open project Flag
-    let openProjectFlag = Flag(
-        "-o", "--open",
-        description: "Open the Xcode project after your Kit has been generated"
-    )
+    /// The open project Argument
+    let openProjectArgument = Argument.openProject
     
     // MARK: Properties
     
@@ -122,12 +95,12 @@ extension NewCommand: Command {
     
     /// A concise description of what this command or group is
     var shortDescription: String {
-        return ""
+        return "Generate a new Kit"
     }
     
     /// A longer description of how to use this command or group
     var longDescription: String {
-        return ""
+        return self.shortDescription
     }
     
     /// Executes the command
@@ -136,10 +109,10 @@ extension NewCommand: Command {
     func execute() throws {
         // Print Bootstrap
         self.printBootstrap()
-        // Check if the DestinationFlag Value is available
-        if let destinationFlagValue = self.destinationFlag.value {
-            // Set Project Path with DestinationFlag Value
-            self.projectDirectory.path = destinationFlagValue
+        // Check if the Destination Argument Value is available
+        if let destinationArgumentValue = self.destinationArgument.value {
+            // Set Project Path with Destination Argument Value
+            self.projectDirectory.path = destinationArgumentValue
             // Check if the last character is a slash
             if self.projectDirectory.path.last == "/" {
                 // Drop the last slash
@@ -152,30 +125,30 @@ extension NewCommand: Command {
             self.projectDirectory.path += "/\(projectNameParameterValue)"
         }
         // Initialize ProjectName
-        let projectName = self.projectNameParameter.value ?? self.projectNameFlag.value ?? ProjectNameQuestion(
+        let projectName = self.projectNameParameter.value ?? self.projectNameArgument.value ?? ProjectNameQuestion(
             projectDirectory: self.projectDirectory
         ).ask(on: self)
         // Initialize AuthorName
-        let authorName = self.authorNameFlag.value ?? AuthorNameQuestion(
+        let authorName = self.authorNameArgument.value ?? AuthorNameQuestion(
             gitConfigService: self.gitConfigService
         ).ask(on: self)
         // Initialiuze AuthorEmail
-        let authorEmail = self.authorEmailFlag.value ?? AuthorEmailQuestion(
+        let authorEmail = self.authorEmailArgument.value ?? AuthorEmailQuestion(
             gitConfigService: self.gitConfigService
         ).ask(on: self)
         // Initialize RepositoryURL
-        let repositoryURL = self.repositoryURLFlag.value ?? RepositoryURLQuestion(
+        let repositoryURL = self.repositoryURLArgument.value ?? RepositoryURLQuestion(
             projectDirectory: self.projectDirectory,
             gitConfigService: self.gitConfigService,
             projectName: projectName,
             authorName: authorName
         ).ask(on: self)
         // Initialize OrganizationName
-        let organizationName = self.organizationNameFlag.value ?? OrganizationNameQuestion(
+        let organizationName = self.organizationNameArgument.value ?? OrganizationNameQuestion(
             projectName: projectName
         ).ask(on: self)
         // Initialize OrganizationIdentifier
-        let organizationIdentifier = self.organizationIdentifierFlag.value ?? OrganizationIdentifierQuestion(
+        let organizationIdentifier = self.organizationIdentifierArgument.value ?? OrganizationIdentifierQuestion(
             projectName: projectName
         ).ask(on: self)
         // Initialize TemplatePlacerholder
@@ -192,8 +165,8 @@ extension NewCommand: Command {
             with: templatePlaceholder,
             projectDirectory: self.projectDirectory
         )
-        // Check if ForceFlag is not present
-        if !self.forceFlag.isPresent {
+        // Check if Force Argument is not present
+        if !self.forceArgument.isPresent {
             // Ask for Generate
             self.askForGenerate(projectName: projectName)
         }
@@ -208,8 +181,8 @@ extension NewCommand: Command {
         )
         // Print Finish
         self.printFinish(with: templatePlaceholder)
-        // Verify if OpenProject Flag is present
-        guard self.openProjectFlag.isPresent else {
+        // Verify if OpenProject Argument is present
+        guard self.openProjectArgument.isPresent else {
             // Return out of function as nothing left to do
             return
         }

@@ -85,7 +85,7 @@ If you wish to open the Xcode project after your Kit has been generated simply r
 ```bash
 $ swiftkit new MyAwesomeKit --open
 ```
-> Head over to the `Flags` section to learn more about the available flags
+> Head over to the `Arguments` section to learn more about the available flags
 
 ## Kit-Structure 📦
 
@@ -161,9 +161,9 @@ A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/READM
    <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
 </p>
 
-## Flags
+## Arguments
 
-SwiftKit supports arguments/flags when launched. Following flags are supported:
+SwiftKit supports arguments when launched. Following arguments are supported:
 
 | Long parameter | Short parameter | Description
 | ----------- | ----------- | -------------- |
@@ -177,7 +177,7 @@ SwiftKit supports arguments/flags when launched. Following flags are supported:
 | `--force` | `-f` | Generate the Kit without confirmation ✅ |
 | `--open` | `-o` | Open the Xcode project after your Kit has been generated 📂 |
 
-Example command with all parameters.
+Example with all arguments set.
 
 ```bash
 swiftkit new MyAwesomeKit \

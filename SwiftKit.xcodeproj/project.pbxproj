@@ -33,6 +33,7 @@
 
 /* Begin PBXBuildFile section */
 		3D4A3B6622775C1B002F897B /* Flag+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6522775C1B002F897B /* Flag+Present.swift */; };
+		3D4A3B6B227771A3002F897B /* NewCommand+Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6A227771A3002F897B /* NewCommand+Argument.swift */; };
 		OBJ_105 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* ANSIEscapeCode.swift */; };
 		OBJ_106 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* BackgroundColor.swift */; };
 		OBJ_107 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* Cursor.swift */; };
@@ -182,6 +183,7 @@
 
 /* Begin PBXFileReference section */
 		3D4A3B6522775C1B002F897B /* Flag+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flag+Present.swift"; sourceTree = "<group>"; };
+		3D4A3B6A227771A3002F897B /* NewCommand+Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewCommand+Argument.swift"; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* NewCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommand.swift; sourceTree = "<group>"; };
@@ -302,10 +304,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D4A3B672277714A002F897B /* Argument */ = {
+			isa = PBXGroup;
+			children = (
+				3D4A3B6A227771A3002F897B /* NewCommand+Argument.swift */,
+			);
+			path = Argument;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* New */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* NewCommand.swift */,
+				3D4A3B672277714A002F897B /* Argument */,
 				OBJ_12 /* Question */,
 			);
 			path = New;
@@ -835,6 +846,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_179 /* NewCommand.swift in Sources */,
+				3D4A3B6B227771A3002F897B /* NewCommand+Argument.swift in Sources */,
 				OBJ_180 /* AuthorEmailQuestion.swift in Sources */,
 				OBJ_181 /* AuthorNameQuestion.swift in Sources */,
 				OBJ_182 /* OrganizationIdentifierQuestion.swift in Sources */,
