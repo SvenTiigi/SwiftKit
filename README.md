@@ -80,6 +80,13 @@ $ swiftkit new
 ```
 > This will infer the Kit name based on your directory name
 
+If you wish to open the Xcode project after your Kit has been generated simply run:
+
+```bash
+$ swiftkit new MyAwesomeKit --open
+```
+> Head over to the `Flags` section to learn more about the available flags
+
 ## Kit-Structure 📦
 
 The upcoming sections will explain the structure of your generated Kit in detail.
@@ -153,6 +160,36 @@ A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/READM
 <p align="center">
    <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
 </p>
+
+## Flags
+
+SwiftKit supports arguments/flags when launched. Following flags are supported:
+
+| Long parameter | Short parameter | Description
+| ----------- | ----------- | -------------- |
+| `--destination` | `-d` | Where the generated Kit should be saved 💾 |
+| `--project` | `-p` | The project name of your Kit 🐣 |
+| `--name` | `-n` | Your name 👨‍💻 |
+| `--email` | `-e` | Your email address 📫 |
+| `--url` | `-u` | The repository url 🌎 |
+| `--organization` | `-o` | The name of your organization 🏢 |
+| `--organization-identifier` | `-i` | The organization identifier ℹ️ |
+| `--force` | `-f` | Generate the Kit without confirmation ✅ |
+| `--open` | `-o` | Open the Xcode project after your Kit has been generated 📂 |
+
+Example command with all parameters.
+
+```bash
+swiftkit new MyAwesomeKit \
+		  	--project MyAwesomeKit \
+			--name SvenTiigi \
+			--email sven.tiigi@gmail.com \
+			--url https://github.com/SvenTiigi/MyAwesomeKit \
+			--organization SvenTiigi \
+			--organization-identifier de.tiigi \
+			--force \
+			--open
+```
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
