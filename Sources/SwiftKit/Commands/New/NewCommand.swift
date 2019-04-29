@@ -14,10 +14,68 @@ import Motor
 /// The NewCommand
 class NewCommand {
     
-    // MARK: Properties
+    // MARK: Parameters
     
     /// The optional ProjectName Parameter
     let projectNameParameter = OptionalParameter()
+    
+    // MARK: Flags & Keys
+    
+    /// The destination Flag
+    let destinationFlag = Key<String>(
+        "-d", "--destination",
+        description: "Where the generated Kit should be saved 💾"
+    )
+    
+    /// The project name Flag
+    let projectNameFlag = Key<String>(
+        "-p", "--project",
+        description: "The project name of your Kit 🐣"
+    )
+    
+    /// The author name Flag
+    let authorNameFlag = Key<String>(
+        "-n", "--name",
+        description: "Your name 👨‍💻"
+    )
+    
+    /// The author email Flag
+    let authorEmailFlag = Key<String>(
+        "-e", "--email",
+        description: "Your email address 📫"
+    )
+    
+    /// The repository URL Flag
+    let repositoryURLFlag = Key<String>(
+        "-u", "--url",
+        description: "The repository url 🌎"
+    )
+    
+    /// The organization name Flags
+    let organizationNameFlag = Key<String>(
+        "-o", "--organization",
+        description: "The name of your organization 🏢"
+    )
+    
+    /// The organization identifier Flag
+    let organizationIdentifierFlag = Key<String>(
+        "-oi", "--organization-identifier",
+        description: "The organization identifier 📦"
+    )
+    
+    /// The force Flag
+    let forceFlag = Flag(
+        "-f", "--force",
+        description: "Generate the Kit without confirmation ✅"
+    )
+    
+    /// The open project Flag
+    let openProjectFlag = Flag(
+        "-o", "--open",
+        description: "Opens the the Xcode project of your generated Kit"
+    )
+    
+    // MARK: Properties
     
     /// The ProjectDirectory
     var projectDirectory: ProjectDirectory
@@ -68,28 +126,44 @@ extension NewCommand: Command {
     func execute() throws {
         // Print Bootstrap
         self.printBootstrap()
+        if let destinationFlagValue = self.destinationFlag.value {
+            self.projectDirectory.path = destinationFlagValue
+            if self.projectDirectory.path.last == "/" {
+                self.projectDirectory.path = .init(self.projectDirectory.path.dropLast())
+            }
+        }
         // Check if a ProjectName Parameter value is available
         if let projectNameParameterValue = self.projectNameParameter.value {
             // Append value to ProjectDirectory Path
             self.projectDirectory.path += "/\(projectNameParameterValue)"
         }
         // Initialize ProjectName
-        let projectName = ProjectNameQuestion(projectDirectory: self.projectDirectory).ask(on: self)
+        let projectName = self.projectNameFlag.value ?? ProjectNameQuestion(
+            projectDirectory: self.projectDirectory
+        ).ask(on: self)
         // Initialize AuthorName
-        let authorName = AuthorNameQuestion(gitConfigService: self.gitConfigService).ask(on: self)
+        let authorName = self.authorNameFlag.value ?? AuthorNameQuestion(
+            gitConfigService: self.gitConfigService
+        ).ask(on: self)
         // Initialiuze AuthorEmail
-        let authorEmail = AuthorEmailQuestion(gitConfigService: self.gitConfigService).ask(on: self)
+        let authorEmail = self.authorEmailFlag.value ?? AuthorEmailQuestion(
+            gitConfigService: self.gitConfigService
+        ).ask(on: self)
         // Initialize RepositoryURL
-        let repositoryURL = RepositoryURLQuestion(
+        let repositoryURL = self.repositoryURLFlag.value ?? RepositoryURLQuestion(
             projectDirectory: self.projectDirectory,
             gitConfigService: self.gitConfigService,
             projectName: projectName,
             authorName: authorName
         ).ask(on: self)
         // Initialize OrganizationName
-        let organizationName = OrganizationNameQuestion(projectName: projectName).ask(on: self)
+        let organizationName = self.organizationNameFlag.value ?? OrganizationNameQuestion(
+            projectName: projectName
+        ).ask(on: self)
         // Initialize OrganizationIdentifier
-        let organizationIdentifier = OrganizationIdentifierQuestion(projectName: projectName).ask(on: self)
+        let organizationIdentifier = self.organizationIdentifierFlag.value ?? OrganizationIdentifierQuestion(
+            projectName: projectName
+        ).ask(on: self)
         // Initialize TemplatePlacerholder
         let templatePlaceholder = TemplatePlaceholder(
             projectName: projectName,
@@ -104,8 +178,11 @@ extension NewCommand: Command {
             with: templatePlaceholder,
             projectDirectory: self.projectDirectory
         )
-        // Ask for Generate
-        self.askForGenerate(projectName: projectName)
+        // Check if ForceFlag is not present
+        if !self.forceFlag.isPresent {
+            // Ask for Generate
+            self.askForGenerate(projectName: projectName)
+        }
         // Print Start
         self.printStart(with: templatePlaceholder)
         // Clone Template
@@ -117,6 +194,12 @@ extension NewCommand: Command {
         )
         // Print Finish
         self.printFinish(with: templatePlaceholder)
+        // Verify if OpenProject Flag is present
+        guard self.openProjectFlag.isPresent else {
+            // Return out of function as nothing left to do
+            return
+        }
+        try? run(bash: "open \(self.projectDirectory.path)/\(projectName).xcodeproj")
     }
     
 }
