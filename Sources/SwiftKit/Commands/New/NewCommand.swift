@@ -142,7 +142,7 @@ extension NewCommand: Command {
             self.projectDirectory.path += "/\(projectNameParameterValue)"
         }
         // Initialize ProjectName
-        let projectName = self.projectNameFlag.value ?? ProjectNameQuestion(
+        let projectName = self.projectNameParameter.value ?? self.projectNameFlag.value ?? ProjectNameQuestion(
             projectDirectory: self.projectDirectory
         ).ask(on: self)
         // Initialize AuthorName
