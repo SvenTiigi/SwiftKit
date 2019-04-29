@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D4A3B6622775C1B002F897B /* Flag+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A3B6522775C1B002F897B /* Flag+Present.swift */; };
 		OBJ_105 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* ANSIEscapeCode.swift */; };
 		OBJ_106 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* BackgroundColor.swift */; };
 		OBJ_107 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* Cursor.swift */; };
@@ -180,6 +181,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D4A3B6522775C1B002F897B /* Flag+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flag+Present.swift"; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* NewCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommand.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				OBJ_21 /* String+AsciiArt.swift */,
 				OBJ_22 /* String+DropSuffix.swift */,
 				OBJ_23 /* String+NonEmpty.swift */,
+				3D4A3B6522775C1B002F897B /* Flag+Present.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,7 +427,7 @@
 			path = .build/checkouts/Motor/Sources/Motor;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -435,7 +438,6 @@
 				OBJ_98 /* Template */,
 				OBJ_99 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_52 /* motor-example */ = {
@@ -726,7 +728,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -843,6 +845,7 @@
 				OBJ_187 /* String+AsciiArt.swift in Sources */,
 				OBJ_188 /* String+DropSuffix.swift in Sources */,
 				OBJ_189 /* String+NonEmpty.swift in Sources */,
+				3D4A3B6622775C1B002F897B /* Flag+Present.swift in Sources */,
 				OBJ_190 /* ProjectDirectory.swift in Sources */,
 				OBJ_191 /* GitConfigService.swift in Sources */,
 				OBJ_192 /* SwiftCLIGitConfigService.swift in Sources */,
