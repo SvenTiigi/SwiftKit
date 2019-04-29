@@ -64,10 +64,6 @@ extension SwiftKit {
         // Switch on Environment
         switch self.environment {
         case .production:
-            // Initialize ZSH Completion Generator
-            let generator = ZshCompletionGenerator(cli: cli)
-            // Write completions
-            generator.writeCompletions()
             // Start CLI
             _ = cli.go()
         case .development:
