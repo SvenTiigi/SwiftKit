@@ -59,7 +59,7 @@ class NewCommand {
     
     /// The organization identifier Flag
     let organizationIdentifierFlag = Key<String>(
-        "-oi", "--organization-identifier",
+        "-i", "--organization-identifier",
         description: "The organization identifier"
     )
     
@@ -72,7 +72,7 @@ class NewCommand {
     /// The open project Flag
     let openProjectFlag = Flag(
         "-o", "--open",
-        description: "Opens the the Xcode project of your generated Kit"
+        description: "Open the Xcode project after your Kit has been generated"
     )
     
     // MARK: Properties
@@ -118,6 +118,16 @@ extension NewCommand: Command {
     /// The name
     var name: String {
         return "new"
+    }
+    
+    /// A concise description of what this command or group is
+    var shortDescription: String {
+        return ""
+    }
+    
+    /// A longer description of how to use this command or group
+    var longDescription: String {
+        return ""
     }
     
     /// Executes the command
@@ -234,7 +244,7 @@ extension NewCommand {
             stdout <<< "🌎  Repository URL: \(templatePlaceholder.repositoryURL)"
         }
         stdout <<< "🏢  Organization: \(templatePlaceholder.organizationName)"
-        stdout <<< "📦  Organization Identifier: \(templatePlaceholder.organizationIdentifier)"
+        stdout <<< "ℹ️  Organization Identifier: \(templatePlaceholder.organizationIdentifier)"
         stdout <<< "---------------------------------------------------------------------"
         stdout <<< ""
     }
