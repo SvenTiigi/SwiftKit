@@ -16,7 +16,7 @@ struct SwiftKit {
     // MARK: Properties
     
     /// The Version
-    let version: String = "1.0.0"
+    let version: String = "1.1.1"
     
     /// The CLI Name
     let cliName: String = "swiftkit"
