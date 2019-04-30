@@ -31,7 +31,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <br/>
 
 <p align="center">
-  <kbd><img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitDemo.gif" alt="SwiftKit Demo GIF"></kbd>
+  <img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitTerminalDemo.gif" alt="SwiftKit Terminal Demo">
 </p>
 
 <br/>
