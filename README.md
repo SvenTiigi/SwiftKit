@@ -87,7 +87,7 @@ If you wish to open the Xcode project after your Kit has been generated simply r
 ```bash
 $ swiftkit new MyAwesomeKit --open
 ```
-> Head over to the `Arguments` section to learn more about the available flags
+> Head over to the [`Arguments`]((https://github.com/SvenTiigi/SwiftKit#arguments)) section to learn more about the available flags
 
 ## Kit-Structure 📦
 
