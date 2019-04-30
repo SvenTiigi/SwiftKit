@@ -141,8 +141,15 @@ extension NewCommand: Command {
         }
         // Print Start
         self.printStart(with: templatePlaceholder)
-        // Clone Template
-        try self.templateCloneService.clone(atPath: self.projectDirectory.path)
+        do {
+            // Try to clone Template
+            try self.templateCloneService.clone(atPath: self.projectDirectory.path)
+        } catch {
+            // Print cached error
+            self.print(error: error)
+            // Return out of function as nothing left to do
+            return
+        }
         /// Migrate Template
         self.templatePlaceholderMigrationService.migrate(
             atPath: self.projectDirectory.path,
@@ -262,6 +269,14 @@ extension NewCommand {
         self.spinner.stop(
             message: "\(templatePlaceholder.projectName) is ready to go 🚀"
         )
+    }
+    
+    /// Print Error
+    ///
+    /// - Parameter error: The Error that should be printed
+    func print(error: Error) {
+        self.spinner.stop()
+        stderr <<< error.localizedDescription
     }
     
 }
