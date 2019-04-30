@@ -34,8 +34,6 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
   <img width="800" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitTerminalDemo.gif" alt="SwiftKit Terminal Demo">
 </p>
 
-<br/>
-
 ## Features
 
 - [x] Generated Kit supports `iOS`, `tvOS`, `watchOS` and `macOS`
