@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftCLI
 import Motor
+import SwiftCLI
 import SwiftKit
 
 // MARK: - NewCommand
@@ -83,7 +83,6 @@ class NewCommand {
     }
 
 }
-
 
 // MARK: - Command
 
@@ -316,5 +315,3 @@ extension NewCommand {
     }
     
 }
-
-
