@@ -14,6 +14,14 @@ public struct SwiftKit {
     
     // MARK: Properties
     
+    /// The SwiftKit URL. Default value `https://github.com/SvenTiigi/SwiftKit`
+    public private(set) static var url: String = "https://github.com/SvenTiigi/SwiftKit"
+    
+    /// The Git URL
+    public static var gitURL: String {
+        return self.url + ".git"
+    }
+    
     /// The Environment
     public let environment: Environment
     
@@ -21,8 +29,17 @@ public struct SwiftKit {
     
     /// Designated Initializer
     ///
-    /// - Parameter environment: The Environment. Default value `production`
-    public init(environment: Environment = .production) {
+    /// - Parameters:
+    ///   - url: The optional SwiftKit URL override.
+    ///   - environment: The Environment. Default value `production`
+    public init(url: String? = nil,
+                environment: Environment = .production) {
+        // Check if a new URL is supplied
+        if let url = url {
+            // Set URL
+            SwiftKit.url = url
+        }
+        // Set Environment
         self.environment = environment
     }
     

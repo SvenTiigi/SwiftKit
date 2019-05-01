@@ -32,6 +32,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD912279D43500E1C6CB /* SwiftKitError.swift */; };
+		3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */; };
 		OBJ_124 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* ANSIEscapeCode.swift */; };
 		OBJ_125 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* BackgroundColor.swift */; };
 		OBJ_126 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* Cursor.swift */; };
@@ -215,6 +217,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D81AD912279D43500E1C6CB /* SwiftKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitError.swift; sourceTree = "<group>"; };
+		3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DividerLine.swift"; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* DateFormatter+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Init.swift"; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				OBJ_14 /* Kit+Author.swift */,
 				OBJ_16 /* Kit+Organization.swift */,
 				OBJ_13 /* CIService.swift */,
+				3D81AD912279D43500E1C6CB /* SwiftKitError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 			children = (
 				OBJ_10 /* DateFormatter+Init.swift */,
 				OBJ_11 /* String+DropSuffix.swift */,
+				3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -999,10 +1005,12 @@
 				OBJ_200 /* CIService.swift in Sources */,
 				OBJ_201 /* Kit+Author.swift in Sources */,
 				OBJ_202 /* Kit+Directory.swift in Sources */,
+				3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */,
 				OBJ_203 /* Kit+Organization.swift in Sources */,
 				OBJ_204 /* Kit.swift in Sources */,
 				OBJ_205 /* GitService.swift in Sources */,
 				OBJ_206 /* SwiftCLIGitService.swift in Sources */,
+				3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */,
 				OBJ_207 /* DefaultKitMigrationService.swift in Sources */,
 				OBJ_208 /* DisabledKitMigrationService.swift in Sources */,
 				OBJ_209 /* KitMigrationService.swift in Sources */,

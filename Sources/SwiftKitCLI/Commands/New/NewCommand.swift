@@ -230,7 +230,7 @@ extension NewCommand {
     ///   - directory: The Kit Directory
     func printSummary(with kit: Kit, at directory: Kit.Directory) {
         stdout <<< "\(kit.name) Summary:"
-        stdout <<< "---------------------------------------------------------------------"
+        stdout <<< .dividerLine
         stdout <<< "💾  Destination: \(directory.path)"
         stdout <<< "📦  Kit Name: \(kit.name)"
         stdout <<< "👨‍💻  Author: \(kit.author.name)"
@@ -245,7 +245,7 @@ extension NewCommand {
         if let ciService = kit.ciService {
             stdout <<< "🛠   CI-Service: \(ciService.displayName)"
         }
-        stdout <<< "---------------------------------------------------------------------"
+        stdout <<< .dividerLine
         stdout <<< ""
     }
     
