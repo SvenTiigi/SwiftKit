@@ -62,6 +62,14 @@ public extension SwiftKit {
         )
     }
     
+    /// The UpdateCheckService
+    var updateCheckService: UpdateCheckService {
+        return GitUpdateCheckService(
+            repositoryURL: SwiftKit.url,
+            gitService: self.gitService
+        )
+    }
+    
 }
 
 // MARK: - Internal Services
@@ -75,12 +83,14 @@ extension SwiftKit {
         case .production:
             // Use DefaultKitSetupService with master branch
             return DefaultKitSetupService(
+                gitURL: SwiftKit.gitURL,
                 gitBranch: .master,
                 gitService: self.gitService
             )
         case .development:
             // Use DefaultKitSetupService with develop branch
             return DefaultKitSetupService(
+                gitURL: SwiftKit.gitURL,
                 gitBranch: .develop,
                 gitService: self.gitService
             )

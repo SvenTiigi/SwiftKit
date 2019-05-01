@@ -29,11 +29,11 @@ struct DefaultKitSetupService {
     /// Designated Initializer
     ///
     /// - Parameters:
-    ///   - gitURL: The Git URL. Default value `SwiftKit.gitURL`
+    ///   - gitURL: The Git URL
     ///   - gitBranch: The GitBranch. Default value `.master`
     ///   - fileManager: The FileManager. Default value `.default`
     ///   - gitService: The GitService
-    init(gitURL: String = SwiftKit.gitURL,
+    init(gitURL: String,
          gitBranch: GitBranch = .master,
          fileManager: FileManager = .default,
          gitService: GitService) {

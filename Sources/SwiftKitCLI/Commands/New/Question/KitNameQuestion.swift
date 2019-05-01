@@ -33,7 +33,7 @@ extension KitNameQuestion: Question {
     /// The QuestionVariant
     var questionVariant: QuestionVariant {
         // Initialize Question Text
-        let text = "🐣  What is the name of your Kit?"
+        let text = "📦  What is the name of your Kit?"
         // Check if KitName is available
         if let kitName = self.kitName {
             // Return optional variant as we can provide a default answer

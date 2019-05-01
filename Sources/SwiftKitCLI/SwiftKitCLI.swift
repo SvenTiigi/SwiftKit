@@ -51,7 +51,7 @@ extension SwiftKitCLI {
             _ = cli.go()
         case .test:
             // Start CLI in Debug Mode
-            _ = cli.debugGo(with: "swiftkit new MyTestKit")
+            _ = cli.debugGo(with: "swiftkit new")
         }
     }
     
@@ -66,7 +66,12 @@ private extension SwiftKitCLI {
         return [
             NewCommand(
                 gitService: self.swiftKit.gitService,
-                kitService: self.swiftKit.kitService
+                kitService: self.swiftKit.kitService,
+                updateCheckService: self.swiftKit.updateCheckService
+            ),
+            UpdateCommand(
+                packageManagerService: DefaultPackageManagerService(),
+                updateCheckService: self.swiftKit.updateCheckService
             )
         ]
     }

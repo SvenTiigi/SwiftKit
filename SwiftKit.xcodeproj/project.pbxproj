@@ -34,6 +34,11 @@
 /* Begin PBXBuildFile section */
 		3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD912279D43500E1C6CB /* SwiftKitError.swift */; };
 		3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */; };
+		3D81AD9A2279FC2F00E1C6CB /* UpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */; };
+		3D81AD9C2279FC9200E1C6CB /* GitUpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD9B2279FC9200E1C6CB /* GitUpdateCheckService.swift */; };
+		3D81ADA0227A013300E1C6CB /* UpdateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD9E227A013000E1C6CB /* UpdateCommand.swift */; };
+		3D81ADA9227A219C00E1C6CB /* PackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81ADA5227A20A200E1C6CB /* PackageManagerService.swift */; };
+		3D81ADAA227A219F00E1C6CB /* DefaultPackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */; };
 		OBJ_124 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* ANSIEscapeCode.swift */; };
 		OBJ_125 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* BackgroundColor.swift */; };
 		OBJ_126 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* Cursor.swift */; };
@@ -219,6 +224,11 @@
 /* Begin PBXFileReference section */
 		3D81AD912279D43500E1C6CB /* SwiftKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitError.swift; sourceTree = "<group>"; };
 		3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DividerLine.swift"; sourceTree = "<group>"; };
+		3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckService.swift; sourceTree = "<group>"; };
+		3D81AD9B2279FC9200E1C6CB /* GitUpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUpdateCheckService.swift; sourceTree = "<group>"; };
+		3D81AD9E227A013000E1C6CB /* UpdateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommand.swift; sourceTree = "<group>"; };
+		3D81ADA5227A20A200E1C6CB /* PackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageManagerService.swift; sourceTree = "<group>"; };
+		3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPackageManagerService.swift; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* DateFormatter+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Init.swift"; sourceTree = "<group>"; };
@@ -362,6 +372,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D81AD982279FC1200E1C6CB /* UpdateCheckService */ = {
+			isa = PBXGroup;
+			children = (
+				3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */,
+				3D81AD9B2279FC9200E1C6CB /* GitUpdateCheckService.swift */,
+			);
+			path = UpdateCheckService;
+			sourceTree = "<group>";
+		};
+		3D81AD9D227A012600E1C6CB /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				3D81AD9E227A013000E1C6CB /* UpdateCommand.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		3D81ADA2227A201800E1C6CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3D81ADA3227A203D00E1C6CB /* PackageManagerService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3D81ADA3227A203D00E1C6CB /* PackageManagerService */ = {
+			isa = PBXGroup;
+			children = (
+				3D81ADA5227A20A200E1C6CB /* PackageManagerService.swift */,
+				3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */,
+			);
+			path = PackageManagerService;
+			sourceTree = "<group>";
+		};
 		OBJ_109 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +437,7 @@
 			children = (
 				OBJ_19 /* GitService */,
 				OBJ_31 /* KitService */,
+				3D81AD982279FC1200E1C6CB /* UpdateCheckService */,
 				OBJ_22 /* InternalServices */,
 			);
 			path = Services;
@@ -451,6 +496,7 @@
 				OBJ_56 /* main.swift */,
 				OBJ_55 /* SwiftKitCLI.swift */,
 				OBJ_37 /* Commands */,
+				3D81ADA2227A201800E1C6CB /* Services */,
 				OBJ_51 /* Extensions */,
 			);
 			name = SwiftKitCLI;
@@ -461,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_38 /* New */,
+				3D81AD9D227A012600E1C6CB /* Update */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -1003,6 +1050,8 @@
 				OBJ_198 /* DateFormatter+Init.swift in Sources */,
 				OBJ_199 /* String+DropSuffix.swift in Sources */,
 				OBJ_200 /* CIService.swift in Sources */,
+				3D81AD9A2279FC2F00E1C6CB /* UpdateCheckService.swift in Sources */,
+				3D81AD9C2279FC9200E1C6CB /* GitUpdateCheckService.swift in Sources */,
 				OBJ_201 /* Kit+Author.swift in Sources */,
 				OBJ_202 /* Kit+Directory.swift in Sources */,
 				3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */,
@@ -1028,6 +1077,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				3D81ADA9227A219C00E1C6CB /* PackageManagerService.swift in Sources */,
+				3D81ADA0227A013300E1C6CB /* UpdateCommand.swift in Sources */,
+				3D81ADAA227A219F00E1C6CB /* DefaultPackageManagerService.swift in Sources */,
 				OBJ_225 /* NewCommand+Argument.swift in Sources */,
 				OBJ_226 /* NewCommand.swift in Sources */,
 				OBJ_227 /* AuthorEmailQuestion.swift in Sources */,

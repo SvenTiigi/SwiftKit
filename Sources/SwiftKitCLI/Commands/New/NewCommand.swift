@@ -13,7 +13,7 @@ import SwiftKit
 // MARK: - NewCommand
 
 /// The NewCommand
-class NewCommand {
+final class NewCommand {
     
     // MARK: Parameters
     
@@ -63,6 +63,9 @@ class NewCommand {
     /// The KitService
     let kitService: KitService
     
+    /// The UpdateCheckService
+    let updateCheckService: UpdateCheckService
+    
     /// The Spinner
     let spinner = Spinner(pattern: Patterns.dots)
     
@@ -74,12 +77,15 @@ class NewCommand {
     ///   - kitDirectory: The Kit Directory. Default value `.default()`
     ///   - gitService: The GitService
     ///   - kitService: The KitService
+    ///   - updateCheckService: The UpdateCheckService
     init(kitDirectory: Kit.Directory = .default(),
          gitService: GitService,
-         kitService: KitService) {
+         kitService: KitService,
+         updateCheckService: UpdateCheckService) {
         self.kitDirectory = kitDirectory
         self.gitService = gitService
         self.kitService = kitService
+        self.updateCheckService = updateCheckService
     }
 
 }
@@ -153,6 +159,13 @@ extension NewCommand: Command {
         if self.openProjectArgument.isPresent {
             // Open the Xcode Project
             try? run(bash: "open \(self.kitDirectory.path)/\(kit.name).xcodeproj")
+        }
+        // Check if an Update is available
+        if case let .some(.available(version)) = self.updateCheckService.check(version: SwiftKitCLI.version) {
+            // Print out that a new version is available
+            stdout <<< "\nA new version of SwiftKit is available: \(version)"
+            // Print out update instructions
+            stdout <<< "To update SwiftKit run: swiftkit update"
         }
     }
 
