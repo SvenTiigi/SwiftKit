@@ -273,7 +273,9 @@ extension NewCommand {
     ///
     /// - Parameter error: The Error that should be printed
     func print(error: Error) {
+        // Stop the Spinner
         self.spinner.stop()
+        // Print Error
         stderr <<< error.localizedDescription
     }
     
