@@ -24,6 +24,12 @@ public protocol GitService {
     /// - Returns: The remot URL if available
     func getRemoteURL(repositoryPath: String) -> String?
     
+    /// Retrieve latest Tag from repository URL
+    ///
+    /// - Parameter repositoryURL: The repository URL
+    /// - Returns: The latest Tag if available
+    func getLatestTag(repositoryURL: String) -> String?
+    
     /// Clone Git Repo from URL to Path
     ///
     /// - Parameters:

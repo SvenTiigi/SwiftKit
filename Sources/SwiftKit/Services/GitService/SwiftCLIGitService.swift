@@ -38,6 +38,23 @@ extension SwiftCLIGitService: GitService {
             .drop(suffix: ".git")
     }
     
+    /// Retrieve latest Tag from repository URL
+    ///
+    /// - Parameter repositoryURL: The repository URL
+    /// - Returns: The latest Tag if available
+    func getLatestTag(repositoryURL: String) -> String? {
+        // Initialize curl command
+        let command = #"""
+        curl --silent "\#(repositoryURL)/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#'
+        """#
+        // Verify TagName is available
+        guard let tagName = try? SwiftCLI.capture(bash: command).stdout else {
+            return nil
+        }
+        // Return trimmed Tag Name
+        return tagName.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted)
+    }
+    
     /// Clone Git Repo from URL to Path
     ///
     /// - Parameters:
