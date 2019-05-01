@@ -20,7 +20,7 @@ final class SwiftKitCLI {
     static let environment: SwiftKit.Environment = .production
     
     /// The Version
-    let version: String = "1.2.0"
+    static let version: String = "1.2.0"
     
     /// The CLI Name
     let cliName: String = "swiftkit"
@@ -41,7 +41,7 @@ extension SwiftKitCLI {
         // Initialize the CLI
         let cli = SwiftCLI.CLI(
             name: self.cliName,
-            version: self.version,
+            version: SwiftKitCLI.version,
             commands: self.commands
         )
         // Switch on Environment
