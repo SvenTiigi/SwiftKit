@@ -170,7 +170,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | Long parameter | Short parameter | Description
 | ----------- | ----------- | -------------- |
 | `--destination` | `-d` | Where the generated Kit should be saved 💾 |
-| `--project` | `-p` | The project name of your Kit 🐣 |
+| `--kit-name` | `-k` | The name of your Kit 📦 |
 | `--name` | `-n` | Your name 👨‍💻 |
 | `--email` | `-e` | Your email address 📫 |
 | `--url` | `-u` | The repository url 🌎 |
@@ -184,7 +184,7 @@ Example with all arguments set.
 
 ```bash
 swiftkit new MyAwesomeKit \
-		  	--project MyAwesomeKit \
+		  	--kit-name MyAwesomeKit \
 			--name SvenTiigi \
 			--email sven.tiigi@gmail.com \
 			--url https://github.com/SvenTiigi/MyAwesomeKit \

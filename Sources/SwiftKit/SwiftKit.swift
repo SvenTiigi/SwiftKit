@@ -2,101 +2,82 @@
 //  SwiftKit.swift
 //  SwiftKit
 //
-//  Created by Sven Tiigi on 28.04.19.
+//  Created by Sven Tiigi on 01.05.19.
 //
 
 import Foundation
-import SwiftCLI
 
 // MARK: - SwiftKit
 
 /// The SwiftKit
-struct SwiftKit {
+public struct SwiftKit {
     
     // MARK: Properties
     
-    /// The Version
-    let version: String = "1.1.1"
-    
-    /// The CLI Name
-    let cliName: String = "swiftkit"
-    
     /// The Environment
-    let environment: Environment
+    public let environment: Environment
     
     // MARK: Initializer
     
     /// Designated Initializer
     ///
     /// - Parameter environment: The Environment. Default value `production`
-    init(environment: Environment = .production) {
+    public init(environment: Environment = .production) {
         self.environment = environment
     }
     
 }
 
-// MARK: - Environment
+// MARK: - Services
 
-extension SwiftKit {
+public extension SwiftKit {
+
+    /// The GitService
+    var gitService: GitService {
+        return SwiftCLIGitService()
+    }
     
-    /// The Environment
-    enum Environment: String, Codable, Equatable, Hashable, CaseIterable {
-        /// Production
-        case production
-        /// Development
-        case development
+    /// The KitService
+    var kitService: KitService {
+        return DefaultKitService(
+            kitSetupService: self.kitSetupService,
+            kitMigrationService: self.kitMigrationService
+        )
     }
     
 }
 
-// MARK: - Start
+// MARK: - Internal Services
 
 extension SwiftKit {
     
-    /// Start SwiftKit
-    func start() {
-        // Initialize the CLI
-        let cli = SwiftCLI.CLI(
-            name: self.cliName,
-            version: self.version,
-            commands: self.commands
-        )
+    /// The KitSetupService
+    var kitSetupService: KitSetupService {
         // Switch on Environment
         switch self.environment {
         case .production:
-            // Start CLI
-            _ = cli.go()
+            return DefaultKitSetupService(
+                gitBranch: .master,
+                gitService: self.gitService
+            )
         case .development:
-            // Start CLI in Debug Mode
-            _ = cli.debugGo(with: "swiftkit new MyDevKit")
+            return DefaultKitSetupService(
+                gitBranch: .develop,
+                gitService: self.gitService
+            )
+        case .test:
+            return DisabledKitSetupService()
         }
     }
     
-}
-
-// MARK: - Commands
-
-private extension SwiftKit {
-    
-    /// The Commands
-    var commands: [Command] {
+    /// The KitMigrationService
+    var kitMigrationService: KitMigrationService {
+        // Switch on Environment
         switch self.environment {
-        case .production:
-            return [
-                NewCommand(
-                    gitConfigService: SwiftCLIGitConfigService(),
-                    templateCloneService: DefaultTemplateCloneService(),
-                    templatePlaceholderMigrationService: DefaultTemplatePlaceholderMigrationService()
-                )
-            ]
-        case .development:
-            return [
-                NewCommand(
-                    gitConfigService: SwiftCLIGitConfigService(),
-                    templateCloneService: EmptyTemplateCloneService(),
-                    templatePlaceholderMigrationService: EmptyTemplatePlaceholderMigrationService()
-                )
-            ]
+        case .production, .development:
+            return DefaultKitMigrationService()
+        case .test:
+            return DisabledKitMigrationService()
         }
     }
     

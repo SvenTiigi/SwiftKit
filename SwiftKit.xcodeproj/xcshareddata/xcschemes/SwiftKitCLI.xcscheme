@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftKit::SwiftKit"
-               BuildableName = "SwiftKit.framework"
-               BlueprintName = "SwiftKit"
-               ReferencedContainer = "container:SwiftKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "SwiftKit::SwiftKitCLI"
                BuildableName = "SwiftKitCLI"
                BlueprintName = "SwiftKitCLI"
@@ -66,15 +52,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SwiftKit::SwiftKit"
-            BuildableName = "SwiftKit.framework"
-            BlueprintName = "SwiftKit"
+            BlueprintIdentifier = "SwiftKit::SwiftKitCLI"
+            BuildableName = "SwiftKitCLI"
+            BlueprintName = "SwiftKitCLI"
             ReferencedContainer = "container:SwiftKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -1,13 +1,13 @@
 //
 //  String+DropSuffix.swift
-//  SwiftCLI
+//  SwiftKit
 //
-//  Created by Sven Tiigi on 27.04.19.
+//  Created by Sven Tiigi on 01.05.19.
 //
 
 import Foundation
 
-extension String {
+public extension String {
     
     /// Drop suffix from String
     ///
