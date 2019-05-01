@@ -12,12 +12,12 @@ import SwiftKit
 // MARK: - SwiftKitCLI
 
 /// The SwiftKitCLI
-class SwiftKitCLI {
+final class SwiftKitCLI {
     
     // MARK: Properties
     
     /// The SwiftKit Environment
-    let environment: SwiftKit.Environment
+    static let environment: SwiftKit.Environment = .production
     
     /// The Version
     let version: String = "1.2.0"
@@ -27,17 +27,8 @@ class SwiftKitCLI {
     
     /// The SwiftKit
     lazy var swiftKit = SwiftKit(
-        environment: self.environment
+        environment: SwiftKitCLI.environment
     )
-    
-    // MARK: Initializer
-    
-    /// Designated Initializer
-    ///
-    /// - Parameter environment: The SwiftKit Environment
-    init(environment: SwiftKit.Environment) {
-        self.environment = environment
-    }
     
 }
 
@@ -54,7 +45,7 @@ extension SwiftKitCLI {
             commands: self.commands
         )
         // Switch on Environment
-        switch self.environment {
+        switch SwiftKitCLI.environment {
         case .production, .development:
             // Start CLI
             _ = cli.go()

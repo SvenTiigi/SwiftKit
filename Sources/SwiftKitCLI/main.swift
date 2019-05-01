@@ -9,7 +9,7 @@ import Foundation
 import SwiftKit
 
 // Initialize SwiftKitCLI
-let swiftKitCLI = SwiftKitCLI(environment: .production)
+let swiftKitCLI = SwiftKitCLI()
 
 // Start SwiftKitCLI
 swiftKitCLI.start()

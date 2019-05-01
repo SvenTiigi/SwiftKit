@@ -534,8 +534,8 @@
 		OBJ_58 /* SwiftKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_59 /* SwiftKitTests.swift */,
 				OBJ_60 /* XCTestManifests.swift */,
+				OBJ_59 /* SwiftKitTests.swift */,
 			);
 			name = SwiftKitTests;
 			path = Tests/SwiftKitTests;
