@@ -18,7 +18,7 @@ struct AuthorNameQuestion {
     
     /// The Git Name
     var gitName: String? {
-        return self.gitService.getValue(forKey: "user.name")
+        return self.gitService.getValue(for: .name)
     }
     
 }

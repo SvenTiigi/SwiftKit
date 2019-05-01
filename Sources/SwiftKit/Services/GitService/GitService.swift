@@ -12,11 +12,11 @@ import Foundation
 /// The GitService
 public protocol GitService {
     
-    /// Retrieve config value for key
+    /// Retrieve value for GitConfigKey
     ///
-    /// - Parameter key: The config key
+    /// - Parameter key: The GitConfigKey
     /// - Returns: The corresponding value if available
-    func getValue(forKey key: String) -> String?
+    func getValue(for key: GitConfigKey) -> String?
     
     /// Retrieve remote URL for Repository
     ///
@@ -33,6 +33,16 @@ public protocol GitService {
     /// - Throws: If cloning fails
     func clone(from url: String, to path: String, branch: GitBranch) throws
     
+}
+
+// MARK: - GitConfigKey
+
+/// The GitConfigKey
+public enum GitConfigKey: String, Codable, Equatable, Hashable, CaseIterable {
+    /// The name
+    case name = "user.name"
+    /// The email
+    case email = "user.email"
 }
 
 // MARK: - GitBranch

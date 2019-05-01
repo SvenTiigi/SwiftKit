@@ -18,7 +18,7 @@ struct AuthorEmailQuestion {
     
     /// The Git Email
     var gitEmail: String? {
-        return self.gitService.getValue(forKey: "user.email")
+        return self.gitService.getValue(for: .email)
     }
     
 }

@@ -56,16 +56,19 @@ extension SwiftKit {
         // Switch on Environment
         switch self.environment {
         case .production:
+            // Use DefaultKitSetupService with master branch
             return DefaultKitSetupService(
                 gitBranch: .master,
                 gitService: self.gitService
             )
         case .development:
+            // Use DefaultKitSetupService with develop branch
             return DefaultKitSetupService(
                 gitBranch: .develop,
                 gitService: self.gitService
             )
         case .test:
+            // Use DisabledKitSetupService
             return DisabledKitSetupService()
         }
     }
@@ -75,8 +78,10 @@ extension SwiftKit {
         // Switch on Environment
         switch self.environment {
         case .production, .development:
+            // Use DefaultKitMigrationService
             return DefaultKitMigrationService()
         case .test:
+            // Use DisabledKitMigrationService
             return DisabledKitMigrationService()
         }
     }

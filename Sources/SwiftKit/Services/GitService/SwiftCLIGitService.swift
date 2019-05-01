@@ -17,12 +17,12 @@ struct SwiftCLIGitService {}
 
 extension SwiftCLIGitService: GitService {
     
-    /// Retrieve config value for key
+    /// Retrieve value for GitConfigKey
     ///
-    /// - Parameter key: The config key
+    /// - Parameter key: The GitConfigKey
     /// - Returns: The corresponding value if available
-    func getValue(forKey key: String) -> String? {
-        return try? SwiftCLI.capture(bash: "git config --global --get \(key)")
+    func getValue(for key: GitConfigKey) -> String? {
+        return try? SwiftCLI.capture(bash: "git config --global --get \(key.rawValue)")
             .stdout
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
