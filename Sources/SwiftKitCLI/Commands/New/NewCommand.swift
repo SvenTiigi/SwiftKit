@@ -158,7 +158,7 @@ extension NewCommand: Command {
 
 }
 
-// MARK: - Make TemplatePlaceholder
+// MARK: - Make Kit
 
 extension NewCommand {
     
@@ -225,7 +225,9 @@ extension NewCommand {
     
     /// Print Summary
     ///
-    /// - Parameter templatePlaceholder: The TemplatePlaceholder
+    /// - Parameters:
+    ///   - kit: The Kit
+    ///   - directory: The Kit Directory
     func printSummary(with kit: Kit, at directory: Kit.Directory) {
         stdout <<< "\(kit.name) Summary:"
         stdout <<< "---------------------------------------------------------------------"

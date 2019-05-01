@@ -121,8 +121,7 @@ extension DefaultKitMigrationService {
 
 extension DefaultKitMigrationService {
     
-    /// Migrate CIService which will remove all CIServices files except if the
-    /// TemplatePlaceholder contains a selected CIService
+    /// Migrate CIService which will remove all CIServices files except if the Kit contains a selected CIService
     ///
     /// - Parameters:
     ///   - kitDirectory: The Kit directory
