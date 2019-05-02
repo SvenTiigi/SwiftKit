@@ -1,0 +1,21 @@
+fastlane_version "2.89.0"
+
+default_platform :ios
+
+platform :ios do
+
+  desc "Build SwiftKit"
+  lane :build do
+    spm(
+      command: "build",
+      build_path: "./build",
+      configuration: "release"
+    )
+  end
+
+  desc "Run Tests"
+  lane :test do
+    sh("swift", "test", "--parallel")
+  end
+
+end

@@ -1,0 +1,25 @@
+branches:
+  only:
+    - master
+    - develop
+    - /^hotfix.*$/
+    - /^feature.*$/
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+osx_image: xcode10.2
+language: swift
+
+stages:
+  - Build
+  - Test
+
+jobs:
+  include:
+    - stage: Build
+      script: fastlane ios build
+    - stage: Test
+      script: fastlane ios test
