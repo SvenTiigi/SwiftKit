@@ -66,6 +66,15 @@ $ brew tap SvenTiigi/SwiftKit
 $ brew install swiftkit
 ```
 
+### Update
+
+To update SwiftKit to the latest version simply run:
+
+```bash
+$ swiftkit update
+```
+> The `update` command will only work if SwiftKit was installed via either Mint or Homebrew
+
 ## Usage 👨‍💻
 
 To create a new Kit simply run:
@@ -183,26 +192,17 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 Example with all arguments set.
 
 ```bash
-swiftkit new MyAwesomeKit \
-		  	--kit-name MyAwesomeKit \
-			--name SvenTiigi \
-			--email sven.tiigi@gmail.com \
-			--url https://github.com/SvenTiigi/MyAwesomeKit \
-			--ci-service 1 \
-			--organization SvenTiigi \
-			--organization-identifier de.tiigi \
-			--force \
-			--open
+swiftkit new \
+		--kit-name MyAwesomeKit \
+		--name SvenTiigi \
+		--email sven.tiigi@gmail.com \
+		--url https://github.com/SvenTiigi/MyAwesomeKit \
+		--ci-service 1 \
+		--organization SvenTiigi \
+		--organization-identifier de.tiigi \
+		--force \
+		--open
 ```
-
-## Update
-
-To update SwiftKit to the latest version simply run:
-
-```bash
-$ swiftkit update
-```
-> The update command will properly update SwiftKit if you installed it via Mint or Homebrew
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
