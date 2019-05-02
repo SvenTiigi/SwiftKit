@@ -18,7 +18,7 @@ protocol PackageManagerService {
     /// Update SwiftKit via the given PackageManager
     ///
     /// - Parameter packageManager: The PackageManager
-        /// - Throws: If updating fails
+    /// - Throws: If updating fails
     func update(packageManager: PackageManager) throws
     
 }
@@ -41,5 +41,4 @@ enum PackageManager: String, Codable, Equatable, Hashable, CaseIterable {
             return "Homebrew 🍺"
         }
     }
-    
 }
