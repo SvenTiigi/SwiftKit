@@ -12,12 +12,19 @@ import Foundation
 /// The OrganizationIdentifierQuestion
 struct OrganizationIdentifierQuestion {
     
+    /// The Organization Name
+    let organizationName: String
+    
     /// The Kit Name
     let kitName: String
     
     /// The default Organization Identifier
     var defaultOrganizationIdentifier: String {
-        return "\(Locale.current.topLevelDomain).\(self.kitName)"
+        // Initialize Organization Name by retrieving the first word from Organization name
+        // if it is unavailable use Kit Name
+        let organizationName = self.organizationName.components(separatedBy: " ").first ?? self.kitName
+        // Return default organization name
+        return "\(Locale.current.topLevelDomain).\(organizationName)"
     }
     
 }

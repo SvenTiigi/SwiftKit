@@ -212,6 +212,7 @@ extension NewCommand {
         ).ask(on: self)
         // 7. Initialize OrganizationIdentifier
         let organizationIdentifier = self.organizationIdentifierArgument.value ?? OrganizationIdentifierQuestion(
+            organizationName: organizationName,
             kitName: kitName
         ).ask(on: self)
         // Return Kit
