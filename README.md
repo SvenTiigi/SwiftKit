@@ -193,15 +193,15 @@ Example with all arguments set.
 
 ```bash
 swiftkit new \
-		--kit-name MyAwesomeKit \
-		--name SvenTiigi \
-		--email sven.tiigi@gmail.com \
-		--url https://github.com/SvenTiigi/MyAwesomeKit \
-		--ci-service 1 \
-		--organization SvenTiigi \
-		--organization-identifier de.tiigi \
-		--force \
-		--open
+	--kit-name MyAwesomeKit \
+	--name SvenTiigi \
+	--email sven.tiigi@gmail.com \
+	--url https://github.com/SvenTiigi/MyAwesomeKit \
+	--ci-service 1 \
+	--organization SvenTiigi \
+	--organization-identifier de.tiigi \
+	--force \
+	--open
 ```
 
 ## Contributing
