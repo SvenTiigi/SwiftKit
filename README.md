@@ -66,14 +66,14 @@ $ brew tap SvenTiigi/SwiftKit
 $ brew install swiftkit
 ```
 
-### Update
+## Update
 
 To update SwiftKit to the latest version simply run:
 
 ```bash
 $ swiftkit update
 ```
-> The `update` command will only work if SwiftKit was installed via either Mint or Homebrew
+> The `update` command will only work if SwiftKit was installed via either Mint 🌱 or Homebrew 🍺
 
 ## Usage 👨‍💻
 
