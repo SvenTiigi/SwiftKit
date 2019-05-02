@@ -16,7 +16,7 @@ public protocol UpdateCheckService {
     ///
     /// - Parameter version: The current installed Version
     /// - Returns: An UpdateResult if available
-    func check(version: String) -> UpdateResult?
+    func check(version: Version) -> UpdateResult?
     
 }
 
@@ -27,5 +27,5 @@ public enum UpdateResult: Equatable, Hashable {
     /// Latest version
     case latest
     /// A new version is available
-    case available(version: String)
+    case available(version: Version)
 }

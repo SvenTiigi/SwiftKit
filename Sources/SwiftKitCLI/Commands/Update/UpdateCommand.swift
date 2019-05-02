@@ -22,6 +22,9 @@ final class UpdateCommand {
     /// The UpdateCheckService
     let updateCheckService: UpdateCheckService
     
+    /// The Version
+    let version: Version
+    
     // MARK: Initializer
     
     /// Designated Initializer
@@ -29,10 +32,13 @@ final class UpdateCommand {
     /// - Parameters:
     ///   - packageManagerService: The PackageManagerService
     ///   - updateCheckService: The UpdateCheckService
+    ///   - version: The Version
     init(packageManagerService: PackageManagerService,
-         updateCheckService: UpdateCheckService) {
+         updateCheckService: UpdateCheckService,
+         version: Version) {
         self.packageManagerService = packageManagerService
         self.updateCheckService = updateCheckService
+        self.version = version
     }
     
 }
@@ -63,7 +69,7 @@ extension UpdateCommand: Command {
         // Print out ASCII art
         stdout <<< .asciiArt
         // Verify update is available
-        guard case .available(_)? = self.updateCheckService.check(version: SwiftKitCLI.version) else {
+        guard case .available(_)? = self.updateCheckService.check(version: self.version) else {
             // No update available print that latest version is installed
             stdout <<< "You are running the latest version of SwiftKit 📦"
             return

@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D2B7430227AB80800B206BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B742F227AB80800B206BE /* Version.swift */; };
 		3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD912279D43500E1C6CB /* SwiftKitError.swift */; };
 		3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */; };
 		3D81AD9A2279FC2F00E1C6CB /* UpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */; };
@@ -222,6 +223,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2B742F227AB80800B206BE /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		3D81AD912279D43500E1C6CB /* SwiftKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitError.swift; sourceTree = "<group>"; };
 		3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DividerLine.swift"; sourceTree = "<group>"; };
 		3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckService.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				OBJ_16 /* Kit+Organization.swift */,
 				OBJ_13 /* CIService.swift */,
 				3D81AD912279D43500E1C6CB /* SwiftKitError.swift */,
+				3D2B742F227AB80800B206BE /* Version.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -545,7 +548,7 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -557,7 +560,6 @@
 				OBJ_117 /* LICENSE */,
 				OBJ_118 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_51 /* Extensions */ = {
@@ -919,7 +921,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_109 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1069,6 +1071,7 @@
 				OBJ_213 /* DefaultKitService.swift in Sources */,
 				OBJ_214 /* KitService.swift in Sources */,
 				OBJ_215 /* SwiftKit+Environment.swift in Sources */,
+				3D2B7430227AB80800B206BE /* Version.swift in Sources */,
 				OBJ_216 /* SwiftKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

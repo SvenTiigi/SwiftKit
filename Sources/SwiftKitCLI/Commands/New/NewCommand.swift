@@ -66,6 +66,9 @@ final class NewCommand {
     /// The UpdateCheckService
     let updateCheckService: UpdateCheckService
     
+    /// The Version
+    let version: Version
+    
     /// The Spinner
     let spinner = Spinner(pattern: Patterns.dots)
     
@@ -78,14 +81,17 @@ final class NewCommand {
     ///   - gitService: The GitService
     ///   - kitService: The KitService
     ///   - updateCheckService: The UpdateCheckService
+    ///   - version: The Version
     init(kitDirectory: Kit.Directory = .default(),
          gitService: GitService,
          kitService: KitService,
-         updateCheckService: UpdateCheckService) {
+         updateCheckService: UpdateCheckService,
+         version: Version) {
         self.kitDirectory = kitDirectory
         self.gitService = gitService
         self.kitService = kitService
         self.updateCheckService = updateCheckService
+        self.version = version
     }
 
 }
@@ -161,7 +167,7 @@ extension NewCommand: Command {
             try? run(bash: "open \(self.kitDirectory.path)/\(kit.name).xcodeproj")
         }
         // Check if an Update is available
-        if case let .some(.available(version)) = self.updateCheckService.check(version: SwiftKitCLI.version) {
+        if case let .some(.available(version)) = self.updateCheckService.check(version: self.version) {
             // Print out that a new version is available
             stdout <<< "\nA new version of SwiftKit is available: \(version)"
             // Print out update instructions
