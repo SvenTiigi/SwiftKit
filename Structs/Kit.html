@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SwiftKit Structure Reference</title>
+    <title>Kit Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/SwiftKit" class="dashAnchor"></a>
-    <a title="SwiftKit Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/Kit" class="dashAnchor"></a>
+    <a title="Kit Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SwiftKit Structure Reference
+        Kit Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -131,14 +131,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>SwiftKit</h1>
+            <h1>Kit</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SwiftKit</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Kit</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>The SwiftKit</p>
+            <p>The Kit</p>
 
           </section>
           <section class="section task-group-section">
@@ -154,9 +154,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV3urlSSvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/url" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV3urlSSvpZ">url</a>
+                    <a name="/s:8SwiftKit0B0V4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V4nameSSvp">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -164,14 +164,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SwiftKit URL. Default value <code>https://github.com/SvenTiigi/SwiftKit</code></p>
+                        <p>The name</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -181,9 +181,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV6gitURLSSvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/gitURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV6gitURLSSvpZ">gitURL</a>
+                    <a name="/s:8SwiftKit0B0V6authorAC6AuthorVvp"></a>
+                    <a name="//apple_ref/swift/Property/author" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V6authorAC6AuthorVvp">author</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -191,14 +191,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Git URL</p>
+                        <p>The Author</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">gitURL</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">author</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit/Author.html">Author</a></span></code></pre>
 
                         </div>
                       </div>
@@ -208,9 +208,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV11environmentAB11EnvironmentOvp"></a>
-                    <a name="//apple_ref/swift/Property/environment" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV11environmentAB11EnvironmentOvp">environment</a>
+                    <a name="/s:8SwiftKit0B0V13repositoryURLSSvp"></a>
+                    <a name="//apple_ref/swift/Property/repositoryURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V13repositoryURLSSvp">repositoryURL</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,14 +218,95 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Environment</p>
+                        <p>The repository URL</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">environment</span><span class="p">:</span> <span class="kt"><a href="../Structs/SwiftKit/Environment.html">Environment</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">repositoryURL</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V12organizationAC12OrganizationVvp"></a>
+                    <a name="//apple_ref/swift/Property/organization" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12organizationAC12OrganizationVvp">organization</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>THe Organization</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">organization</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit/Organization.html">Organization</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V9ciServiceAA9CIServiceOSgvp"></a>
+                    <a name="//apple_ref/swift/Property/ciService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9ciServiceAA9CIServiceOSgvp">ciService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The optional CIService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">ciService</span><span class="p">:</span> <span class="kt"><a href="../Enums/CIService.html">CIService</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V4date10Foundation4DateVvp"></a>
+                    <a name="//apple_ref/swift/Property/date" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V4date10Foundation4DateVvp">date</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
 
                         </div>
                       </div>
@@ -246,9 +327,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV3url11environmentABSSSg_AB11EnvironmentOtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(url:environment:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV3url11environmentABSSSg_AB11EnvironmentOtcfc">init(url:environment:)</a>
+                    <a name="/s:8SwiftKit0B0V4name6author13repositoryURL12organization9ciService4dateACSS_AC6AuthorVSSAC12OrganizationVAA9CIServiceOSg10Foundation4DateVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:author:repositoryURL:organization:ciService:date:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V4name6author13repositoryURL12organization9ciService4dateACSS_AC6AuthorVSSAC12OrganizationVAA9CIServiceOSg10Foundation4DateVtcfc">init(name:author:repositoryURL:organization:ciService:date:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -263,8 +344,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">environment</span><span class="p">:</span> <span class="kt"><a href="../Structs/SwiftKit/Environment.html">Environment</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">production</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+            <span class="nv">author</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit/Author.html">Author</a></span><span class="p">,</span>
+            <span class="nv">repositoryURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+            <span class="nv">organization</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit/Organization.html">Organization</a></span><span class="p">,</span>
+            <span class="nv">ciService</span><span class="p">:</span> <span class="kt"><a href="../Enums/CIService.html">CIService</a></span><span class="p">?,</span>
+            <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">())</span></code></pre>
 
                         </div>
                       </div>
@@ -275,24 +360,72 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>url</em>
+                                <em>name</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The optional SwiftKit URL override.</p>
+                                  <p>The Kit name</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>environment</em>
+                                <em>author</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The Environment. Default value <code>production</code></p>
+                                  <p>The Author</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>repositoryURL</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The repository URL</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>organization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Organization</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ciService</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional CIService</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Date. Default value <code>.init</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -306,19 +439,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Environment"></a>
-                <a name="//apple_ref/swift/Section/Environment" class="dashAnchor"></a>
-                <a href="#/Environment">
-                  <h3 class="section-name">Environment</h3>
+                <a name="/Author"></a>
+                <a name="//apple_ref/swift/Section/Author" class="dashAnchor"></a>
+                <a href="#/Author">
+                  <h3 class="section-name">Author</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV11EnvironmentO"></a>
-                    <a name="//apple_ref/swift/Enum/Environment" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV11EnvironmentO">Environment</a>
+                    <a name="/s:8SwiftKit0B0V6AuthorV"></a>
+                    <a name="//apple_ref/swift/Struct/Author" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V6AuthorV">Author</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,15 +459,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Environment</p>
+                        <p>The Author</p>
 
-                        <a href="../Structs/SwiftKit/Environment.html" class="slightly-smaller">See more</a>
+                        <a href="../Structs/Kit/Author.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Environment</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Author</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -345,19 +478,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Services"></a>
-                <a name="//apple_ref/swift/Section/Services" class="dashAnchor"></a>
-                <a href="#/Services">
-                  <h3 class="section-name">Services</h3>
+                <a name="/Directory"></a>
+                <a name="//apple_ref/swift/Section/Directory" class="dashAnchor"></a>
+                <a href="#/Directory">
+                  <h3 class="section-name">Directory</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV10gitServiceAA03GitD0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/gitService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV10gitServiceAA03GitD0_pvp">gitService</a>
+                    <a name="/s:8SwiftKit0B0V9DirectoryV"></a>
+                    <a name="//apple_ref/swift/Struct/Directory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9DirectoryV">Directory</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -365,68 +498,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The GitService</p>
+                        <p>The Directory</p>
 
+                        <a href="../Structs/Kit/Directory.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/GitService.html">GitService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKitAAV10kitServiceAA0bD0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/kitService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV10kitServiceAA0bD0_pvp">kitService</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The KitService</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitService.html">KitService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKitAAV18updateCheckServiceAA06UpdatedE0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/updateCheckService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV18updateCheckServiceAA06UpdatedE0_pvp">updateCheckService</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The UpdateCheckService</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">updateCheckService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/UpdateCheckService.html">UpdateCheckService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Directory</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -437,19 +517,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Internal%20Services"></a>
-                <a name="//apple_ref/swift/Section/Internal Services" class="dashAnchor"></a>
-                <a href="#/Internal%20Services">
-                  <h3 class="section-name">Internal Services</h3>
+                <a name="/Organization"></a>
+                <a name="//apple_ref/swift/Section/Organization" class="dashAnchor"></a>
+                <a href="#/Organization">
+                  <h3 class="section-name">Organization</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV15kitSetupServiceAA0bdE0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/kitSetupService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV15kitSetupServiceAA0bdE0_pvp">kitSetupService</a>
+                    <a name="/s:8SwiftKit0B0V12OrganizationV"></a>
+                    <a name="//apple_ref/swift/Struct/Organization" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12OrganizationV">Organization</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -457,14 +537,53 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The KitSetupService</p>
+                        <p>The Organization</p>
+
+                        <a href="../Structs/Kit/Organization.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Organization</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Placeholders"></a>
+                <a name="//apple_ref/swift/Section/Placeholders" class="dashAnchor"></a>
+                <a href="#/Placeholders">
+                  <h3 class="section-name">Placeholders</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V12Placeholdersa"></a>
+                    <a name="//apple_ref/swift/Alias/Placeholders" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12Placeholdersa">Placeholders</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Placeholders typealias represents a Dictionary<String, String></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitSetupService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitSetupService.html">KitSetupService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Placeholders</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -474,9 +593,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV19kitMigrationServiceAA0bdE0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/kitMigrationService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV19kitMigrationServiceAA0bdE0_pvp">kitMigrationService</a>
+                    <a name="/s:8SwiftKit0B0V12placeholdersSDyS2SGvp"></a>
+                    <a name="//apple_ref/swift/Property/placeholders" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12placeholdersSDyS2SGvp">placeholders</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -484,14 +603,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The KitMigrationService</p>
+                        <p>The Placeholders</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitMigrationService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitMigrationService.html">KitMigrationService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">placeholders</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html#/s:8SwiftKit0B0V12Placeholdersa">Placeholders</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

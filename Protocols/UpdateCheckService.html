@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>String Extension Reference</title>
+    <title>UpdateCheckService Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
-    <a title="String Extension Reference"></a>
+    <a name="//apple_ref/swift/Protocol/UpdateCheckService" class="dashAnchor"></a>
+    <a title="UpdateCheckService Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        String Extension Reference
+        UpdateCheckService Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -131,14 +131,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>String</h1>
+            <h1>UpdateCheckService</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">String</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">UpdateCheckService</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>The UpdateCheckService</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -146,9 +147,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:SS8SwiftKitE11dividerLineSSvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/dividerLine" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS8SwiftKitE11dividerLineSSvpZ">dividerLine</a>
+                    <a name="/s:8SwiftKit18UpdateCheckServiceP5check7versionAA0C6ResultOSgAA7VersionV_tF"></a>
+                    <a name="//apple_ref/swift/Method/check(version:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit18UpdateCheckServiceP5check7versionAA0C6ResultOSgAA7VersionV_tF">check(version:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -156,45 +157,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A String divider line</p>
+                        <p>Check for Updates</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">dividerLine</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:SS8SwiftKitE4drop6suffixS2S_tF"></a>
-                    <a name="//apple_ref/swift/Method/drop(suffix:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS8SwiftKitE4drop6suffixS2S_tF">drop(suffix:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Drop suffix from String</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">drop</span><span class="p">(</span><span class="nv">suffix</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">check</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/Version.html">Version</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/UpdateResult.html">UpdateResult</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -205,12 +175,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>suffix</em>
+                                <em>version</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The suffix that should be removed</p>
+                                  <p>The current installed Version</p>
                                 </div>
                               </td>
                             </tr>
@@ -219,7 +189,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The String without suffix</p>
+                        <p>An UpdateResult if available</p>
                       </div>
                     </section>
                   </div>

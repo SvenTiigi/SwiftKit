@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Environment Enumeration Reference</title>
+    <title>Organization Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/Environment" class="dashAnchor"></a>
-    <a title="Environment Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Struct/Organization" class="dashAnchor"></a>
+    <a title="Organization Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        Environment Enumeration Reference
+        Organization Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -131,25 +131,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Environment</h1>
+            <h1>Organization</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Environment</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Organization</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>The Environment</p>
+            <p>The Organization</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV11EnvironmentO10productionyA2DmF"></a>
-                    <a name="//apple_ref/swift/Element/production" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV11EnvironmentO10productionyA2DmF">production</a>
+                    <a name="/s:8SwiftKit0B0V12OrganizationV4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12OrganizationV4nameSSvp">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,14 +164,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Production Environment</p>
+                        <p>The name</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">production</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -174,9 +181,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV11EnvironmentO11developmentyA2DmF"></a>
-                    <a name="//apple_ref/swift/Element/development" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV11EnvironmentO11developmentyA2DmF">development</a>
+                    <a name="/s:8SwiftKit0B0V12OrganizationV10identifierSSvp"></a>
+                    <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12OrganizationV10identifierSSvp">identifier</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -184,26 +191,37 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Development Environment</p>
+                        <p>The identifier</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">development</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <a href="#/Initializer">
+                  <h3 class="section-name">Initializer</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKitAAV11EnvironmentO4testyA2DmF"></a>
-                    <a name="//apple_ref/swift/Element/test" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKitAAV11EnvironmentO4testyA2DmF">test</a>
+                    <a name="/s:8SwiftKit0B0V12OrganizationV4name10identifierAESS_SStcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:identifier:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V12OrganizationV4name10identifierAESS_SStcfc">init(name:identifier:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,16 +229,48 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Test Environment</p>
+                        <p>Designated Initializer</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">test</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+            <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
