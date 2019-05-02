@@ -6,6 +6,9 @@
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
    </a>
+   <a href="https://travis-ci.com/SvenTiigi/SwiftKit">
+      <img src="https://travis-ci.com/SvenTiigi/SwiftKit.svg?branch=master" alt="Build Status">
+   </a>
    <a href="https://github.com/SvenTiigi/SwiftKit/releases">
       <img src="https://img.shields.io/github/release/SvenTiigi/SwiftKit.svg" alt="Version">
    </a>
