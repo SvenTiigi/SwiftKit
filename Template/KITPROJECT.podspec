@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary                   = "KITPROJECT"
   s.homepage                  = "KITURL"
   s.license                   = { :type => "MIT", :file => "LICENSE" }
-  s.author                    = { "KITAUTHOR" => "KITAUTHORMAIL" }
+  s.author                    = { "KITAUTHOR" => "KITMAILAUTHOR" }
   s.source                    = { :git => "KITURL.git", :tag => s.version.to_s }
   s.ios.deployment_target     = "8.0"
   s.tvos.deployment_target    = "9.0"

@@ -71,7 +71,7 @@ extension Kit {
         return [
             "KITPROJECT": self.name,
             "KITAUTHOR": self.author.name,
-            "KITAUTHORMAIL": self.author.email,
+            "KITMAILAUTHOR": self.author.email,
             "KITURL": self.repositoryURL,
             "KITORGANIZATION": self.organization.name,
             "KITBUNDLEIDENTIFIER": self.organization.identifier,
