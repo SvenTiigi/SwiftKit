@@ -195,6 +195,15 @@ swiftkit new MyAwesomeKit \
 			--open
 ```
 
+## Update
+
+To update SwiftKit to the latest version simply run:
+
+```bash
+$ swiftkit update
+```
+> The update command will properly update SwiftKit if you installed it via Mint or Homebrew
+
 ## Contributing
 Contributions are very welcome 🙌 🤓
 
