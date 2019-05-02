@@ -15,7 +15,7 @@ let package = Package(
         .library(
             name: "SwiftKit",
             targets: ["SwiftKit"]
-        ),
+        )
     ],
     dependencies: [
         // SwiftCLI Dependency
@@ -47,6 +47,6 @@ let package = Package(
                 "SwiftKit",
                 "SwiftKitCLI"
             ]
-        ),
+        )
     ]
 )
