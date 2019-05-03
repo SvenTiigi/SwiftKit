@@ -1,6 +1,6 @@
 //
 //  CIServiceQuestion.swift
-//  SwiftKit
+//  SwiftKitCLI
 //
 //  Created by Sven Tiigi on 29.04.19.
 //

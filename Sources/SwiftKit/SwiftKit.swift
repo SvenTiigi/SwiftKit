@@ -48,6 +48,11 @@ public struct SwiftKit {
 // MARK: - Services
 
 public extension SwiftKit {
+    
+    /// The CocoaPodsService
+    var cocoaPodsService: CocoaPodsService {
+        return SwiftCLICocoaPodsService()
+    }
 
     /// The GitService
     var gitService: GitService {

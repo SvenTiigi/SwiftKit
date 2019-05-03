@@ -65,17 +65,49 @@ private extension SwiftKitCLI {
     var commands: [Command] {
         return [
             NewCommand(
-                gitService: self.swiftKit.gitService,
-                kitService: self.swiftKit.kitService,
-                updateCheckService: self.swiftKit.updateCheckService,
-                version: SwiftKitCLI.version
+                generateKitDialogService: self.generatedKitDialogService,
+                openGeneratedKitService: self.openGeneratedKitService,
+                updateNotifierService: self.updateNotifierService
             ),
             UpdateCommand(
-                packageManagerService: DefaultPackageManagerService(),
+                packageManagerService: self.packageManagerService,
                 updateCheckService: self.swiftKit.updateCheckService,
-                version: SwiftKitCLI.version
+                currentVersion: SwiftKitCLI.version
             )
         ]
+    }
+    
+}
+
+// MARK: - Services
+
+private extension SwiftKitCLI {
+    
+    /// The GenerateKitDialogService
+    var generatedKitDialogService: GenerateKitDialogService {
+        return SwiftCLIGenerateKitDialogService(
+            gitService: self.swiftKit.gitService,
+            kitService: self.swiftKit.kitService,
+            cocoaPodsService: self.swiftKit.cocoaPodsService
+        )
+    }
+    
+    /// The OpenGeneratedKitService
+    var openGeneratedKitService: OpenGeneratedKitService {
+        return SwiftCLIOpenGeneratedKitService()
+    }
+    
+    /// The UpdateNotifierService
+    var updateNotifierService: UpdateNotifierService {
+        return SwiftKitUpdateNotifierService(
+            currentVersion: SwiftKitCLI.version,
+            updateCheckService: self.swiftKit.updateCheckService
+        )
+    }
+    
+    /// The PackageManagerService
+    var packageManagerService: PackageManagerService {
+        return DefaultPackageManagerService()
     }
     
 }

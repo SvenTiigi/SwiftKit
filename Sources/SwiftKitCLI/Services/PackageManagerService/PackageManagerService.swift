@@ -1,6 +1,6 @@
 //
 //  PackageManager.swift
-//  SwiftKit
+//  SwiftKitCLI
 //
 //  Created by Sven Tiigi on 01.05.19.
 //

@@ -1,6 +1,6 @@
 //
 //  KitService.swift
-//  SwiftKitCLI
+//  SwiftKit
 //
 //  Created by Sven Tiigi on 01.05.19.
 //

@@ -1,6 +1,6 @@
 //
 //  UpdateCommand.swift
-//  SwiftKit
+//  SwiftKitCLI
 //
 //  Created by Sven Tiigi on 01.05.19.
 //
@@ -22,8 +22,8 @@ final class UpdateCommand {
     /// The UpdateCheckService
     let updateCheckService: UpdateCheckService
     
-    /// The Version
-    let version: Version
+    /// The current Version
+    let currentVersion: Version
     
     // MARK: Initializer
     
@@ -32,13 +32,13 @@ final class UpdateCommand {
     /// - Parameters:
     ///   - packageManagerService: The PackageManagerService
     ///   - updateCheckService: The UpdateCheckService
-    ///   - version: The Version
+    ///   - currentVersion: The current Version
     init(packageManagerService: PackageManagerService,
          updateCheckService: UpdateCheckService,
-         version: Version) {
+         currentVersion: Version) {
         self.packageManagerService = packageManagerService
         self.updateCheckService = updateCheckService
-        self.version = version
+        self.currentVersion = currentVersion
     }
     
 }
@@ -68,10 +68,10 @@ extension UpdateCommand: Command {
     func execute() throws {
         // Print out ASCII art
         stdout <<< .asciiArt
-        // Verify update is available
-        guard case .available(_)? = self.updateCheckService.check(version: self.version) else {
+        // Verify update is available for current Version
+        guard case .available(_)? = self.updateCheckService.check(version: self.currentVersion) else {
             // No update available print that latest version is installed
-            stdout <<< "You are running the latest version of SwiftKit 📦"
+            stdout <<< "You are running the latest version of SwiftKit 📦: \(self.currentVersion.description)"
             return
         }
         // Verify PackageManager is available
