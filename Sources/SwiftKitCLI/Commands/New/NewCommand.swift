@@ -193,7 +193,7 @@ extension NewCommand {
         let authorName = self.authorNameArgument.value ?? AuthorNameQuestion(
             gitService: self.gitService
         ).ask(on: self)
-        // 3. Initialiuze AuthorEmail
+        // 3. Initialize AuthorEmail
         let authorEmail = self.authorEmailArgument.value ?? AuthorEmailQuestion(
             gitService: self.gitService
         ).ask(on: self)
