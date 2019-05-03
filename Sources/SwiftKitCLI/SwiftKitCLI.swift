@@ -20,7 +20,7 @@ final class SwiftKitCLI {
     static let environment: SwiftKit.Environment = .production
     
     /// The Version
-    static let version: Version = "1.2.0"
+    static let version: Version = "1.2.1"
     
     /// The CLI Name
     let cliName: String = "swiftkit"
@@ -29,6 +29,11 @@ final class SwiftKitCLI {
     lazy var swiftKit = SwiftKit(
         environment: SwiftKitCLI.environment
     )
+    
+    /// The Version
+    var version: Version {
+        return SwiftKitCLI.version
+    }
     
 }
 
@@ -41,7 +46,7 @@ extension SwiftKitCLI {
         // Initialize the CLI
         let cli = SwiftCLI.CLI(
             name: self.cliName,
-            version: SwiftKitCLI.version.description,
+            version: self.version.description,
             commands: self.commands
         )
         // Switch on Environment
@@ -72,7 +77,7 @@ private extension SwiftKitCLI {
             UpdateCommand(
                 packageManagerService: self.packageManagerService,
                 updateCheckService: self.swiftKit.updateCheckService,
-                currentVersion: SwiftKitCLI.version
+                currentVersion: self.version
             )
         ]
     }
@@ -100,7 +105,7 @@ private extension SwiftKitCLI {
     /// The UpdateNotifierService
     var updateNotifierService: UpdateNotifierService {
         return SwiftKitUpdateNotifierService(
-            currentVersion: SwiftKitCLI.version,
+            currentVersion: self.version,
             updateCheckService: self.swiftKit.updateCheckService
         )
     }
