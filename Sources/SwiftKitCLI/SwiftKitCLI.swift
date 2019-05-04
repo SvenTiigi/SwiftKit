@@ -49,6 +49,8 @@ extension SwiftKitCLI {
             version: self.version.description,
             commands: self.commands
         )
+        // Print ASCII art
+        cli.stdout <<< .asciiArt
         // Switch on Environment
         switch SwiftKitCLI.environment {
         case .production, .development:

@@ -66,8 +66,6 @@ extension UpdateCommand: Command {
     ///
     /// - Throws: CLI.Error if command cannot execute successfully
     func execute() throws {
-        // Print out ASCII art
-        stdout <<< .asciiArt
         // Verify update is available for current Version
         guard case .available(_)? = self.updateCheckService.check(version: self.currentVersion) else {
             // No update available print that latest version is installed

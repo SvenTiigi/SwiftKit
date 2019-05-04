@@ -102,8 +102,6 @@ extension NewCommand: Command {
     ///
     /// - Throws: CLI.Error if command cannot execute successfully
     func execute() throws {
-        // Print out Ascii Art
-        stdout <<< .asciiArt
         // Start GenerateKitDialogService and verify generated Kit is available
         guard case .success(let generatedKit) = self.generateKitDialogService.start(on: self) else {
             // Generating Kit failed return out of function
