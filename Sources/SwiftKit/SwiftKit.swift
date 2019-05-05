@@ -77,6 +77,7 @@ public extension SwiftKit {
         return DefaultUpdateService(
             packageManagerService: self.packageManagerService,
             updateCheckService: self.updateCheckService,
+            activityService: self.activityService,
             currentVersion: self.version,
             executable: self.executable
         )

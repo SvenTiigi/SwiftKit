@@ -18,6 +18,9 @@ struct DefaultUpdateService {
     /// The UpdateCheckService
     let updateCheckService: UpdateCheckService
     
+    /// The ActivityService
+    let activityService: ActivityService
+    
     /// The current Version
     let currentVersion: Version
     
@@ -33,7 +36,7 @@ extension DefaultUpdateService: UpdateService {
     /// Perform Update
     func update() {
         // Verify update is available for current Version
-        guard case .available(_)? = self.updateCheckService.check(version: self.currentVersion) else {
+        guard case .available(let version)? = self.updateCheckService.check(version: self.currentVersion) else {
             // No update available print that latest version is installed
             self.executable.print(
                 "You are running the latest version of SwiftKit 📦: \(self.currentVersion.description)"
@@ -47,17 +50,26 @@ extension DefaultUpdateService: UpdateService {
             // Return out of function
             return
         }
-        // Print updating via PackageManager
-        self.executable.print("Updating SwiftKit via \(packageManager.displayName)")
+        // Start the ActivityService
+        self.activityService.start(
+            message: "Updating SwiftKit via \(packageManager.displayName) to version: \(version.description)"
+        )
         // Update SwiftKit via PackageManager
         do {
+            // Try to update PackageManagerService
             try self.packageManagerService.update(packageManager: packageManager)
         } catch {
+            // Stop the ActivityService
+            self.activityService.stop()
             // Print error
             self.executable.print(
                 error: SwiftKitError(reason: "SwiftKit update failed 🙈", error: error)
             )
+            // Return out of function
+            return
         }
+        // Stop the ActivityService
+        self.activityService.stop(message: "SwiftKit has been successfully updated 🚀")
     }
     
 }
