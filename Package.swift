@@ -28,7 +28,8 @@ let package = Package(
         .target(
             name: "SwiftKit",
             dependencies: [
-                "SwiftCLI"
+                "SwiftCLI",
+                "Motor"
             ]
         ),
         // SwiftKitCLI Target
@@ -36,16 +37,14 @@ let package = Package(
             name: "SwiftKitCLI",
             dependencies: [
                 "SwiftKit",
-                "SwiftCLI",
-                "Motor"
+                "SwiftCLI"
             ]
         ),
         // SwiftKitTests Target
         .testTarget(
             name: "SwiftKitTests",
             dependencies: [
-                "SwiftKit",
-                "SwiftKitCLI"
+                "SwiftKit"
             ]
         )
     ]

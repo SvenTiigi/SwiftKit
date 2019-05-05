@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     
     /// A String divider line
     static var dividerLine: String {

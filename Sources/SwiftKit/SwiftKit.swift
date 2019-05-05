@@ -14,13 +14,11 @@ public struct SwiftKit {
     
     // MARK: Properties
     
-    /// The SwiftKit URL. Default value `https://github.com/SvenTiigi/SwiftKit`
-    public private(set) static var url: String = "https://github.com/SvenTiigi/SwiftKit"
+    /// The SwiftKit repository URL
+    public let url: String
     
-    /// The Git URL
-    public static var gitURL: String {
-        return self.url + ".git"
-    }
+    /// The Version
+    public let version: Version
     
     /// The Environment
     public let environment: Environment
@@ -28,25 +26,27 @@ public struct SwiftKit {
     /// The Executable
     let executable: Executable
     
+    /// The Git URL
+    var gitURL: String {
+        return "\(self.url).git"
+    }
+    
     // MARK: Initializer
     
     /// Designated Initializer
     ///
     /// - Parameters:
-    ///   - url: The optional SwiftKit URL override.
-    ///   - environment: The Environment. Default value `production`
+    ///   - url: The SwiftKit repository URL. Default value `https://github.com/SvenTiigi/SwiftKit`
+    ///   - version: The Version. Default value `.default`
+    ///   - environment: The Environment. Default value `.default`
     ///   - executable: The Executable
-    public init(url: String? = nil,
-                environment: Environment = .production,
+    public init(url: String = "https://github.com/SvenTiigi/SwiftKit",
+                version: Version = .default,
+                environment: Environment = .default,
                 executable: Executable) {
-        // Check if a new URL is supplied
-        if let url = url {
-            // Set URL
-            SwiftKit.url = url
-        }
-        // Set Environment
+        self.url = url
+        self.version = version
         self.environment = environment
-        // Set Executable
         self.executable = executable
     }
     
@@ -55,6 +55,43 @@ public struct SwiftKit {
 // MARK: - Services
 
 public extension SwiftKit {
+    
+    /// The KitService
+    var kitService: KitService {
+        return DefaultKitService(
+            kitDirectory: .default(),
+            executable: self.executable,
+            gitService: self.gitService,
+            cocoaPodsService: self.cocoaPodsService,
+            kitSetupService: self.kitSetupService,
+            kitMigrationService: self.kitMigrationService,
+            fileService: self.fileService,
+            updateNotifierService: self.updateNotifierService,
+            activityService: self.activityService,
+            questionService: self.questionService
+        )
+    }
+    
+    /// The UpdateService
+    var updateService: UpdateService {
+        return DefaultUpdateService(
+            packageManagerService: self.packageManagerService,
+            updateCheckService: self.updateCheckService,
+            currentVersion: self.version,
+            executable: self.executable
+        )
+    }
+    
+}
+
+// MARK: - Internal Services
+
+extension SwiftKit {
+    
+    /// The ActivityService
+    var activityService: ActivityService {
+        return MotorActivityService()
+    }
     
     /// The CocoaPodsService
     var cocoaPodsService: CocoaPodsService {
@@ -69,58 +106,12 @@ public extension SwiftKit {
             executable: self.executable
         )
     }
-
+    
     /// The GitService
     var gitService: GitService {
         return ExecutableGitService(
             executable: self.executable
         )
-    }
-    
-    /// The KitService
-    var kitService: KitService {
-        return DefaultKitService(
-            kitSetupService: self.kitSetupService,
-            kitMigrationService: self.kitMigrationService
-        )
-    }
-    
-    /// The UpdateCheckService
-    var updateCheckService: UpdateCheckService {
-        return GitUpdateCheckService(
-            repositoryURL: SwiftKit.url,
-            gitService: self.gitService
-        )
-    }
-    
-}
-
-// MARK: - Internal Services
-
-extension SwiftKit {
-    
-    /// The KitSetupService
-    var kitSetupService: KitSetupService {
-        // Switch on Environment
-        switch self.environment {
-        case .production:
-            // Use DefaultKitSetupService with master branch
-            return DefaultKitSetupService(
-                gitURL: SwiftKit.gitURL,
-                gitBranch: .master,
-                gitService: self.gitService
-            )
-        case .development:
-            // Use DefaultKitSetupService with develop branch
-            return DefaultKitSetupService(
-                gitURL: SwiftKit.gitURL,
-                gitBranch: .develop,
-                gitService: self.gitService
-            )
-        case .test:
-            // Use DisabledKitSetupService
-            return DisabledKitSetupService()
-        }
     }
     
     /// The KitMigrationService
@@ -134,6 +125,61 @@ extension SwiftKit {
             // Use DisabledKitMigrationService
             return DisabledKitMigrationService()
         }
+    }
+    
+    /// The KitSetupService
+    var kitSetupService: KitSetupService {
+        // Switch on Environment
+        switch self.environment {
+        case .production:
+            // Use DefaultKitSetupService with master branch
+            return DefaultKitSetupService(
+                gitURL: self.gitURL,
+                gitBranch: .master,
+                gitService: self.gitService
+            )
+        case .development:
+            // Use DefaultKitSetupService with develop branch
+            return DefaultKitSetupService(
+                gitURL: self.gitURL,
+                gitBranch: .develop,
+                gitService: self.gitService
+            )
+        case .test:
+            // Use DisabledKitSetupService
+            return DisabledKitSetupService()
+        }
+    }
+    
+    /// The PackageManagerService
+    var packageManagerService: PackageManagerService {
+        return ExecutablePackageManagerService(
+            executable: self.executable
+        )
+    }
+    
+    /// The UpdateCheckService
+    var updateCheckService: UpdateCheckService {
+        return GitUpdateCheckService(
+            repositoryURL: self.url,
+            gitService: self.gitService
+        )
+    }
+    
+    /// The UpdateNotifierService
+    var updateNotifierService: UpdateNotifierService {
+        return ExecutableUpdateNotifierService(
+            currentVersion: self.version,
+            updateCheckService: self.updateCheckService,
+            executable: self.executable
+        )
+    }
+    
+    /// The QuestionService
+    var questionService: QuestionService {
+        return ExecutableQuestionService(
+            executable: self.executable
+        )
     }
     
 }

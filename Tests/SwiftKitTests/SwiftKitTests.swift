@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftKit
 
 /// The SwiftKitTests
 final class SwiftKitTests: XCTestCase {
@@ -15,7 +16,31 @@ final class SwiftKitTests: XCTestCase {
     ]
     
     func testIsProduction() {
-        // Fill test
+        XCTAssertEqual(SwiftKit(executable: FakeExecutable()).environment, SwiftKit.Environment.production)
     }
     
+}
+
+struct FakeExecutable: Executable {
+    
+    func execute(_ command: String) throws -> String {
+        return ""
+    }
+    
+    func print(_ text: String) {
+        
+    }
+    
+    func print(error: Error) {
+        
+    }
+    
+    func readLine(prompt: String?) -> String? {
+        return nil
+    }
+    
+    func terminate() {
+        
+    }
+
 }

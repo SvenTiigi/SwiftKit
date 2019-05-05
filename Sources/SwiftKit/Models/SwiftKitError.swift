@@ -33,7 +33,6 @@ extension SwiftKitError: LocalizedError {
             description += "\nError: \(error.localizedDescription)\n"
         }
         description += .dividerLine
-        description += "\nOpen an issue if you need additional help at \(SwiftKit.url)/issues/new"
         return description
     }
     

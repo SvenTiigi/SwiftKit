@@ -22,3 +22,25 @@ public extension SwiftKit {
     }
     
 }
+
+// MARK: - Environment+Default
+
+public extension SwiftKit.Environment {
+    
+    /// The default Environment
+    static var `default`: SwiftKit.Environment {
+        return .production
+    }
+    
+}
+
+// MARK: - Version+Default
+
+public extension Version {
+    
+    /// The default Version
+    static var `default`: Version {
+        return "1.2.1"
+    }
+    
+}

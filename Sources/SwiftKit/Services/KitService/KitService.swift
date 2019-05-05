@@ -12,12 +12,9 @@ import Foundation
 /// The KitService
 public protocol KitService {
     
-    /// Generate Kit at Directory
+    /// Create Kit
     ///
-    /// - Parameters:
-    ///   - kit: The Kit
-    ///   - directory: The Kit Directory
-    /// - Throws: If generating fails
-    func generate(kit: Kit, at directory: Kit.Directory) throws
+    /// - Parameter arguments: The KitCreationArguments
+    func create(with arguments: KitCreationArguments)
     
 }

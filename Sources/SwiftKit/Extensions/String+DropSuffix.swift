@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     
     /// Drop suffix from String
     ///
