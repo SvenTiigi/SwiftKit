@@ -25,6 +25,9 @@ public struct SwiftKit {
     /// The Environment
     public let environment: Environment
     
+    /// The Executable
+    let executable: Executable
+    
     // MARK: Initializer
     
     /// Designated Initializer
@@ -32,8 +35,10 @@ public struct SwiftKit {
     /// - Parameters:
     ///   - url: The optional SwiftKit URL override.
     ///   - environment: The Environment. Default value `production`
+    ///   - executable: The Executable
     public init(url: String? = nil,
-                environment: Environment = .production) {
+                environment: Environment = .production,
+                executable: Executable) {
         // Check if a new URL is supplied
         if let url = url {
             // Set URL
@@ -41,6 +46,8 @@ public struct SwiftKit {
         }
         // Set Environment
         self.environment = environment
+        // Set Executable
+        self.executable = executable
     }
     
 }
@@ -51,12 +58,23 @@ public extension SwiftKit {
     
     /// The CocoaPodsService
     var cocoaPodsService: CocoaPodsService {
-        return SwiftCLICocoaPodsService()
+        return ExecutableCocoaPodsService(
+            executable: self.executable
+        )
+    }
+    
+    /// The FileService
+    var fileService: FileService {
+        return ExecutableFileService(
+            executable: self.executable
+        )
     }
 
     /// The GitService
     var gitService: GitService {
-        return SwiftCLIGitService()
+        return ExecutableGitService(
+            executable: self.executable
+        )
     }
     
     /// The KitService

@@ -27,7 +27,8 @@ final class SwiftKitCLI {
     
     /// The SwiftKit
     lazy var swiftKit = SwiftKit(
-        environment: SwiftKitCLI.environment
+        environment: SwiftKitCLI.environment,
+        executable: self
     )
     
     /// The Version
@@ -73,7 +74,7 @@ private extension SwiftKitCLI {
         return [
             NewCommand(
                 generateKitDialogService: self.generatedKitDialogService,
-                openGeneratedKitService: self.openGeneratedKitService,
+                fileService: self.swiftKit.fileService,
                 updateNotifierService: self.updateNotifierService
             ),
             UpdateCommand(
@@ -99,11 +100,6 @@ private extension SwiftKitCLI {
         )
     }
     
-    /// The OpenGeneratedKitService
-    var openGeneratedKitService: OpenGeneratedKitService {
-        return SwiftCLIOpenGeneratedKitService()
-    }
-    
     /// The UpdateNotifierService
     var updateNotifierService: UpdateNotifierService {
         return SwiftKitUpdateNotifierService(
@@ -115,6 +111,22 @@ private extension SwiftKitCLI {
     /// The PackageManagerService
     var packageManagerService: PackageManagerService {
         return DefaultPackageManagerService()
+    }
+    
+}
+
+// MARK: - Executable
+
+extension SwiftKitCLI: Executable {
+    
+    /// Execute the command
+    ///
+    /// - Parameter command: The command that should be executed
+    /// - Returns: The corresponding output
+    /// - Throws: If execution fails
+    @discardableResult
+    func execute(_ command: String) throws -> String {
+        return try SwiftCLI.capture(bash: command).stdout
     }
     
 }

@@ -1,29 +1,32 @@
 //
-//  SwiftCLIGitService.swift
+//  ExecutableGitService.swift
 //  SwiftKit
 //
 //  Created by Sven Tiigi on 01.05.19.
 //
 
 import Foundation
-import SwiftCLI
 
-// MARK: - SwiftCLIGitService
+// MARK: - ExecutableGitService
 
-/// The SwiftCLIGitService
-struct SwiftCLIGitService {}
+/// The ExecutableGitService
+struct ExecutableGitService {
+    
+    /// The Executable
+    let executable: Executable
+    
+}
 
 // MARK: - GitConfigService
 
-extension SwiftCLIGitService: GitService {
+extension ExecutableGitService: GitService {
     
     /// Retrieve value for GitConfigKey
     ///
     /// - Parameter key: The GitConfigKey
     /// - Returns: The corresponding value if available
     func getValue(for key: GitConfigKey) -> String? {
-        return try? SwiftCLI.capture(bash: "git config --global --get \(key.rawValue)")
-            .stdout
+        return try? self.executable.execute("git config --global --get \(key.rawValue)")
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
@@ -32,8 +35,7 @@ extension SwiftCLIGitService: GitService {
     /// - Parameter repositoryPath: The repository path
     /// - Returns: The remot URL if available
     func getRemoteURL(repositoryPath: String) -> String? {
-        return try? SwiftCLI.capture(bash: "cd \(repositoryPath) && git remote get-url origin")
-            .stdout
+        return try? self.executable.execute("cd \(repositoryPath) && git remote get-url origin")
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .drop(suffix: ".git")
     }
@@ -48,7 +50,7 @@ extension SwiftCLIGitService: GitService {
         curl --silent "\#(repositoryURL)/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#'
         """#
         // Verify TagName is available
-        guard let tagName = try? SwiftCLI.capture(bash: command).stdout else {
+        guard let tagName = try? self.executable.execute(command) else {
             return nil
         }
         // Return trimmed Tag Name
@@ -63,7 +65,7 @@ extension SwiftCLIGitService: GitService {
     ///   - branch: The GitBranch
     /// - Throws: If cloning fails
     func clone(from url: String, to path: String, branch: GitBranch) throws {
-        try SwiftCLI.run(bash: "git clone -b \(branch.name) \(url) '\(path)' -q")
+        try self.executable.execute("git clone -b \(branch.name) \(url) '\(path)' -q")
     }
     
 }

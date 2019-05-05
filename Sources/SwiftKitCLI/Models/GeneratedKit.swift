@@ -20,3 +20,14 @@ struct GeneratedKit: Codable, Equatable, Hashable {
     let directory: Kit.Directory
     
 }
+
+// MARK: - ProjectPath
+
+extension GeneratedKit {
+    
+    /// The Project Path
+    var projectPath: String {
+        return "\(self.directory.path)/\(self.kit.name).xcodeproj"
+    }
+    
+}

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftCLI
+import SwiftKit
 
 // MARK: - NewCommand
 
@@ -55,8 +56,8 @@ final class NewCommand {
     /// The GenerateKitDialogService
     let generateKitDialogService: GenerateKitDialogService
     
-    /// The OpenGeneratedKitService
-    let openGeneratedKitService: OpenGeneratedKitService
+    /// The FileService
+    let fileService: FileService
     
     /// The UpdateNotifierService
     let updateNotifierService: UpdateNotifierService
@@ -67,13 +68,13 @@ final class NewCommand {
     ///
     /// - Parameters:
     ///   - generateKitDialogService: The GenerateKitDialogService
-    ///   - openGeneratedKitService: The OpenGeneratedKitService
+    ///   - fileService: The FileService
     ///   - updateNotifierService: The UpdateNotifierService
     init(generateKitDialogService: GenerateKitDialogService,
-         openGeneratedKitService: OpenGeneratedKitService,
+         fileService: FileService,
          updateNotifierService: UpdateNotifierService) {
         self.generateKitDialogService = generateKitDialogService
-        self.openGeneratedKitService = openGeneratedKitService
+        self.fileService = fileService
         self.updateNotifierService = updateNotifierService
     }
 
@@ -109,8 +110,8 @@ extension NewCommand: Command {
         }
         // Verify if OpenProject Argument is present
         if self.openProjectArgument.isPresent {
-            // Open generated Kit
-            self.openGeneratedKitService.open(generatedKit)
+            // Open generated Kit project path
+            self.fileService.open(atPath: generatedKit.projectPath)
         }
         // Notify about updates if needed
         self.updateNotifierService.notifyIfNeeded(on: self)

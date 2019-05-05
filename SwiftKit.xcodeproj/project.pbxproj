@@ -33,14 +33,14 @@
 
 /* Begin PBXBuildFile section */
 		3D07B920227CC0CB0096B292 /* CocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B91F227CC0CB0096B292 /* CocoaPodsService.swift */; };
-		3D07B922227CC14D0096B292 /* SwiftCLICocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B921227CC14D0096B292 /* SwiftCLICocoaPodsService.swift */; };
+		3D07B922227CC14D0096B292 /* ExecutableCocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B921227CC14D0096B292 /* ExecutableCocoaPodsService.swift */; };
 		3D07B926227CCA7B0096B292 /* GenerateKitDialogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B924227CC2E60096B292 /* GenerateKitDialogService.swift */; };
 		3D07B92B227CCD630096B292 /* SwiftCLIGenerateKitDialogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B927227CCCB40096B292 /* SwiftCLIGenerateKitDialogService.swift */; };
-		3D07B930227CD1A70096B292 /* OpenGeneratedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B92E227CD1A30096B292 /* OpenGeneratedKitService.swift */; };
-		3D07B934227CD2810096B292 /* SwiftCLIOpenGeneratedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B931227CD1F40096B292 /* SwiftCLIOpenGeneratedKitService.swift */; };
 		3D07B93A227CD3120096B292 /* SwiftKitUpdateNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B938227CD2FF0096B292 /* SwiftKitUpdateNotifierService.swift */; };
 		3D07B93B227CD3160096B292 /* UpdateNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D07B936227CD2A90096B292 /* UpdateNotifierService.swift */; };
 		3D2B7430227AB80800B206BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B742F227AB80800B206BE /* Version.swift */; };
+		3D5B8750227EE58C0019D299 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B874F227EE58C0019D299 /* FileService.swift */; };
+		3D5B8752227EE5B80019D299 /* ExecutableFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B8751227EE5B80019D299 /* ExecutableFileService.swift */; };
 		3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD912279D43500E1C6CB /* SwiftKitError.swift */; };
 		3D81AD942279DB0D00E1C6CB /* String+DividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */; };
 		3D81AD9A2279FC2F00E1C6CB /* UpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */; };
@@ -48,6 +48,7 @@
 		3D81ADA0227A013300E1C6CB /* UpdateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81AD9E227A013000E1C6CB /* UpdateCommand.swift */; };
 		3D81ADA9227A219C00E1C6CB /* PackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81ADA5227A20A200E1C6CB /* PackageManagerService.swift */; };
 		3D81ADAA227A219F00E1C6CB /* DefaultPackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */; };
+		3DEC3129227DB0B30025D1F7 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC3128227DB0B30025D1F7 /* Executable.swift */; };
 		3DF36776227CD5A6009AF66B /* GeneratedKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF36774227CD5A4009AF66B /* GeneratedKit.swift */; };
 		3DF3677A227CD94D009AF66B /* GenerateKitQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF36779227CD94D009AF66B /* GenerateKitQuestion.swift */; };
 		OBJ_124 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* ANSIEscapeCode.swift */; };
@@ -98,7 +99,7 @@
 		OBJ_203 /* Kit+Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Kit+Organization.swift */; };
 		OBJ_204 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Kit.swift */; };
 		OBJ_205 /* GitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* GitService.swift */; };
-		OBJ_206 /* SwiftCLIGitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* SwiftCLIGitService.swift */; };
+		OBJ_206 /* ExecutableGitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* ExecutableGitService.swift */; };
 		OBJ_207 /* DefaultKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* DefaultKitMigrationService.swift */; };
 		OBJ_208 /* DisabledKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* DisabledKitMigrationService.swift */; };
 		OBJ_209 /* KitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* KitMigrationService.swift */; };
@@ -234,14 +235,14 @@
 
 /* Begin PBXFileReference section */
 		3D07B91F227CC0CB0096B292 /* CocoaPodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaPodsService.swift; sourceTree = "<group>"; };
-		3D07B921227CC14D0096B292 /* SwiftCLICocoaPodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCLICocoaPodsService.swift; sourceTree = "<group>"; };
+		3D07B921227CC14D0096B292 /* ExecutableCocoaPodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCocoaPodsService.swift; sourceTree = "<group>"; };
 		3D07B924227CC2E60096B292 /* GenerateKitDialogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateKitDialogService.swift; sourceTree = "<group>"; };
 		3D07B927227CCCB40096B292 /* SwiftCLIGenerateKitDialogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCLIGenerateKitDialogService.swift; sourceTree = "<group>"; };
-		3D07B92E227CD1A30096B292 /* OpenGeneratedKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGeneratedKitService.swift; sourceTree = "<group>"; };
-		3D07B931227CD1F40096B292 /* SwiftCLIOpenGeneratedKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCLIOpenGeneratedKitService.swift; sourceTree = "<group>"; };
 		3D07B936227CD2A90096B292 /* UpdateNotifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotifierService.swift; sourceTree = "<group>"; };
 		3D07B938227CD2FF0096B292 /* SwiftKitUpdateNotifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitUpdateNotifierService.swift; sourceTree = "<group>"; };
 		3D2B742F227AB80800B206BE /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		3D5B874F227EE58C0019D299 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		3D5B8751227EE5B80019D299 /* ExecutableFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableFileService.swift; sourceTree = "<group>"; };
 		3D81AD912279D43500E1C6CB /* SwiftKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitError.swift; sourceTree = "<group>"; };
 		3D81AD932279DB0D00E1C6CB /* String+DividerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DividerLine.swift"; sourceTree = "<group>"; };
 		3D81AD992279FC2F00E1C6CB /* UpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckService.swift; sourceTree = "<group>"; };
@@ -249,6 +250,7 @@
 		3D81AD9E227A013000E1C6CB /* UpdateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommand.swift; sourceTree = "<group>"; };
 		3D81ADA5227A20A200E1C6CB /* PackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageManagerService.swift; sourceTree = "<group>"; };
 		3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPackageManagerService.swift; sourceTree = "<group>"; };
+		3DEC3128227DB0B30025D1F7 /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		3DF36774227CD5A4009AF66B /* GeneratedKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedKit.swift; sourceTree = "<group>"; };
 		3DF36779227CD94D009AF66B /* GenerateKitQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateKitQuestion.swift; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,7 +275,7 @@
 		OBJ_16 /* Kit+Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kit+Organization.swift"; sourceTree = "<group>"; };
 		OBJ_17 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		OBJ_20 /* GitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitService.swift; sourceTree = "<group>"; };
-		OBJ_21 /* SwiftCLIGitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCLIGitService.swift; sourceTree = "<group>"; };
+		OBJ_21 /* ExecutableGitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableGitService.swift; sourceTree = "<group>"; };
 		OBJ_24 /* DefaultKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_25 /* DisabledKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledKitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_26 /* KitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitMigrationService.swift; sourceTree = "<group>"; };
@@ -398,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				3D07B91F227CC0CB0096B292 /* CocoaPodsService.swift */,
-				3D07B921227CC14D0096B292 /* SwiftCLICocoaPodsService.swift */,
+				3D07B921227CC14D0096B292 /* ExecutableCocoaPodsService.swift */,
 			);
 			path = CocoaPodsService;
 			sourceTree = "<group>";
@@ -415,19 +417,10 @@
 		3D07B92C227CCE630096B292 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_42 /* Question */,
 				3DF36774227CD5A4009AF66B /* GeneratedKit.swift */,
+				OBJ_42 /* Question */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3D07B92D227CD1990096B292 /* OpenGeneratedKitService */ = {
-			isa = PBXGroup;
-			children = (
-				3D07B92E227CD1A30096B292 /* OpenGeneratedKitService.swift */,
-				3D07B931227CD1F40096B292 /* SwiftCLIOpenGeneratedKitService.swift */,
-			);
-			path = OpenGeneratedKitService;
 			sourceTree = "<group>";
 		};
 		3D07B935227CD2920096B292 /* UpdateNotifierService */ = {
@@ -437,6 +430,15 @@
 				3D07B938227CD2FF0096B292 /* SwiftKitUpdateNotifierService.swift */,
 			);
 			path = UpdateNotifierService;
+			sourceTree = "<group>";
+		};
+		3D5B874E227EE57A0019D299 /* FileService */ = {
+			isa = PBXGroup;
+			children = (
+				3D5B874F227EE58C0019D299 /* FileService.swift */,
+				3D5B8751227EE5B80019D299 /* ExecutableFileService.swift */,
+			);
+			path = FileService;
 			sourceTree = "<group>";
 		};
 		3D81AD982279FC1200E1C6CB /* UpdateCheckService */ = {
@@ -460,7 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				3D07B923227CC2DE0096B292 /* GenerateKitDialogService */,
-				3D07B92D227CD1990096B292 /* OpenGeneratedKitService */,
 				3D07B935227CD2920096B292 /* UpdateNotifierService */,
 				3D81ADA3227A203D00E1C6CB /* PackageManagerService */,
 			);
@@ -474,6 +475,14 @@
 				3D81ADA7227A211400E1C6CB /* DefaultPackageManagerService.swift */,
 			);
 			path = PackageManagerService;
+			sourceTree = "<group>";
+		};
+		3DEC3127227DB0A10025D1F7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC3128227DB0B30025D1F7 /* Executable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		OBJ_109 /* Products */ = {
@@ -507,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				3D07B91E227CC0BC0096B292 /* CocoaPodsService */,
+				3D5B874E227EE57A0019D299 /* FileService */,
 				OBJ_19 /* GitService */,
 				OBJ_31 /* KitService */,
 				3D81AD982279FC1200E1C6CB /* UpdateCheckService */,
@@ -519,7 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_20 /* GitService.swift */,
-				OBJ_21 /* SwiftCLIGitService.swift */,
+				OBJ_21 /* ExecutableGitService.swift */,
 			);
 			path = GitService;
 			sourceTree = "<group>";
@@ -737,6 +747,7 @@
 				OBJ_34 /* SwiftKit+Environment.swift */,
 				OBJ_18 /* Services */,
 				OBJ_12 /* Models */,
+				3DEC3127227DB0A10025D1F7 /* Protocols */,
 				OBJ_9 /* Extensions */,
 			);
 			name = SwiftKit;
@@ -1112,10 +1123,12 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_198 /* DateFormatter+Init.swift in Sources */,
+				3D5B8750227EE58C0019D299 /* FileService.swift in Sources */,
 				OBJ_199 /* String+DropSuffix.swift in Sources */,
+				3DEC3129227DB0B30025D1F7 /* Executable.swift in Sources */,
 				OBJ_200 /* CIService.swift in Sources */,
 				3D81AD9A2279FC2F00E1C6CB /* UpdateCheckService.swift in Sources */,
-				3D07B922227CC14D0096B292 /* SwiftCLICocoaPodsService.swift in Sources */,
+				3D07B922227CC14D0096B292 /* ExecutableCocoaPodsService.swift in Sources */,
 				3D81AD9C2279FC9200E1C6CB /* GitUpdateCheckService.swift in Sources */,
 				OBJ_201 /* Kit+Author.swift in Sources */,
 				OBJ_202 /* Kit+Directory.swift in Sources */,
@@ -1123,7 +1136,7 @@
 				OBJ_203 /* Kit+Organization.swift in Sources */,
 				OBJ_204 /* Kit.swift in Sources */,
 				OBJ_205 /* GitService.swift in Sources */,
-				OBJ_206 /* SwiftCLIGitService.swift in Sources */,
+				OBJ_206 /* ExecutableGitService.swift in Sources */,
 				3D81AD922279D43500E1C6CB /* SwiftKitError.swift in Sources */,
 				OBJ_207 /* DefaultKitMigrationService.swift in Sources */,
 				OBJ_208 /* DisabledKitMigrationService.swift in Sources */,
@@ -1132,6 +1145,7 @@
 				OBJ_211 /* DisabledKitSetupService.swift in Sources */,
 				OBJ_212 /* KitSetupService.swift in Sources */,
 				OBJ_213 /* DefaultKitService.swift in Sources */,
+				3D5B8752227EE5B80019D299 /* ExecutableFileService.swift in Sources */,
 				OBJ_214 /* KitService.swift in Sources */,
 				3D07B920227CC0CB0096B292 /* CocoaPodsService.swift in Sources */,
 				OBJ_215 /* SwiftKit+Environment.swift in Sources */,
@@ -1144,7 +1158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				3D07B930227CD1A70096B292 /* OpenGeneratedKitService.swift in Sources */,
 				3D81ADA9227A219C00E1C6CB /* PackageManagerService.swift in Sources */,
 				3D07B93A227CD3120096B292 /* SwiftKitUpdateNotifierService.swift in Sources */,
 				3DF3677A227CD94D009AF66B /* GenerateKitQuestion.swift in Sources */,
@@ -1153,7 +1166,6 @@
 				OBJ_225 /* NewCommand+Argument.swift in Sources */,
 				OBJ_226 /* NewCommand.swift in Sources */,
 				OBJ_227 /* AuthorEmailQuestion.swift in Sources */,
-				3D07B934227CD2810096B292 /* SwiftCLIOpenGeneratedKitService.swift in Sources */,
 				OBJ_228 /* AuthorNameQuestion.swift in Sources */,
 				3DF36776227CD5A6009AF66B /* GeneratedKit.swift in Sources */,
 				3D07B93B227CD3160096B292 /* UpdateNotifierService.swift in Sources */,
