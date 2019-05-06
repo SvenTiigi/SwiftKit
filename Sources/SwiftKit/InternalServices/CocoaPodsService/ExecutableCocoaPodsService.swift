@@ -28,4 +28,5 @@ extension ExecutableCocoaPodsService: CocoaPodsService {
     func isPodAvailable(forName name: String) -> Bool {
         return (try? self.executable.execute("pod trunk info \(name)")) != nil
     }
+    
 }
