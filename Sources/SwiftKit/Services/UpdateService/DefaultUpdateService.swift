@@ -18,9 +18,6 @@ struct DefaultUpdateService {
     /// The UpdateCheckService
     let updateCheckService: UpdateCheckService
     
-    /// The ActivityService
-    let activityService: ActivityService
-    
     /// The current Version
     let currentVersion: Version
     
@@ -51,8 +48,8 @@ extension DefaultUpdateService: UpdateService {
             // Return out of function
             return
         }
-        // Start the ActivityService
-        self.activityService.start(
+        // Start loading on Executable
+        self.executable.startLoading(
             message: "Updating SwiftKit via \(packageManager.displayName) to version: \(version.description)"
         )
         // Update SwiftKit via PackageManager
@@ -60,17 +57,17 @@ extension DefaultUpdateService: UpdateService {
             // Try to update PackageManagerService
             try self.packageManagerService.update(packageManager: packageManager)
         } catch {
-            // Stop the ActivityService
-            self.activityService.stop()
+            // Stop loading on Executable
+            self.executable.stopLoading()
             // Print error
-            self.executable.print(
-                error: SwiftKitError(reason: "SwiftKit update failed 🙈", error: error)
+            self.executable.printError(
+                SwiftKitError(reason: "SwiftKit update failed 🙈", error: error).localizedDescription
             )
             // Return out of function
             return
         }
-        // Stop the ActivityService
-        self.activityService.stop(message: "SwiftKit has been successfully updated 🚀")
+        // Stop loading on Executable
+        self.executable.stopLoading(message: "SwiftKit has been successfully updated 🚀")
     }
     
 }

@@ -22,7 +22,7 @@ final class SwiftKitTests: XCTestCase {
 }
 
 struct FakeExecutable: Executable {
-    
+
     func execute(_ command: String) throws -> String {
         return ""
     }
@@ -31,7 +31,15 @@ struct FakeExecutable: Executable {
         
     }
     
-    func print(error: Error) {
+    func printError(_ text: String) {
+        
+    }
+    
+    func startLoading(message: String?) {
+        
+    }
+    
+    func stopLoading(message: String?) {
         
     }
     

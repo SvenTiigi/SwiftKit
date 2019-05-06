@@ -39,9 +39,6 @@ final class DefaultKitService {
     /// The UpdateNotifierService
     let updateNotifierService: UpdateNotifierService
     
-    /// The ActivityService
-    let activityService: ActivityService
-    
     /// The QuestionService
     let questionService: QuestionService
     
@@ -61,7 +58,6 @@ final class DefaultKitService {
     ///   - kitMigrationService: The KitMigrationService
     ///   - fileService: The FileService
     ///   - updateNotifierService: The UpdateNotifierService
-    ///   - activityService: The ActivityService
     ///   - questionService: The QuestionService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
@@ -71,7 +67,6 @@ final class DefaultKitService {
          kitMigrationService: KitMigrationService,
          fileService: FileService,
          updateNotifierService: UpdateNotifierService,
-         activityService: ActivityService,
          questionService: QuestionService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
@@ -81,7 +76,6 @@ final class DefaultKitService {
         self.kitMigrationService = kitMigrationService
         self.fileService = fileService
         self.updateNotifierService = updateNotifierService
-        self.activityService = activityService
         self.questionService = questionService
     }
     
@@ -305,8 +299,8 @@ extension DefaultKitService {
     ///
     /// - Parameter kit: The Kit
     func printStart(with kit: Kit) {
-        // Start ActivityService with message
-        self.activityService.start(
+        // Start loading on Executable
+        self.executable.startLoading(
             message: "Generating \(kit.name)"
         )
     }
@@ -315,8 +309,8 @@ extension DefaultKitService {
     ///
     /// - Parameter kit: The Kit
     func printFinish(with kit: Kit) {
-        // Stop ActivityService with message
-        self.activityService.stop(
+        // Stop loading on Executable
+        self.executable.stopLoading(
             message: "\(kit.name) is ready to go 🚀"
         )
     }
@@ -325,10 +319,10 @@ extension DefaultKitService {
     ///
     /// - Parameter error: The Error that should be printed
     func print(error: Error) {
-        // Stop the ActivityService
-        self.activityService.stop()
+        // Stop loading on Executable
+        self.executable.stopLoading()
         // Print Error
-        self.executable.print(error: error)
+        self.executable.printError(error.localizedDescription)
     }
     
 }

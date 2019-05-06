@@ -11,5 +11,5 @@ import SwiftKit
 // Initialize SwiftKitCLI
 let swiftKitCLI = SwiftKitCLI()
 
-// Start SwiftKitCLI
-swiftKitCLI.start()
+// Execute SwiftKitCLI
+swiftKitCLI.execute()

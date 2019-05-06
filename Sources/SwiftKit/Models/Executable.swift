@@ -25,10 +25,20 @@ public protocol Executable {
     /// - Parameter text: The text that should be printed out
     func print(_ text: String)
     
-    /// Print an Error
+    /// Print error
     ///
-    /// - Parameter error: The Error that should be printed out
-    func print(error: Error)
+    /// - Parameter text: The text that should be printed out
+    func printError(_ text: String)
+    
+    /// Start loading
+    ///
+    /// - Parameter message: The optional message
+    func startLoading(message: String?)
+    
+    /// Stop loading
+    ///
+    /// - Parameter message: The optional message
+    func stopLoading(message: String?)
     
     /// Read line
     ///
@@ -36,7 +46,23 @@ public protocol Executable {
     /// - Returns: The retrieved line if available
     func readLine(prompt: String?) -> String?
     
-    /// Terminate CLI
+    /// Terminate Executable
     func terminate()
+    
+}
+
+// MARK: - Convenience Functions
+
+extension Executable {
+    
+    /// Start loading
+    func startLoading() {
+        self.startLoading(message: nil)
+    }
+    
+    /// Stop loading
+    func stopLoading() {
+        self.stopLoading(message: nil)
+    }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Motor
 import SwiftCLI
 import SwiftKit
 
@@ -17,6 +18,11 @@ final class SwiftKitCLI {
     /// The SwiftKit
     private lazy var swiftKit = SwiftKit(
         executable: self
+    )
+    
+    /// The CLI Spinner
+    private lazy var cliSpinner = Motor.Spinner(
+        pattern: Motor.Patterns.dots
     )
     
     /// The CLI
@@ -32,8 +38,8 @@ final class SwiftKitCLI {
 
 extension SwiftKitCLI {
     
-    /// Start the SwiftKitCLI
-    func start() {
+    /// Execute SwiftKitCLI
+    func execute() {
         // Print ASCII art
         self.cli.stdout <<< .asciiArt
         // Switch on Environment
@@ -88,11 +94,29 @@ extension SwiftKitCLI: Executable {
         self.cli.stdout <<< text
     }
     
-    /// Print an Error
+    /// Print error
     ///
-    /// - Parameter error: The Error that should be printed out
-    func print(error: Error) {
-        self.cli.stderr <<< error.localizedDescription
+    /// - Parameter text: The text that should be printed out
+    func printError(_ text: String) {
+        self.cli.stderr <<< text
+    }
+    
+    /// Start loading
+    ///
+    /// - Parameter message: The optional message
+    func startLoading(message: String?) {
+        if let message = message {
+            self.cliSpinner.start(message: message)
+        } else {
+            self.cliSpinner.start()
+        }
+    }
+    
+    /// Stop loading
+    ///
+    /// - Parameter message: The optional message
+    func stopLoading(message: String?) {
+        self.cliSpinner.stop(message: message)
     }
     
     /// Read line
@@ -111,7 +135,7 @@ extension SwiftKitCLI: Executable {
         return line
     }
     
-    /// Terminate CLI
+    /// Terminate Executable
     func terminate() {
         exit(0)
     }

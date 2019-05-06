@@ -40,7 +40,11 @@ public extension Version {
     
     /// The default Version
     static var `default`: Version {
-        return "1.2.1"
+        return .init(
+            major: 1,
+            minor: 2,
+            patch: 1
+        )
     }
     
 }

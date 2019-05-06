@@ -27,17 +27,15 @@ let package = Package(
         // SwiftKit Target
         .target(
             name: "SwiftKit",
-            dependencies: [
-                "SwiftCLI",
-                "Motor"
-            ]
+            dependencies: []
         ),
         // SwiftKitCLI Target
         .target(
             name: "SwiftKitCLI",
             dependencies: [
                 "SwiftKit",
-                "SwiftCLI"
+                "SwiftCLI",
+                "Motor"
             ]
         ),
         // SwiftKitTests Target

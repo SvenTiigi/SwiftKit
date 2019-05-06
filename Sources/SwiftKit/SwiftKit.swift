@@ -67,7 +67,6 @@ public extension SwiftKit {
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
             updateNotifierService: self.updateNotifierService,
-            activityService: self.activityService,
             questionService: self.questionService
         )
     }
@@ -77,7 +76,6 @@ public extension SwiftKit {
         return DefaultUpdateService(
             packageManagerService: self.packageManagerService,
             updateCheckService: self.updateCheckService,
-            activityService: self.activityService,
             currentVersion: self.version,
             executable: self.executable
         )
@@ -88,11 +86,6 @@ public extension SwiftKit {
 // MARK: - Internal Services
 
 extension SwiftKit {
-    
-    /// The ActivityService
-    var activityService: ActivityService {
-        return MotorActivityService()
-    }
     
     /// The CocoaPodsService
     var cocoaPodsService: CocoaPodsService {
