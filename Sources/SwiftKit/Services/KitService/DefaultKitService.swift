@@ -5,6 +5,7 @@
 //  Created by Sven Tiigi on 01.05.19.
 //
 
+import Dispatch
 import Foundation
 
 // MARK: - DefaultKitService
