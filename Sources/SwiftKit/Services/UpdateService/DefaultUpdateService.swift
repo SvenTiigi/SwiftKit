@@ -46,7 +46,8 @@ extension DefaultUpdateService: UpdateService {
         // Verify PackageManager is available
         guard let packageManager = self.packageManagerService.packageManager else {
             // Print out to update manually
-            self.executable.print("Unable to detect PackageManager 🤷‍♂️ Please update SwiftKit manually.")
+            self.executable.print("Unable to detect PackageManager 🤷‍♂️")
+            self.executable.print("Please update SwiftKit manually")
             // Return out of function
             return
         }
