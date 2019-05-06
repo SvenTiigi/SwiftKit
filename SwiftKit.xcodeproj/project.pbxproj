@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D52A1092280A341007AF896 /* FakeExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52A1082280A341007AF896 /* FakeExecutable.swift */; };
 		OBJ_151 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* ANSIEscapeCode.swift */; };
 		OBJ_152 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* BackgroundColor.swift */; };
 		OBJ_153 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* Cursor.swift */; };
@@ -196,6 +197,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D52A1082280A341007AF896 /* FakeExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeExecutable.swift; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* DateFormatter+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Init.swift"; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_85 /* SwiftKitTests.swift */,
+				3D52A1082280A341007AF896 /* FakeExecutable.swift */,
 				OBJ_86 /* XCTestManifests.swift */,
 			);
 			name = SwiftKitTests;
@@ -1148,6 +1151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				3D52A1092280A341007AF896 /* FakeExecutable.swift in Sources */,
 				OBJ_310 /* SwiftKitTests.swift in Sources */,
 				OBJ_311 /* XCTestManifests.swift in Sources */,
 			);

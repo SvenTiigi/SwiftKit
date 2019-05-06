@@ -15,40 +15,12 @@ final class SwiftKitTests: XCTestCase {
         ("testIsProduction", testIsProduction),
     ]
     
+    lazy var fakeExecutable = FakeExecutable()
+    
+    lazy var swiftKit = SwiftKit(executable: self.fakeExecutable)
+    
     func testIsProduction() {
-        XCTAssertEqual(SwiftKit(executable: FakeExecutable()).environment, SwiftKit.Environment.production)
+        XCTAssertEqual(self.swiftKit.environment, .production)
     }
     
-}
-
-struct FakeExecutable: Executable {
-
-    func execute(_ command: String) throws -> String {
-        return ""
-    }
-    
-    func print(_ text: String) {
-        
-    }
-    
-    func printError(_ text: String) {
-        
-    }
-    
-    func startLoading(message: String?) {
-        
-    }
-    
-    func stopLoading(message: String?) {
-        
-    }
-    
-    func readLine(prompt: String?) -> String? {
-        return nil
-    }
-    
-    func terminate() {
-        
-    }
-
 }
