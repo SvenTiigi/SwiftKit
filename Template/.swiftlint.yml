@@ -8,6 +8,7 @@ opt_in_rules: # some rules are only opt-in
   - implicitly_unwrapped_optional
   - sorted_imports
   - valid_docs
+  - nslocalizedstring_require_bundle
 
 included:
   - Sources
