@@ -36,7 +36,7 @@ extension DefaultUpdateService: UpdateService {
         guard case .available(let version)? = self.updateCheckService.check(version: self.currentVersion) else {
             // No update available print that latest version is installed
             self.executable.print(
-                "You are running the latest version of SwiftKit 📦: \(self.currentVersion.description)"
+                "You are running the latest version of SwiftKit 📦 \(self.currentVersion.description)"
             )
             return
         }
