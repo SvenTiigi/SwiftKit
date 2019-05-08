@@ -21,8 +21,8 @@ public extension SwiftKit {
             kitSetupService: self.kitSetupService,
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
-            updateNotifierService: self.updateNotifierService,
-            questionService: self.questionService
+            questionService: self.questionService,
+            updateNotificationService: self.updateNotificationService
         )
     }
     
@@ -115,12 +115,11 @@ extension SwiftKit {
         )
     }
     
-    /// The UpdateNotifierService
-    var updateNotifierService: UpdateNotifierService {
-        return ExecutableUpdateNotifierService(
+    /// The UpdateNotificationService
+    var updateNotificationService: UpdateNotificationService {
+        return DispatchQueueUpdateNotificationService(
             currentVersion: self.version,
-            updateCheckService: self.updateCheckService,
-            executable: self.executable
+            updateCheckService: self.updateCheckService
         )
     }
     

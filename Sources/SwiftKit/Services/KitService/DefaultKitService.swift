@@ -36,14 +36,17 @@ final class DefaultKitService {
     /// The FileService
     let fileService: FileService
     
-    /// The UpdateNotifierService
-    let updateNotifierService: UpdateNotifierService
-    
     /// The QuestionService
     let questionService: QuestionService
     
+    /// The UpdateNotificationService
+    let updateNotificationService: UpdateNotificationService
+    
     /// Bool if pod is available
     var isPodAvailable: Bool?
+    
+    /// The optional UpdateNotification
+    var updateNotification: UpdateNotification?
     
     // MARK: Initializer
     
@@ -57,8 +60,8 @@ final class DefaultKitService {
     ///   - kitSetupService: The KitSetupService
     ///   - kitMigrationService: The KitMigrationService
     ///   - fileService: The FileService
-    ///   - updateNotifierService: The UpdateNotifierService
     ///   - questionService: The QuestionService
+    ///   - updateNotificationService: The UpdateNotificationService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
          gitService: GitService,
@@ -66,8 +69,8 @@ final class DefaultKitService {
          kitSetupService: KitSetupService,
          kitMigrationService: KitMigrationService,
          fileService: FileService,
-         updateNotifierService: UpdateNotifierService,
-         questionService: QuestionService) {
+         questionService: QuestionService,
+         updateNotificationService: UpdateNotificationService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
         self.gitService = gitService
@@ -75,8 +78,8 @@ final class DefaultKitService {
         self.kitSetupService = kitSetupService
         self.kitMigrationService = kitMigrationService
         self.fileService = fileService
-        self.updateNotifierService = updateNotifierService
         self.questionService = questionService
+        self.updateNotificationService = updateNotificationService
     }
     
 }
@@ -89,6 +92,11 @@ extension DefaultKitService: KitService {
     ///
     /// - Parameter arguments: The KitCreationArguments
     func create(with arguments: KitCreationArguments) {
+        // Retrieve UpdateNotification
+        self.updateNotificationService.getUpdateNotification { [weak self] updateNotification in
+            // Set UpdateNotification
+            self?.updateNotification = updateNotification
+        }
         // Check if the Destination Argument Value is available
         if let destinationArgumentValue = arguments.destinationArgument {
             // Set Kit Directory Path with Destination Argument Value
@@ -147,8 +155,8 @@ extension DefaultKitService: KitService {
             // Open generated Kit project path
             self.fileService.open(atPath: "\(self.kitDirectory.path)/\(kit.name).xcodeproj")
         }
-        // Notify about updates if needed
-        self.updateNotifierService.notifyIfNeeded()
+        // Show UpdateNotification on Executable if available
+        self.updateNotification?.show(on: self.executable)
     }
     
 }

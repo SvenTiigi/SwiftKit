@@ -19,13 +19,3 @@ protocol UpdateCheckService {
     func check(version: Version) -> UpdateResult?
     
 }
-
-// MARK: - UpdateResult
-
-/// The UpdateResult
-enum UpdateResult: Equatable, Hashable {
-    /// Latest version
-    case latest
-    /// A new version is available
-    case available(version: Version)
-}

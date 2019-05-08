@@ -34,6 +34,10 @@
 /* Begin PBXBuildFile section */
 		3D52A1092280A341007AF896 /* FakeExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52A1082280A341007AF896 /* FakeExecutable.swift */; };
 		3D52A10B2280A4F7007AF896 /* SwiftKit+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52A10A2280A4F7007AF896 /* SwiftKit+Service.swift */; };
+		3DDD6E282282A84F00456A58 /* UpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E272282A84F00456A58 /* UpdateResult.swift */; };
+		3DDD6E2A2282A86100456A58 /* UpdateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E292282A86100456A58 /* UpdateNotification.swift */; };
+		3DDD6E322282ABBE00456A58 /* UpdateNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E312282ABBE00456A58 /* UpdateNotificationService.swift */; };
+		3DDD6E342282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E332282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift */; };
 		OBJ_151 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* ANSIEscapeCode.swift */; };
 		OBJ_152 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* BackgroundColor.swift */; };
 		OBJ_153 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* Cursor.swift */; };
@@ -95,8 +99,6 @@
 		OBJ_243 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* QuestionService.swift */; };
 		OBJ_244 /* GitUpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* GitUpdateCheckService.swift */; };
 		OBJ_245 /* UpdateCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* UpdateCheckService.swift */; };
-		OBJ_246 /* ExecutableUpdateNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* ExecutableUpdateNotifierService.swift */; };
-		OBJ_247 /* UpdateNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* UpdateNotifierService.swift */; };
 		OBJ_248 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* Executable.swift */; };
 		OBJ_249 /* GitBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* GitBranch.swift */; };
 		OBJ_250 /* GitConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* GitConfigKey.swift */; };
@@ -200,6 +202,10 @@
 /* Begin PBXFileReference section */
 		3D52A1082280A341007AF896 /* FakeExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeExecutable.swift; sourceTree = "<group>"; };
 		3D52A10A2280A4F7007AF896 /* SwiftKit+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftKit+Service.swift"; sourceTree = "<group>"; };
+		3DDD6E272282A84F00456A58 /* UpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateResult.swift; sourceTree = "<group>"; };
+		3DDD6E292282A86100456A58 /* UpdateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotification.swift; sourceTree = "<group>"; };
+		3DDD6E312282ABBE00456A58 /* UpdateNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationService.swift; sourceTree = "<group>"; };
+		3DDD6E332282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueUpdateNotificationService.swift; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* DateFormatter+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Init.swift"; sourceTree = "<group>"; };
@@ -259,8 +265,6 @@
 		OBJ_36 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		OBJ_38 /* GitUpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUpdateCheckService.swift; sourceTree = "<group>"; };
 		OBJ_39 /* UpdateCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckService.swift; sourceTree = "<group>"; };
-		OBJ_41 /* ExecutableUpdateNotifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableUpdateNotifierService.swift; sourceTree = "<group>"; };
-		OBJ_42 /* UpdateNotifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotifierService.swift; sourceTree = "<group>"; };
 		OBJ_44 /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		OBJ_45 /* GitBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitBranch.swift; sourceTree = "<group>"; };
 		OBJ_46 /* GitConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitConfigKey.swift; sourceTree = "<group>"; };
@@ -378,6 +382,24 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		3DDD6E262282A84300456A58 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD6E272282A84F00456A58 /* UpdateResult.swift */,
+				3DDD6E292282A86100456A58 /* UpdateNotification.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		3DDD6E302282ABAD00456A58 /* UpdateNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD6E312282ABBE00456A58 /* UpdateNotificationService.swift */,
+				3DDD6E332282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift */,
+			);
+			path = UpdateNotificationService;
+			sourceTree = "<group>";
+		};
 		OBJ_109 /* ANSIEscapeCode-logo */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +457,7 @@
 				OBJ_31 /* PackageManagerService */,
 				OBJ_34 /* QuestionService */,
 				OBJ_37 /* UpdateCheckService */,
-				OBJ_40 /* UpdateNotifierService */,
+				3DDD6E302282ABAD00456A58 /* UpdateNotificationService */,
 			);
 			path = InternalServices;
 			sourceTree = "<group>";
@@ -527,21 +549,13 @@
 			path = UpdateCheckService;
 			sourceTree = "<group>";
 		};
-		OBJ_40 /* UpdateNotifierService */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_42 /* UpdateNotifierService.swift */,
-				OBJ_41 /* ExecutableUpdateNotifierService.swift */,
-			);
-			path = UpdateNotifierService;
-			sourceTree = "<group>";
-		};
 		OBJ_43 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_47 /* Kit */,
 				3D52A1062280A1DB007AF896 /* Git */,
 				3D52A1072280A1EC007AF896 /* Question */,
+				3DDD6E262282A84300456A58 /* Update */,
 				OBJ_66 /* Version.swift */,
 				OBJ_44 /* Executable.swift */,
 				OBJ_65 /* SwiftKitError.swift */,
@@ -563,7 +577,7 @@
 			path = Kit;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -576,7 +590,6 @@
 				OBJ_144 /* LICENSE */,
 				OBJ_145 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_53 /* Questions */ = {
@@ -950,7 +963,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_135 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1079,7 +1092,10 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_225 /* DateFormatter+Init.swift in Sources */,
+				3DDD6E342282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift in Sources */,
 				OBJ_226 /* String+DividerLine.swift in Sources */,
+				3DDD6E2A2282A86100456A58 /* UpdateNotification.swift in Sources */,
+				3DDD6E282282A84F00456A58 /* UpdateResult.swift in Sources */,
 				OBJ_227 /* String+DropSuffix.swift in Sources */,
 				OBJ_228 /* CocoaPodsService.swift in Sources */,
 				OBJ_229 /* ExecutableCocoaPodsService.swift in Sources */,
@@ -1099,8 +1115,6 @@
 				OBJ_243 /* QuestionService.swift in Sources */,
 				OBJ_244 /* GitUpdateCheckService.swift in Sources */,
 				OBJ_245 /* UpdateCheckService.swift in Sources */,
-				OBJ_246 /* ExecutableUpdateNotifierService.swift in Sources */,
-				OBJ_247 /* UpdateNotifierService.swift in Sources */,
 				OBJ_248 /* Executable.swift in Sources */,
 				OBJ_249 /* GitBranch.swift in Sources */,
 				OBJ_250 /* GitConfigKey.swift in Sources */,
@@ -1115,6 +1129,7 @@
 				OBJ_259 /* GenerateKitQuestion.swift in Sources */,
 				OBJ_260 /* KitNameQuestion.swift in Sources */,
 				OBJ_261 /* OrganizationIdentifierQuestion.swift in Sources */,
+				3DDD6E322282ABBE00456A58 /* UpdateNotificationService.swift in Sources */,
 				3D52A10B2280A4F7007AF896 /* SwiftKit+Service.swift in Sources */,
 				OBJ_262 /* OrganizationNameQuestion.swift in Sources */,
 				OBJ_263 /* RepositoryURLQuestion.swift in Sources */,
