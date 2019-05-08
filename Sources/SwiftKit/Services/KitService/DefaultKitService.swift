@@ -225,7 +225,7 @@ extension DefaultKitService {
                 kitName: kitName
             ),
             predefinedAnswer: arguments.organizationIdentifierArgument
-        )
+        ).trimmingCharacters(in: .whitespaces)
         // Return Kit
         return .init(
             name: kitName,
