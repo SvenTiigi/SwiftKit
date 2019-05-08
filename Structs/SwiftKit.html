@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SwiftKit Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/SwiftKit" class="dashAnchor"></a>
+    <a title="SwiftKit Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/SwiftKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SwiftKit Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultKitService.html">DefaultKitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DispatchQueueUpdateNotificationService.html">DispatchQueueUpdateNotificationService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GitBranch.html">GitBranch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GitConfigKey.html">GitConfigKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PackageManager.html">PackageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/QuestionVariant.html">QuestionVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UpdateResult.html">UpdateResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CocoaPodsService.html">CocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Executable.html">Executable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FileService.html">FileService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GitService.html">GitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitMigrationService.html">KitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitService.html">KitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitSetupService.html">KitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PackageManagerService.html">PackageManagerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Question.html">Question</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QuestionService.html">QuestionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateCheckService.html">UpdateCheckService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateNotificationService.html">UpdateNotificationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateService.html">UpdateService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AuthorEmailQuestion.html">AuthorEmailQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AuthorNameQuestion.html">AuthorNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CIServiceQuestion.html">CIServiceQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultKitMigrationService.html">DefaultKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultKitSetupService.html">DefaultKitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultUpdateService.html">DefaultUpdateService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisabledKitMigrationService.html">DisabledKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisabledKitSetupService.html">DisabledKitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableCocoaPodsService.html">ExecutableCocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableFileService.html">ExecutableFileService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableGitService.html">ExecutableGitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutablePackageManagerService.html">ExecutablePackageManagerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableQuestionService.html">ExecutableQuestionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GenerateKitQuestion.html">GenerateKitQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GitUpdateCheckService.html">GitUpdateCheckService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit.html">Kit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Author.html">– Author</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/CIService.html">– CIService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Directory.html">– Directory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Organization.html">– Organization</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KitCreationArguments.html">KitCreationArguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KitNameQuestion.html">KitNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OrganizationIdentifierQuestion.html">OrganizationIdentifierQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OrganizationNameQuestion.html">OrganizationNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RepositoryURLQuestion.html">RepositoryURLQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKit.html">SwiftKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKit/Environment.html">– Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKitError.html">SwiftKitError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateNotification.html">UpdateNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SwiftKit</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SwiftKit</span></code></pre>
+
+                </div>
+              </div>
+            <p>The SwiftKit</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV3urlSSvp"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV3urlSSvp">url</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The SwiftKit repository URL</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV7versionAA7VersionVvp"></a>
+                    <a name="//apple_ref/swift/Property/version" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV7versionAA7VersionVvp">version</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Version</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/Version.html">Version</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV11environmentAB11EnvironmentOvp"></a>
+                    <a name="//apple_ref/swift/Property/environment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV11environmentAB11EnvironmentOvp">environment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Environment</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">environment</span><span class="p">:</span> <span class="kt"><a href="../Structs/SwiftKit/Environment.html">Environment</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV10executableAA10Executable_pvp"></a>
+                    <a name="//apple_ref/swift/Property/executable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV10executableAA10Executable_pvp">executable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Executable</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">executable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executable.html">Executable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV6gitURLSSvp"></a>
+                    <a name="//apple_ref/swift/Property/gitURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV6gitURLSSvp">gitURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Git URL</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gitURL</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <a href="#/Initializer">
+                  <h3 class="section-name">Initializer</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV3url7version11environment10executableABSS_AA7VersionVAB11EnvironmentOAA10Executable_ptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(url:version:environment:executable:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV3url7version11environment10executableABSS_AA7VersionVAB11EnvironmentOAA10Executable_ptcfc">init(url:version:environment:executable:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated Initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"https://github.com/SvenTiigi/SwiftKit"</span><span class="p">,</span>
+            <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/Version.html">Version</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+            <span class="nv">environment</span><span class="p">:</span> <span class="kt"><a href="../Structs/SwiftKit/Environment.html">Environment</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+            <span class="nv">executable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executable.html">Executable</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SwiftKit repository URL. Default value <code>https://github.com/SvenTiigi/SwiftKit</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Version. Default value <code>.default</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>environment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Environment. Default value <code>.default</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>executable</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Executable</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Environment"></a>
+                <a name="//apple_ref/swift/Section/Environment" class="dashAnchor"></a>
+                <a href="#/Environment">
+                  <h3 class="section-name">Environment</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV11EnvironmentO"></a>
+                    <a name="//apple_ref/swift/Enum/Environment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV11EnvironmentO">Environment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Environment</p>
+
+                        <a href="../Structs/SwiftKit/Environment.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Environment</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Services"></a>
+                <a name="//apple_ref/swift/Section/Services" class="dashAnchor"></a>
+                <a href="#/Services">
+                  <h3 class="section-name">Services</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV10kitServiceAA0bD0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/kitService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV10kitServiceAA0bD0_pvp">kitService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The KitService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitService.html">KitService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV13updateServiceAA06UpdateD0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/updateService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV13updateServiceAA06UpdateD0_pvp">updateService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The UpdateService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">updateService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/UpdateService.html">UpdateService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Internal%20Services"></a>
+                <a name="//apple_ref/swift/Section/Internal Services" class="dashAnchor"></a>
+                <a href="#/Internal%20Services">
+                  <h3 class="section-name">Internal Services</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV16cocoaPodsServiceAA05CocoadE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/cocoaPodsService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV16cocoaPodsServiceAA05CocoadE0_pvp">cocoaPodsService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The CocoaPodsService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">cocoaPodsService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CocoaPodsService.html">CocoaPodsService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV11fileServiceAA04FileD0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/fileService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV11fileServiceAA04FileD0_pvp">fileService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The FileService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fileService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FileService.html">FileService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV10gitServiceAA03GitD0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/gitService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV10gitServiceAA03GitD0_pvp">gitService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The GitService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/GitService.html">GitService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV19kitMigrationServiceAA0bdE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/kitMigrationService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV19kitMigrationServiceAA0bdE0_pvp">kitMigrationService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The KitMigrationService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitMigrationService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitMigrationService.html">KitMigrationService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV15kitSetupServiceAA0bdE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/kitSetupService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV15kitSetupServiceAA0bdE0_pvp">kitSetupService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The KitSetupService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">kitSetupService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KitSetupService.html">KitSetupService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV21packageManagerServiceAA07PackagedE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/packageManagerService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV21packageManagerServiceAA07PackagedE0_pvp">packageManagerService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The PackageManagerService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">packageManagerService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PackageManagerService.html">PackageManagerService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV18updateCheckServiceAA06UpdatedE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/updateCheckService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV18updateCheckServiceAA06UpdatedE0_pvp">updateCheckService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The UpdateCheckService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">updateCheckService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/UpdateCheckService.html">UpdateCheckService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV25updateNotificationServiceAA06UpdatedE0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/updateNotificationService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV25updateNotificationServiceAA06UpdatedE0_pvp">updateNotificationService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The UpdateNotificationService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">updateNotificationService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/UpdateNotificationService.html">UpdateNotificationService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKitAAV15questionServiceAA08QuestionD0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/questionService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKitAAV15questionServiceAA08QuestionD0_pvp">questionService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The QuestionService</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">questionService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/QuestionService.html">QuestionService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2019 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

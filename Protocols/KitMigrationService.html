@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KitMigrationService Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/KitMigrationService" class="dashAnchor"></a>
+    <a title="KitMigrationService Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/SwiftKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        KitMigrationService Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultKitService.html">DefaultKitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DispatchQueueUpdateNotificationService.html">DispatchQueueUpdateNotificationService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GitBranch.html">GitBranch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GitConfigKey.html">GitConfigKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PackageManager.html">PackageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/QuestionVariant.html">QuestionVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UpdateResult.html">UpdateResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CocoaPodsService.html">CocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Executable.html">Executable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FileService.html">FileService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GitService.html">GitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitMigrationService.html">KitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitService.html">KitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KitSetupService.html">KitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PackageManagerService.html">PackageManagerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Question.html">Question</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QuestionService.html">QuestionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateCheckService.html">UpdateCheckService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateNotificationService.html">UpdateNotificationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UpdateService.html">UpdateService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AuthorEmailQuestion.html">AuthorEmailQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AuthorNameQuestion.html">AuthorNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CIServiceQuestion.html">CIServiceQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultKitMigrationService.html">DefaultKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultKitSetupService.html">DefaultKitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultUpdateService.html">DefaultUpdateService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisabledKitMigrationService.html">DisabledKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisabledKitSetupService.html">DisabledKitSetupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableCocoaPodsService.html">ExecutableCocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableFileService.html">ExecutableFileService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableGitService.html">ExecutableGitService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutablePackageManagerService.html">ExecutablePackageManagerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExecutableQuestionService.html">ExecutableQuestionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GenerateKitQuestion.html">GenerateKitQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GitUpdateCheckService.html">GitUpdateCheckService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit.html">Kit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Author.html">– Author</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/CIService.html">– CIService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Directory.html">– Directory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Kit/Organization.html">– Organization</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KitCreationArguments.html">KitCreationArguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KitNameQuestion.html">KitNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OrganizationIdentifierQuestion.html">OrganizationIdentifierQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OrganizationNameQuestion.html">OrganizationNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RepositoryURLQuestion.html">RepositoryURLQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKit.html">SwiftKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKit/Environment.html">– Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SwiftKitError.html">SwiftKitError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateNotification.html">UpdateNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>KitMigrationService</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">KitMigrationService</span></code></pre>
+
+                </div>
+              </div>
+            <p>The KitMigrationService</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B16MigrationServiceP7migrate3kit2atyAA0B0V_AH9DirectoryVtKF"></a>
+                    <a name="//apple_ref/swift/Method/migrate(kit:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B16MigrationServiceP7migrate3kit2atyAA0B0V_AH9DirectoryVtKF">migrate(kit:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Migrate Kit at Directory</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    If migration fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">migrate</span><span class="p">(</span><span class="nv">kit</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="p">,</span> <span class="n">at</span> <span class="nv">kitDirectory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>kit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Kit</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>kitDirectory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Kit Directory</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2019 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
