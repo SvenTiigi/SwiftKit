@@ -378,6 +378,14 @@
 			children = (
 				OBJ_63 /* Question.swift */,
 				OBJ_64 /* QuestionVariant.swift */,
+				OBJ_54 /* AuthorEmailQuestion.swift */,
+				OBJ_55 /* AuthorNameQuestion.swift */,
+				OBJ_56 /* CIServiceQuestion.swift */,
+				OBJ_57 /* GenerateKitQuestion.swift */,
+				OBJ_58 /* KitNameQuestion.swift */,
+				OBJ_59 /* OrganizationIdentifierQuestion.swift */,
+				OBJ_60 /* OrganizationNameQuestion.swift */,
+				OBJ_61 /* RepositoryURLQuestion.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -572,7 +580,6 @@
 				OBJ_51 /* Kit+Organization.swift */,
 				OBJ_52 /* Kit.swift */,
 				OBJ_62 /* KitCreationArguments.swift */,
-				OBJ_53 /* Questions */,
 			);
 			path = Kit;
 			sourceTree = "<group>";
@@ -590,21 +597,6 @@
 				OBJ_144 /* LICENSE */,
 				OBJ_145 /* README.md */,
 			);
-			sourceTree = "<group>";
-		};
-		OBJ_53 /* Questions */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_54 /* AuthorEmailQuestion.swift */,
-				OBJ_55 /* AuthorNameQuestion.swift */,
-				OBJ_56 /* CIServiceQuestion.swift */,
-				OBJ_57 /* GenerateKitQuestion.swift */,
-				OBJ_58 /* KitNameQuestion.swift */,
-				OBJ_59 /* OrganizationIdentifierQuestion.swift */,
-				OBJ_60 /* OrganizationNameQuestion.swift */,
-				OBJ_61 /* RepositoryURLQuestion.swift */,
-			);
-			path = Questions;
 			sourceTree = "<group>";
 		};
 		OBJ_67 /* Services */ = {
