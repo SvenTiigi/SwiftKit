@@ -19,10 +19,17 @@ struct UpdateNotification {
     
     // MARK: Initializer
     
+    /// Optional Initializer
+    /// Will return nil if UpdateResult isn't case available
+    ///
+    /// - Parameter updateResult: The UpdateResult
     init?(updateResult: UpdateResult) {
+        // Verify an updatable Version is available
         guard case .available(let version) = updateResult else {
+            // No updatable Version is available return nil
             return nil
         }
+        // Set Version
         self.updateVersion = version
     }
     
