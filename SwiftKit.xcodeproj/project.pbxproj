@@ -378,14 +378,14 @@
 			children = (
 				OBJ_63 /* Question.swift */,
 				OBJ_64 /* QuestionVariant.swift */,
-				OBJ_54 /* AuthorEmailQuestion.swift */,
-				OBJ_55 /* AuthorNameQuestion.swift */,
-				OBJ_56 /* CIServiceQuestion.swift */,
-				OBJ_57 /* GenerateKitQuestion.swift */,
 				OBJ_58 /* KitNameQuestion.swift */,
-				OBJ_59 /* OrganizationIdentifierQuestion.swift */,
-				OBJ_60 /* OrganizationNameQuestion.swift */,
+				OBJ_55 /* AuthorNameQuestion.swift */,
+				OBJ_54 /* AuthorEmailQuestion.swift */,
 				OBJ_61 /* RepositoryURLQuestion.swift */,
+				OBJ_56 /* CIServiceQuestion.swift */,
+				OBJ_60 /* OrganizationNameQuestion.swift */,
+				OBJ_59 /* OrganizationIdentifierQuestion.swift */,
+				OBJ_57 /* GenerateKitQuestion.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
