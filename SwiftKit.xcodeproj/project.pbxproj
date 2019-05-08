@@ -38,6 +38,7 @@
 		3DDD6E2A2282A86100456A58 /* UpdateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E292282A86100456A58 /* UpdateNotification.swift */; };
 		3DDD6E322282ABBE00456A58 /* UpdateNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E312282ABBE00456A58 /* UpdateNotificationService.swift */; };
 		3DDD6E342282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD6E332282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift */; };
+		3DECD6DB2283562A0076290E /* String+DropWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DECD6DA2283562A0076290E /* String+DropWhitespaces.swift */; };
 		OBJ_151 /* ANSIEscapeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* ANSIEscapeCode.swift */; };
 		OBJ_152 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* BackgroundColor.swift */; };
 		OBJ_153 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* Cursor.swift */; };
@@ -206,6 +207,7 @@
 		3DDD6E292282A86100456A58 /* UpdateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotification.swift; sourceTree = "<group>"; };
 		3DDD6E312282ABBE00456A58 /* UpdateNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationService.swift; sourceTree = "<group>"; };
 		3DDD6E332282AC1D00456A58 /* DispatchQueueUpdateNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueUpdateNotificationService.swift; sourceTree = "<group>"; };
+		3DECD6DA2283562A0076290E /* String+DropWhitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DropWhitespaces.swift"; sourceTree = "<group>"; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* DateFormatter+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Init.swift"; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 				OBJ_10 /* DateFormatter+Init.swift */,
 				OBJ_11 /* String+DividerLine.swift */,
 				OBJ_12 /* String+DropSuffix.swift */,
+				3DECD6DA2283562A0076290E /* String+DropWhitespaces.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1105,6 +1108,7 @@
 				OBJ_241 /* PackageManagerService.swift in Sources */,
 				OBJ_242 /* ExecutableQuestionService.swift in Sources */,
 				OBJ_243 /* QuestionService.swift in Sources */,
+				3DECD6DB2283562A0076290E /* String+DropWhitespaces.swift in Sources */,
 				OBJ_244 /* GitUpdateCheckService.swift in Sources */,
 				OBJ_245 /* UpdateCheckService.swift in Sources */,
 				OBJ_248 /* Executable.swift in Sources */,
