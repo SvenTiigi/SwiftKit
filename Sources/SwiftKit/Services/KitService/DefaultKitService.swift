@@ -309,7 +309,7 @@ extension DefaultKitService {
         if let ciService = kit.ciService {
             self.executable.print("🛠   CI-Service: \(ciService.displayName)")
         }
-        self.executable.print("📱   Targets: \(kit.applicationTargets.displayString)")
+        self.executable.print("📱  Targets: \(kit.applicationTargets.displayString)")
         self.executable.print(.dividerLine)
         self.executable.print("")
     }
