@@ -80,6 +80,7 @@ private extension XcodeProj {
     ///
     /// - Parameter target: The ApplicationTarget that should be removed
     func remove(target: ApplicationTarget) {
+        // Remove Target by ApplicationTarget raw value as native Target name
         self.remove(nativeTargetName: target.rawValue)
     }
     
