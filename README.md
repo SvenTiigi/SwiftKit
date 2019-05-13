@@ -100,7 +100,14 @@ If you wish to open the Xcode project after your Kit has been generated simply r
 ```bash
 $ swiftkit new MyAwesomeKit --open
 ```
-> Head over to the [`Arguments`](https://github.com/SvenTiigi/SwiftKit#arguments) section to learn more about the available flags
+> Head over to the [`Arguments`](https://github.com/SvenTiigi/SwiftKit#arguments) section to learn more about the available arguments
+
+In default SwiftKit will create a Kit that supports `iOS`, `tvOS`, `watchOS`, `macOS`. If you want to support only certain Targets simply run:
+
+```bash
+$ swiftkit new MyAwesomeKit --target iOS --target tvOS
+```
+> This will create a Kit which only supports `iOS` and `tvOS`
 
 ## Kit-Structure 📦
 
@@ -182,6 +189,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 
 | Long parameter | Short parameter | Description
 | ----------- | ----------- | -------------- |
+| `--target` | `-t` | The Target that should be included in your Kit 📱 |
 | `--destination` | `-d` | Where the generated Kit should be saved 💾 |
 | `--kit-name` | `-k` | The name of your Kit 📦 |
 | `--name` | `-n` | Your name 👨‍💻 |
@@ -193,10 +201,15 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--force` | `-f` | Generate the Kit without confirmation ✅ |
 | `--open` | `-o` | Open the Xcode project after your Kit has been generated 📂 |
 
-Example with all arguments set.
+Example with all arguments been set.
 
 ```bash
 swiftkit new \
+	--target iOS \
+	--target tvOS \
+	--target watchOS \
+	--target macOS \
+	--destination ~/Desktop/MyAwesomeKit \
 	--kit-name MyAwesomeKit \
 	--name SvenTiigi \
 	--email sven.tiigi@gmail.com \
