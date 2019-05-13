@@ -133,7 +133,9 @@ extension SwiftKit {
     
     /// The XcodeProjectService
     var xcodeProjectService: XcodeProjectService {
-        return DefaultXcodeProjectService()
+        return DefaultXcodeProjectService(
+            executable: self.executable
+        )
     }
     
 }

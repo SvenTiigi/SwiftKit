@@ -12,7 +12,12 @@ import xcodeproj
 // MARK: - DefaultXcodeProjectService
 
 /// The DefaultXcodeProjectService
-struct DefaultXcodeProjectService {}
+struct DefaultXcodeProjectService {
+    
+    /// The Executable
+    let executable: Executable
+    
+}
 
 // MARK: - ServiceError
 
@@ -53,6 +58,14 @@ extension DefaultXcodeProjectService: XcodeProjectService {
             // Remove Target
             xcodeProject.remove(target: target)
         }
+        // Check if iOS is contained in Targets
+        if targets.contains(.iOS) {
+            // Remove iOS Example Target
+            _ = try? xcodeProject.removeExampleTarget(
+                executable: self.executable,
+                directory: directory
+            )
+        }
         // Try to save changes to XcodeProject
         try xcodeProject.write(path: xcodeProjectPath, override: true)
     }
@@ -67,8 +80,12 @@ private extension XcodeProj {
     ///
     /// - Parameter target: The ApplicationTarget that should be removed
     func remove(target: ApplicationTarget) {
+        self.remove(nativeTargetName: target.rawValue)
+    }
+    
+    func remove(nativeTargetName: String) {
         // Verify a native target which contains the ApplicationTarget raw value is available
-        guard let nativeTarget = self.pbxproj.nativeTargets.first(where: { $0.name.contains(target.rawValue) }) else {
+        guard let nativeTarget = self.pbxproj.nativeTargets.first(where: { $0.name.contains(nativeTargetName) }) else {
             // Native Target is unavailable
             return
         }
@@ -79,8 +96,28 @@ private extension XcodeProj {
             // Filter out any Scheme that matches the native target name
             self.sharedData?.schemes = schemes.filter { $0.name != nativeTarget.name }
         }
-        // Re-Invoke remove target to ensure to remove any additional Target (e.g. Test-Targets)
-        self.remove(target: target)
+        // Re-Invoke remove target to ensure to remove any additional Targets (e.g. Test-Targets)
+        self.remove(nativeTargetName: nativeTargetName)
+    }
+    
+    /// Remove Example Target
+    ///
+    /// - Parameters:
+    ///   - executable: The Executable to delete Example folder
+    ///   - directory: The Kit Directory
+    /// - Throws: If removing Example Target fails
+    func removeExampleTarget(executable: Executable, directory: Kit.Directory) throws {
+        // Initialize Example-Target Name
+        let exampleTargetName = "Example"
+        // Remove Example Target
+        self.remove(nativeTargetName: exampleTargetName)
+        // Check if Example Group can be retrieved from Groups
+        if let exampleGroup = self.pbxproj.groups.first(where: { $0.path == exampleTargetName }) {
+            // Delete Example Group
+            self.pbxproj.delete(object: exampleGroup)
+        }
+        // Try to remove Example Directory
+        try executable.execute("rm -rf \(directory.path)/\(exampleTargetName)")
     }
     
 }
