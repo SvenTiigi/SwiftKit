@@ -22,7 +22,8 @@ public extension SwiftKit {
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
             questionService: self.questionService,
-            updateNotificationService: self.updateNotificationService
+            updateNotificationService: self.updateNotificationService,
+            xcodeProjectService: self.xcodeProjectService
         )
     }
     

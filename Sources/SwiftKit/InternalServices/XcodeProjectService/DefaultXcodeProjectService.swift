@@ -30,13 +30,13 @@ extension DefaultXcodeProjectService {
 
 extension DefaultXcodeProjectService: XcodeProjectService {
     
-    /// Remove ApplicationTarget from Xcode-Project in Kit Directory
+    /// Remove ApplicationTargets from Xcode-Project in Kit Directory
     ///
     /// - Parameters:
-    ///   - target: The ApplicationTarget that should be removed
+    ///   - targets: The ApplicationTargets that should be removed
     ///   - directory: The Kit Directory
-    /// - Throws: If removing ApplicationTarget fails
-    func remove(target: ApplicationTarget, in directory: Kit.Directory) throws {
+    /// - Throws: If removing ApplicationTargets fails
+    func remove(targets: [ApplicationTarget], in directory: Kit.Directory) throws {
         // Initialize Path from Kit Directory path
         let path = PathKit.Path(directory.path)
         // Try to retrieve children in path
@@ -48,8 +48,11 @@ extension DefaultXcodeProjectService: XcodeProjectService {
         }
         // Try to initialize XcodeProject
         let xcodeProject = try XcodeProj(path: xcodeProjectPath)
-        // Remove Target
-        xcodeProject.remove(target: target)
+        // For each ApplicationTarget
+        for target in targets {
+            // Remove Target
+            xcodeProject.remove(target: target)
+        }
         // Try to save changes to XcodeProject
         try xcodeProject.write(path: xcodeProjectPath, override: true)
     }

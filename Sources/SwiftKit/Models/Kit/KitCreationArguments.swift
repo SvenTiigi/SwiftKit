@@ -47,8 +47,8 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
     /// The open project argument
     let openProjectArgument: Bool
     
-    /// The Schemes argument
-    let schemesArgument: [String]?
+    /// The Targets argument
+    let targetsArgument: [String]?
     
     // MARK: Initializer
     
@@ -66,7 +66,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
     ///   - organizationIdentifierArgument: The organization identifier argument
     ///   - forceArgument: The force argument
     ///   - openProjectArgument: The open project argument
-    ///   - schemesArgument: The Schemes argument
+    ///   - targetsArgument: The Targets argument
     public init(kitNameParameter: String?,
                 destinationArgument: String?,
                 kitNameArgument: String?,
@@ -78,7 +78,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
                 organizationIdentifierArgument: String?,
                 forceArgument: Bool,
                 openProjectArgument: Bool,
-                schemesArgument: [String]?) {
+                targetsArgument: [String]?) {
         self.kitNameParameter = kitNameParameter
         self.destinationArgument = destinationArgument
         self.kitNameArgument = kitNameArgument
@@ -90,7 +90,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
         self.organizationIdentifierArgument = organizationIdentifierArgument
         self.forceArgument = forceArgument
         self.openProjectArgument = openProjectArgument
-        self.schemesArgument = schemesArgument
+        self.targetsArgument = targetsArgument
     }
     
 }

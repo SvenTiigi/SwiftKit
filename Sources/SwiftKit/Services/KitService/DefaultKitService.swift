@@ -42,6 +42,9 @@ final class DefaultKitService {
     /// The UpdateNotificationService
     let updateNotificationService: UpdateNotificationService
     
+    /// The XcodeProjectService
+    let xcodeProjectService: XcodeProjectService
+    
     /// Bool if pod is available
     var isPodAvailable: Bool?
     
@@ -62,6 +65,7 @@ final class DefaultKitService {
     ///   - fileService: The FileService
     ///   - questionService: The QuestionService
     ///   - updateNotificationService: The UpdateNotificationService
+    ///   - xcodeProjectService: The XcodeProjectService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
          gitService: GitService,
@@ -70,7 +74,8 @@ final class DefaultKitService {
          kitMigrationService: KitMigrationService,
          fileService: FileService,
          questionService: QuestionService,
-         updateNotificationService: UpdateNotificationService) {
+         updateNotificationService: UpdateNotificationService,
+         xcodeProjectService: XcodeProjectService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
         self.gitService = gitService
@@ -80,6 +85,7 @@ final class DefaultKitService {
         self.fileService = fileService
         self.questionService = questionService
         self.updateNotificationService = updateNotificationService
+        self.xcodeProjectService = xcodeProjectService
     }
     
 }
@@ -147,6 +153,22 @@ extension DefaultKitService: KitService {
             self.print(error: error)
             // Return out of function
             return
+        }
+        // Check if Targets are available on argument
+        if let targets = arguments.targetsArgument {
+            // Retrieve excluded ApplicationTargets
+            let excludedTargets = ApplicationTarget.getExcludedTargets(
+                includedTargets: targets
+            )
+            do {
+                // Try to remove excluded ApplicationTargets from XcodeProject
+                try self.xcodeProjectService.remove(
+                    targets: excludedTargets,
+                    in: self.kitDirectory
+                )
+            } catch {
+                Swift.print(error.localizedDescription)
+            }
         }
         // Print Finish
         self.printFinish(with: kit)

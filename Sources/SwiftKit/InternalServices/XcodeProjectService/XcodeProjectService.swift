@@ -12,12 +12,12 @@ import Foundation
 /// The XcodeProjectService
 protocol XcodeProjectService {
     
-    /// Remove ApplicationTarget from Xcode-Project in Kit Directory
+    /// Remove ApplicationTargets from Xcode-Project in Kit Directory
     ///
     /// - Parameters:
-    ///   - target: The ApplicationTarget that should be removed
+    ///   - targets: The ApplicationTargets that should be removed
     ///   - directory: The Kit Directory
-    /// - Throws: If removing ApplicationTarget fails
-    func remove(target: ApplicationTarget, in directory: Kit.Directory) throws
+    /// - Throws: If removing ApplicationTargets fails
+    func remove(targets: [ApplicationTarget], in directory: Kit.Directory) throws
     
 }

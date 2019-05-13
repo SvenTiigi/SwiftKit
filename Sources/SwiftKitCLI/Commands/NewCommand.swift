@@ -81,10 +81,10 @@ final class NewCommand {
         description: "Open the Xcode project after your Kit has been generated 📂"
     )
     
-    /// The Schemes Argument
-    let schemesArgument = VariadicKey<String>(
-        "-s", "--schemes",
-        description: "The Schemes that should be included in your Kit 📱"
+    /// The Targets Argument
+    let targetsArgument = VariadicKey<String>(
+        "-t", "--targets",
+        description: "The Targets that should be included in your Kit 📱"
     )
     
     // MARK: Properties
@@ -151,7 +151,7 @@ extension NewCommand {
             organizationIdentifierArgument: self.organizationIdentifierArgument.value,
             forceArgument: self.forceArgument.value,
             openProjectArgument: self.openProjectArgument.value,
-            schemesArgument: self.schemesArgument.values.isEmpty ? nil : self.schemesArgument.values
+            targetsArgument: self.targetsArgument.values.isEmpty ? nil : self.targetsArgument.values
         )
     }
     
