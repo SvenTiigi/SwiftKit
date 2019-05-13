@@ -32,6 +32,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3D434B6C2289DC9200A6AF37 /* XcodeProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D434B6B2289DC9200A6AF37 /* XcodeProjectService.swift */; };
+		3D434B6E2289DD3300A6AF37 /* DefaultXcodeProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D434B6D2289DD3300A6AF37 /* DefaultXcodeProjectService.swift */; };
+		3D434B712289DEB400A6AF37 /* ApplicationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D434B702289DEB400A6AF37 /* ApplicationTarget.swift */; };
 		OBJ_276 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_251 /* Document.swift */; };
 		OBJ_277 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_252 /* Element.swift */; };
 		OBJ_278 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_253 /* Error.swift */; };
@@ -385,6 +388,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D434B6B2289DC9200A6AF37 /* XcodeProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeProjectService.swift; sourceTree = "<group>"; };
+		3D434B6D2289DD3300A6AF37 /* DefaultXcodeProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultXcodeProjectService.swift; sourceTree = "<group>"; };
+		3D434B702289DEB400A6AF37 /* ApplicationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTarget.swift; sourceTree = "<group>"; };
 		"AEXML::AEXML::Product" /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -681,6 +687,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D434B6A2289DC7F00A6AF37 /* XcodeProjectService */ = {
+			isa = PBXGroup;
+			children = (
+				3D434B6B2289DC9200A6AF37 /* XcodeProjectService.swift */,
+				3D434B6D2289DD3300A6AF37 /* DefaultXcodeProjectService.swift */,
+			);
+			path = XcodeProjectService;
+			sourceTree = "<group>";
+		};
+		3D434B6F2289DEAA00A6AF37 /* Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				3D434B702289DEB400A6AF37 /* ApplicationTarget.swift */,
+			);
+			path = Xcode;
+			sourceTree = "<group>";
+		};
 		OBJ_102 /* motor-example */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +798,7 @@
 				OBJ_35 /* QuestionService */,
 				OBJ_38 /* UpdateCheckService */,
 				OBJ_41 /* UpdateNotificationService */,
+				3D434B6A2289DC7F00A6AF37 /* XcodeProjectService */,
 			);
 			path = InternalServices;
 			sourceTree = "<group>";
@@ -1133,6 +1157,7 @@
 				OBJ_46 /* Git */,
 				OBJ_56 /* Question */,
 				OBJ_68 /* Update */,
+				3D434B6F2289DEAA00A6AF37 /* Xcode */,
 				OBJ_45 /* Executable.swift */,
 				OBJ_67 /* SwiftKitError.swift */,
 				OBJ_71 /* Version.swift */,
@@ -1783,6 +1808,7 @@
 				OBJ_383 /* String+DropWhitespaces.swift in Sources */,
 				OBJ_384 /* CocoaPodsService.swift in Sources */,
 				OBJ_385 /* ExecutableCocoaPodsService.swift in Sources */,
+				3D434B6C2289DC9200A6AF37 /* XcodeProjectService.swift in Sources */,
 				OBJ_386 /* ExecutableFileService.swift in Sources */,
 				OBJ_387 /* FileService.swift in Sources */,
 				OBJ_388 /* ExecutableGitService.swift in Sources */,
@@ -1830,7 +1856,9 @@
 				OBJ_430 /* UpdateService.swift in Sources */,
 				OBJ_431 /* SwiftKit+Environment.swift in Sources */,
 				OBJ_432 /* SwiftKit+Service.swift in Sources */,
+				3D434B6E2289DD3300A6AF37 /* DefaultXcodeProjectService.swift in Sources */,
 				OBJ_433 /* SwiftKit.swift in Sources */,
+				3D434B712289DEB400A6AF37 /* ApplicationTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
