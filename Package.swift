@@ -18,6 +18,8 @@ let package = Package(
         )
     ],
     dependencies: [
+        // xcodeproj Dependency
+        .package(url: "https://github.com/tuist/xcodeproj.git", .upToNextMajor(from: "6.7.0")),
         // SwiftCLI Dependency
         .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.2.2")),
         // Motor Dependency
@@ -27,7 +29,9 @@ let package = Package(
         // SwiftKit Target
         .target(
             name: "SwiftKit",
-            dependencies: []
+            dependencies: [
+                "xcodeproj"
+            ]
         ),
         // SwiftKitCLI Target
         .target(
