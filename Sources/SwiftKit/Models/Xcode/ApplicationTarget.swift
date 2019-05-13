@@ -21,6 +21,25 @@ enum ApplicationTarget: Codable, Equatable, Hashable, CaseIterable {
     case macOS
 }
 
+// MARK: - Array+ApplicationTarget Initializer
+
+extension Array where Element == ApplicationTarget {
+    
+    /// The display String
+    var displayString: String {
+        return self.map { $0.rawValue }.joined(separator: ", ")
+    }
+    
+    /// Initializer with optional ApplicationTarget String representation array
+    /// When passing nil `.allCases` will be used to initialize the array
+    ///
+    /// - Parameter targets: The ApplicationTarget String representation array
+    init(targets: [String]?) {
+        self = targets?.compactMap(ApplicationTarget.init) ?? ApplicationTarget.allCases
+    }
+    
+}
+
 // MARK: - RawRepresentable Initializer
 
 extension ApplicationTarget: RawRepresentable {
@@ -63,14 +82,12 @@ extension ApplicationTarget: RawRepresentable {
 
 extension ApplicationTarget {
     
-    /// Retrieve excluded ApplicationTargets from included ApplicationTarget Strings
+    /// Retrieve excluded ApplicationTargets from included ApplicationTargets
     ///
-    /// - Parameter includedTargets: The included ApplicationTarget Strings
+    /// - Parameter includedTargets: The included ApplicationTargets
     /// - Returns: The excluded ApplicationTargets
-    static func getExcludedTargets(includedTargets: [String]) -> [ApplicationTarget] {
-        let includedTargets = includedTargets.compactMap(ApplicationTarget.init)
-        let excludedTargets = ApplicationTarget.allCases.filter { !includedTargets.contains($0) }
-        return excludedTargets
+    static func getExcludedTargets(includedTargets: [ApplicationTarget]) -> [ApplicationTarget] {
+        return ApplicationTarget.allCases.filter { !includedTargets.contains($0) }
     }
     
 }

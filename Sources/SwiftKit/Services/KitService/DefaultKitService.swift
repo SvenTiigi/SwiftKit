@@ -154,21 +154,17 @@ extension DefaultKitService: KitService {
             // Return out of function
             return
         }
-        // Check if Targets are available on argument
-        if let targets = arguments.targetsArgument {
-            // Retrieve excluded ApplicationTargets
-            let excludedTargets = ApplicationTarget.getExcludedTargets(
-                includedTargets: targets
+        // Initialize excluded Targets
+        let excludedTargets = ApplicationTarget.getExcludedTargets(
+            includedTargets: kit.applicationTargets
+        )
+        // Check if excluded Targets are not empty
+        if !excludedTargets.isEmpty {
+            // Try to remove excluded ApplicationTargets from XcodeProject
+            _ = try? self.xcodeProjectService.remove(
+                targets: excludedTargets,
+                in: self.kitDirectory
             )
-            do {
-                // Try to remove excluded ApplicationTargets from XcodeProject
-                try self.xcodeProjectService.remove(
-                    targets: excludedTargets,
-                    in: self.kitDirectory
-                )
-            } catch {
-                Swift.print(error.localizedDescription)
-            }
         }
         // Print Finish
         self.printFinish(with: kit)
@@ -260,7 +256,10 @@ extension DefaultKitService {
                 name: organizationName,
                 identifier: organizationIdentifier
             ),
-            ciService: ciService
+            ciService: ciService,
+            applicationTargets: .init(
+                targets: arguments.targetsArgument
+            )
         )
     }
     // swiftlint:enable function_body_length
@@ -310,6 +309,7 @@ extension DefaultKitService {
         if let ciService = kit.ciService {
             self.executable.print("🛠   CI-Service: \(ciService.displayName)")
         }
+        self.executable.print("📱   Targets: \(kit.applicationTargets.displayString)")
         self.executable.print(.dividerLine)
         self.executable.print("")
     }
