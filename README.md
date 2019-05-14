@@ -221,6 +221,11 @@ swiftkit new \
 	--open
 ```
 
+## Featured on
+
+* [Swift Weekly](http://digest.swiftweekly.com/issues/swift-weekly-issue-157-175911)
+* [iOS Goodies](https://ios-goodies.com/post/184763118641/week-281)
+
 ## Contributing
 Contributions are very welcome 🙌 🤓
 
