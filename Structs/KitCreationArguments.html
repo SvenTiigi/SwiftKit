@@ -43,6 +43,9 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/ApplicationTarget.html">ApplicationTarget</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/GitBranch.html">GitBranch</a>
               </li>
               <li class="nav-group-task">
@@ -62,6 +65,9 @@
           <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Extensions/DateFormatter.html">DateFormatter</a>
               </li>
@@ -112,6 +118,9 @@
               <li class="nav-group-task">
                 <a href="../Protocols/UpdateService.html">UpdateService</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/XcodeProjectService.html">XcodeProjectService</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -134,6 +143,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DefaultUpdateService.html">DefaultUpdateService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultXcodeProjectService.html">DefaultXcodeProjectService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultXcodeProjectService/ServiceError.html">– ServiceError</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DisabledKitMigrationService.html">DisabledKitMigrationService</a>
@@ -531,6 +546,33 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B17CreationArgumentsV15targetsArgumentSaySSGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/targetsArgument" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B17CreationArgumentsV15targetsArgumentSaySSGSgvp">targetsArgument</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Targets argument</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">targetsArgument</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -545,9 +587,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit0B17CreationArgumentsV16kitNameParameter19destinationArgument0efI006authorfI00j5EmailI021repositoryURLArgument09ciServiceI0012organizationfI00p10IdentifierI005forceI0011openProjectI0ACSSSg_A8OS2btcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(kitNameParameter:destinationArgument:kitNameArgument:authorNameArgument:authorEmailArgument:repositoryURLArgument:ciServiceArgument:organizationNameArgument:organizationIdentifierArgument:forceArgument:openProjectArgument:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B17CreationArgumentsV16kitNameParameter19destinationArgument0efI006authorfI00j5EmailI021repositoryURLArgument09ciServiceI0012organizationfI00p10IdentifierI005forceI0011openProjectI0ACSSSg_A8OS2btcfc">init(kitNameParameter:destinationArgument:kitNameArgument:authorNameArgument:authorEmailArgument:repositoryURLArgument:ciServiceArgument:organizationNameArgument:organizationIdentifierArgument:forceArgument:openProjectArgument:)</a>
+                    <a name="/s:8SwiftKit0B17CreationArgumentsV16kitNameParameter19destinationArgument0efI006authorfI00j5EmailI021repositoryURLArgument09ciServiceI0012organizationfI00p10IdentifierI005forceI0011openProjectI007targetsI0ACSSSg_A8PS2bSaySSGSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(kitNameParameter:destinationArgument:kitNameArgument:authorNameArgument:authorEmailArgument:repositoryURLArgument:ciServiceArgument:organizationNameArgument:organizationIdentifierArgument:forceArgument:openProjectArgument:targetsArgument:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B17CreationArgumentsV16kitNameParameter19destinationArgument0efI006authorfI00j5EmailI021repositoryURLArgument09ciServiceI0012organizationfI00p10IdentifierI005forceI0011openProjectI007targetsI0ACSSSg_A8PS2bSaySSGSgtcfc">init(kitNameParameter:destinationArgument:kitNameArgument:authorNameArgument:authorEmailArgument:repositoryURLArgument:ciServiceArgument:organizationNameArgument:organizationIdentifierArgument:forceArgument:openProjectArgument:targetsArgument:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -572,7 +614,8 @@
             <span class="nv">organizationNameArgument</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
             <span class="nv">organizationIdentifierArgument</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
             <span class="nv">forceArgument</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
-            <span class="nv">openProjectArgument</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+            <span class="nv">openProjectArgument</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+            <span class="nv">targetsArgument</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
@@ -709,6 +752,18 @@
                               <td>
                                 <div>
                                   <p>The open project argument</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>targetsArgument</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Targets argument</p>
                                 </div>
                               </td>
                             </tr>

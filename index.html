@@ -42,6 +42,9 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/ApplicationTarget.html">ApplicationTarget</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/GitBranch.html">GitBranch</a>
               </li>
               <li class="nav-group-task">
@@ -61,6 +64,9 @@
           <li class="nav-group-name">
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Extensions/DateFormatter.html">DateFormatter</a>
               </li>
@@ -111,6 +117,9 @@
               <li class="nav-group-task">
                 <a href="Protocols/UpdateService.html">UpdateService</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Protocols/XcodeProjectService.html">XcodeProjectService</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -133,6 +142,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/DefaultUpdateService.html">DefaultUpdateService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultXcodeProjectService.html">DefaultXcodeProjectService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultXcodeProjectService/ServiceError.html">– ServiceError</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/DisabledKitMigrationService.html">DisabledKitMigrationService</a>
@@ -311,7 +326,15 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 </code></pre>
 
 <blockquote>
-<p>Head over to the <a href="https://github.com/SvenTiigi/SwiftKit#arguments"><code>Arguments</code></a> section to learn more about the available flags</p>
+<p>Head over to the <a href="https://github.com/SvenTiigi/SwiftKit#arguments"><code>Arguments</code></a> section to learn more about the available arguments</p>
+</blockquote>
+
+<p>In default SwiftKit will create a Kit that supports <code>iOS</code>, <code>tvOS</code>, <code>watchOS</code>, <code>macOS</code>. If you want to support only certain Targets simply run:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>swiftkit new MyAwesomeKit <span class="nt">--target</span> iOS <span class="nt">--target</span> tvOS
+</code></pre>
+
+<blockquote>
+<p>This will create a Kit which only supports <code>iOS</code> and <code>tvOS</code></p>
 </blockquote>
 <h2 id='kit-structure' class='heading'>Kit-Structure 📦</h2>
 
@@ -427,6 +450,11 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 </tr>
 </thead><tbody>
 <tr>
+<td><code>--target</code></td>
+<td><code>-t</code></td>
+<td>The Target that should be included in your Kit 📱</td>
+</tr>
+<tr>
 <td><code>--destination</code></td>
 <td><code>-d</code></td>
 <td>Where the generated Kit should be saved 💾</td>
@@ -478,8 +506,13 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 </tr>
 </tbody></table>
 
-<p>Example with all arguments set.</p>
+<p>Example with all arguments been set.</p>
 <pre class="highlight shell"><code>swiftkit new <span class="se">\</span>
+    <span class="nt">--target</span> iOS <span class="se">\</span>
+    <span class="nt">--target</span> tvOS <span class="se">\</span>
+    <span class="nt">--target</span> watchOS <span class="se">\</span>
+    <span class="nt">--target</span> macOS <span class="se">\</span>
+    <span class="nt">--destination</span> ~/Desktop/MyAwesomeKit <span class="se">\</span>
     <span class="nt">--kit-name</span> MyAwesomeKit <span class="se">\</span>
     <span class="nt">--name</span> SvenTiigi <span class="se">\</span>
     <span class="nt">--email</span> sven.tiigi@gmail.com <span class="se">\</span>
@@ -490,6 +523,12 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
     <span class="nt">--force</span> <span class="se">\</span>
     <span class="nt">--open</span>
 </code></pre>
+<h2 id='featured-on' class='heading'>Featured on</h2>
+
+<ul>
+<li><a href="http://digest.swiftweekly.com/issues/swift-weekly-issue-157-175911">Swift Weekly</a></li>
+<li><a href="https://ios-goodies.com/post/184763118641/week-281">iOS Goodies</a></li>
+</ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
 <p>Contributions are very welcome 🙌 🤓</p>
