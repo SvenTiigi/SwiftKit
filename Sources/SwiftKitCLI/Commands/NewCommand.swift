@@ -81,6 +81,12 @@ final class NewCommand {
         description: "Open the Xcode project after your Kit has been generated 📂"
     )
     
+    /// The variadic Target Argument
+    let targetArgument = VariadicKey<String>(
+        "-t", "--target",
+        description: "The Target that should be included in your Kit 📱"
+    )
+    
     // MARK: Properties
     
     /// The KitService
@@ -144,7 +150,8 @@ extension NewCommand {
             organizationNameArgument: self.organizationNameArgument.value,
             organizationIdentifierArgument: self.organizationIdentifierArgument.value,
             forceArgument: self.forceArgument.value,
-            openProjectArgument: self.openProjectArgument.value
+            openProjectArgument: self.openProjectArgument.value,
+            targetsArgument: self.targetArgument.values.isEmpty ? nil : self.targetArgument.values
         )
     }
     

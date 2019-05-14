@@ -42,6 +42,9 @@ final class DefaultKitService {
     /// The UpdateNotificationService
     let updateNotificationService: UpdateNotificationService
     
+    /// The XcodeProjectService
+    let xcodeProjectService: XcodeProjectService
+    
     /// Bool if pod is available
     var isPodAvailable: Bool?
     
@@ -62,6 +65,7 @@ final class DefaultKitService {
     ///   - fileService: The FileService
     ///   - questionService: The QuestionService
     ///   - updateNotificationService: The UpdateNotificationService
+    ///   - xcodeProjectService: The XcodeProjectService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
          gitService: GitService,
@@ -70,7 +74,8 @@ final class DefaultKitService {
          kitMigrationService: KitMigrationService,
          fileService: FileService,
          questionService: QuestionService,
-         updateNotificationService: UpdateNotificationService) {
+         updateNotificationService: UpdateNotificationService,
+         xcodeProjectService: XcodeProjectService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
         self.gitService = gitService
@@ -80,6 +85,7 @@ final class DefaultKitService {
         self.fileService = fileService
         self.questionService = questionService
         self.updateNotificationService = updateNotificationService
+        self.xcodeProjectService = xcodeProjectService
     }
     
 }
@@ -147,6 +153,18 @@ extension DefaultKitService: KitService {
             self.print(error: error)
             // Return out of function
             return
+        }
+        // Initialize excluded Targets
+        let excludedTargets = ApplicationTarget.getExcludedTargets(
+            includedTargets: kit.applicationTargets
+        )
+        // Check if excluded Targets are not empty
+        if !excludedTargets.isEmpty {
+            // Try to remove excluded ApplicationTargets from XcodeProject
+            _ = try? self.xcodeProjectService.remove(
+                targets: excludedTargets,
+                in: self.kitDirectory
+            )
         }
         // Print Finish
         self.printFinish(with: kit)
@@ -238,7 +256,10 @@ extension DefaultKitService {
                 name: organizationName,
                 identifier: organizationIdentifier
             ),
-            ciService: ciService
+            ciService: ciService,
+            applicationTargets: .init(
+                targets: arguments.targetsArgument
+            )
         )
     }
     // swiftlint:enable function_body_length
@@ -288,6 +309,7 @@ extension DefaultKitService {
         if let ciService = kit.ciService {
             self.executable.print("🛠   CI-Service: \(ciService.displayName)")
         }
+        self.executable.print("📱  Targets: \(kit.applicationTargets.displayString)")
         self.executable.print(.dividerLine)
         self.executable.print("")
     }
