@@ -10,6 +10,8 @@ platform :ios do
     ensure_git_status_clean
     # Ensure Git branch is master
     ensure_git_branch(branch: 'master')
+    # Perform Dependency-Manager compatibility tests
+    compatibilityTests
     # Perform Tests
     tests
     # Retrieve Version from options
@@ -65,18 +67,8 @@ platform :ios do
     )
   end
 
-  desc "Runs Tests"
+  desc "Runs tests"
   lane :tests do
-    # Carthage build to ensure Carthage compatibility
-    carthage(
-      command: "build", 
-      no_skip_current: true, 
-      cache_builds: true
-    )
-    # Pod lib lint to ensure CocoaPods compatibility
-    pod_lib_lint
-    # SPM Build to ensure Swift Package Manager compatibility
-    spm(command: "build")
     # Perform iOS Tests
     scan(
       project: "KITPROJECT.xcodeproj",
@@ -91,6 +83,22 @@ platform :ios do
     )
     # Perform macOS Tests
     spm(command: "test")
+    # Delete SPM build artifacts
+    spm(command: "clean")
+  end
+
+  desc "Run Dependency-Manager compatibility tests"
+  lane :compatibilityTests do
+    # Carthage build to ensure Carthage compatibility
+    carthage(
+      command: "build", 
+      no_skip_current: true, 
+      cache_builds: true
+    )
+    # Pod lib lint to ensure CocoaPods compatibility
+    pod_lib_lint(allow_warnings: true)
+    # SPM Build to ensure Swift Package Manager compatibility
+    spm(command: "build")
     # Delete SPM build artifacts
     spm(command: "clean")
   end
