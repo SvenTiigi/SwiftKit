@@ -14,11 +14,13 @@ let package = Package(
     targets: [
         .target(
             name: "KITPROJECT",
-            dependencies: []
+            dependencies: [],
+            path: "Sources"
         ),
         .testTarget(
             name: "KITPROJECTTests",
-            dependencies: ["KITPROJECT"]
+            dependencies: ["KITPROJECT"],
+            path: "Tests"
         ),
     ]
 )
