@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         // xcodeproj Dependency
-        .package(url: "https://github.com/tuist/xcodeproj.git", .upToNextMajor(from: "6.7.0")),
+        .package(url: "https://github.com/tuist/xcodeproj.git", .exact(from: "6.7.0")),
         // SwiftCLI Dependency
         .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.2.2")),
         // Motor Dependency
