@@ -10,7 +10,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: Fastlane Build
-    displayName: Fastlane Build
+    displayName: FastlaneBuild
     pool:
       vmImage: $(vmImageName)
     steps:
