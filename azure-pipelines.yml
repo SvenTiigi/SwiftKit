@@ -6,6 +6,7 @@ variables:
   vmImageName: 'macos-latest'
 
 stages:
+
 - stage: Build
   displayName: Build stage
   jobs:
@@ -15,3 +16,13 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: fastlane ios build
+
+- stage: Test
+  displayName: Test stage
+  jobs:
+  - job: FastlaneTest
+    displayName: FastlaneTest
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - script: fastlane ios test
