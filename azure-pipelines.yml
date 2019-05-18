@@ -1,20 +1,17 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 - develop
 
-pool:
-  vmImage: 'macos-latest'
+variables:
+  vmImageName: 'macos-latest'
 
-jobs:
-- job: Build
-  steps:
-  - bash: fastlane ios build
-
-- job: Tests
-  steps:
-  - bash: fastlane ios test
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Fastlane Build
+    displayName: Fastlane Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - bash: fastlane ios build
