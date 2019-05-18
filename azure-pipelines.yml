@@ -9,9 +9,9 @@ stages:
 - stage: Build
   displayName: Build stage
   jobs:
-  - job: Fastlane Build
+  - job: FastlaneBuild
     displayName: FastlaneBuild
     pool:
       vmImage: $(vmImageName)
     steps:
-    - bash: fastlane ios build
+    - script: fastlane ios build
