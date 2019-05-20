@@ -13,10 +13,14 @@ extension Kit {
     
     /// The CIService
     enum CIService: String, Codable, Equatable, Hashable, CaseIterable {
-        /// Travis CI
+        /// Travis CI - macOS only
         case travis = "1"
+        /// Travis CI - macOS & Linux
+        case travisLinux = "2"
         /// GitLab CI
-        case gitlab = "2"
+        case gitlab = "3"
+        /// Azure Pipelines
+        case azure = "4"
     }
     
 }
@@ -29,19 +33,39 @@ extension Kit.CIService {
     var displayName: String {
         switch self {
         case .travis:
-            return "Travis CI"
+            return "Travis CI - macOS only"
+        case .travisLinux:
+            return "Travis CI - macOS & Linux"
         case .gitlab:
             return "GitLab CI"
+        case .azure:
+            return "Azure Pipelines"
         }
     }
     
-    /// The FileName
-    var fileName: String {
+    /// The source file name
+    var sourceFileName: String {
         switch self {
         case .travis:
             return ".travis.yml"
+        case .travisLinux:
+            return ".travis.linux.yml"
         case .gitlab:
             return ".gitlab-ci.yml"
+        case .azure:
+            return "azure-pipelines.yml"
+        }
+    }
+    
+    /// The target file name
+    var targetFileName: String {
+        switch self {
+        case .travis, .travisLinux:
+            return ".travis.yml"
+        case .gitlab:
+            return ".gitlab-ci.yml"
+        case .azure:
+            return "azure-pipelines.yml"
         }
     }
     

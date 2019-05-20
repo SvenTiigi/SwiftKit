@@ -136,8 +136,17 @@ extension DefaultKitMigrationService {
             }
             // Remove not choosen CIService file and discard any error
             try? self.fileManager.removeItem(
-                atPath: kitDirectory.path + "/" + ciService.fileName
+                atPath: kitDirectory.path + "/" + ciService.sourceFileName
             )
+        }
+        // Check if an CI Service is available
+        if let ciService = kit.ciService {
+            // Initialize source path
+            let sourcePath = kitDirectory.path + "/" + ciService.sourceFileName
+            // Initialize destination path
+            let destinationPath = kitDirectory.path + "/" + ciService.targetFileName
+            // Rename CI Service file name
+            try? self.fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
         }
     }
     
