@@ -1,0 +1,35 @@
+branches:
+  only:
+    - master
+    - develop
+    - /^hotfix.*$/
+    - /^feature.*$/
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+language: swift
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+      services: docker
+      env: swift=5.0
+    - os: osx
+      osx_image: xcode10.2
+
+install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      docker pull swift:$swift;
+    fi;
+
+script:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then fastlane ios tests ; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then swift test ; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      docker run -v $(pwd):/package -w /package swift:$swift /bin/sh -c "swift test";
+    fi;
