@@ -1,0 +1,20 @@
+trigger:
+- master
+- develop
+- /^hotfix.*$/
+- /^feature.*$/
+
+variables:
+  vmImageName: 'macos-latest'
+
+stages:
+
+- stage: Tests
+  displayName: Tests stage
+  jobs:
+  - job: FastlaneTests
+    displayName: FastlaneTests
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - script: fastlane ios tests
