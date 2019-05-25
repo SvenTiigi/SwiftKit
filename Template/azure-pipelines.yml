@@ -18,3 +18,13 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: fastlane ios tests
+
+- stage: Compatibility
+  displayName: Compatibility stage
+  jobs:
+  - job: DependencyManagerCompatibility
+    displayName: DependencyManagerCompatibility
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - script: fastlane ios compatibilityTests

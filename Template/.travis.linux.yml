@@ -10,26 +10,29 @@ notifications:
     on_success: change
     on_failure: always
 
+env:
+  - FASTLANE_SKIP_UPDATE_CHECK=true
+
 language: swift
 
-matrix:
+stages:
+  - Tests
+  - Compatibility
+
+jobs:
   include:
-    - os: linux
+    - stage: Tests
+      os: linux
       dist: trusty
-      sudo: required
-      services: docker
-      env: swift=5.0
-    - os: osx
+      name: macOS Tests
+      script: swift test
+    - stage: Tests
+      os: osx
       osx_image: xcode10.2
-
-install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      docker pull swift:$swift;
-    fi;
-
-script:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then fastlane ios tests ; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then swift test ; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      docker run -v $(pwd):/package -w /package swift:$swift /bin/sh -c "swift test";
-    fi;
+      name: Unit Tests
+      script: fastlane ios tests
+    - stage: Compatibility
+      os: osx
+      osx_image: xcode10.2
+      name: DependencyManager compatibility
+      script: fastlane ios compatibilityTests
