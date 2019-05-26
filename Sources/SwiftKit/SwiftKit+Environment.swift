@@ -29,7 +29,7 @@ public extension SwiftKit.Environment {
     
     /// The default Environment
     static var `default`: SwiftKit.Environment {
-        return .development
+        return .production
     }
     
 }
