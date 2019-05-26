@@ -48,7 +48,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
 - [x] `SwiftLint` Build-Phase integrated
-- [x] `CI-Service` configuration templates included (Travis, GitLab)
+- [x] `CI-Service` configuration templates included (Travis, GitLab, Azure Pipelines)
 - [x] Automatically checks if the Kit name is already taken on `CocoaPods`
 - [x] GitHub issue templates for `Bug reports` and `Feature requests`
 
