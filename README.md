@@ -50,6 +50,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 - [x] `SwiftLint` Build-Phase integrated
 - [x] `CI-Service` configuration templates included (Travis, GitLab)
 - [x] Automatically checks if the Kit name is already taken on `CocoaPods`
+- [x] GitHub issue templates for `Bug reports` and `Feature requests`
 
 ## Installation
 
