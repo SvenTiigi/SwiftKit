@@ -32,6 +32,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3DB91AB0229A8FC9002668DA /* CIServiceKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AAF229A8FC9002668DA /* CIServiceKitMigrationService.swift */; };
+		3DB91AB2229A908E002668DA /* SummarizingKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AB1229A908E002668DA /* SummarizingKitMigrationService.swift */; };
+		3DB91AB4229A93D0002668DA /* Kit+Directory+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AB3229A93D0002668DA /* Kit+Directory+Path.swift */; };
 		OBJ_281 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_256 /* Document.swift */; };
 		OBJ_282 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_257 /* Element.swift */; };
 		OBJ_283 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_258 /* Error.swift */; };
@@ -388,6 +391,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DB91AAF229A8FC9002668DA /* CIServiceKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIServiceKitMigrationService.swift; sourceTree = "<group>"; };
+		3DB91AB1229A908E002668DA /* SummarizingKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingKitMigrationService.swift; sourceTree = "<group>"; };
+		3DB91AB3229A93D0002668DA /* Kit+Directory+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kit+Directory+Path.swift"; sourceTree = "<group>"; };
 		"AEXML::AEXML::Product" /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1043,7 +1049,9 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_27 /* KitMigrationService.swift */,
+				3DB91AB1229A908E002668DA /* SummarizingKitMigrationService.swift */,
 				OBJ_25 /* DefaultKitMigrationService.swift */,
+				3DB91AAF229A8FC9002668DA /* CIServiceKitMigrationService.swift */,
 				OBJ_26 /* DisabledKitMigrationService.swift */,
 			);
 			path = KitMigrationService;
@@ -1189,7 +1197,7 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -1202,7 +1210,6 @@
 				OBJ_274 /* LICENSE */,
 				OBJ_275 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_52 /* Kit */ = {
@@ -1210,6 +1217,7 @@
 			children = (
 				OBJ_57 /* Kit.swift */,
 				OBJ_55 /* Kit+Directory.swift */,
+				3DB91AB3229A93D0002668DA /* Kit+Directory+Path.swift */,
 				OBJ_53 /* Kit+Author.swift */,
 				OBJ_54 /* Kit+CIService.swift */,
 				OBJ_56 /* Kit+Organization.swift */,
@@ -1653,7 +1661,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_262 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1817,6 +1825,7 @@
 				OBJ_397 /* KitMigrationService.swift in Sources */,
 				OBJ_398 /* DefaultKitSetupService.swift in Sources */,
 				OBJ_399 /* DisabledKitSetupService.swift in Sources */,
+				3DB91AB2229A908E002668DA /* SummarizingKitMigrationService.swift in Sources */,
 				OBJ_400 /* KitSetupService.swift in Sources */,
 				OBJ_401 /* ExecutablePackageManagerService.swift in Sources */,
 				OBJ_402 /* PackageManagerService.swift in Sources */,
@@ -1848,6 +1857,7 @@
 				OBJ_428 /* QuestionVariant.swift in Sources */,
 				OBJ_429 /* RepositoryURLQuestion.swift in Sources */,
 				OBJ_430 /* SwiftKitError.swift in Sources */,
+				3DB91AB4229A93D0002668DA /* Kit+Directory+Path.swift in Sources */,
 				OBJ_431 /* UpdateNotification.swift in Sources */,
 				OBJ_432 /* UpdateResult.swift in Sources */,
 				OBJ_433 /* Version.swift in Sources */,
@@ -1857,6 +1867,7 @@
 				OBJ_437 /* DefaultUpdateService.swift in Sources */,
 				OBJ_438 /* UpdateService.swift in Sources */,
 				OBJ_439 /* SwiftKit+Environment.swift in Sources */,
+				3DB91AB0229A8FC9002668DA /* CIServiceKitMigrationService.swift in Sources */,
 				OBJ_440 /* SwiftKit+Service.swift in Sources */,
 				OBJ_441 /* SwiftKit.swift in Sources */,
 			);

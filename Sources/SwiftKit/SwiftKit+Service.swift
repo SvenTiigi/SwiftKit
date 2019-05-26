@@ -69,8 +69,15 @@ extension SwiftKit {
         // Switch on Environment
         switch self.environment {
         case .production, .development:
-            // Use DefaultKitMigrationService
-            return DefaultKitMigrationService()
+            // Use SummarizingKitMigrationService
+            return SummarizingKitMigrationService(
+                kitMigrationServices: [
+                    DefaultKitMigrationService(),
+                    CIServiceKitMigrationService(
+                        xcodeProjectService: self.xcodeProjectService
+                    )
+                ]
+            )
         case .test:
             // Use DisabledKitMigrationService
             return DisabledKitMigrationService()

@@ -17,10 +17,7 @@ struct KitNameQuestion {
     
     /// The optional Kit name computed by the Kit Directory
     var kitName: String? {
-        return self.kitDirectory.path
-            .drop(suffix: "/")
-            .components(separatedBy: "/")
-            .last
+        return self.kitDirectory.path.lastComponent
     }
     
 }

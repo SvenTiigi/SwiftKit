@@ -44,11 +44,6 @@ extension DefaultKitMigrationService: KitMigrationService {
             in: kitDirectory,
             for: kit
         )
-        // Migrate CIService in Kit Directory
-        self.migrateCIService(
-            in: kitDirectory,
-            for: kit
-        )
     }
     
 }
@@ -66,7 +61,7 @@ extension DefaultKitMigrationService {
         // Initialize current File Name
         let currentFileName = URL(fileURLWithPath: #file).lastPathComponent
         // Verify Item Names are available for contents of Kit Directory
-        guard let itemNames = try? self.fileManager.contentsOfDirectory(atPath: kitDirectory.path) else {
+        guard let itemNames = try? self.fileManager.contentsOfDirectory(atPath: kitDirectory.path.rawValue) else {
             // Item Names are unavailable return
             return
         }
@@ -78,9 +73,11 @@ extension DefaultKitMigrationService {
                 continue
             }
             // Initialize Item Path
-            let itemPath = kitDirectory.path + "/" + itemName
+            let itemPath = kitDirectory.path.appending(itemName).rawValue
             // Initialize new Item Path
-            let newItemPath = kitDirectory.path + "/" + itemName.replacing(placeholders: kit.placeholders)
+            let newItemPath = kitDirectory.path.appending(
+                itemName.replacing(placeholders: kit.placeholders)
+            ).rawValue
             do {
                 // Check if Item Path is a Folder
                 if self.fileManager.isFolder(atPath: itemPath) {
@@ -112,41 +109,6 @@ extension DefaultKitMigrationService {
                 // Error occured continue with next element
                 continue
             }
-        }
-    }
-    
-}
-
-// MARK: - Migrate CIService
-
-extension DefaultKitMigrationService {
-    
-    /// Migrate CIService which will remove all CIServices files except if the Kit contains a selected CIService
-    ///
-    /// - Parameters:
-    ///   - kitDirectory: The Kit directory
-    ///   - kit: The Kit
-    func migrateCIService(in kitDirectory: Kit.Directory, for kit: Kit) {
-        // Iterate through all CIServices
-        for ciService in Kit.CIService.allCases {
-            // Verify CIService is not equal to the CIService defined in the Kit
-            guard ciService != kit.ciService else {
-                // Continue with next CIService
-                continue
-            }
-            // Remove not choosen CIService file and discard any error
-            try? self.fileManager.removeItem(
-                atPath: kitDirectory.path + "/" + ciService.sourceFileName
-            )
-        }
-        // Check if an CI Service is available
-        if let ciService = kit.ciService {
-            // Initialize source path
-            let sourcePath = kitDirectory.path + "/" + ciService.sourceFileName
-            // Initialize destination path
-            let destinationPath = kitDirectory.path + "/" + ciService.targetFileName
-            // Rename CI Service file name
-            try? self.fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
         }
     }
     

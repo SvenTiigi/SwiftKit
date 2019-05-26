@@ -43,7 +43,7 @@ extension DefaultXcodeProjectService: XcodeProjectService {
     /// - Throws: If removing ApplicationTargets fails
     func remove(targets: [ApplicationTarget], in directory: Kit.Directory) throws {
         // Initialize Path from Kit Directory path
-        let path = PathKit.Path(directory.path)
+        let path = PathKit.Path(directory.path.rawValue)
         // Try to retrieve children in path
         let children = try path.children()
         // Verify XcodeProject path can be retrieved
