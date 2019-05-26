@@ -58,6 +58,15 @@ extension CIServiceKitMigrationService: KitMigrationService {
                 atPath: kitDirectory.path.appending(ciService.sourceFileName).rawValue
             )
         }
+        // Initialize map CIServices to XcodeFileReferences and filter out selected one
+        let fileReferences = Kit.CIService.allCases
+            .map { $0.fileReference }
+            .filter { $0.name != kit.ciService?.fileReference.name }
+        // Remove not choosen CIServices FileReferences in XcodeProject
+        try? self.xcodeProjectService.remove(
+            fileReferences: fileReferences,
+            in: kitDirectory
+        )
         // Check if an CI Service is available
         if let ciService = kit.ciService {
             // Initialize source path
@@ -67,6 +76,17 @@ extension CIServiceKitMigrationService: KitMigrationService {
             // Rename CI Service file name
             try? self.fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
         }
+    }
+    
+}
+
+// MARK: - CIService+FileReference
+
+private extension Kit.CIService {
+    
+    /// The XcodeFileReference
+    var fileReference: XcodeFileReference {
+        return .init(name: self.targetFileName)
     }
     
 }
