@@ -147,10 +147,18 @@ Every generated Kit will come along with a predefined [`Fastfile`](https://githu
 
 ##### tests-Lane
 
-The `tests` lane will run your Unit-Tests and verify that your Kit is `Carthage` and `CocoaPods` compatible.
+The `tests` lane will run your Unit-Tests.
 
 ```bash
 $ fastlane ios tests
+```
+
+##### compatibilityTests-Lane
+
+The `compatibilityTests` lane will verify that your Kit is `Carthage`, `CocoaPods` and `Swift Package Manager` compatible.
+
+```bash
+$ fastlane ios compatibilityTests
 ```
 
 #### release-lane
@@ -166,10 +174,11 @@ The lane verifies various aspects of your Kit.
 | Step | Description |
 | --- | --- |
 | 1 | Ensure your are on a clean master branch |
-| 2 | Run `tests` lane |
-| 3 | Increment version |
-| 4 | Add and push Git tag |
-| 5 | Pushes the Podspec via `pod trunk push` |
+| 2 | Run `compatibilityTests ` lane |
+| 3 | Run `tests` lane |
+| 4 | Increment version |
+| 5 | Add and push Git tag |
+| 6 | Pushes the Podspec via `pod trunk push` |
 
 > ☝️ Please ensure you have registered your machine with [`pod trunk register`](https://guides.cocoapods.org/making/getting-setup-with-trunk.html) in order to successfully push the Podspec to CocoaPods
 
@@ -195,7 +204,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--name` | `-n` | Your name 👨‍💻 |
 | `--email` | `-e` | Your email address 📫 |
 | `--url` | `-u` | The repository url 🌎 |
-| `--ci-service` | `-c` | The CI-Service 🛠 (`1=Travis CI`, `2=GitLab CI`) |
+| `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` |
 | `--organization` | `-o` | The name of your organization 🏢 |
 | `--organization-identifier` | `-i` | The organization identifier 🖋 |
 | `--force` | `-f` | Generate the Kit without confirmation ✅ |
@@ -216,7 +225,7 @@ swiftkit new \
 	--url https://github.com/SvenTiigi/MyAwesomeKit \
 	--ci-service 1 \
 	--organization SvenTiigi \
-	--organization-identifier de.tiigi \
+	--organization-identifier com.tiigi \
 	--force \
 	--open
 ```
