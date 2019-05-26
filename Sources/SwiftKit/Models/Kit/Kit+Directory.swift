@@ -15,8 +15,21 @@ extension Kit {
     struct Directory: Codable, Equatable, Hashable {
 
         /// The Path
-        var path: String
+        var path: Path
         
+    }
+    
+}
+
+// MARK: - Initializer
+
+extension Kit.Directory {
+    
+    /// Initialize with path string
+    ///
+    /// - Parameter path: The path string
+    init(path: String) {
+        self.path = .init(rawValue: path)
     }
     
 }
@@ -30,7 +43,7 @@ extension Kit.Directory {
     /// - Parameter fileManager: The FileManager. Default value `.default`
     /// - Returns: The Kit Directory
     static func `default`(fileManager: FileManager = .default) -> Kit.Directory {
-        return .init(path: fileManager.currentDirectoryPath)
+        return .init(path: .init(rawValue: fileManager.currentDirectoryPath))
     }
     
 }

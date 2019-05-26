@@ -22,6 +22,11 @@ stages:
 jobs:
   include:
     - stage: Tests
+      os: linux
+      dist: trusty
+      name: macOS Tests
+      script: swift test
+    - stage: Tests
       os: osx
       osx_image: xcode10.2
       name: Unit Tests

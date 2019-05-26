@@ -27,7 +27,7 @@ struct RepositoryURLQuestion {
     /// The Git URL
     var gitURL: String? {
         return self.gitService.getRemoteURL(
-            repositoryPath: self.kitDirectory.path
+            repositoryPath: self.kitDirectory.path.rawValue
         )
     }
     

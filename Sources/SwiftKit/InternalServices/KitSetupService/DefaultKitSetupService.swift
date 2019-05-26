@@ -54,14 +54,21 @@ extension DefaultKitSetupService: KitSetupService {
     /// - Parameter kitDirectory: The Kit Directory
     /// - Throws: If setup fails
     func setup(at kitDirectory: Kit.Directory) throws {
+        // Defer execution
+        defer {
+            // Remove temporary folder and ignore error
+            try? self.fileManager.removeItem(
+                atPath: kitDirectory.path.appendedTempFolderPath.rawValue
+            )
+        }
         // Remove any previous temporary folder and ignore error
         try? self.fileManager.removeItem(
-            atPath: self.tempFolderPath(kitDirectory.path)
+            atPath: kitDirectory.path.appendedTempFolderPath.rawValue
         )
         do {
             // Make a new temporary folder
             try self.fileManager.createDirectory(
-                atPath: self.tempFolderPath(kitDirectory.path),
+                atPath: kitDirectory.path.appendedTempFolderPath.rawValue,
                 withIntermediateDirectories: true,
                 attributes: nil
             )
@@ -73,7 +80,7 @@ extension DefaultKitSetupService: KitSetupService {
             // Try to clone from Git URL
             try self.gitService.clone(
                 from: self.gitURL,
-                to: self.clonePath(kitDirectory.path),
+                to: kitDirectory.path.appendedClonePath.rawValue,
                 branch: self.gitBranch
             )
         } catch {
@@ -85,21 +92,21 @@ extension DefaultKitSetupService: KitSetupService {
         do {
             // Retrieve all Files in cloned template path
             files = try self.fileManager.contentsOfDirectory(
-                atPath: self.clonedTemplatePath(kitDirectory.path)
+                atPath: kitDirectory.path.appendedClonedTemplatePath.rawValue
             )
         } catch {
             // Throw SwiftKitError
             throw SwiftKitError.directoryContentUnavailable(
-                self.clonedTemplatePath(kitDirectory.path),
+                kitDirectory.path.appendedClonedTemplatePath.rawValue,
                 error
             )
         }
         // For each file
         for file in files {
             // Initialize Origin
-            let origin = self.clonedTemplatePath(kitDirectory.path) + "/" + file
+            let origin = kitDirectory.path.appendedClonedTemplatePath.appending(file).rawValue
             // Initialize Destination
-            let destination = kitDirectory.path + "/" + file
+            let destination = kitDirectory.path.appending(file).rawValue
             do {
                 // Copy Item from origin to destination
                 try self.fileManager.copyItem(
@@ -115,31 +122,27 @@ extension DefaultKitSetupService: KitSetupService {
                 )
             }
         }
-        // Remove temporary folder and ignore error
-        try? self.fileManager.removeItem(
-            atPath: self.tempFolderPath(kitDirectory.path)
-        )
     }
     
 }
 
-// MARK: - URLs
+// MARK: - Path+appended
 
-extension DefaultKitSetupService {
+private extension Kit.Directory.Path {
     
-    /// The Temp Folder Path
-    func tempFolderPath(_ basePath: String) -> String {
-        return basePath + "/swiftkit_temp"
+    /// The appended TempFolder Path
+    var appendedTempFolderPath: Kit.Directory.Path {
+        return self.appending("swiftkit_temp")
     }
     
-    /// The ClonePath
-    func clonePath(_ basePath: String) -> String {
-        return self.tempFolderPath(basePath) + "/SwiftKit"
+    /// The appended Clone Path
+    var appendedClonePath: Kit.Directory.Path {
+        return self.appendedTempFolderPath.appending("SwiftKit")
     }
     
-    /// The cloned Kit Template Path
-    func clonedTemplatePath(_ basePath: String) -> String {
-        return self.clonePath(basePath) + "/Template"
+    /// The appended ClondedTemplate Path
+    var appendedClonedTemplatePath: Kit.Directory.Path {
+        return self.appendedClonePath.appending("Template")
     }
     
 }

@@ -106,17 +106,12 @@ extension DefaultKitService: KitService {
         // Check if the Destination Argument Value is available
         if let destinationArgumentValue = arguments.destinationArgument {
             // Set Kit Directory Path with Destination Argument Value
-            self.kitDirectory.path = destinationArgumentValue
-            // Check if the last character is a slash
-            if self.kitDirectory.path.last == "/" {
-                // Drop the last slash
-                self.kitDirectory.path = .init(self.kitDirectory.path.dropLast())
-            }
+            self.kitDirectory.path = .init(rawValue: destinationArgumentValue)
         }
         // Check if a Kit name Parameter value is available
         if let kitName = arguments.kitNameParameter {
             // Append Kit name to Kit Directory Path
-            self.kitDirectory.path += "/\(kitName)"
+            self.kitDirectory.path.append(kitName)
         }
         // Make Kit with KitCreationArguments
         let kit = self.makeKit(with: arguments)
@@ -155,7 +150,7 @@ extension DefaultKitService: KitService {
             return
         }
         // Initialize excluded Targets
-        let excludedTargets = ApplicationTarget.getExcludedTargets(
+        let excludedTargets = XcodeApplicationTarget.getExcludedTargets(
             includedTargets: kit.applicationTargets
         )
         // Check if excluded Targets are not empty

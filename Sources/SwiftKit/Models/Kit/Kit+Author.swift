@@ -14,8 +14,6 @@ extension Kit {
     /// The Author
     struct Author: Codable, Equatable, Hashable {
         
-        // MARK: Properties
-        
         /// The name
         let name: String
         
