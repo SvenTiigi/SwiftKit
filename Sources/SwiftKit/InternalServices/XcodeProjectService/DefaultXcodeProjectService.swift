@@ -74,7 +74,7 @@ extension DefaultXcodeProjectService: XcodeProjectService {
         for fileReference in fileReferences {
             // Verify FileReference is available in XcodeProject
             guard let fileReference = xcodeProject.pbxproj.fileReferences
-                .first(where: { $0.name == fileReference.name }) else {
+                .first(where: { $0.path == fileReference.name }) else {
                     // Continue with next element
                     continue
             }
