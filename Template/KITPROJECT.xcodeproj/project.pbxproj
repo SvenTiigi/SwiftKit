@@ -442,7 +442,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = KITORGANIZATION;
+				ORGANIZATIONNAME = "KITORGANIZATION";
 				TargetAttributes = {
 					3D9C428F22745894000A6585 = {
 						CreatedOnToolsVersion = 10.2.1;
