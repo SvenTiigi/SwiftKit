@@ -150,7 +150,7 @@ extension DefaultKitService: KitService {
             return
         }
         // Initialize excluded Targets
-        let excludedTargets = ApplicationTarget.getExcludedTargets(
+        let excludedTargets = XcodeApplicationTarget.getExcludedTargets(
             includedTargets: kit.applicationTargets
         )
         // Check if excluded Targets are not empty

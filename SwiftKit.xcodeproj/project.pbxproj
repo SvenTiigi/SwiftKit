@@ -35,6 +35,7 @@
 		3DB91AB0229A8FC9002668DA /* CIServiceKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AAF229A8FC9002668DA /* CIServiceKitMigrationService.swift */; };
 		3DB91AB2229A908E002668DA /* SummarizingKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AB1229A908E002668DA /* SummarizingKitMigrationService.swift */; };
 		3DB91AB4229A93D0002668DA /* Kit+Directory+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AB3229A93D0002668DA /* Kit+Directory+Path.swift */; };
+		3DB91AB6229AB61E002668DA /* XcodeFileReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91AB5229AB61E002668DA /* XcodeFileReference.swift */; };
 		OBJ_281 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_256 /* Document.swift */; };
 		OBJ_282 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_257 /* Element.swift */; };
 		OBJ_283 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_258 /* Error.swift */; };
@@ -132,7 +133,7 @@
 		OBJ_431 /* UpdateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* UpdateNotification.swift */; };
 		OBJ_432 /* UpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* UpdateResult.swift */; };
 		OBJ_433 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* Version.swift */; };
-		OBJ_434 /* ApplicationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* ApplicationTarget.swift */; };
+		OBJ_434 /* XcodeApplicationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* XcodeApplicationTarget.swift */; };
 		OBJ_435 /* DefaultKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* DefaultKitService.swift */; };
 		OBJ_436 /* KitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* KitService.swift */; };
 		OBJ_437 /* DefaultUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* DefaultUpdateService.swift */; };
@@ -394,6 +395,7 @@
 		3DB91AAF229A8FC9002668DA /* CIServiceKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIServiceKitMigrationService.swift; sourceTree = "<group>"; };
 		3DB91AB1229A908E002668DA /* SummarizingKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingKitMigrationService.swift; sourceTree = "<group>"; };
 		3DB91AB3229A93D0002668DA /* Kit+Directory+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kit+Directory+Path.swift"; sourceTree = "<group>"; };
+		3DB91AB5229AB61E002668DA /* XcodeFileReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeFileReference.swift; sourceTree = "<group>"; };
 		"AEXML::AEXML::Product" /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -586,7 +588,7 @@
 		OBJ_72 /* UpdateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotification.swift; sourceTree = "<group>"; };
 		OBJ_73 /* UpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateResult.swift; sourceTree = "<group>"; };
 		OBJ_74 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		OBJ_76 /* ApplicationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTarget.swift; sourceTree = "<group>"; };
+		OBJ_76 /* XcodeApplicationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeApplicationTarget.swift; sourceTree = "<group>"; };
 		OBJ_79 /* DefaultKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKitService.swift; sourceTree = "<group>"; };
 		OBJ_80 /* KitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitService.swift; sourceTree = "<group>"; };
 		OBJ_82 /* DefaultUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUpdateService.swift; sourceTree = "<group>"; };
@@ -1264,7 +1266,8 @@
 		OBJ_75 /* Xcode */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_76 /* ApplicationTarget.swift */,
+				OBJ_76 /* XcodeApplicationTarget.swift */,
+				3DB91AB5229AB61E002668DA /* XcodeFileReference.swift */,
 			);
 			path = Xcode;
 			sourceTree = "<group>";
@@ -1816,6 +1819,7 @@
 				OBJ_388 /* String+DropWhitespaces.swift in Sources */,
 				OBJ_389 /* CocoaPodsService.swift in Sources */,
 				OBJ_390 /* ExecutableCocoaPodsService.swift in Sources */,
+				3DB91AB6229AB61E002668DA /* XcodeFileReference.swift in Sources */,
 				OBJ_391 /* ExecutableFileService.swift in Sources */,
 				OBJ_392 /* FileService.swift in Sources */,
 				OBJ_393 /* ExecutableGitService.swift in Sources */,
@@ -1861,7 +1865,7 @@
 				OBJ_431 /* UpdateNotification.swift in Sources */,
 				OBJ_432 /* UpdateResult.swift in Sources */,
 				OBJ_433 /* Version.swift in Sources */,
-				OBJ_434 /* ApplicationTarget.swift in Sources */,
+				OBJ_434 /* XcodeApplicationTarget.swift in Sources */,
 				OBJ_435 /* DefaultKitService.swift in Sources */,
 				OBJ_436 /* KitService.swift in Sources */,
 				OBJ_437 /* DefaultUpdateService.swift in Sources */,

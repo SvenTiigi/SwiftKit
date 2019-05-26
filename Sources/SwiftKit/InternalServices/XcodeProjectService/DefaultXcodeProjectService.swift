@@ -38,21 +38,12 @@ extension DefaultXcodeProjectService: XcodeProjectService {
     /// Remove ApplicationTargets from Xcode-Project in Kit Directory
     ///
     /// - Parameters:
-    ///   - targets: The ApplicationTargets that should be removed
+    ///   - targets: The XcodeApplicationTargets that should be removed
     ///   - directory: The Kit Directory
     /// - Throws: If removing ApplicationTargets fails
-    func remove(targets: [ApplicationTarget], in directory: Kit.Directory) throws {
-        // Initialize Path from Kit Directory path
-        let path = PathKit.Path(directory.path.rawValue)
-        // Try to retrieve children in path
-        let children = try path.children()
-        // Verify XcodeProject path can be retrieved
-        guard let xcodeProjectPath = children.first(where: { $0.extension == "xcodeproj" }) else {
-            // Throw XcodeProject not found error
-            throw ServiceError.xcodeProjectNotFound(path: path.absolute().string)
-        }
+    func remove(targets: [XcodeApplicationTarget], in directory: Kit.Directory) throws {
         // Try to initialize XcodeProject
-        let xcodeProject = try XcodeProj(path: xcodeProjectPath)
+        let xcodeProject = try XcodeProj(directory: directory)
         // For each ApplicationTarget
         for target in targets {
             // Remove Target
@@ -67,7 +58,31 @@ extension DefaultXcodeProjectService: XcodeProjectService {
             )
         }
         // Try to save changes to XcodeProject
-        try xcodeProject.write(path: xcodeProjectPath, override: true)
+        try xcodeProject.write(directory: directory)
+    }
+    
+    /// Remove FileReferences from Xcode-Project in Kit Directory
+    ///
+    /// - Parameters:
+    ///   - fileReferences: The Xcode FileReferences
+    ///   - directory: The Kit Directory
+    /// - Throws: If removing FileReferences fails
+    func remove(fileReferences: [XcodeFileReference], in directory: Kit.Directory) throws {
+        // Try to initialize XcodeProject
+        let xcodeProject = try XcodeProj(directory: directory)
+        // For each FileReference
+        for fileReference in fileReferences {
+            // Verify FileReference is available in XcodeProject
+            guard let fileReference = xcodeProject.pbxproj.fileReferences
+                .first(where: { $0.name == fileReference.name }) else {
+                    // Continue with next element
+                    continue
+            }
+            // Delete FileReference
+            xcodeProject.pbxproj.delete(object: fileReference)
+        }
+        // Try to save changes to XcodeProject
+        try xcodeProject.write(directory: directory)
     }
     
 }
@@ -76,14 +91,35 @@ extension DefaultXcodeProjectService: XcodeProjectService {
 
 private extension XcodeProj {
     
+    /// Convenience Initializer with Kit Directory
+    ///
+    /// - Parameter directory: The Kit Directory
+    /// - Throws: If XcodeProj can not be initialized
+    convenience init(directory: Kit.Directory) throws {
+        // Try to initialize XcodeProject
+        try self.init(path: .xcodeProject(in: directory))
+    }
+    
+    /// Write XcodeProject in Directory
+    ///
+    /// - Parameter directory: The Kit Directory
+    /// - Throws: If writing fails
+    func write(directory: Kit.Directory) throws {
+        // Try to save changes to XcodeProject
+        try self.write(path: .xcodeProject(in: directory), override: true)
+    }
+    
     /// Remove ApplicationTarget
     ///
-    /// - Parameter target: The ApplicationTarget that should be removed
-    func remove(target: ApplicationTarget) {
+    /// - Parameter target: The XcodeApplicationTarget that should be removed
+    func remove(target: XcodeApplicationTarget) {
         // Remove Target by ApplicationTarget raw value as native Target name
         self.remove(nativeTargetName: target.rawValue)
     }
     
+    /// Remove NativeTarget by name
+    ///
+    /// - Parameter nativeTargetName: The NativeTarget name
     func remove(nativeTargetName: String) {
         // Verify a native target which contains the ApplicationTarget raw value is available
         guard let nativeTarget = self.pbxproj.nativeTargets.first(where: { $0.name.contains(nativeTargetName) }) else {
@@ -119,6 +155,33 @@ private extension XcodeProj {
         }
         // Try to remove Example Directory
         try executable.execute("rm -rf \(directory.path)/\(exampleTargetName)")
+    }
+    
+}
+
+// MARK: - PathKit.Path+XcodeProjectPath
+
+private extension PathKit.Path {
+    
+    /// Retrieve XcodeProject Path in Directory
+    ///
+    /// - Parameter directory: The Kit Directory
+    /// - Returns: The XcodeProject Path
+    /// - Throws: If XcodeProject is not available
+    static func xcodeProject(in directory: Kit.Directory) throws -> PathKit.Path {
+        // Initialize Path from Kit Directory path
+        let path = PathKit.Path(directory.path.rawValue)
+        // Try to retrieve children in path
+        let children = try path.children()
+        // Verify XcodeProject path can be retrieved
+        guard let xcodeProjectPath = children.first(where: { $0.extension == "xcodeproj" }) else {
+            // Throw XcodeProject not found error
+            throw DefaultXcodeProjectService
+                .ServiceError
+                .xcodeProjectNotFound(path: path.absolute().string)
+        }
+        // Return XcodeProject Path
+        return xcodeProjectPath
     }
     
 }

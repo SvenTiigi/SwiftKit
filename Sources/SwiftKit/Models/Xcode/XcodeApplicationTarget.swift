@@ -1,5 +1,5 @@
 //
-//  ApplicationTarget.swift
+//  XcodeApplicationTarget.swift
 //  SwiftKit
 //
 //  Created by Sven Tiigi on 13.05.19.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-// MARK: - ApplicationTarget
+// MARK: - XcodeApplicationTarget
 
-/// The ApplicationTarget
-enum ApplicationTarget: Codable, Equatable, Hashable, CaseIterable {
+/// The XcodeApplicationTarget
+enum XcodeApplicationTarget: Codable, Equatable, Hashable, CaseIterable {
     /// iOS
     case iOS
     /// tvOS
@@ -23,7 +23,7 @@ enum ApplicationTarget: Codable, Equatable, Hashable, CaseIterable {
 
 // MARK: - Array+ApplicationTarget Initializer
 
-extension Array where Element == ApplicationTarget {
+extension Array where Element == XcodeApplicationTarget {
     
     /// The display String
     var displayString: String {
@@ -35,14 +35,14 @@ extension Array where Element == ApplicationTarget {
     ///
     /// - Parameter targets: The ApplicationTarget String representation array
     init(targets: [String]?) {
-        self = targets?.compactMap(ApplicationTarget.init) ?? ApplicationTarget.allCases
+        self = targets?.compactMap(XcodeApplicationTarget.init) ?? XcodeApplicationTarget.allCases
     }
     
 }
 
-// MARK: - RawRepresentable Initializer
+// MARK: - RawRepresentable
 
-extension ApplicationTarget: RawRepresentable {
+extension XcodeApplicationTarget: RawRepresentable {
     
     /// The corresponding value of the raw type.
     var rawValue: String {
@@ -80,14 +80,14 @@ extension ApplicationTarget: RawRepresentable {
 
 // MARK: - Get Excluded Targets
 
-extension ApplicationTarget {
+extension XcodeApplicationTarget {
     
     /// Retrieve excluded ApplicationTargets from included ApplicationTargets
     ///
     /// - Parameter includedTargets: The included ApplicationTargets
     /// - Returns: The excluded ApplicationTargets
-    static func getExcludedTargets(includedTargets: [ApplicationTarget]) -> [ApplicationTarget] {
-        return ApplicationTarget.allCases.filter { !includedTargets.contains($0) }
+    static func getExcludedTargets(includedTargets: [XcodeApplicationTarget]) -> [XcodeApplicationTarget] {
+        return XcodeApplicationTarget.allCases.filter { !includedTargets.contains($0) }
     }
     
 }

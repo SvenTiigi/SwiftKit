@@ -30,7 +30,7 @@ struct Kit: Codable, Equatable, Hashable {
     let ciService: CIService?
     
     /// The ApplicationTargets
-    let applicationTargets: [ApplicationTarget]
+    let applicationTargets: [XcodeApplicationTarget]
     
     /// The date
     let date: Date
@@ -51,7 +51,7 @@ struct Kit: Codable, Equatable, Hashable {
          repositoryURL: String,
          organization: Organization,
          ciService: CIService?,
-         applicationTargets: [ApplicationTarget],
+         applicationTargets: [XcodeApplicationTarget],
          date: Date = .init()) {
         self.name = name
         self.author = author
