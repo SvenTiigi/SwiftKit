@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GitUpdateCheckService Structure Reference</title>
+    <title>XcodeFileReference Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/GitUpdateCheckService" class="dashAnchor"></a>
-    <a title="GitUpdateCheckService Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/XcodeFileReference" class="dashAnchor"></a>
+    <a title="XcodeFileReference Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        GitUpdateCheckService Structure Reference
+        XcodeFileReference Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -238,14 +238,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>GitUpdateCheckService</h1>
+            <h1>XcodeFileReference</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GitUpdateCheckService</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">XcodeFileReference</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>The GitUpdateCheckService</p>
+            <p>The XcodeFileReference</p>
 
           </section>
           <section class="section task-group-section">
@@ -254,9 +254,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV13repositoryURLSSvp"></a>
-                    <a name="//apple_ref/swift/Property/repositoryURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV13repositoryURLSSvp">repositoryURL</a>
+                    <a name="/s:8SwiftKit18XcodeFileReferenceV4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit18XcodeFileReferenceV4nameSSvp">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,104 +264,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The repository URL</p>
+                        <p>The name</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">repositoryURL</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV03gitF0AA0cF0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/gitService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV03gitF0AA0cF0_pvp">gitService</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The GitService</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">gitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/GitService.html">GitService</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UpdateCheckService"></a>
-                <a name="//apple_ref/swift/Section/UpdateCheckService" class="dashAnchor"></a>
-                <a href="#/UpdateCheckService">
-                  <h3 class="section-name">UpdateCheckService</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV5check7versionAA0D6ResultOSgAA7VersionV_tF"></a>
-                    <a name="//apple_ref/swift/Method/check(version:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV5check7versionAA0D6ResultOSgAA7VersionV_tF">check(version:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Check for Updates</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">check</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/Version.html">Version</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/UpdateResult.html">UpdateResult</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>version</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The current installed Version</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>An UpdateResult if available</p>
                       </div>
                     </section>
                   </div>

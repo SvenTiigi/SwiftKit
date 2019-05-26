@@ -43,9 +43,6 @@
             <a href="../../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../../Enums/ApplicationTarget.html">ApplicationTarget</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Enums/GitBranch.html">GitBranch</a>
               </li>
               <li class="nav-group-task">
@@ -59,6 +56,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Enums/UpdateResult.html">UpdateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/XcodeApplicationTarget.html">XcodeApplicationTarget</a>
               </li>
             </ul>
           </li>
@@ -131,6 +131,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/AuthorNameQuestion.html">AuthorNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/CIServiceKitMigrationService.html">CIServiceKitMigrationService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/CIServiceQuestion.html">CIServiceQuestion</a>
@@ -208,6 +211,9 @@
                 <a href="../../Structs/RepositoryURLQuestion.html">RepositoryURLQuestion</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Structs/SummarizingKitMigrationService.html">SummarizingKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Structs/SwiftKit.html">SwiftKit</a>
               </li>
               <li class="nav-group-task">
@@ -221,6 +227,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/Version.html">Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/XcodeFileReference.html">XcodeFileReference</a>
               </li>
             </ul>
           </li>
@@ -255,7 +264,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Travis CI</p>
+                        <p>Travis CI - macOS only</p>
 
                       </div>
                       <div class="declaration">
@@ -263,6 +272,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">case</span> <span class="n">travis</span> <span class="o">=</span> <span class="s">"1"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V9CIServiceO11travisLinuxyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/travisLinux" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9CIServiceO11travisLinuxyA2EmF">travisLinux</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Travis CI - macOS &amp; Linux</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">travisLinux</span> <span class="o">=</span> <span class="s">"2"</span></code></pre>
 
                         </div>
                       </div>
@@ -289,7 +325,34 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">gitlab</span> <span class="o">=</span> <span class="s">"2"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">gitlab</span> <span class="o">=</span> <span class="s">"3"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V9CIServiceO5azureyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/azure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9CIServiceO5azureyA2EmF">azure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Azure Pipelines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">azure</span> <span class="o">=</span> <span class="s">"4"</span></code></pre>
 
                         </div>
                       </div>
@@ -337,9 +400,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit0B0V9CIServiceO8fileNameSSvp"></a>
-                    <a name="//apple_ref/swift/Property/fileName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B0V9CIServiceO8fileNameSSvp">fileName</a>
+                    <a name="/s:8SwiftKit0B0V9CIServiceO14sourceFileNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/sourceFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9CIServiceO14sourceFileNameSSvp">sourceFileName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -347,14 +410,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The FileName</p>
+                        <p>The source file name</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sourceFileName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit0B0V9CIServiceO14targetFileNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/targetFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B0V9CIServiceO14targetFileNameSSvp">targetFileName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The target file name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">targetFileName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

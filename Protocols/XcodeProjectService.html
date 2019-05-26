@@ -43,9 +43,6 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/ApplicationTarget.html">ApplicationTarget</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Enums/GitBranch.html">GitBranch</a>
               </li>
               <li class="nav-group-task">
@@ -59,6 +56,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/UpdateResult.html">UpdateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/XcodeApplicationTarget.html">XcodeApplicationTarget</a>
               </li>
             </ul>
           </li>
@@ -131,6 +131,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AuthorNameQuestion.html">AuthorNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CIServiceKitMigrationService.html">CIServiceKitMigrationService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/CIServiceQuestion.html">CIServiceQuestion</a>
@@ -208,6 +211,9 @@
                 <a href="../Structs/RepositoryURLQuestion.html">RepositoryURLQuestion</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/SummarizingKitMigrationService.html">SummarizingKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/SwiftKit.html">SwiftKit</a>
               </li>
               <li class="nav-group-task">
@@ -221,6 +227,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Version.html">Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/XcodeFileReference.html">XcodeFileReference</a>
               </li>
             </ul>
           </li>
@@ -245,9 +254,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit19XcodeProjectServiceP6remove7targets2inySayAA17ApplicationTargetOG_AA0B0V9DirectoryVtKF"></a>
+                    <a name="/s:8SwiftKit19XcodeProjectServiceP6remove7targets2inySayAA0C17ApplicationTargetOG_AA0B0V9DirectoryVtKF"></a>
                     <a name="//apple_ref/swift/Method/remove(targets:in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit19XcodeProjectServiceP6remove7targets2inySayAA17ApplicationTargetOG_AA0B0V9DirectoryVtKF">remove(targets:in:)</a>
+                    <a class="token" href="#/s:8SwiftKit19XcodeProjectServiceP6remove7targets2inySayAA0C17ApplicationTargetOG_AA0B0V9DirectoryVtKF">remove(targets:in:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,7 +276,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">targets</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/ApplicationTarget.html">ApplicationTarget</a></span><span class="p">],</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">targets</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/XcodeApplicationTarget.html">XcodeApplicationTarget</a></span><span class="p">],</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -283,7 +292,70 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The ApplicationTargets that should be removed</p>
+                                  <p>The XcodeApplicationTargets that should be removed</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Kit Directory</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit19XcodeProjectServiceP6remove14fileReferences2inySayAA0C13FileReferenceVG_AA0B0V9DirectoryVtKF"></a>
+                    <a name="//apple_ref/swift/Method/remove(fileReferences:in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit19XcodeProjectServiceP6remove14fileReferences2inySayAA0C13FileReferenceVG_AA0B0V9DirectoryVtKF">remove(fileReferences:in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove FileReferences from Xcode-Project in Kit Directory</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    If removing FileReferences fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">fileReferences</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/XcodeFileReference.html">XcodeFileReference</a></span><span class="p">],</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileReferences</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Xcode FileReferences</p>
                                 </div>
                               </td>
                             </tr>

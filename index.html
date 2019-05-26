@@ -42,9 +42,6 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/ApplicationTarget.html">ApplicationTarget</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Enums/GitBranch.html">GitBranch</a>
               </li>
               <li class="nav-group-task">
@@ -58,6 +55,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/UpdateResult.html">UpdateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/XcodeApplicationTarget.html">XcodeApplicationTarget</a>
               </li>
             </ul>
           </li>
@@ -130,6 +130,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/AuthorNameQuestion.html">AuthorNameQuestion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CIServiceKitMigrationService.html">CIServiceKitMigrationService</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/CIServiceQuestion.html">CIServiceQuestion</a>
@@ -207,6 +210,9 @@
                 <a href="Structs/RepositoryURLQuestion.html">RepositoryURLQuestion</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/SummarizingKitMigrationService.html">SummarizingKitMigrationService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/SwiftKit.html">SwiftKit</a>
               </li>
               <li class="nav-group-task">
@@ -220,6 +226,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Version.html">Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/XcodeFileReference.html">XcodeFileReference</a>
               </li>
             </ul>
           </li>
@@ -387,8 +396,13 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <p>Every generated Kit will come along with a predefined <a href="https://github.com/SvenTiigi/SwiftKit/blob/master/Template/fastlane/Fastfile"><code>Fastfile</code></a>.</p>
 <h5 id='tests-lane' class='heading'>tests-Lane</h5>
 
-<p>The <code>tests</code> lane will run your Unit-Tests and verify that your Kit is <code>Carthage</code> and <code>CocoaPods</code> compatible.</p>
+<p>The <code>tests</code> lane will run your Unit-Tests.</p>
 <pre class="highlight shell"><code><span class="nv">$ </span>fastlane ios tests
+</code></pre>
+<h5 id='compatibilitytests-lane' class='heading'>compatibilityTests-Lane</h5>
+
+<p>The <code>compatibilityTests</code> lane will verify that your Kit is <code>Carthage</code>, <code>CocoaPods</code> and <code>Swift Package Manager</code> compatible.</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>fastlane ios compatibilityTests
 </code></pre>
 <h4 id='release-lane' class='heading'>release-lane</h4>
 
@@ -410,18 +424,22 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 </tr>
 <tr>
 <td>2</td>
-<td>Run <code>tests</code> lane</td>
+<td>Run <code>compatibilityTests</code> lane</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Increment version</td>
+<td>Run <code>tests</code> lane</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Add and push Git tag</td>
+<td>Increment version</td>
 </tr>
 <tr>
 <td>5</td>
+<td>Add and push Git tag</td>
+</tr>
+<tr>
+<td>6</td>
 <td>Pushes the Podspec via <code>pod trunk push</code></td>
 </tr>
 </tbody></table>
@@ -482,7 +500,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <tr>
 <td><code>--ci-service</code></td>
 <td><code>-c</code></td>
-<td>The CI-Service 🛠 (<code>1=Travis CI</code>, <code>2=GitLab CI</code>)</td>
+<td>The CI-Service 🛠 <br/> <code>1 = Travis CI - macOS only</code> <br/> <code>2 = Travis CI - macOS &amp; Linux</code> <br/> <code>3 = GitLab CI</code> <br/> <code>4 = Azure Pipelines</code></td>
 </tr>
 <tr>
 <td><code>--organization</code></td>
@@ -519,7 +537,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
     <span class="nt">--url</span> https://github.com/SvenTiigi/MyAwesomeKit <span class="se">\</span>
     <span class="nt">--ci-service</span> 1 <span class="se">\</span>
     <span class="nt">--organization</span> SvenTiigi <span class="se">\</span>
-    <span class="nt">--organization-identifier</span> de.tiigi <span class="se">\</span>
+    <span class="nt">--organization-identifier</span> com.tiigi <span class="se">\</span>
     <span class="nt">--force</span> <span class="se">\</span>
     <span class="nt">--open</span>
 </code></pre>

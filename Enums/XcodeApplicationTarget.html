@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GitUpdateCheckService Structure Reference</title>
+    <title>XcodeApplicationTarget Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/GitUpdateCheckService" class="dashAnchor"></a>
-    <a title="GitUpdateCheckService Structure Reference"></a>
+    <a name="//apple_ref/swift/Enum/XcodeApplicationTarget" class="dashAnchor"></a>
+    <a title="XcodeApplicationTarget Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        GitUpdateCheckService Structure Reference
+        XcodeApplicationTarget Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -238,14 +238,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>GitUpdateCheckService</h1>
+            <h1>XcodeApplicationTarget</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GitUpdateCheckService</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">XcodeApplicationTarget</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
 
                 </div>
               </div>
-            <p>The GitUpdateCheckService</p>
+            <p>The XcodeApplicationTarget</p>
 
           </section>
           <section class="section task-group-section">
@@ -254,9 +254,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV13repositoryURLSSvp"></a>
-                    <a name="//apple_ref/swift/Property/repositoryURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV13repositoryURLSSvp">repositoryURL</a>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO3iOSyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/iOS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO3iOSyA2CmF">iOS</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,14 +264,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The repository URL</p>
+                        <p>iOS</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">repositoryURL</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">iOS</span></code></pre>
 
                         </div>
                       </div>
@@ -281,9 +281,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV03gitF0AA0cF0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/gitService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV03gitF0AA0cF0_pvp">gitService</a>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO4tvOSyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/tvOS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO4tvOSyA2CmF">tvOS</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -291,14 +291,68 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The GitService</p>
+                        <p>tvOS</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">gitService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/GitService.html">GitService</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">tvOS</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO7watchOSyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/watchOS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO7watchOSyA2CmF">watchOS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>watchOS</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">watchOS</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO5macOSyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/macOS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO5macOSyA2CmF">macOS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>macOS</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">macOS</span></code></pre>
 
                         </div>
                       </div>
@@ -309,19 +363,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/UpdateCheckService"></a>
-                <a name="//apple_ref/swift/Section/UpdateCheckService" class="dashAnchor"></a>
-                <a href="#/UpdateCheckService">
-                  <h3 class="section-name">UpdateCheckService</h3>
+                <a name="/RawRepresentable"></a>
+                <a name="//apple_ref/swift/Section/RawRepresentable" class="dashAnchor"></a>
+                <a href="#/RawRepresentable">
+                  <h3 class="section-name">RawRepresentable</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit21GitUpdateCheckServiceV5check7versionAA0D6ResultOSgAA7VersionV_tF"></a>
-                    <a name="//apple_ref/swift/Method/check(version:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit21GitUpdateCheckServiceV5check7versionAA0D6ResultOSgAA7VersionV_tF">check(version:)</a>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO8rawValueSSvp"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO8rawValueSSvp">rawValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -329,14 +383,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Check for Updates</p>
+                        <p>The corresponding value of the raw type.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">check</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/Version.html">Version</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/UpdateResult.html">UpdateResult</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO8rawValueACSgSS_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO8rawValueACSgSS_tcfc">init(rawValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with the specified raw value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">?(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -347,12 +428,69 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>version</em>
+                                <em>rawValue</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The current installed Version</p>
+                                  <p>The raw value to use for the new instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Get%20Excluded%20Targets"></a>
+                <a name="//apple_ref/swift/Section/Get Excluded Targets" class="dashAnchor"></a>
+                <a href="#/Get%20Excluded%20Targets">
+                  <h3 class="section-name">Get Excluded Targets</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftKit22XcodeApplicationTargetO18getExcludedTargets08includedH0SayACGAF_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getExcludedTargets(includedTargets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit22XcodeApplicationTargetO18getExcludedTargets08includedH0SayACGAF_tFZ">getExcludedTargets(includedTargets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve excluded ApplicationTargets from included ApplicationTargets</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getExcludedTargets</span><span class="p">(</span><span class="nv">includedTargets</span><span class="p">:</span> <span class="p">[</span><span class="kt">XcodeApplicationTarget</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">XcodeApplicationTarget</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>includedTargets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The included ApplicationTargets</p>
                                 </div>
                               </td>
                             </tr>
@@ -361,7 +499,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>An UpdateResult if available</p>
+                        <p>The excluded ApplicationTargets</p>
                       </div>
                     </section>
                   </div>
