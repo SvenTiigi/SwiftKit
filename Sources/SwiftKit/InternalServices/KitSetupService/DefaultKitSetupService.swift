@@ -54,6 +54,13 @@ extension DefaultKitSetupService: KitSetupService {
     /// - Parameter kitDirectory: The Kit Directory
     /// - Throws: If setup fails
     func setup(at kitDirectory: Kit.Directory) throws {
+        // Defer execution
+        defer {
+            // Remove temporary folder and ignore error
+            try? self.fileManager.removeItem(
+                atPath: kitDirectory.path.appendedTempFolderPath.rawValue
+            )
+        }
         // Remove any previous temporary folder and ignore error
         try? self.fileManager.removeItem(
             atPath: kitDirectory.path.appendedTempFolderPath.rawValue
@@ -115,49 +122,28 @@ extension DefaultKitSetupService: KitSetupService {
                 )
             }
         }
-        // Remove temporary folder and ignore error
-        try? self.fileManager.removeItem(
-            atPath: kitDirectory.path.appendedTempFolderPath.rawValue
-        )
     }
     
 }
 
-// MARK: - URLs
-
-extension DefaultKitSetupService {
-    
-//    /// The Temp Folder Path
-//    func tempFolderPath(_ basePath: String) -> String {
-//        return basePath + "/swiftkit_temp"
-//    }
-//
-//    /// The ClonePath
-//    func clonePath(_ basePath: String) -> String {
-//        return self.tempFolderPath(basePath) + "/SwiftKit"
-//    }
-//
-//    /// The cloned Kit Template Path
-//    func clonedTemplatePath(_ basePath: String) -> String {
-//        return self.clonePath(basePath) + "/Template"
-//    }
-    
-}
+// MARK: - Path+appended
 
 private extension Kit.Directory.Path {
     
+    /// The appended TempFolder Path
     var appendedTempFolderPath: Kit.Directory.Path {
         return self.appending("swiftkit_temp")
     }
     
+    /// The appended Clone Path
     var appendedClonePath: Kit.Directory.Path {
         return self.appendedTempFolderPath.appending("SwiftKit")
     }
     
+    /// The appended ClondedTemplate Path
     var appendedClonedTemplatePath: Kit.Directory.Path {
         return self.appendedClonePath.appending("Template")
     }
-    
     
 }
 
