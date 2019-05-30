@@ -46,7 +46,7 @@ extension SwiftKit {
     
     /// The CocoaPodsService
     var cocoaPodsService: CocoaPodsService {
-        return ExecutableCocoaPodsService(
+        return DispatchQueueExecutableCocoaPodsService(
             executable: self.executable
         )
     }

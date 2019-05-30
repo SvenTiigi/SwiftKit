@@ -5,7 +5,6 @@
 //  Created by Sven Tiigi on 01.05.19.
 //
 
-import Dispatch
 import Foundation
 
 // MARK: - DefaultKitService
@@ -204,8 +203,11 @@ extension DefaultKitService {
             ),
             predefinedAnswer: arguments.kitNameParameter ?? arguments.kitNameArgument
         )
-        // Check for CocoaPod with name
-        self.checkForCocoaPod(name: kitName)
+        // Check if a Pod with the given KitName is available
+        self.cocoaPodsService.isPodAvailable(forName: kitName) { [weak self] isPodAvailable in
+            // Set isPodAvailable
+            self?.isPodAvailable = isPodAvailable
+        }
         // 2. Initialize AuthorName
         let authorName = self.questionService.ask(
             AuthorNameQuestion(
@@ -271,23 +273,6 @@ extension DefaultKitService {
         )
     }
     // swiftlint:enable function_body_length
-    
-}
-
-// MARK: - Check for CocoaPod
-
-extension DefaultKitService {
-    
-    /// Check for CocoaPod name availability
-    ///
-    /// - Parameter name: The Pod name
-    func checkForCocoaPod(name: String) {
-        // Dispatch on background queue as isPodAvailable API might take some time
-        DispatchQueue.global().async { [weak self] in
-            // Set isPodAvailable
-            self?.isPodAvailable = self?.cocoaPodsService.isPodAvailable(forName: name)
-        }
-    }
     
 }
 

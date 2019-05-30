@@ -14,8 +14,9 @@ protocol CocoaPodsService {
     
     /// Check if a Pod with a given name is available
     ///
-    /// - Parameter name: The Pod name
-    /// - Returns: Bool if Pod is available / already taken
-    func isPodAvailable(forName name: String) -> Bool
+    /// - Parameters:
+    ///   - name: The Pod name
+    ///   - completion: The completion closure
+    func isPodAvailable(forName name: String, _ completion: @escaping (Bool) -> Void)
     
 }

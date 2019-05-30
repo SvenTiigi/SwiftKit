@@ -88,7 +88,7 @@
 		OBJ_391 /* String+DropSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* String+DropSuffix.swift */; };
 		OBJ_392 /* String+DropWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* String+DropWhitespaces.swift */; };
 		OBJ_393 /* CocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* CocoaPodsService.swift */; };
-		OBJ_394 /* ExecutableCocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ExecutableCocoaPodsService.swift */; };
+		OBJ_394 /* DispatchQueueExecutableCocoaPodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* DispatchQueueExecutableCocoaPodsService.swift */; };
 		OBJ_395 /* ExecutableFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ExecutableFileService.swift */; };
 		OBJ_396 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* FileService.swift */; };
 		OBJ_397 /* ExecutableGitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ExecutableGitService.swift */; };
@@ -461,7 +461,7 @@
 		OBJ_165 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		OBJ_168 /* BuildPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildPhase.swift; sourceTree = "<group>"; };
 		OBJ_169 /* PBXBuildFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBXBuildFile.swift; sourceTree = "<group>"; };
-		OBJ_17 /* ExecutableCocoaPodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCocoaPodsService.swift; sourceTree = "<group>"; };
+		OBJ_17 /* DispatchQueueExecutableCocoaPodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExecutableCocoaPodsService.swift; sourceTree = "<group>"; };
 		OBJ_170 /* PBXBuildPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBXBuildPhase.swift; sourceTree = "<group>"; };
 		OBJ_171 /* PBXBuildRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBXBuildRule.swift; sourceTree = "<group>"; };
 		OBJ_172 /* PBXCopyFilesBuildPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBXCopyFilesBuildPhase.swift; sourceTree = "<group>"; };
@@ -850,7 +850,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_16 /* CocoaPodsService.swift */,
-				OBJ_17 /* ExecutableCocoaPodsService.swift */,
+				OBJ_17 /* DispatchQueueExecutableCocoaPodsService.swift */,
 			);
 			path = CocoaPodsService;
 			sourceTree = "<group>";
@@ -1836,7 +1836,7 @@
 				OBJ_392 /* String+DropWhitespaces.swift in Sources */,
 				OBJ_393 /* CocoaPodsService.swift in Sources */,
 				3D8577B6229FC5C800D54435 /* KitCreationEnvironmentConfig.swift in Sources */,
-				OBJ_394 /* ExecutableCocoaPodsService.swift in Sources */,
+				OBJ_394 /* DispatchQueueExecutableCocoaPodsService.swift in Sources */,
 				OBJ_395 /* ExecutableFileService.swift in Sources */,
 				OBJ_396 /* FileService.swift in Sources */,
 				OBJ_397 /* ExecutableGitService.swift in Sources */,
