@@ -250,7 +250,9 @@ SwiftKit will use those values and skip the corresponding console question when 
     "organizationIdentifier": "de.tiigi"   
 }
 ```
-> ☝️ The environment config values will only be used if no argument for the corresponding value is present. 
+> Path: `~/.swiftkit-env.json`
+
+The environment config values will only be used if no argument for the corresponding value is present.
 
 ## Featured on
 
