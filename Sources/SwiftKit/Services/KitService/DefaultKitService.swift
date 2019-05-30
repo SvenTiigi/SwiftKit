@@ -288,7 +288,7 @@ extension DefaultKitService {
     func printSummary(for kit: Kit, at directory: Kit.Directory) {
         self.executable.print("\(kit.name) Summary:")
         self.executable.print(.dividerLine)
-        self.executable.print("💾  Destination: \(directory.path)")
+        self.executable.print("💾  Destination: \(directory.path.rawValue)")
         self.executable.print("📦  Kit Name: \(kit.name)")
         self.executable.print("👨‍💻  Author: \(kit.author.name)")
         if !kit.author.email.isEmpty {
