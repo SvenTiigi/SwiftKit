@@ -18,6 +18,7 @@ public extension SwiftKit {
             executable: self.executable,
             gitService: self.gitService,
             cocoaPodsService: self.cocoaPodsService,
+            kitCreationEnvironmentConfigService: self.kitCreationEnvironmentConfigService,
             kitSetupService: self.kitSetupService,
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
@@ -64,24 +65,9 @@ extension SwiftKit {
         )
     }
     
-    /// The KitMigrationService
-    var kitMigrationService: KitMigrationService {
-        // Switch on Environment
-        switch self.environment {
-        case .production, .development:
-            // Use SummarizingKitMigrationService
-            return SummarizingKitMigrationService(
-                kitMigrationServices: [
-                    DefaultKitMigrationService(),
-                    CIServiceKitMigrationService(
-                        xcodeProjectService: self.xcodeProjectService
-                    )
-                ]
-            )
-        case .test:
-            // Use DisabledKitMigrationService
-            return DisabledKitMigrationService()
-        }
+    /// The KitCreationEnvironmentConfigService
+    var kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService {
+        return DefaultKitCreationEnvironmentConfigService()
     }
     
     /// The KitSetupService
@@ -105,6 +91,26 @@ extension SwiftKit {
         case .test:
             // Use DisabledKitSetupService
             return DisabledKitSetupService()
+        }
+    }
+    
+    /// The KitMigrationService
+    var kitMigrationService: KitMigrationService {
+        // Switch on Environment
+        switch self.environment {
+        case .production, .development:
+            // Use SummarizingKitMigrationService
+            return SummarizingKitMigrationService(
+                kitMigrationServices: [
+                    DefaultKitMigrationService(),
+                    CIServiceKitMigrationService(
+                        xcodeProjectService: self.xcodeProjectService
+                    )
+                ]
+            )
+        case .test:
+            // Use DisabledKitMigrationService
+            return DisabledKitMigrationService()
         }
     }
     

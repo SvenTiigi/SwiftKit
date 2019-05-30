@@ -27,6 +27,9 @@ final class DefaultKitService {
     /// The CocoaPodsService
     let cocoaPodsService: CocoaPodsService
     
+    /// The KitCreationEnvironmentConfigService
+    let kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService
+    
     /// The KitSetupService
     let kitSetupService: KitSetupService
     
@@ -60,6 +63,7 @@ final class DefaultKitService {
     ///   - executable: The Executable
     ///   - gitService: The GitService
     ///   - cocoaPodsService: The CocoaPodsService
+    ///   - kitCreationEnvironmentConfigService: The KitCreationEnvironmentConfigService
     ///   - kitSetupService: The KitSetupService
     ///   - kitMigrationService: The KitMigrationService
     ///   - fileService: The FileService
@@ -70,6 +74,7 @@ final class DefaultKitService {
          executable: Executable,
          gitService: GitService,
          cocoaPodsService: CocoaPodsService,
+         kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService,
          kitSetupService: KitSetupService,
          kitMigrationService: KitMigrationService,
          fileService: FileService,
@@ -80,6 +85,7 @@ final class DefaultKitService {
         self.executable = executable
         self.gitService = gitService
         self.cocoaPodsService = cocoaPodsService
+        self.kitCreationEnvironmentConfigService = kitCreationEnvironmentConfigService
         self.kitSetupService = kitSetupService
         self.kitMigrationService = kitMigrationService
         self.fileService = fileService
@@ -98,6 +104,13 @@ extension DefaultKitService: KitService {
     ///
     /// - Parameter arguments: The KitCreationArguments
     func create(with arguments: KitCreationArguments) {
+        // Initialize mutable KitCreationArguments
+        var arguments = arguments
+        // Check if a KitCreationEnvironmentConfig is available
+        if let environmentConfig = try? self.kitCreationEnvironmentConfigService.get() {
+            // Re-Initialize arguments by migrating it with the KitCreationEnvironmentConfig
+            arguments = environmentConfig.migrate(arguments)
+        }
         // Retrieve UpdateNotification
         self.updateNotificationService.getUpdateNotification { [weak self] updateNotification in
             // Set UpdateNotification
