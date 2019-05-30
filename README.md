@@ -231,6 +231,27 @@ swiftkit new \
 	--open
 ```
 
+## Environment-Configuration
+
+You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
+
+- authorName
+- authorEmail
+- organizationName
+- organizationIdentifier
+
+SwiftKit will use those values and skip the corresponding console question when running `swiftkit new`.
+
+```json
+{
+    "authorName": "Sven Tiigi",
+    "authorEmail": "sven.tiigi@gmail.com",
+    "organizationName": "Sven Tiigi",
+    "organizationIdentifier": "de.tiigi"   
+}
+```
+> ☝️ The environment config values will only be used if no argument for the corresponding value is present. 
+
 ## Featured on
 
 * [Swift Weekly](http://digest.swiftweekly.com/issues/swift-weekly-issue-157-175911)
