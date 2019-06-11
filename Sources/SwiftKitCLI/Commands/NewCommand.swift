@@ -21,6 +21,12 @@ final class NewCommand {
     
     // MARK: Arguments
     
+    /// The template repository URL Argument
+    let templateRepositoryURLArgument = Key<String>(
+        "-r", "--repository",
+        description: "The template repository url"
+    )
+    
     /// The destination Argument
     let destinationArgument = Key<String>(
         "-d", "--destination",
@@ -141,6 +147,7 @@ extension NewCommand {
     var kitCreationArguments: KitCreationArguments {
         return .init(
             kitNameParameter: self.kitNameParameter.value,
+            templateRepositoryURLArgument: self.templateRepositoryURLArgument.value,
             destinationArgument: self.destinationArgument.value,
             kitNameArgument: self.kitNameArgument.value,
             authorNameArgument: self.authorNameArgument.value,

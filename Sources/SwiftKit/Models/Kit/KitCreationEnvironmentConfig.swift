@@ -59,6 +59,7 @@ extension KitCreationEnvironmentConfig {
         let organizationIdentifierArgument = arguments.organizationIdentifierArgument ?? self.organizationIdentifier
         return .init(
             kitNameParameter: arguments.kitNameParameter,
+            templateRepositoryURLArgument: arguments.templateRepositoryURLArgument,
             destinationArgument: arguments.destinationArgument,
             kitNameArgument: arguments.kitNameArgument,
             authorNameArgument: authorNameArgument,

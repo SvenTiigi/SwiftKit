@@ -152,7 +152,10 @@ extension DefaultKitService: KitService {
         self.printStart(with: kit)
         do {
             // Try to setup Kit
-            try self.kitSetupService.setup(at: self.kitDirectory)
+            try self.kitSetupService.setup(
+                with: arguments,
+                at: self.kitDirectory
+            )
             // Try to migrate Kit
             try self.kitMigrationService.migrate(kit: kit, at: self.kitDirectory)
         } catch {

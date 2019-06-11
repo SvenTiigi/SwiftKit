@@ -51,9 +51,11 @@ extension DefaultKitSetupService: KitSetupService {
     
     /// Setup Kit at Directory
     ///
-    /// - Parameter kitDirectory: The Kit Directory
+    /// - Parameters:
+    ///   - arguments: The KitCreation Arguments
+    ///   - kitDirectory: The Kit Directory
     /// - Throws: If setup fails
-    func setup(at kitDirectory: Kit.Directory) throws {
+    func setup(with arguments: KitCreationArguments, at kitDirectory: Kit.Directory) throws {
         // Defer execution
         defer {
             // Remove temporary folder and ignore error
@@ -79,7 +81,7 @@ extension DefaultKitSetupService: KitSetupService {
         do {
             // Try to clone from Git URL
             try self.gitService.clone(
-                from: self.gitURL,
+                from: arguments.templateRepositoryURLArgument ?? self.gitURL,
                 to: kitDirectory.path.appendedClonePath.rawValue,
                 branch: self.gitBranch
             )

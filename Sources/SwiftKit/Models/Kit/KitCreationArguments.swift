@@ -17,6 +17,9 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
     /// The Kit name parameter
     let kitNameParameter: String?
     
+    /// The template repository URL Argument
+    let templateRepositoryURLArgument: String?
+    
     /// The destination argument
     let destinationArgument: String?
     
@@ -56,6 +59,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
     ///
     /// - Parameters:
     ///   - kitNameParameter: The Kit name parameter
+    ///   - templateRepositoryURLArgument: The template repository URL Argument
     ///   - destinationArgument: The destination argument
     ///   - kitNameArgument: The Kit name argument
     ///   - authorNameArgument: The author name argument
@@ -68,6 +72,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
     ///   - openProjectArgument: The open project argument
     ///   - targetsArgument: The Targets argument
     public init(kitNameParameter: String?,
+                templateRepositoryURLArgument: String?,
                 destinationArgument: String?,
                 kitNameArgument: String?,
                 authorNameArgument: String?,
@@ -80,6 +85,7 @@ public struct KitCreationArguments: Codable, Equatable, Hashable {
                 openProjectArgument: Bool,
                 targetsArgument: [String]?) {
         self.kitNameParameter = kitNameParameter
+        self.templateRepositoryURLArgument = templateRepositoryURLArgument
         self.destinationArgument = destinationArgument
         self.kitNameArgument = kitNameArgument
         self.authorNameArgument = authorNameArgument

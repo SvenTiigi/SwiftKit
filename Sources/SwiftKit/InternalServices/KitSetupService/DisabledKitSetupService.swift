@@ -14,9 +14,11 @@ struct DisabledKitSetupService: KitSetupService {
     
     /// Setup Kit at Directory
     ///
-    /// - Parameter kitDirectory: The Kit Directory
+    /// - Parameters:
+    ///   - arguments: The KitCreation Arguments
+    ///   - kitDirectory: The Kit Directory
     /// - Throws: If setup fails
-    func setup(at kitDirectory: Kit.Directory) throws {
+    func setup(with arguments: KitCreationArguments, at kitDirectory: Kit.Directory) throws {
         // Simply do nothing
     }
     
