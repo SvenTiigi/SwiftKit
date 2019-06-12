@@ -208,6 +208,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` |
 | `--organization` | `-o` | The name of your organization 🏢 |
 | `--organization-identifier` | `-i` | The organization identifier 🖋 |
+| `--repository` | `-r` | The SwiftKit template repository url 🌎 |
 | `--force` | `-f` | Generate the Kit without confirmation ✅ |
 | `--open` | `-o` | Open the Xcode project after your Kit has been generated 📂 |
 
@@ -227,6 +228,7 @@ swiftkit new \
 	--ci-service 1 \
 	--organization SvenTiigi \
 	--organization-identifier com.tiigi \
+	--repository https://github.com/SvenTiigi/SwiftKit.git \
 	--force \
 	--open
 ```
@@ -235,10 +237,12 @@ swiftkit new \
 
 You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
 
-- authorName
-- authorEmail
-- organizationName
-- organizationIdentifier
+| Key | Description |
+| ----------- | ----------- |
+| `authorName` | The author name |
+| `authorEmail` | The author email address |
+| `organizationName` | The organization name |
+| `organizationIdentifier` | The organization identifier |
 
 SwiftKit will use those values and skip the corresponding console question when running `swiftkit new`.
 
@@ -258,6 +262,7 @@ The environment config values will only be used if no argument for the correspon
 
 * [Swift Weekly](http://digest.swiftweekly.com/issues/swift-weekly-issue-157-175911)
 * [iOS Goodies](https://ios-goodies.com/post/184763118641/week-281)
+* [Mybridge - Swift Open Source for the Past Month (v.May 2019)](https://medium.mybridge.co/swift-open-source-for-the-past-month-v-may-2019-c0f6a0d61e34)
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
