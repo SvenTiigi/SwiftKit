@@ -34,6 +34,9 @@
                 <a href="Classes/DefaultKitService.html">DefaultKitService</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/DispatchQueueExecutableCocoaPodsService.html">DispatchQueueExecutableCocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/DispatchQueueUpdateNotificationService.html">DispatchQueueUpdateNotificationService</a>
               </li>
             </ul>
@@ -91,6 +94,9 @@
                 <a href="Protocols/GitService.html">GitService</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/KitCreationEnvironmentConfigService.html">KitCreationEnvironmentConfigService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/KitMigrationService.html">KitMigrationService</a>
               </li>
               <li class="nav-group-task">
@@ -138,6 +144,12 @@
                 <a href="Structs/CIServiceQuestion.html">CIServiceQuestion</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/DefaultKitCreationEnvironmentConfigService.html">DefaultKitCreationEnvironmentConfigService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultKitCreationEnvironmentConfigService/ServiceError.html">– ServiceError</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/DefaultKitMigrationService.html">DefaultKitMigrationService</a>
               </li>
               <li class="nav-group-task">
@@ -157,9 +169,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/DisabledKitSetupService.html">DisabledKitSetupService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/ExecutableCocoaPodsService.html">ExecutableCocoaPodsService</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ExecutableFileService.html">ExecutableFileService</a>
@@ -196,6 +205,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/KitCreationArguments.html">KitCreationArguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KitCreationEnvironmentConfig.html">KitCreationEnvironmentConfig</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/KitNameQuestion.html">KitNameQuestion</a>
@@ -288,8 +300,9 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <li>[x] Fastlane already integrated for <code>tests</code> and <code>release</code></li>
 <li>[x] <code>Jazzy</code> to generate documentation</li>
 <li>[x] <code>SwiftLint</code> Build-Phase integrated</li>
-<li>[x] <code>CI-Service</code> configuration templates included (Travis, GitLab)</li>
+<li>[x] <code>CI-Service</code> configuration templates included (Travis, GitLab, Azure Pipelines)</li>
 <li>[x] Automatically checks if the Kit name is already taken on <code>CocoaPods</code></li>
+<li>[x] GitHub issue templates for <code>Bug reports</code> and <code>Feature requests</code></li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='mint' class='heading'>Mint 🌱</h3>
@@ -513,6 +526,11 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 <td>The organization identifier 🖋</td>
 </tr>
 <tr>
+<td><code>--repository</code></td>
+<td><code>-r</code></td>
+<td>The SwiftKit template repository url 🌎</td>
+</tr>
+<tr>
 <td><code>--force</code></td>
 <td><code>-f</code></td>
 <td>Generate the Kit without confirmation ✅</td>
@@ -538,14 +556,58 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
     <span class="nt">--ci-service</span> 1 <span class="se">\</span>
     <span class="nt">--organization</span> SvenTiigi <span class="se">\</span>
     <span class="nt">--organization-identifier</span> com.tiigi <span class="se">\</span>
+    <span class="nt">--repository</span> https://github.com/SvenTiigi/SwiftKit.git <span class="se">\</span>
     <span class="nt">--force</span> <span class="se">\</span>
     <span class="nt">--open</span>
 </code></pre>
+<h2 id='environment-configuration' class='heading'>Environment-Configuration</h2>
+
+<p>You can place a JSON environment configuration file in your home directory <code>~/.swiftkit-env.json</code> to provide default values for:</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>authorName</code></td>
+<td>The author name</td>
+</tr>
+<tr>
+<td><code>authorEmail</code></td>
+<td>The author email address</td>
+</tr>
+<tr>
+<td><code>organizationName</code></td>
+<td>The organization name</td>
+</tr>
+<tr>
+<td><code>organizationIdentifier</code></td>
+<td>The organization identifier</td>
+</tr>
+</tbody></table>
+
+<p>SwiftKit will use those values and skip the corresponding console question when running <code>swiftkit new</code>.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"authorName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sven Tiigi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authorEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sven.tiigi@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organizationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sven Tiigi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organizationIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de.tiigi"</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Path: <code>~/.swiftkit-env.json</code></p>
+</blockquote>
+
+<p>The environment config values will only be used if no argument for the corresponding value is present.</p>
 <h2 id='featured-on' class='heading'>Featured on</h2>
 
 <ul>
 <li><a href="http://digest.swiftweekly.com/issues/swift-weekly-issue-157-175911">Swift Weekly</a></li>
 <li><a href="https://ios-goodies.com/post/184763118641/week-281">iOS Goodies</a></li>
+<li><a href="https://medium.mybridge.co/swift-open-source-for-the-past-month-v-may-2019-c0f6a0d61e34">Mybridge - Swift Open Source for the Past Month (v.May 2019)</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 

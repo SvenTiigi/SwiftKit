@@ -35,6 +35,9 @@
                 <a href="../Classes/DefaultKitService.html">DefaultKitService</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/DispatchQueueExecutableCocoaPodsService.html">DispatchQueueExecutableCocoaPodsService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/DispatchQueueUpdateNotificationService.html">DispatchQueueUpdateNotificationService</a>
               </li>
             </ul>
@@ -92,6 +95,9 @@
                 <a href="../Protocols/GitService.html">GitService</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/KitCreationEnvironmentConfigService.html">KitCreationEnvironmentConfigService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/KitMigrationService.html">KitMigrationService</a>
               </li>
               <li class="nav-group-task">
@@ -139,6 +145,12 @@
                 <a href="../Structs/CIServiceQuestion.html">CIServiceQuestion</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/DefaultKitCreationEnvironmentConfigService.html">DefaultKitCreationEnvironmentConfigService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultKitCreationEnvironmentConfigService/ServiceError.html">– ServiceError</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/DefaultKitMigrationService.html">DefaultKitMigrationService</a>
               </li>
               <li class="nav-group-task">
@@ -158,9 +170,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DisabledKitSetupService.html">DisabledKitSetupService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/ExecutableCocoaPodsService.html">ExecutableCocoaPodsService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ExecutableFileService.html">ExecutableFileService</a>
@@ -197,6 +206,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/KitCreationArguments.html">KitCreationArguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KitCreationEnvironmentConfig.html">KitCreationEnvironmentConfig</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/KitNameQuestion.html">KitNameQuestion</a>
@@ -254,9 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit0B12SetupServiceP5setup2atyAA0B0V9DirectoryV_tKF"></a>
-                    <a name="//apple_ref/swift/Method/setup(at:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B12SetupServiceP5setup2atyAA0B0V9DirectoryV_tKF">setup(at:)</a>
+                    <a name="/s:8SwiftKit0B12SetupServiceP5setup4with2atyAA0B17CreationArgumentsV_AA0B0V9DirectoryVtKF"></a>
+                    <a name="//apple_ref/swift/Method/setup(with:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit0B12SetupServiceP5setup4with2atyAA0B17CreationArgumentsV_AA0B0V9DirectoryVtKF">setup(with:at:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -276,7 +288,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setup</span><span class="p">(</span><span class="n">at</span> <span class="nv">kitDirectory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setup</span><span class="p">(</span><span class="n">with</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt"><a href="../Structs/KitCreationArguments.html">KitCreationArguments</a></span><span class="p">,</span> <span class="n">at</span> <span class="nv">kitDirectory</span><span class="p">:</span> <span class="kt"><a href="../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -284,6 +296,18 @@
                         <h4>Parameters</h4>
                         <table class="graybox">
                           <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arguments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The KitCreation Arguments</p>
+                                </div>
+                              </td>
+                            </tr>
                             <tr>
                               <td>
                                 <code>

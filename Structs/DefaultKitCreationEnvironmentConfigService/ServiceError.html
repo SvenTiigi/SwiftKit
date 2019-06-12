@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Directory Structure Reference</title>
+    <title>ServiceError Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Directory" class="dashAnchor"></a>
-    <a title="Directory Structure Reference"></a>
+    <a name="//apple_ref/swift/Enum/ServiceError" class="dashAnchor"></a>
+    <a title="ServiceError Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        Directory Structure Reference
+        ServiceError Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -250,14 +250,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Directory</h1>
+            <h1>ServiceError</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Directory</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">ServiceError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                 </div>
               </div>
-            <p>The Directory</p>
+            <p>The ServiceError</p>
 
           </section>
           <section class="section task-group-section">
@@ -266,9 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftKit0B0V9DirectoryV4pathAE4PathVvp"></a>
-                    <a name="//apple_ref/swift/Property/path" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B0V9DirectoryV4pathAE4PathVvp">path</a>
+                    <a name="/s:8SwiftKit07DefaultB32CreationEnvironmentConfigServiceV0G5ErrorO24homeDirectoryUnavailableyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/homeDirectoryUnavailable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftKit07DefaultB32CreationEnvironmentConfigServiceV0G5ErrorO24homeDirectoryUnavailableyA2EmF">homeDirectoryUnavailable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -276,173 +276,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Path</p>
+                        <p>HomeDirectory is unavailable</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Kit/Directory/Path.html">Path</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">homeDirectoryUnavailable</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Path"></a>
-                <a name="//apple_ref/swift/Section/Path" class="dashAnchor"></a>
-                <a href="#/Path">
-                  <h3 class="section-name">Path</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKit0B0V9DirectoryV4PathV"></a>
-                    <a name="//apple_ref/swift/Struct/Path" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B0V9DirectoryV4PathV">Path</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The Path</p>
-
-                        <a href="../../Structs/Kit/Directory/Path.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Path</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Initializer"></a>
-                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
-                <a href="#/Initializer">
-                  <h3 class="section-name">Initializer</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKit0B0V9DirectoryV4pathAESS_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(path:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B0V9DirectoryV4pathAESS_tcfc">init(path:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize with path string</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>path</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The path string</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Defaults"></a>
-                <a name="//apple_ref/swift/Section/Defaults" class="dashAnchor"></a>
-                <a href="#/Defaults">
-                  <h3 class="section-name">Defaults</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftKit0B0V9DirectoryV7default11fileManagerAESo06NSFileF0C_tFZ"></a>
-                    <a name="//apple_ref/swift/Method/default(fileManager:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftKit0B0V9DirectoryV7default11fileManagerAESo06NSFileF0C_tFZ">default(fileManager:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Retrieve default Kit.Directory</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="p">`</span><span class="nv">default</span><span class="p">`(</span><span class="nv">fileManager</span><span class="p">:</span> <span class="kt">FileManager</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Kit.html">Kit</a></span><span class="o">.</span><span class="kt">Directory</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>fileManager</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The FileManager. Default value <code>.default</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The Kit Directory</p>
                       </div>
                     </section>
                   </div>
