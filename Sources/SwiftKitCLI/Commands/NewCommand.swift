@@ -24,7 +24,7 @@ final class NewCommand {
     /// The template repository URL Argument
     let templateRepositoryURLArgument = Key<String>(
         "-r", "--repository",
-        description: "The template repository url"
+        description: "The SwiftKit template repository url 🌎"
     )
     
     /// The destination Argument
