@@ -16,9 +16,9 @@ public extension SwiftKit {
         return DefaultKitService(
             kitDirectory: .default(),
             executable: self.executable,
-            gitService: self.gitService,
             cocoaPodsService: self.cocoaPodsService,
             kitCreationEnvironmentConfigService: self.kitCreationEnvironmentConfigService,
+            kitCreationService: self.kitCreationService,
             kitSetupService: self.kitSetupService,
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
@@ -68,6 +68,14 @@ extension SwiftKit {
     /// The KitCreationEnvironmentConfigService
     var kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService {
         return DefaultKitCreationEnvironmentConfigService()
+    }
+    
+    /// The KitCreationService
+    var kitCreationService: KitCreationService {
+        return QuestionKitCreationService(
+            questionService: self.questionService,
+            gitService: self.gitService
+        )
     }
     
     /// The KitSetupService

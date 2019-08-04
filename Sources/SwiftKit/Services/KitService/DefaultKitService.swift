@@ -20,14 +20,14 @@ final class DefaultKitService {
     /// The Executable
     let executable: Executable
     
-    /// The GitService
-    let gitService: GitService
-    
     /// The CocoaPodsService
     let cocoaPodsService: CocoaPodsService
     
     /// The ReadableKitCreationEnvironmentConfigService
     let kitCreationEnvironmentConfigService: ReadableKitCreationEnvironmentConfigService
+    
+    /// The KitCreationService
+    let kitCreationService: KitCreationService
     
     /// The KitSetupService
     let kitSetupService: KitSetupService
@@ -57,9 +57,9 @@ final class DefaultKitService {
     /// - Parameters:
     ///   - kitDirectory: The Kit Directory
     ///   - executable: The Executable
-    ///   - gitService: The GitService
     ///   - cocoaPodsService: The CocoaPodsService
     ///   - kitCreationEnvironmentConfigService: The ReadableKitCreationEnvironmentConfigService
+    ///   - kitCreationService: The KitCreationService
     ///   - kitSetupService: The KitSetupService
     ///   - kitMigrationService: The KitMigrationService
     ///   - fileService: The FileService
@@ -67,9 +67,9 @@ final class DefaultKitService {
     ///   - updateNotificationService: The UpdateNotificationService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
-         gitService: GitService,
          cocoaPodsService: CocoaPodsService,
          kitCreationEnvironmentConfigService: ReadableKitCreationEnvironmentConfigService,
+         kitCreationService: KitCreationService,
          kitSetupService: KitSetupService,
          kitMigrationService: KitMigrationService,
          fileService: FileService,
@@ -77,9 +77,9 @@ final class DefaultKitService {
          updateNotificationService: UpdateNotificationService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
-        self.gitService = gitService
         self.cocoaPodsService = cocoaPodsService
         self.kitCreationEnvironmentConfigService = kitCreationEnvironmentConfigService
+        self.kitCreationService = kitCreationService
         self.kitSetupService = kitSetupService
         self.kitMigrationService = kitMigrationService
         self.fileService = fileService
@@ -97,17 +97,17 @@ extension DefaultKitService: KitService {
     ///
     /// - Parameter arguments: The KitCreationArguments
     func create(with arguments: KitCreationArguments) {
+        // Retrieve UpdateNotification
+        self.updateNotificationService.getUpdateNotification { [weak self] updateNotification in
+            // Set UpdateNotification
+            self?.updateNotification = updateNotification
+        }
         // Initialize mutable KitCreationArguments
         var arguments = arguments
         // Check if a KitCreationEnvironmentConfig is available
         if let environmentConfig = try? self.kitCreationEnvironmentConfigService.get() {
             // Re-Initialize arguments by migrating it with the KitCreationEnvironmentConfig
             arguments = environmentConfig.migrate(arguments)
-        }
-        // Retrieve UpdateNotification
-        self.updateNotificationService.getUpdateNotification { [weak self] updateNotification in
-            // Set UpdateNotification
-            self?.updateNotification = updateNotification
         }
         // Check if the Destination Argument Value is available
         if let destinationArgumentValue = arguments.destinationArgument {
@@ -119,8 +119,18 @@ extension DefaultKitService: KitService {
             // Append Kit name to Kit Directory Path
             self.kitDirectory.path.append(kitName)
         }
-        // Make Kit with KitCreationArguments
-        let kit = self.makeKit(with: arguments)
+        // Create Kit with Argument in Kit Directory
+        let kit = self.kitCreationService.createKit(
+            with: arguments,
+            in: self.kitDirectory,
+            kitNameCompletion: { [weak self] kitName in
+                // Check if a Pod with the given KitName is available
+                self?.cocoaPodsService.isPodAvailable(forName: kitName) { [weak self] isPodAvailable in
+                    // Set isPodAvailable
+                    self?.isPodAvailable = isPodAvailable
+                }
+            }
+        )
         // Print Summary
         self.printSummary(
             for: kit,
@@ -171,96 +181,6 @@ extension DefaultKitService: KitService {
         // Show UpdateNotification on Executable if available
         self.updateNotification?.show(on: self.executable)
     }
-    
-}
-
-// MARK: - Make Kit
-
-extension DefaultKitService {
-    
-    // swiftlint:disable function_body_length
-    /// Make Kit
-    ///
-    /// - Parameter arguments: The KitArguments
-    /// - Returns: The Kit
-    func makeKit(with arguments: KitCreationArguments) -> Kit {
-        // 1. Initialize Kit name
-        let kitName = self.questionService.ask(
-            KitNameQuestion(
-                kitDirectory: self.kitDirectory
-            ),
-            predefinedAnswer: arguments.kitNameParameter ?? arguments.kitNameArgument
-        )
-        // Check if a Pod with the given KitName is available
-        self.cocoaPodsService.isPodAvailable(forName: kitName) { [weak self] isPodAvailable in
-            // Set isPodAvailable
-            self?.isPodAvailable = isPodAvailable
-        }
-        // 2. Initialize AuthorName
-        let authorName = self.questionService.ask(
-            AuthorNameQuestion(
-                gitService: self.gitService
-            ),
-            predefinedAnswer: arguments.authorNameArgument
-        )
-        // 3. Initialize AuthorEmail
-        let authorEmail = self.questionService.ask(
-            AuthorEmailQuestion(
-                gitService: self.gitService
-            ),
-            predefinedAnswer: arguments.authorEmailArgument
-        )
-        // 4. Initialize RepositoryURL
-        let repositoryURL = self.questionService.ask(
-            RepositoryURLQuestion(
-                kitDirectory: self.kitDirectory,
-                gitService: self.gitService,
-                kitName: kitName,
-                authorName: authorName
-            ),
-            predefinedAnswer: arguments.repositoryURLArgument
-        )
-        // 5. Initialize CIService
-        let ciService = Kit.CIService(
-            rawValue: self.questionService.ask(
-                CIServiceQuestion(),
-                predefinedAnswer: arguments.ciServiceArgument
-            )
-        )
-        // 6. Initialize OrganizationName
-        let organizationName = self.questionService.ask(
-            OrganizationNameQuestion(
-                kitName: kitName
-            ),
-            predefinedAnswer: arguments.organizationNameArgument
-        )
-        // 7. Initialize OrganizationIdentifier
-        let organizationIdentifier = self.questionService.ask(
-            OrganizationIdentifierQuestion(
-                organizationName: organizationName,
-                kitName: kitName
-            ),
-            predefinedAnswer: arguments.organizationIdentifierArgument
-        ).dropWhitespaces()
-        // Return Kit
-        return .init(
-            name: kitName,
-            author: .init(
-                name: authorName,
-                email: authorEmail
-            ),
-            repositoryURL: repositoryURL,
-            organization: .init(
-                name: organizationName,
-                identifier: organizationIdentifier
-            ),
-            ciService: ciService,
-            applicationTargets: .init(
-                targets: arguments.targetsArgument
-            )
-        )
-    }
-    // swiftlint:enable function_body_length
     
 }
 
