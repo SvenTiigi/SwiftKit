@@ -69,6 +69,8 @@ dependencies: [
 ]
 ```
 
+Alternatively navigate to your Xcode project, select `Swift Packages` and click the `+` icon to search for `KITPROJECT`.
+
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate KITPROJECT into your project manually. Simply drag the `Sources` Folder into your Xcode project.
