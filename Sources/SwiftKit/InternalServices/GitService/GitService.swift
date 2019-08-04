@@ -12,6 +12,12 @@ import Foundation
 /// The GitService
 protocol GitService {
     
+    /// Initialize Git Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If initialization fails
+    func initialize(in repositoryPath: String) throws
+    
     /// Retrieve value for GitConfigKey
     ///
     /// - Parameter key: The GitConfigKey
@@ -39,18 +45,26 @@ protocol GitService {
     /// - Throws: If cloning fails
     func clone(from url: String, to path: String, branch: GitBranch) throws
     
-    /// Initialize Git Repository
+    /// Add Remote Origin URL
+    ///
+    /// - Parameters:
+    ///   - url: The origin URL
+    ///   - repositoryPath: The repository path
+    /// - Throws: If adding failed
+    func addRemote(origin url: String, in repositoryPath: String) throws
+
+    /// Stage all File in repository path
     ///
     /// - Parameter repositoryPath: The repository path
-    /// - Throws: If initialization fails
-    func initialize(repositoryPath: String) throws
-
-    /// Stage all and commit with message
+    /// - Throws: If staging fails
+    func stageAll(in repositoryPath: String) throws
+    
+    /// Commit with message
     ///
     /// - Parameters:
     ///   - message: The commit message
     ///   - repositoryPath: The repository path
     /// - Throws: If staging or committing fails
-    func commitAll(message: String, in repositoryPath: String) throws
+    func commit(message: String, in repositoryPath: String) throws
     
 }

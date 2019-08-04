@@ -44,9 +44,6 @@ final class DefaultKitService {
     /// The UpdateNotificationService
     let updateNotificationService: UpdateNotificationService
     
-    /// The XcodeProjectService
-    let xcodeProjectService: XcodeProjectService
-    
     /// Bool if pod is available
     var isPodAvailable: Bool?
     
@@ -68,7 +65,6 @@ final class DefaultKitService {
     ///   - fileService: The FileService
     ///   - questionService: The QuestionService
     ///   - updateNotificationService: The UpdateNotificationService
-    ///   - xcodeProjectService: The XcodeProjectService
     init(kitDirectory: Kit.Directory,
          executable: Executable,
          gitService: GitService,
@@ -78,8 +74,7 @@ final class DefaultKitService {
          kitMigrationService: KitMigrationService,
          fileService: FileService,
          questionService: QuestionService,
-         updateNotificationService: UpdateNotificationService,
-         xcodeProjectService: XcodeProjectService) {
+         updateNotificationService: UpdateNotificationService) {
         self.kitDirectory = kitDirectory
         self.executable = executable
         self.gitService = gitService
@@ -90,7 +85,6 @@ final class DefaultKitService {
         self.fileService = fileService
         self.questionService = questionService
         self.updateNotificationService = updateNotificationService
-        self.xcodeProjectService = xcodeProjectService
     }
     
 }
@@ -98,8 +92,7 @@ final class DefaultKitService {
 // MARK: - KitService
 
 extension DefaultKitService: KitService {
-    
-    // swiftlint:disable function_body_length
+
     /// Create Kit
     ///
     /// - Parameter arguments: The KitCreationArguments
@@ -158,34 +151,16 @@ extension DefaultKitService: KitService {
                 at: self.kitDirectory
             )
             // Try to migrate Kit
-            try self.kitMigrationService.migrate(kit: kit, at: self.kitDirectory)
+            try self.kitMigrationService.migrate(
+                kit: kit,
+                at: self.kitDirectory
+            )
         } catch {
             // Print cached error
             self.print(error: error)
             // Return out of function
             return
         }
-        // Initialize excluded Targets
-        let excludedTargets = XcodeApplicationTarget.getExcludedTargets(
-            includedTargets: kit.applicationTargets
-        )
-        // Check if excluded Targets are not empty
-        if !excludedTargets.isEmpty {
-            // Try to remove excluded ApplicationTargets from XcodeProject
-            _ = try? self.xcodeProjectService.remove(
-                targets: excludedTargets,
-                in: self.kitDirectory
-            )
-        }
-        // Initialize Git in Kit Directory
-        _ = try? self.gitService.initialize(
-            repositoryPath: self.kitDirectory.path.rawValue
-        )
-        // Commit all in Kit Directory
-        _ = try? self.gitService.commitAll(
-            message: "Setup \(kit.name) with SwiftKit 📦",
-            in: self.kitDirectory.path.rawValue
-        )
         // Print Finish
         self.printFinish(with: kit)
         // Verify if OpenProject Argument is present
@@ -196,7 +171,6 @@ extension DefaultKitService: KitService {
         // Show UpdateNotification on Executable if available
         self.updateNotification?.show(on: self.executable)
     }
-    // swiftlint:enable function_body_length
     
 }
 

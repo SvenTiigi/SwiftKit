@@ -24,6 +24,14 @@ struct ExecutableGitService {
 
 extension ExecutableGitService: GitService {
     
+    /// Initialize Git Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If initialization fails
+    func initialize(in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git init")
+    }
+    
     /// Retrieve value for GitConfigKey
     ///
     /// - Parameter key: The GitConfigKey
@@ -71,34 +79,34 @@ extension ExecutableGitService: GitService {
         try self.executable.execute("git clone -b \(branch.name) \(url) '\(path)' -q")
     }
     
-    /// Initialize Git Repository
+    /// Add Remote Origin URL
     ///
-    /// - Parameter repositoryPath: The repository path
-    /// - Throws: If initialization fails
-    func initialize(repositoryPath: String) throws {
-        try self.executable.execute("cd \(repositoryPath) && git init")
+    /// - Parameters:
+    ///   - url: The origin URL
+    ///   - repositoryPath: The repository path
+    /// - Throws: If adding failed
+    func addRemote(origin url: String, in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git remote add origin \(repositoryPath)")
     }
     
-    /// Stage all and commit with message
+    /// Stage all File in repository path
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If staging fails
+    func stageAll(in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git add .")
+    }
+    
+    /// Commit with message
     ///
     /// - Parameters:
     ///   - message: The commit message
     ///   - repositoryPath: The repository path
     /// - Throws: If staging or committing fails
-    func commitAll(message: String, in repositoryPath: String) throws {
-        // Stage all Files
-        try self.executable.execute("cd \(repositoryPath) && git add .")
-        do {
-            // Commit
-            try self.executable.execute(
-                "cd \(repositoryPath) && git commit -m \"\(message)\" -m \"\(self.swiftKitURL)\""
-            )
-        } catch {
-            // If commiting fails perform reset
-            _ = try? self.executable.execute("cd \(repositoryPath) && git reset")
-            // Throw error
-            throw error
-        }
+    func commit(message: String, in repositoryPath: String) throws {
+        try self.executable.execute(
+            "cd \(repositoryPath) && git commit -m \"\(message)\" -m \"\(self.swiftKitURL)\""
+        )
     }
     
 }

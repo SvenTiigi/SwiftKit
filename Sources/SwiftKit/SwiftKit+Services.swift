@@ -23,8 +23,7 @@ public extension SwiftKit {
             kitMigrationService: self.kitMigrationService,
             fileService: self.fileService,
             questionService: self.questionService,
-            updateNotificationService: self.updateNotificationService,
-            xcodeProjectService: self.xcodeProjectService
+            updateNotificationService: self.updateNotificationService
         )
     }
     
@@ -83,11 +82,17 @@ extension SwiftKit {
     /// The KitMigrationService
     var kitMigrationService: KitMigrationService {
         return SummarizingKitMigrationService(
-            kitMigrationServices: [
-                DefaultKitMigrationService(),
-                CIServiceKitMigrationService(
+            kitMigrations: [
+                .init(DefaultKitMigrationService()),
+                .init(CIServiceKitMigrationService(
                     xcodeProjectService: self.xcodeProjectService
-                )
+                )),
+                .init(ExcludedTargetsKitMigrationService(
+                    xcodeProjectService: self.xcodeProjectService
+                ), discardError: true),
+                .init(GitSetupKitMigrationService(
+                    gitService: self.gitService
+                ), discardError: true)
             ]
         )
     }
