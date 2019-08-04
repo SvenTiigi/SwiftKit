@@ -69,7 +69,7 @@ extension SummarizingKitMigrationService {
         /// - Parameters:
         ///   - service: The KitMigrationService
         ///   - discardError: The discard error Bool. Default value `false`
-        init(_ service: KitMigrationService, discardError: Bool = false) {
+        init(service: KitMigrationService, discardError: Bool = false) {
             self.service = service
             self.discardError = discardError
         }
