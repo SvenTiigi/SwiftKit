@@ -95,11 +95,9 @@
 		OBJ_412 /* KitCreationEnvironmentConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* KitCreationEnvironmentConfigService.swift */; };
 		OBJ_413 /* CIServiceKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* CIServiceKitMigrationService.swift */; };
 		OBJ_414 /* DefaultKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* DefaultKitMigrationService.swift */; };
-		OBJ_415 /* DisabledKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DisabledKitMigrationService.swift */; };
 		OBJ_416 /* KitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* KitMigrationService.swift */; };
 		OBJ_417 /* SummarizingKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SummarizingKitMigrationService.swift */; };
 		OBJ_418 /* DefaultKitSetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* DefaultKitSetupService.swift */; };
-		OBJ_419 /* DisabledKitSetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* DisabledKitSetupService.swift */; };
 		OBJ_420 /* KitSetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* KitSetupService.swift */; };
 		OBJ_421 /* ExecutablePackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* ExecutablePackageManagerService.swift */; };
 		OBJ_422 /* PackageManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* PackageManagerService.swift */; };
@@ -143,8 +141,7 @@
 		OBJ_460 /* KitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* KitService.swift */; };
 		OBJ_461 /* DefaultUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* DefaultUpdateService.swift */; };
 		OBJ_462 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* UpdateService.swift */; };
-		OBJ_463 /* SwiftKit+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* SwiftKit+Environment.swift */; };
-		OBJ_464 /* SwiftKit+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* SwiftKit+Service.swift */; };
+		OBJ_464 /* SwiftKit+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* SwiftKit+Services.swift */; };
 		OBJ_465 /* SwiftKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* SwiftKit.swift */; };
 		OBJ_467 /* XcodeProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "XcodeProj::XcodeProj::Product" /* XcodeProj.framework */; };
 		OBJ_468 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AEXML::AEXML::Product" /* AEXML.framework */; };
@@ -568,11 +565,9 @@
 		OBJ_289 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_29 /* DefaultKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_290 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_30 /* DisabledKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledKitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_31 /* KitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_32 /* SummarizingKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingKitMigrationService.swift; sourceTree = "<group>"; };
 		OBJ_34 /* DefaultKitSetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKitSetupService.swift; sourceTree = "<group>"; };
-		OBJ_35 /* DisabledKitSetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledKitSetupService.swift; sourceTree = "<group>"; };
 		OBJ_36 /* KitSetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitSetupService.swift; sourceTree = "<group>"; };
 		OBJ_38 /* ExecutablePackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutablePackageManagerService.swift; sourceTree = "<group>"; };
 		OBJ_39 /* PackageManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageManagerService.swift; sourceTree = "<group>"; };
@@ -617,8 +612,7 @@
 		OBJ_89 /* KitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitService.swift; sourceTree = "<group>"; };
 		OBJ_91 /* DefaultUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUpdateService.swift; sourceTree = "<group>"; };
 		OBJ_92 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
-		OBJ_93 /* SwiftKit+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftKit+Environment.swift"; sourceTree = "<group>"; };
-		OBJ_94 /* SwiftKit+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftKit+Service.swift"; sourceTree = "<group>"; };
+		OBJ_94 /* SwiftKit+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftKit+Services.swift"; sourceTree = "<group>"; };
 		OBJ_95 /* SwiftKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKit.swift; sourceTree = "<group>"; };
 		OBJ_98 /* SwiftKitCLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKitCLI.swift; sourceTree = "<group>"; };
 		"PathKit::PathKit::Product" /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PathKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1159,7 +1153,6 @@
 				OBJ_32 /* SummarizingKitMigrationService.swift */,
 				OBJ_29 /* DefaultKitMigrationService.swift */,
 				OBJ_28 /* CIServiceKitMigrationService.swift */,
-				OBJ_30 /* DisabledKitMigrationService.swift */,
 			);
 			path = KitMigrationService;
 			sourceTree = "<group>";
@@ -1198,7 +1191,6 @@
 			children = (
 				OBJ_36 /* KitSetupService.swift */,
 				OBJ_34 /* DefaultKitSetupService.swift */,
-				OBJ_35 /* DisabledKitSetupService.swift */,
 			);
 			path = KitSetupService;
 			sourceTree = "<group>";
@@ -1248,7 +1240,7 @@
 			path = XcodeProjectService;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -1261,7 +1253,6 @@
 				OBJ_289 /* LICENSE */,
 				OBJ_290 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_52 /* Models */ = {
@@ -1343,8 +1334,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_95 /* SwiftKit.swift */,
-				OBJ_93 /* SwiftKit+Environment.swift */,
-				OBJ_94 /* SwiftKit+Service.swift */,
+				OBJ_94 /* SwiftKit+Services.swift */,
 				OBJ_86 /* Services */,
 				OBJ_14 /* InternalServices */,
 				OBJ_52 /* Models */,
@@ -1710,7 +1700,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_277 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1913,11 +1903,9 @@
 				OBJ_412 /* KitCreationEnvironmentConfigService.swift in Sources */,
 				OBJ_413 /* CIServiceKitMigrationService.swift in Sources */,
 				OBJ_414 /* DefaultKitMigrationService.swift in Sources */,
-				OBJ_415 /* DisabledKitMigrationService.swift in Sources */,
 				OBJ_416 /* KitMigrationService.swift in Sources */,
 				OBJ_417 /* SummarizingKitMigrationService.swift in Sources */,
 				OBJ_418 /* DefaultKitSetupService.swift in Sources */,
-				OBJ_419 /* DisabledKitSetupService.swift in Sources */,
 				OBJ_420 /* KitSetupService.swift in Sources */,
 				OBJ_421 /* ExecutablePackageManagerService.swift in Sources */,
 				OBJ_422 /* PackageManagerService.swift in Sources */,
@@ -1961,8 +1949,7 @@
 				OBJ_460 /* KitService.swift in Sources */,
 				OBJ_461 /* DefaultUpdateService.swift in Sources */,
 				OBJ_462 /* UpdateService.swift in Sources */,
-				OBJ_463 /* SwiftKit+Environment.swift in Sources */,
-				OBJ_464 /* SwiftKit+Service.swift in Sources */,
+				OBJ_464 /* SwiftKit+Services.swift in Sources */,
 				OBJ_465 /* SwiftKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

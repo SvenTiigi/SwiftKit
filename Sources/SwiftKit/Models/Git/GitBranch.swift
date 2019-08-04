@@ -10,7 +10,7 @@ import Foundation
 // MARK: - GitBranch
 
 /// The GitBranch
-enum GitBranch: Equatable, Hashable {
+public enum GitBranch: Equatable, Hashable {
     /// Master Branch
     case master
     /// Develop Branch

@@ -1,5 +1,5 @@
 //
-//  SwiftKit+Service.swift
+//  SwiftKit+Services.swift
 //  SwiftKit
 //
 //  Created by Sven Tiigi on 06.05.19.
@@ -72,46 +72,23 @@ extension SwiftKit {
     
     /// The KitSetupService
     var kitSetupService: KitSetupService {
-        // Switch on Environment
-        switch self.environment {
-        case .production:
-            // Use DefaultKitSetupService with master branch
-            return DefaultKitSetupService(
-                gitURL: self.gitURL,
-                gitBranch: .master,
-                gitService: self.gitService
-            )
-        case .development:
-            // Use DefaultKitSetupService with develop branch
-            return DefaultKitSetupService(
-                gitURL: self.gitURL,
-                gitBranch: .develop,
-                gitService: self.gitService
-            )
-        case .test:
-            // Use DisabledKitSetupService
-            return DisabledKitSetupService()
-        }
+        return DefaultKitSetupService(
+            gitURL: self.gitURL,
+            gitBranch: self.branch,
+            gitService: self.gitService
+        )
     }
     
     /// The KitMigrationService
     var kitMigrationService: KitMigrationService {
-        // Switch on Environment
-        switch self.environment {
-        case .production, .development:
-            // Use SummarizingKitMigrationService
-            return SummarizingKitMigrationService(
-                kitMigrationServices: [
-                    DefaultKitMigrationService(),
-                    CIServiceKitMigrationService(
-                        xcodeProjectService: self.xcodeProjectService
-                    )
-                ]
-            )
-        case .test:
-            // Use DisabledKitMigrationService
-            return DisabledKitMigrationService()
-        }
+        return SummarizingKitMigrationService(
+            kitMigrationServices: [
+                DefaultKitMigrationService(),
+                CIServiceKitMigrationService(
+                    xcodeProjectService: self.xcodeProjectService
+                )
+            ]
+        )
     }
     
     /// The PackageManagerService

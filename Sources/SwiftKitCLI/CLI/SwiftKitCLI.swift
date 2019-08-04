@@ -42,15 +42,8 @@ extension SwiftKitCLI {
     func execute() {
         // Print ASCII art
         self.cli.stdout <<< .asciiArt
-        // Switch on Environment
-        switch self.swiftKit.environment {
-        case .production, .development:
-            // Start CLI
-            _ = self.cli.go()
-        case .test:
-            // Start CLI in Debug Mode
-            _ = self.cli.go(with: ["swiftkit", "new"])
-        }
+        // Start CLI
+        _ = self.cli.go()
     }
     
 }
