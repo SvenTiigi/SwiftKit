@@ -10,13 +10,27 @@ import Foundation
 // MARK: - SwiftKitError
 
 /// The SwiftKitError
-struct SwiftKitError {
+public struct SwiftKitError {
+    
+    // MARK: Properties
     
     /// The reason
-    let reason: String
+    public let reason: String
     
     /// The Error
-    let error: Error?
+    public let error: Error?
+    
+    // MARK: Initializer
+    
+    /// Designated Initializer
+    ///
+    /// - Parameters:
+    ///   - reason: The reason
+    ///   - error: The optional Error
+    public init(reason: String, error: Error?) {
+        self.reason = reason
+        self.error = error
+    }
     
 }
 
@@ -25,19 +39,19 @@ struct SwiftKitError {
 extension SwiftKitError: LocalizedError {
     
     /// A localized message describing what error occurred
-    var errorDescription: String? {
+    public var errorDescription: String? {
         var description = "🆘 SwiftKit failed\n"
         description += .dividerLine
         description += "\nReason: \(self.reason)"
         if let error = self.error {
-            description += "\nError: \(error.localizedDescription)\n"
+            description += "\nError: \(error)\n"
         }
         description += .dividerLine
         return description
     }
     
     /// The localized Description
-    var localizedDescription: String {
+    public var localizedDescription: String {
         return self.errorDescription ?? "Unknown error"
     }
     
@@ -48,7 +62,7 @@ extension SwiftKitError: LocalizedError {
 extension SwiftKitError: CustomStringConvertible {
     
     /// A textual representation of this instance
-    var description: String {
+    public var description: String {
         return self.localizedDescription
     }
     
@@ -59,7 +73,7 @@ extension SwiftKitError: CustomStringConvertible {
 extension SwiftKitError: CustomDebugStringConvertible {
     
     /// A textual representation of this instance, suitable for debugging
-    var debugDescription: String {
+    public var debugDescription: String {
         return self.localizedDescription
     }
     
