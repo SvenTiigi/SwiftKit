@@ -35,6 +35,7 @@
 		3D8577B6229FC5C800D54435 /* KitCreationEnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8577B5229FC5C800D54435 /* KitCreationEnvironmentConfig.swift */; };
 		3D8577B9229FC8FF00D54435 /* KitCreationEnvironmentConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8577B8229FC8FF00D54435 /* KitCreationEnvironmentConfigService.swift */; };
 		3D8577BB229FC95000D54435 /* DefaultKitCreationEnvironmentConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8577BA229FC95000D54435 /* DefaultKitCreationEnvironmentConfigService.swift */; };
+		3DDAB44722F6CD13006069F0 /* Kit+GitHubHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAB44622F6CD13006069F0 /* Kit+GitHubHandle.swift */; };
 		OBJ_285 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_260 /* Document.swift */; };
 		OBJ_286 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_261 /* Element.swift */; };
 		OBJ_287 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_262 /* Error.swift */; };
@@ -398,6 +399,7 @@
 		3D8577B5229FC5C800D54435 /* KitCreationEnvironmentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCreationEnvironmentConfig.swift; sourceTree = "<group>"; };
 		3D8577B8229FC8FF00D54435 /* KitCreationEnvironmentConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCreationEnvironmentConfigService.swift; sourceTree = "<group>"; };
 		3D8577BA229FC95000D54435 /* DefaultKitCreationEnvironmentConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKitCreationEnvironmentConfigService.swift; sourceTree = "<group>"; };
+		3DDAB44622F6CD13006069F0 /* Kit+GitHubHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kit+GitHubHandle.swift"; sourceTree = "<group>"; };
 		"AEXML::AEXML::Product" /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1247,6 +1249,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_55 /* Kit+Author.swift */,
+				3DDAB44622F6CD13006069F0 /* Kit+GitHubHandle.swift */,
 				OBJ_56 /* Kit+CIService.swift */,
 				OBJ_57 /* Kit+Directory+Path.swift */,
 				OBJ_58 /* Kit+Directory.swift */,
@@ -1873,6 +1876,7 @@
 				3D8577B9229FC8FF00D54435 /* KitCreationEnvironmentConfigService.swift in Sources */,
 				OBJ_427 /* AuthorEmailQuestion.swift in Sources */,
 				OBJ_428 /* AuthorNameQuestion.swift in Sources */,
+				3DDAB44722F6CD13006069F0 /* Kit+GitHubHandle.swift in Sources */,
 				OBJ_429 /* CIServiceQuestion.swift in Sources */,
 				OBJ_430 /* GenerateKitQuestion.swift in Sources */,
 				OBJ_431 /* KitNameQuestion.swift in Sources */,

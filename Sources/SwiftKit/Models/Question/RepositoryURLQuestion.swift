@@ -33,7 +33,7 @@ struct RepositoryURLQuestion {
     
     /// The Fallback URL
     var fallbackURL: String {
-        return "https://github.com/\(self.authorName.replacingOccurrences(of: " ", with: ""))/\(self.kitName)"
+        return "https://github.com/\(self.authorName.dropWhitespaces())/\(self.kitName)"
     }
     
 }
