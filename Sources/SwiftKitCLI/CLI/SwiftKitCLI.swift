@@ -77,7 +77,27 @@ extension SwiftKitCLI: Executable {
     /// - Throws: If execution fails
     @discardableResult
     func execute(_ command: String) throws -> String {
-        return try SwiftCLI.Task.capture(bash: command).stdout
+        do {
+            // Try to execute command and capture output
+            return try SwiftCLI.Task.capture(bash: command).stdout
+        } catch {
+            // Check if Error is a SwiftCLI CaptureError
+            if let captureError = error as? SwiftCLI.CaptureError {
+                // Initialize SwiftKit Error
+                let swiftKitError = SwiftKitError(
+                    reason: "Command execution failed: \(command)",
+                    error: SwiftKitError(
+                        reason: captureError.message ?? "",
+                        error: captureError
+                    )
+                )
+                // Throw SwiftKitError
+                throw swiftKitError
+            } else {
+                // Throw Error
+                throw error
+            }
+        }
     }
     
     /// Print text
