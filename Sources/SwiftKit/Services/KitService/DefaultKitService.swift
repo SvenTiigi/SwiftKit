@@ -26,8 +26,8 @@ final class DefaultKitService {
     /// The CocoaPodsService
     let cocoaPodsService: CocoaPodsService
     
-    /// The KitCreationEnvironmentConfigService
-    let kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService
+    /// The ReadableKitCreationEnvironmentConfigService
+    let kitCreationEnvironmentConfigService: ReadableKitCreationEnvironmentConfigService
     
     /// The KitSetupService
     let kitSetupService: KitSetupService
@@ -62,7 +62,7 @@ final class DefaultKitService {
     ///   - executable: The Executable
     ///   - gitService: The GitService
     ///   - cocoaPodsService: The CocoaPodsService
-    ///   - kitCreationEnvironmentConfigService: The KitCreationEnvironmentConfigService
+    ///   - kitCreationEnvironmentConfigService: The ReadableKitCreationEnvironmentConfigService
     ///   - kitSetupService: The KitSetupService
     ///   - kitMigrationService: The KitMigrationService
     ///   - fileService: The FileService
@@ -73,7 +73,7 @@ final class DefaultKitService {
          executable: Executable,
          gitService: GitService,
          cocoaPodsService: CocoaPodsService,
-         kitCreationEnvironmentConfigService: KitCreationEnvironmentConfigService,
+         kitCreationEnvironmentConfigService: ReadableKitCreationEnvironmentConfigService,
          kitSetupService: KitSetupService,
          kitMigrationService: KitMigrationService,
          fileService: FileService,
