@@ -49,7 +49,7 @@ extension SwiftKitCLI {
             _ = self.cli.go()
         case .test:
             // Start CLI in Debug Mode
-            _ = self.cli.debugGo(with: "swiftkit new")
+            _ = self.cli.go(with: ["swiftkit", "new"])
         }
     }
     
@@ -84,7 +84,7 @@ extension SwiftKitCLI: Executable {
     /// - Throws: If execution fails
     @discardableResult
     func execute(_ command: String) throws -> String {
-        return try SwiftCLI.capture(bash: command).stdout
+        return try SwiftCLI.Task.capture(bash: command).stdout
     }
     
     /// Print text

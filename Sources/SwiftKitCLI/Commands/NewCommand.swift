@@ -158,7 +158,7 @@ extension NewCommand {
             organizationIdentifierArgument: self.organizationIdentifierArgument.value,
             forceArgument: self.forceArgument.value,
             openProjectArgument: self.openProjectArgument.value,
-            targetsArgument: self.targetArgument.values.isEmpty ? nil : self.targetArgument.values
+            targetsArgument: self.targetArgument.value.isEmpty ? nil : self.targetArgument.value
         )
     }
     
