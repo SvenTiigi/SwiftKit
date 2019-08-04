@@ -39,4 +39,18 @@ protocol GitService {
     /// - Throws: If cloning fails
     func clone(from url: String, to path: String, branch: GitBranch) throws
     
+    /// Initialize Git Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If initialization fails
+    func initialize(repositoryPath: String) throws
+
+    /// Stage all and commit with message
+    ///
+    /// - Parameters:
+    ///   - message: The commit message
+    ///   - repositoryPath: The repository path
+    /// - Throws: If staging or committing fails
+    func commitAll(message: String, in repositoryPath: String) throws
+    
 }

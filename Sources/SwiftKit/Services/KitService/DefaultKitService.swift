@@ -99,6 +99,7 @@ final class DefaultKitService {
 
 extension DefaultKitService: KitService {
     
+    // swiftlint:disable function_body_length
     /// Create Kit
     ///
     /// - Parameter arguments: The KitCreationArguments
@@ -176,6 +177,15 @@ extension DefaultKitService: KitService {
                 in: self.kitDirectory
             )
         }
+        // Initialize Git in Kit Directory
+        _ = try? self.gitService.initialize(
+            repositoryPath: self.kitDirectory.path.rawValue
+        )
+        // Commit all in Kit Directory
+        _ = try? self.gitService.commitAll(
+            message: "Setup \(kit.name) with SwiftKit 📦",
+            in: self.kitDirectory.path.rawValue
+        )
         // Print Finish
         self.printFinish(with: kit)
         // Verify if OpenProject Argument is present
@@ -186,6 +196,7 @@ extension DefaultKitService: KitService {
         // Show UpdateNotification on Executable if available
         self.updateNotification?.show(on: self.executable)
     }
+    // swiftlint:enable function_body_length
     
 }
 

@@ -61,6 +61,7 @@ extension SwiftKit {
     /// The GitService
     var gitService: GitService {
         return ExecutableGitService(
+            swiftKitURL: self.url,
             executable: self.executable
         )
     }
