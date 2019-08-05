@@ -26,16 +26,15 @@ extension ExcludedTargetsKitMigrationService: KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws {
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory) {
         // Initialize excluded Targets
         let excludedTargets = XcodeApplicationTarget.getExcludedTargets(
             includedTargets: kit.applicationTargets
         )
         // Check if excluded Targets are not empty
         if !excludedTargets.isEmpty {
-            // Try to remove excluded ApplicationTargets from XcodeProject
-            try self.xcodeProjectService.remove(
+            // Remove excluded ApplicationTargets from XcodeProject
+            try? self.xcodeProjectService.remove(
                 targets: excludedTargets,
                 in: kitDirectory
             )

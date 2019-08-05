@@ -160,17 +160,17 @@ extension DefaultKitService: KitService {
                 with: arguments,
                 at: self.kitDirectory
             )
-            // Try to migrate Kit
-            try self.kitMigrationService.migrate(
-                kit: kit,
-                at: self.kitDirectory
-            )
         } catch {
             // Print cached error
             self.print(error: error)
             // Return out of function
             return
         }
+        // Migrate Kit at Directory
+        self.kitMigrationService.migrate(
+            kit: kit,
+            at: self.kitDirectory
+        )
         // Print Finish
         self.printFinish(with: kit)
         // Verify if OpenProject Argument is present

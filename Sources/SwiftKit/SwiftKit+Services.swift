@@ -90,26 +90,16 @@ extension SwiftKit {
     /// The KitMigrationService
     var kitMigrationService: KitMigrationService {
         return SummarizingKitMigrationService(
-            kitMigrations: [
-                .init(
-                    service: DefaultKitMigrationService()
+            kitMigrationServices: [
+                DefaultKitMigrationService(),
+                CIServiceKitMigrationService(
+                    xcodeProjectService: self.xcodeProjectService
                 ),
-                .init(
-                    service: CIServiceKitMigrationService(
-                        xcodeProjectService: self.xcodeProjectService
-                    )
+                ExcludedTargetsKitMigrationService(
+                    xcodeProjectService: self.xcodeProjectService
                 ),
-                .init(
-                    service: ExcludedTargetsKitMigrationService(
-                        xcodeProjectService: self.xcodeProjectService
-                    ),
-                    discardError: true
-                ),
-                .init(
-                    service: GitSetupKitMigrationService(
-                        gitService: self.gitService
-                    ),
-                    discardError: true
+                GitSetupKitMigrationService(
+                    gitService: self.gitService
                 )
             ]
         )

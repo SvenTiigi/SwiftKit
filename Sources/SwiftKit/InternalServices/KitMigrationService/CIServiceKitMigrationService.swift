@@ -44,8 +44,7 @@ extension CIServiceKitMigrationService: KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws {
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory) {
         // Iterate through all CIServices
         for ciService in Kit.CIService.allCases {
             // Verify CIService is not equal to the CIService defined in the Kit
