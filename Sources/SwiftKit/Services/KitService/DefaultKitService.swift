@@ -253,7 +253,7 @@ extension DefaultKitService {
         // Stop loading on Executable
         self.executable.stopLoading()
         // Print Error
-        self.executable.printError(error.localizedDescription)
+        self.executable.printError(error)
     }
     
 }

@@ -26,8 +26,8 @@ public struct SwiftKitError {
     ///
     /// - Parameters:
     ///   - reason: The reason
-    ///   - error: The optional Error
-    public init(reason: String, error: Error?) {
+    ///   - error: The optional Error. Default value nil
+    public init(reason: String, error: Error? = nil) {
         self.reason = reason
         self.error = error
     }

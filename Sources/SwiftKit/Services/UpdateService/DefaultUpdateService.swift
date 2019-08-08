@@ -61,7 +61,7 @@ extension DefaultUpdateService: UpdateService {
             self.executable.stopLoading()
             // Print error
             self.executable.printError(
-                SwiftKitError(reason: "SwiftKit update failed 🙈", error: error).localizedDescription
+                SwiftKitError(reason: "SwiftKit update failed 🙈", error: error)
             )
             // Return out of function
             return

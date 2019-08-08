@@ -60,6 +60,9 @@ private extension SwiftKitCLI {
             ),
             UpdateCommand(
                 updateService: self.swiftKit.updateService
+            ),
+            ReleaseCommand(
+                releaseService: self.swiftKit.releaseService
             )
         ]
     }
@@ -86,10 +89,7 @@ extension SwiftKitCLI: Executable {
                 // Initialize SwiftKit Error
                 let swiftKitError = SwiftKitError(
                     reason: "Command execution failed: \(command)",
-                    error: SwiftKitError(
-                        reason: captureError.message ?? "",
-                        error: captureError
-                    )
+                    error: captureError.message ?? ""
                 )
                 // Throw SwiftKitError
                 throw swiftKitError
@@ -172,3 +172,7 @@ private extension String {
     }
     
 }
+
+// MARK: - String+Error
+
+extension String: Error {}
