@@ -22,13 +22,13 @@ final class ReleaseCommand {
     /// The destination Argument
     let destinationArgument = Key<String>(
         "-d", "--directory",
-        description: "The Kit directory 🗂"
+        description: "The directory 🗂"
     )
     
     /// The version Argument
     let versionArgument = Key<String>(
         "-v", "--version",
-        description: "The Version 🔢"
+        description: "The version 🔢"
     )
     
     // MARK: Initializer
