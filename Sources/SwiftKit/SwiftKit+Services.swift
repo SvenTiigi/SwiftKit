@@ -37,15 +37,6 @@ public extension SwiftKit {
         )
     }
     
-    /// The ReleaseService
-    var releaseService: ReleaseService {
-        return DefaultReleaseService(
-            executable: self.executable,
-            kitDirectory: .default(),
-            questionService: self.questionService
-        )
-    }
-    
 }
 
 // MARK: - Internal Services

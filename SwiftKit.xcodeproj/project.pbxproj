@@ -36,9 +36,6 @@
 		3D9D98F322F748D500793A0A /* GitSetupKitMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D98F222F748D500793A0A /* GitSetupKitMigrationService.swift */; };
 		3D9D98F622F74C9500793A0A /* KitCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D98F522F74C9500793A0A /* KitCreationService.swift */; };
 		3D9D98F822F74D1200793A0A /* QuestionKitCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D98F722F74D1200793A0A /* QuestionKitCreationService.swift */; };
-		3DB8779222FAA00500F92639 /* ReleaseCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8779122FAA00500F92639 /* ReleaseCommand.swift */; };
-		3DB8779522FAA06000F92639 /* ReleaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8779422FAA06000F92639 /* ReleaseService.swift */; };
-		3DB8779722FAA1FD00F92639 /* DefaultReleaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8779622FAA1FD00F92639 /* DefaultReleaseService.swift */; };
 		OBJ_296 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_271 /* Document.swift */; };
 		OBJ_297 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_272 /* Element.swift */; };
 		OBJ_298 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_273 /* Error.swift */; };
@@ -409,9 +406,6 @@
 		3D9D98F222F748D500793A0A /* GitSetupKitMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSetupKitMigrationService.swift; sourceTree = "<group>"; };
 		3D9D98F522F74C9500793A0A /* KitCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCreationService.swift; sourceTree = "<group>"; };
 		3D9D98F722F74D1200793A0A /* QuestionKitCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionKitCreationService.swift; sourceTree = "<group>"; };
-		3DB8779122FAA00500F92639 /* ReleaseCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseCommand.swift; sourceTree = "<group>"; };
-		3DB8779422FAA06000F92639 /* ReleaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseService.swift; sourceTree = "<group>"; };
-		3DB8779622FAA1FD00F92639 /* DefaultReleaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReleaseService.swift; sourceTree = "<group>"; };
 		"AEXML::AEXML::Product" /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ANSIEscapeCode::ANSIEscapeCode::Product" /* ANSIEscapeCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ANSIEscapeCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Motor::Motor::Product" /* Motor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Motor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -728,15 +722,6 @@
 				3D9D98F722F74D1200793A0A /* QuestionKitCreationService.swift */,
 			);
 			path = KitCreationService;
-			sourceTree = "<group>";
-		};
-		3DB8779322FAA04E00F92639 /* ReleaseService */ = {
-			isa = PBXGroup;
-			children = (
-				3DB8779422FAA06000F92639 /* ReleaseService.swift */,
-				3DB8779622FAA1FD00F92639 /* DefaultReleaseService.swift */,
-			);
-			path = ReleaseService;
 			sourceTree = "<group>";
 		};
 		OBJ_103 /* Tests */ = {
@@ -1393,7 +1378,6 @@
 			children = (
 				OBJ_87 /* KitService */,
 				OBJ_90 /* UpdateService */,
-				3DB8779322FAA04E00F92639 /* ReleaseService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1451,7 +1435,6 @@
 			children = (
 				OBJ_100 /* NewCommand.swift */,
 				OBJ_101 /* UpdateCommand.swift */,
-				3DB8779122FAA00500F92639 /* ReleaseCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -1963,11 +1946,9 @@
 				OBJ_437 /* Kit+Directory.swift in Sources */,
 				OBJ_438 /* Kit+GitHubHandle.swift in Sources */,
 				OBJ_439 /* Kit+Organization.swift in Sources */,
-				3DB8779522FAA06000F92639 /* ReleaseService.swift in Sources */,
 				3D9D98F122F7487E00793A0A /* ExcludedTargetsKitMigrationService.swift in Sources */,
 				OBJ_440 /* Kit.swift in Sources */,
 				OBJ_441 /* KitCreationArguments.swift in Sources */,
-				3DB8779722FAA1FD00F92639 /* DefaultReleaseService.swift in Sources */,
 				OBJ_442 /* KitCreationEnvironmentConfig.swift in Sources */,
 				OBJ_443 /* AuthorEmailQuestion.swift in Sources */,
 				OBJ_444 /* AuthorNameQuestion.swift in Sources */,
@@ -2005,7 +1986,6 @@
 				OBJ_480 /* NewCommand.swift in Sources */,
 				OBJ_481 /* UpdateCommand.swift in Sources */,
 				OBJ_482 /* main.swift in Sources */,
-				3DB8779222FAA00500F92639 /* ReleaseCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

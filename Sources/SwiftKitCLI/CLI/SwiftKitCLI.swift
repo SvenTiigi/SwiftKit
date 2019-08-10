@@ -60,9 +60,6 @@ private extension SwiftKitCLI {
             ),
             UpdateCommand(
                 updateService: self.swiftKit.updateService
-            ),
-            ReleaseCommand(
-                releaseService: self.swiftKit.releaseService
             )
         ]
     }
