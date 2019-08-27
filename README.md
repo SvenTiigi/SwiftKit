@@ -48,7 +48,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
 - [x] `SwiftLint` Build-Phase integrated
-- [x] `CI-Service` configuration templates included (Travis, GitLab, Azure Pipelines)
+- [x] `CI-Service` configuration templates included (GitHub, Travis, GitLab, Azure Pipelines)
 - [x] Automatically checks if the Kit name is already taken on `CocoaPods`
 - [x] GitHub issue templates for `Bug reports` and `Feature requests`
 
@@ -205,7 +205,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--name` | `-n` | Your name 👨‍💻 |
 | `--email` | `-e` | Your email address 📫 |
 | `--url` | `-u` | The repository url 🌎 |
-| `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` |
+| `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` <br/> `5 = GitHub CI` |
 | `--organization` | `-o` | The name of your organization 🏢 |
 | `--organization-identifier` | `-i` | The organization identifier 🖋 |
 | `--repository` | `-r` | The SwiftKit template repository url 🌎 |
