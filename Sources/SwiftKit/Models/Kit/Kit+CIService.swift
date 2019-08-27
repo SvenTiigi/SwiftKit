@@ -21,6 +21,8 @@ extension Kit {
         case gitlab = "3"
         /// Azure Pipelines
         case azure = "4"
+        /// GitHub CI
+        case github = "5"
     }
     
 }
@@ -40,6 +42,18 @@ extension Kit.CIService {
             return "GitLab CI"
         case .azure:
             return "Azure Pipelines"
+        case .github:
+            return "GitHub CI"
+        }
+    }
+    
+    /// The source directory
+    var sourceDirectory: String? {
+        switch self {
+        case .github:
+            return ".github/workflows/"
+        case .travis, .travisLinux, .gitlab, .azure:
+            return nil
         }
     }
     
@@ -54,18 +68,18 @@ extension Kit.CIService {
             return ".gitlab-ci.yml"
         case .azure:
             return "azure-pipelines.yml"
+        case .github:
+            return "main.yml"
         }
     }
     
     /// The target file name
-    var targetFileName: String {
+    var targetFileName: String? {
         switch self {
         case .travis, .travisLinux:
             return ".travis.yml"
-        case .gitlab:
-            return ".gitlab-ci.yml"
-        case .azure:
-            return "azure-pipelines.yml"
+        case .gitlab, .azure, .github:
+            return nil
         }
     }
     
