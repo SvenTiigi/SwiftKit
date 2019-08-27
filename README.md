@@ -185,7 +185,7 @@ The lane verifies various aspects of your Kit.
 
 ### ReadMe
 
-<img style="float: right;border-style: none" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" width="30%" alt="Template ReadMe">
+<img style="float: right;" align="right" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" width="30%" alt="Template ReadMe">
 
 A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template file will be automatically created inside your Kit. 
 
