@@ -101,6 +101,7 @@
 		3DB91AC4229AC263002668DA /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
+		3DF6F6282315616D00706C4E /* main.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.yml; path = .github/workflows/main.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +211,7 @@
 				3DB91AC4229AC263002668DA /* .travis.yml */,
 				3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */,
 				3DB91AC6229AC272002668DA /* azure-pipelines.yml */,
+				3DF6F6282315616D00706C4E /* main.yml */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -442,7 +444,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "KITORGANIZATION";
+				ORGANIZATIONNAME = KITORGANIZATION;
 				TargetAttributes = {
 					3D9C428F22745894000A6585 = {
 						CreatedOnToolsVersion = 10.2.1;
