@@ -164,7 +164,7 @@ $ fastlane ios compatibilityTests
 
 #### release-lane
 
-The `release` lane will allow you to automatically release a new version of your Kit for `Carthage`/`GitHub` and `CocoaPods`.
+The `release` lane will allow you to automatically release a new version of your Kit.
 
 ```bash
 $ fastlane ios release version:1.1.0
@@ -183,19 +183,30 @@ The lane verifies various aspects of your Kit.
 
 > ☝️ Please ensure you have registered your machine with [`pod trunk register`](https://guides.cocoapods.org/making/getting-setup-with-trunk.html) in order to successfully push the Podspec to CocoaPods
 
-<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/markdown-logo.png" alt="Markdown Logo">
-
 ### ReadMe
 
-A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
+<img style="float: right;border-style: none" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" width="30%" alt="Template ReadMe">
 
-<p align="center">
-   <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
-</p>
+A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template file will be automatically created inside your Kit. 
+
+The README comes along with typical sections like:
+
+<br/>
+
+* Project description
+* Example
+* Installation
+* Usage
+* Contributing
+* License
+
+<br/>
+
+Please feel free to update the ReadMe to your needs 👍
 
 ## Arguments
 
-SwiftKit supports arguments when launched. Following arguments are supported:
+Beside using the CLI inputs SwiftKit supports arguments when launched. The following arguments are supported:
 
 | Long parameter | Short parameter | Description
 | ----------- | ----------- | -------------- |
@@ -244,7 +255,7 @@ You can place a JSON environment configuration file in your home directory `~/.s
 | `organizationName` | The organization name |
 | `organizationIdentifier` | The organization identifier |
 
-SwiftKit will use those values and skip the corresponding console question when running `swiftkit new`.
+SwiftKit will use those values and skip the corresponding CLI questions when running `swiftkit new`.
 
 ```json
 {
