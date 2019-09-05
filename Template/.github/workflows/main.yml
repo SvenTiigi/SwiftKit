@@ -9,20 +9,17 @@ on:
     - /^feature.*$/
 
 jobs:
-  test:
-    name: Unit Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macOS-latest, ubuntu-latest]
-    steps:
-    - uses: actions/checkout@v1
-    - name: fastlane tests lane
-      run: fastlane ios tests
-  compatibility:
-    name: DependencyManager compatibility tests
+  tests:
+    name: Unit-Tests
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
-    - name: fastlane compatibilityTests lane
+    - name: fastlane ios tests
+      run: fastlane ios tests
+  compatibility:
+    name: Compatibility-Tests
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: fastlane ios compatibilityTests
       run: fastlane ios compatibilityTests
