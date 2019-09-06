@@ -204,6 +204,31 @@ The README comes along with typical sections like:
 
 Please feel free to update the ReadMe to your needs 👍
 
+## Environment-Configuration
+
+You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
+
+| Key | Description |
+| ----------- | ----------- |
+| `authorName` | The author name |
+| `authorEmail` | The author email address |
+| `organizationName` | The organization name |
+| `organizationIdentifier` | The organization identifier |
+
+SwiftKit will use those values and skip the corresponding CLI questions when running `swiftkit new`.
+
+```json
+{
+    "authorName": "Sven Tiigi",
+    "authorEmail": "sven.tiigi@gmail.com",
+    "organizationName": "Sven Tiigi",
+    "organizationIdentifier": "de.tiigi"   
+}
+```
+> Path: `~/.swiftkit-env.json`
+
+The environment config values will only be used if no argument for the corresponding value is present.
+
 ## Arguments
 
 Beside using the CLI inputs SwiftKit supports arguments when launched. The following arguments are supported:
@@ -243,31 +268,6 @@ swiftkit new \
 	--force \
 	--open
 ```
-
-## Environment-Configuration
-
-You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
-
-| Key | Description |
-| ----------- | ----------- |
-| `authorName` | The author name |
-| `authorEmail` | The author email address |
-| `organizationName` | The organization name |
-| `organizationIdentifier` | The organization identifier |
-
-SwiftKit will use those values and skip the corresponding CLI questions when running `swiftkit new`.
-
-```json
-{
-    "authorName": "Sven Tiigi",
-    "authorEmail": "sven.tiigi@gmail.com",
-    "organizationName": "Sven Tiigi",
-    "organizationIdentifier": "de.tiigi"   
-}
-```
-> Path: `~/.swiftkit-env.json`
-
-The environment config values will only be used if no argument for the corresponding value is present.
 
 ## Featured on
 
