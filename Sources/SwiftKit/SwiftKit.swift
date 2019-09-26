@@ -60,8 +60,8 @@ public extension Version {
     static var `default`: Version {
         return .init(
             major: 1,
-            minor: 2,
-            patch: 5
+            minor: 3,
+            patch: 0
         )
     }
     
