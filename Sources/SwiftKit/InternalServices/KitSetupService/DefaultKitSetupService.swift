@@ -109,6 +109,11 @@ extension DefaultKitSetupService: KitSetupService {
             let origin = kitDirectory.path.appendedClonedTemplatePath.appending(file).rawValue
             // Initialize Destination
             let destination = kitDirectory.path.appending(file).rawValue
+            // Check if a file at destination path already exists
+            if self.fileManager.fileExists(atPath: destination) {
+                // Try to remove file at destination path and discard error
+                try? self.fileManager.removeItem(atPath: destination)
+            }
             do {
                 // Copy Item from origin to destination
                 try self.fileManager.copyItem(
