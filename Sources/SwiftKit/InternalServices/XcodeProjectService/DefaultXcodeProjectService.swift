@@ -7,7 +7,7 @@
 
 import Foundation
 import PathKit
-import xcodeproj
+import XcodeProj
 
 // MARK: - DefaultXcodeProjectService
 

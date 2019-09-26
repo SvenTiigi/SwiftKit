@@ -12,6 +12,9 @@ import Foundation
 /// The ExecutableGitService
 struct ExecutableGitService {
     
+    /// The SwiftKit URL
+    let swiftKitURL: String
+    
     /// The Executable
     let executable: Executable
     
@@ -20,6 +23,14 @@ struct ExecutableGitService {
 // MARK: - GitConfigService
 
 extension ExecutableGitService: GitService {
+    
+    /// Initialize Git Repository
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If initialization fails
+    func initialize(in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git init")
+    }
     
     /// Retrieve value for GitConfigKey
     ///
@@ -66,6 +77,36 @@ extension ExecutableGitService: GitService {
     /// - Throws: If cloning fails
     func clone(from url: String, to path: String, branch: GitBranch) throws {
         try self.executable.execute("git clone -b \(branch.name) \(url) '\(path)' -q")
+    }
+    
+    /// Add Remote Origin URL
+    ///
+    /// - Parameters:
+    ///   - url: The origin URL
+    ///   - repositoryPath: The repository path
+    /// - Throws: If adding failed
+    func addRemote(origin url: String, in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git remote add origin \(repositoryPath)")
+    }
+    
+    /// Stage all File in repository path
+    ///
+    /// - Parameter repositoryPath: The repository path
+    /// - Throws: If staging fails
+    func stageAll(in repositoryPath: String) throws {
+        try self.executable.execute("cd \(repositoryPath) && git add .")
+    }
+    
+    /// Commit with message
+    ///
+    /// - Parameters:
+    ///   - message: The commit message
+    ///   - repositoryPath: The repository path
+    /// - Throws: If staging or committing fails
+    func commit(message: String, in repositoryPath: String) throws {
+        try self.executable.execute(
+            "cd \(repositoryPath) && git commit -m \"\(message)\" -m \"\(self.swiftKitURL)\""
+        )
     }
     
 }

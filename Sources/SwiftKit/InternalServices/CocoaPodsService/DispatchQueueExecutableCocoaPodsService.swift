@@ -11,7 +11,7 @@ import Foundation
 // MARK: - DispatchQueueExecutableCocoaPodsService
 
 /// The DispatchQueueExecutableCocoaPodsService
-class DispatchQueueExecutableCocoaPodsService {
+final class DispatchQueueExecutableCocoaPodsService {
     
     // MARK: Properties
     

@@ -26,12 +26,11 @@ extension SummarizingKitMigrationService: KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws {
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory) {
         // For each KitMigrationService
         for kitMigrationService in self.kitMigrationServices {
             // Try to migrate Kit at Directory
-            try kitMigrationService.migrate(
+            kitMigrationService.migrate(
                 kit: kit,
                 at: kitDirectory
             )
