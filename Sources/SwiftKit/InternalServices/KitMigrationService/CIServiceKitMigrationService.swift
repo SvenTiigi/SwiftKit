@@ -44,8 +44,7 @@ extension CIServiceKitMigrationService: KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws {
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory) {
         // Iterate through all CIServices
         for ciService in Kit.CIService.allCases {
             // Verify CIService is not equal to the CIService defined in the Kit
@@ -53,10 +52,24 @@ extension CIServiceKitMigrationService: KitMigrationService {
                 // Continue with next CIService
                 continue
             }
-            // Remove not choosen CIService file and discard any error
-            try? self.fileManager.removeItem(
-                atPath: kitDirectory.path.appending(ciService.sourceFileName).rawValue
-            )
+            // Check if a source directory is available
+            if let sourceDirectory = ciService.sourceDirectory {
+                // Initialize source directory path
+                let sourceDirectoryPath = kitDirectory.path.appending(sourceDirectory)
+                // Remove not choosen CIService file and discard any error
+                try? self.fileManager.removeItem(
+                    atPath: sourceDirectoryPath.appending(ciService.sourceFileName).rawValue
+                )
+                // Remove source directory and discard any error
+                try? self.fileManager.removeItem(
+                    atPath: sourceDirectoryPath.rawValue
+                )
+            } else {
+                // Remove not choosen CIService file and discard any error
+                try? self.fileManager.removeItem(
+                    atPath: kitDirectory.path.appending(ciService.sourceFileName).rawValue
+                )
+            }
         }
         // Initialize map CIServices to XcodeFileReferences and filter out selected one
         let fileReferences = Kit.CIService.allCases
@@ -67,12 +80,12 @@ extension CIServiceKitMigrationService: KitMigrationService {
             fileReferences: fileReferences,
             in: kitDirectory
         )
-        // Check if an CI Service is available
-        if let ciService = kit.ciService {
+        // Check if the CI Service is available and has a Target FileName
+        if let ciService = kit.ciService, let targetFileName = ciService.targetFileName {
             // Initialize source path
             let sourcePath = kitDirectory.path.appending(ciService.sourceFileName).rawValue
             // Initialize destination path
-            let destinationPath = kitDirectory.path.appending(ciService.targetFileName).rawValue
+            let destinationPath = kitDirectory.path.appending(targetFileName).rawValue
             // Rename CI Service file name
             try? self.fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
         }
@@ -86,7 +99,20 @@ private extension Kit.CIService {
     
     /// The XcodeFileReference
     var fileReference: XcodeFileReference {
-        return .init(name: self.targetFileName)
+        // Initialize name with targetFileName if available or sourceFileName
+        var name = self.targetFileName ?? self.sourceFileName
+        // Check if a source directory is available
+        if let sourceDirectory = self.sourceDirectory {
+            // Initialize source directory Path
+            let sourceDirectoryPath = Kit.Directory.Path(
+                rawValue: sourceDirectory
+            )
+            // Re-Initialize name by appedending the name to the source directory
+            // path and retrieve its raw value
+            name = sourceDirectoryPath.appending(name).rawValue
+        }
+        // Return XcodeFileReference
+        return .init(name: name)
     }
     
 }

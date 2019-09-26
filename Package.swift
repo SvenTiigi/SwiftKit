@@ -19,9 +19,9 @@ let package = Package(
     ],
     dependencies: [
         // xcodeproj Dependency
-        .package(url: "https://github.com/tuist/xcodeproj.git", .exact("6.7.0")),
+        .package(url: "https://github.com/tuist/xcodeproj.git", .exact("7.0.0")),
         // SwiftCLI Dependency
-        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.2.2")),
+        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.3.2")),
         // Motor Dependency
         .package(url: "https://github.com/flintbox/Motor.git", .exact("0.1.2"))
     ],
@@ -30,7 +30,7 @@ let package = Package(
         .target(
             name: "SwiftKit",
             dependencies: [
-                "xcodeproj"
+                "XcodeProj"
             ]
         ),
         // SwiftKitCLI Target

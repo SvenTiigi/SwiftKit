@@ -23,6 +23,9 @@ struct Kit: Codable, Equatable, Hashable {
     /// The repository URL
     let repositoryURL: String
     
+    /// The GitHub Handle
+    let gitHubHandle: GitHubHandle
+    
     /// The Organization
     let organization: Organization
     
@@ -56,6 +59,7 @@ struct Kit: Codable, Equatable, Hashable {
         self.name = name
         self.author = author
         self.repositoryURL = repositoryURL
+        self.gitHubHandle = .init(author: author, repositoryURL: repositoryURL)
         self.organization = organization
         self.ciService = ciService
         self.applicationTargets = applicationTargets
@@ -77,6 +81,7 @@ extension Kit {
             "KITPROJECT": self.name,
             "KITAUTHOR": self.author.name,
             "KITMAILAUTHOR": self.author.email,
+            "KITGITHUBHANDLE": self.gitHubHandle.rawValue,
             "KITURL": self.repositoryURL,
             "KITORGANIZATION": self.organization.name,
             "KITBUNDLEIDENTIFIER": self.organization.identifier,

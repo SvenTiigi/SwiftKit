@@ -4,7 +4,7 @@
 
 <p align="center">
    <a href="https://developer.apple.com/swift/">
-      <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
+      <img src="https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat" alt="Swift 5.1">
    </a>
    <a href="https://travis-ci.com/SvenTiigi/SwiftKit">
       <img src="https://travis-ci.com/SvenTiigi/SwiftKit.svg?branch=master" alt="Build Status">
@@ -48,7 +48,7 @@ SwiftKit is inspired by <a href="https://github.com/JohnSundell/SwiftPlate">Swif
 - [x] Fastlane already integrated for `tests` and `release`
 - [x] `Jazzy` to generate documentation
 - [x] `SwiftLint` Build-Phase integrated
-- [x] `CI-Service` configuration templates included (Travis, GitLab, Azure Pipelines)
+- [x] `CI-Service` configuration templates included (GitHub, Travis, GitLab, Azure Pipelines)
 - [x] Automatically checks if the Kit name is already taken on `CocoaPods`
 - [x] GitHub issue templates for `Bug reports` and `Feature requests`
 
@@ -164,7 +164,7 @@ $ fastlane ios compatibilityTests
 
 #### release-lane
 
-The `release` lane will allow you to automatically release a new version of your Kit for `Carthage`/`GitHub` and `CocoaPods`.
+The `release` lane will allow you to automatically release a new version of your Kit.
 
 ```bash
 $ fastlane ios release version:1.1.0
@@ -183,19 +183,55 @@ The lane verifies various aspects of your Kit.
 
 > ☝️ Please ensure you have registered your machine with [`pod trunk register`](https://guides.cocoapods.org/making/getting-setup-with-trunk.html) in order to successfully push the Podspec to CocoaPods
 
-<img style="float: right" align="right" width="100" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/markdown-logo.png" alt="Markdown Logo">
-
 ### ReadMe
 
-A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template will be automatically created inside your Kit. It contains default sections like `Example`, `Installation` and `Usage`. Please feel free to update the ReadMe to your needs.
+<img style="float: right;" align="right" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" width="30%" alt="Template ReadMe">
 
-<p align="center">
-   <kbd><img src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/TemplateReadMe.png" alt="Template ReadMe"></kbd>
-</p>
+A [`README.md`](https://github.com/SvenTiigi/SwiftKit/blob/master/Template/README.md) template file will be automatically created inside your Kit. 
+
+The README comes along with typical sections like:
+
+<br/>
+
+* Project description
+* Example
+* Installation
+* Usage
+* Contributing
+* License
+
+<br/>
+
+Please feel free to update the ReadMe to your needs 👍
+
+## Environment-Configuration
+
+You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
+
+| Key | Description |
+| ----------- | ----------- |
+| `authorName` | The author name |
+| `authorEmail` | The author email address |
+| `organizationName` | The organization name |
+| `organizationIdentifier` | The organization identifier |
+
+SwiftKit will use those values and skip the corresponding CLI questions when running `swiftkit new`.
+
+```json
+{
+    "authorName": "Sven Tiigi",
+    "authorEmail": "sven.tiigi@gmail.com",
+    "organizationName": "Sven Tiigi",
+    "organizationIdentifier": "de.tiigi"   
+}
+```
+> Path: `~/.swiftkit-env.json`
+
+The environment config values will only be used if no argument for the corresponding value is present.
 
 ## Arguments
 
-SwiftKit supports arguments when launched. Following arguments are supported:
+Beside using the CLI inputs SwiftKit supports arguments when launched. The following arguments are supported:
 
 | Long parameter | Short parameter | Description
 | ----------- | ----------- | -------------- |
@@ -205,7 +241,7 @@ SwiftKit supports arguments when launched. Following arguments are supported:
 | `--name` | `-n` | Your name 👨‍💻 |
 | `--email` | `-e` | Your email address 📫 |
 | `--url` | `-u` | The repository url 🌎 |
-| `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` |
+| `--ci-service` | `-c` | The CI-Service 🛠 <br/> `1 = Travis CI - macOS only` <br/> `2 = Travis CI - macOS & Linux` <br/> `3 = GitLab CI` <br/> `4 = Azure Pipelines` <br/> `5 = GitHub CI` |
 | `--organization` | `-o` | The name of your organization 🏢 |
 | `--organization-identifier` | `-i` | The organization identifier 🖋 |
 | `--repository` | `-r` | The SwiftKit template repository url 🌎 |
@@ -232,31 +268,6 @@ swiftkit new \
 	--force \
 	--open
 ```
-
-## Environment-Configuration
-
-You can place a JSON environment configuration file in your home directory `~/.swiftkit-env.json` to provide default values for:
-
-| Key | Description |
-| ----------- | ----------- |
-| `authorName` | The author name |
-| `authorEmail` | The author email address |
-| `organizationName` | The organization name |
-| `organizationIdentifier` | The organization identifier |
-
-SwiftKit will use those values and skip the corresponding console question when running `swiftkit new`.
-
-```json
-{
-    "authorName": "Sven Tiigi",
-    "authorEmail": "sven.tiigi@gmail.com",
-    "organizationName": "Sven Tiigi",
-    "organizationIdentifier": "de.tiigi"   
-}
-```
-> Path: `~/.swiftkit-env.json`
-
-The environment config values will only be used if no argument for the corresponding value is present.
 
 ## Featured on
 

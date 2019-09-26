@@ -17,7 +17,6 @@ protocol KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory)
     
 }

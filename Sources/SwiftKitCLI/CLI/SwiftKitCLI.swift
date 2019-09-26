@@ -42,15 +42,8 @@ extension SwiftKitCLI {
     func execute() {
         // Print ASCII art
         self.cli.stdout <<< .asciiArt
-        // Switch on Environment
-        switch self.swiftKit.environment {
-        case .production, .development:
-            // Start CLI
-            _ = self.cli.go()
-        case .test:
-            // Start CLI in Debug Mode
-            _ = self.cli.debugGo(with: "swiftkit new")
-        }
+        // Start CLI
+        _ = self.cli.go()
     }
     
 }
@@ -84,7 +77,24 @@ extension SwiftKitCLI: Executable {
     /// - Throws: If execution fails
     @discardableResult
     func execute(_ command: String) throws -> String {
-        return try SwiftCLI.capture(bash: command).stdout
+        do {
+            // Try to execute command and capture output
+            return try SwiftCLI.Task.capture(bash: command).stdout
+        } catch {
+            // Check if Error is a SwiftCLI CaptureError
+            if let captureError = error as? SwiftCLI.CaptureError {
+                // Initialize SwiftKit Error
+                let swiftKitError = SwiftKitError(
+                    reason: "Command execution failed: \(command)",
+                    error: captureError.message ?? ""
+                )
+                // Throw SwiftKitError
+                throw swiftKitError
+            } else {
+                // Throw Error
+                throw error
+            }
+        }
     }
     
     /// Print text
@@ -159,3 +169,7 @@ private extension String {
     }
     
 }
+
+// MARK: - String+Error
+
+extension String: Error {}

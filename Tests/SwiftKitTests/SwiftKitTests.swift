@@ -12,15 +12,15 @@ import XCTest
 final class SwiftKitTests: XCTestCase {
     
     static var allTests = [
-        ("testIsProduction", testIsProduction),
+        ("testIsMasterBranch", testIsMasterBranch),
     ]
     
     lazy var fakeExecutable = FakeExecutable()
     
     lazy var swiftKit = SwiftKit(executable: self.fakeExecutable)
     
-    func testIsProduction() {
-        XCTAssertEqual(self.swiftKit.environment, .production)
+    func testIsMasterBranch() {
+        XCTAssertEqual(self.swiftKit.branch, .master)
     }
     
 }

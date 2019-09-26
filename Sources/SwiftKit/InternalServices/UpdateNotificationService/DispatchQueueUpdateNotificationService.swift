@@ -10,7 +10,7 @@ import Foundation
 // MARK: - DispatchQueueUpdateNotificationService
 
 /// The DispatchQueueUpdateNotificationService
-class DispatchQueueUpdateNotificationService {
+final class DispatchQueueUpdateNotificationService {
     
     // MARK: Properties
     

@@ -52,7 +52,7 @@ pod 'KITPROJECT'
 To integrate KITPROJECT into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "KITAUTHOR/KITPROJECT"
+github "KITGITHUBHANDLE/KITPROJECT"
 ```
 
 Run `carthage update` to build the framework and drag the built `KITPROJECT.framework` into your Xcode project. 
@@ -68,6 +68,8 @@ dependencies: [
     .package(url: "KITURL.git", from: "1.0.0")
 ]
 ```
+
+Alternatively navigate to your Xcode project, select `Swift Packages` and click the `+` icon to search for `KITPROJECT`.
 
 ### Manually
 

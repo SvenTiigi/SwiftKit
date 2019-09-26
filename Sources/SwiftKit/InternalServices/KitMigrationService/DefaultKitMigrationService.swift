@@ -37,8 +37,7 @@ extension DefaultKitMigrationService: KitMigrationService {
     /// - Parameters:
     ///   - kit: The Kit
     ///   - kitDirectory: The Kit Directory
-    /// - Throws: If migration fails
-    func migrate(kit: Kit, at kitDirectory: Kit.Directory) throws {
+    func migrate(kit: Kit, at kitDirectory: Kit.Directory) {
         // Migrate Files in Kit Directory
         self.migrateFiles(
             in: kitDirectory,

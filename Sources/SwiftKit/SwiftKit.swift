@@ -17,11 +17,11 @@ public struct SwiftKit {
     /// The SwiftKit repository URL
     public let url: String
     
+    /// The Git Branch
+    public let branch: GitBranch
+    
     /// The Version
     public let version: Version
-    
-    /// The Environment
-    public let environment: Environment
     
     /// The Executable
     let executable: Executable
@@ -37,17 +37,32 @@ public struct SwiftKit {
     ///
     /// - Parameters:
     ///   - url: The SwiftKit repository URL. Default value `https://github.com/SvenTiigi/SwiftKit`
+    ///   - branch: The Git Branch. Default value `.master`
     ///   - version: The Version. Default value `.default`
-    ///   - environment: The Environment. Default value `.default`
     ///   - executable: The Executable
     public init(url: String = "https://github.com/SvenTiigi/SwiftKit",
+                branch: GitBranch = .master,
                 version: Version = .default,
-                environment: Environment = .default,
                 executable: Executable) {
         self.url = url
+        self.branch = branch
         self.version = version
-        self.environment = environment
         self.executable = executable
+    }
+    
+}
+
+// MARK: - Version+Default
+
+public extension Version {
+    
+    /// The default Version
+    static var `default`: Version {
+        return .init(
+            major: 1,
+            minor: 2,
+            patch: 5
+        )
     }
     
 }

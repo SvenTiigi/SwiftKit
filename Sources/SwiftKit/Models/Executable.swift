@@ -55,6 +55,13 @@ public protocol Executable {
 
 extension Executable {
     
+    /// Print error
+    ///
+    /// - Parameter error: The Error
+    func printError(_ error: Error) {
+        self.printError(error.localizedDescription)
+    }
+    
     /// Start loading
     func startLoading() {
         self.startLoading(message: nil)
