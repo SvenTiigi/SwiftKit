@@ -14,7 +14,7 @@ platform :ios do
   end
 
   desc "Run Tests"
-  lane :test do
+  lane :tests do
     sh("swift", "test", "--parallel")
   end
 
