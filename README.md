@@ -6,8 +6,8 @@
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat" alt="Swift 5.1">
    </a>
-   <a href="https://travis-ci.com/SvenTiigi/SwiftKit">
-      <img src="https://travis-ci.com/SvenTiigi/SwiftKit.svg?branch=master" alt="Build Status">
+   <a href="https://github.com/SvenTiigi/WhatsNewKit/actions?query=workflow%3ACI">
+      <img src="https://github.com/SvenTiigi/WhatsNewKit/workflows/CI/badge.svg" alt="CI Status">
    </a>
    <a href="https://github.com/SvenTiigi/SwiftKit/releases">
       <img src="https://img.shields.io/github/release/SvenTiigi/SwiftKit.svg" alt="Version">
@@ -15,6 +15,7 @@
    <a href="https://sventiigi.github.io/SwiftKit">
       <img src="https://github.com/SvenTiigi/SwiftKit/blob/gh-pages/badge.svg" alt="Documentation">
    </a>
+   <br/>
    <a href="https://github.com/yonaskolb/Mint">
       <img src="https://img.shields.io/badge/Mint-compatible-brightgreen.svg" alt="Mint">
    </a>
