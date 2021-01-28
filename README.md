@@ -79,7 +79,7 @@ To update SwiftKit to the latest version simply run:
 ```bash
 $ swiftkit update
 ```
-> The `update` command will only work if SwiftKit is installed via either Mint 🌱 or Homebrew 🍺
+> The `update` command will only work if SwiftKit is installed either via Mint 🌱  or Homebrew 🍺
 
 ## Usage 👨‍💻
 
@@ -176,7 +176,7 @@ The lane verifies various aspects of your Kit.
 | Step | Description |
 | --- | --- |
 | 1 | Ensure your are on a clean master branch |
-| 2 | Run `compatibilityTests ` lane |
+| 2 | Run `compatibilityTests` lane |
 | 3 | Run `tests` lane |
 | 4 | Increment version |
 | 5 | Add and push Git tag |
