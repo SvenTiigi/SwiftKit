@@ -441,7 +441,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "KITORGANIZATION";
 				TargetAttributes = {
 					3D9C428F22745894000A6585 = {
