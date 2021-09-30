@@ -61,7 +61,7 @@ public extension Version {
         return .init(
             major: 1,
             minor: 3,
-            patch: 7
+            patch: 8
         )
     }
     
