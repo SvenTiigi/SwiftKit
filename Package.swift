@@ -19,9 +19,9 @@ let package = Package(
     ],
     dependencies: [
         // xcodeproj Dependency
-        .package(url: "https://github.com/tuist/xcodeproj.git", .exact("7.17.0")),
+        .package(url: "https://github.com/tuist/xcodeproj.git", .exact("8.3.1")),
         // SwiftCLI Dependency
-        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("5.3.2")),
+        .package(url: "https://github.com/jakeheis/SwiftCLI.git", .exact("6.0.3")),
         // Motor Dependency
         .package(url: "https://github.com/flintbox/Motor.git", .exact("0.1.2"))
     ],
