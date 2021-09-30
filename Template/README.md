@@ -55,9 +55,7 @@ To integrate KITPROJECT into your Xcode project using Carthage, specify it in yo
 github "KITGITHUBHANDLE/KITPROJECT"
 ```
 
-Run `carthage update` to build the framework and drag the built `KITPROJECT.framework` into your Xcode project. 
-
-On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md#if-youre-building-for-ios-tvos-or-watchos)
+Run `carthage update --use-xcframeworks` to build the framework and drag the built `KITPROJECT.xcframework` bundles from Carthage/Build into the "Frameworks and Libraries" section of your application’s Xcode project.
 
 ### Swift Package Manager
 
